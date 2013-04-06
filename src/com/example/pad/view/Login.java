@@ -7,6 +7,7 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import com.example.pad.BaseActivity;
 import com.example.pad.R;
 
 /**
@@ -16,17 +17,16 @@ import com.example.pad.R;
  * Time: 7:18 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Login extends Activity {
+public class Login extends BaseActivity {
     private Button logoutBtn;
     private Spinner spinner;
-    private static final String[] m={"A型","B型","O型","AB型","其他"};
+    private static final String[] m={"user1", "user2", "user3"};
     private ArrayAdapter<String> adapter;
 
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login);
         logoutBtn = (Button)findViewById(R.id.logout_btn);
         logoutBtn.setOnClickListener(new LogoutOnClickListener());

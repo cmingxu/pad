@@ -8,11 +8,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import com.example.pad.view.Login;
+import com.example.pad.view.Maintain;
 
 import javax.security.auth.login.LoginException;
 
-public class Main extends Activity {
+public class Main extends BaseActivity {
     private ImageButton logout_btn;
+    private ImageButton maintain_btn;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,9 @@ public class Main extends Activity {
 
         logout_btn = (ImageButton)findViewById(R.id.logout_btn);
         logout_btn.setOnClickListener(new LogoutClickListener());
+        maintain_btn = (ImageButton)findViewById(R.id.maintain_btn);
+        maintain_btn.setOnClickListener(new MaintainClickListener());
+
 
     }
 
@@ -30,6 +35,16 @@ public class Main extends Activity {
         public void onClick(View view) {
             Intent i = new Intent();
             i.setClass(Main.this, Login.class);
+            startActivity(i);
+        }
+    }
+
+    protected class MaintainClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent();
+            i.setClass(Main.this, Maintain.class);
             startActivity(i);
         }
     }

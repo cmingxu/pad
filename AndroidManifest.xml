@@ -4,7 +4,7 @@
           android:versionCode="1"
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="8"/>
-    <application android:label="@string/app_name">
+    <application android:label="@string/app_name" android:icon="@drawable/rio">
         <activity android:name="Main"
                   android:label="@string/app_name">
             <intent-filter>
@@ -13,5 +13,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.Login"/>
+        <activity android:name=".view.Maintain"/>
+        <activity android:name=".BaseActivity"/>
+        <activity android:name=".view.NewForm"/>
+        <activity android:name=".view.AddressChooser"/>
+
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-feature android:name="android.hardware.camera" />
+        <uses-feature android:name="android.hardware.camera.autofocus" />
     </application>
 </manifest> 

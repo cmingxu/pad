@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="我要上传(3)"
+            android:id="@+id/not_uploaded_btn" android:clickable="true" android:maxLines="1"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="2013/3/28"
+            android:id="@+id/editText1" android:editable="false" android:enabled="false" android:maxLines="1"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="王树仁"
+            android:id="@+id/editText2" android:layout_gravity="center"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="18610473786"
+            android:id="@+id/editText3" android:layout_gravity="center"/>
+    <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner" android:layout_gravity="center"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="报修内容"
+            android:id="@+id/editText4" android:layout_gravity="center" android:lines="3" android:longClickable="true"
+            android:gravity="top"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_gravity="center">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="照片"
+                android:id="@+id/take_pic_btn"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上传"
+                android:id="@+id/button1"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
+                android:id="@+id/button2"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="删除"
+                android:id="@+id/button3"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="返回"
+                android:id="@+id/back_btn"/>
+    </LinearLayout>
+</LinearLayout>
