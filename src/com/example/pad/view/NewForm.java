@@ -40,8 +40,8 @@ public class NewForm extends BaseActivity {
         take_pic_btn = (Button)findViewById(R.id.take_pic_btn);
         take_pic_btn.setOnClickListener(new TakePicClickListener());
 
-        address_chose = (EditText)findViewById(R.id.address_chose);
-        address_chose.setOnClickListener(new AddressChoseClickListener());
+//        address_chose = (EditText)findViewById(R.id.address_chose);
+//        address_chose.setOnClickListener(new AddressChoseClickListener());
 
     }
 
