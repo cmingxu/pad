@@ -8,4 +8,6 @@ package com.example.pad.models;
  * To change this template use File | Settings | File Templates.
  */
 public class Loupan extends  Base {
+    public String mLoupanbianhao;
+    public String mLoupanmingcheng;
 }

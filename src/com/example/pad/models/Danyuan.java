@@ -8,4 +8,12 @@ package com.example.pad.models;
  * To change this template use File | Settings | File Templates.
  */
 public class Danyuan extends Base {
+    public String mLougebianhao;
+    public String mLouceng;
+    public String mLoucengMingcheng;
+    public String mDanyuanbianhao;
+    public String mDanyuanmingcheng;
+    public String mYezhubianhao;
+    public String mJiange;
+
 }
