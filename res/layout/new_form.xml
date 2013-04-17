@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="报修内容"
             android:id="@+id/editText4" android:layout_gravity="center" android:lines="3" android:longClickable="true"
-            android:gravity="top"/>
+            android:gravity="top" android:maxLines="3"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
