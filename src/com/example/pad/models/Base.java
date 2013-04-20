@@ -8,4 +8,7 @@ package com.example.pad.models;
  * To change this template use File | Settings | File Templates.
  */
 public class Base {
+    private int id;
+
+
 }

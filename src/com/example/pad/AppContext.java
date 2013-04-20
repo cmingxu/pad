@@ -20,7 +20,7 @@ import java.util.Properties;
  * @version 1.0
  * @created 2012-3-21
  */
-public class AppContext extends Application {
+public class AppContext extends com.activeandroid.app.Application {
 
     public static final int NETTYPE_WIFI = 0x01;
     public static final int NETTYPE_CMWAP = 0x02;

@@ -3,27 +3,23 @@ package com.example.pad.view;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.*;
+import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.models.User;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.util.ArrayList;
 
 /**
@@ -35,12 +31,15 @@ import java.util.ArrayList;
  */
 public class Login extends BaseActivity {
     private Button logoutBtn;
+    private Button loginBtn;
     private TextView reloadUsers;
     private Spinner spinner;
-    private static final String[] m={"user1", "user2", "user3"};
+    private static String[] m={"user1", "user2", "user3"};
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
     private HttpHelper httpHelper = HttpHelper.getInstance("login", "password");
+    private Handler handler;
+    public static final int UPDATE_USER_SELECTOR = 1;
 
 
 
@@ -48,6 +47,8 @@ public class Login extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         logoutBtn = (Button)findViewById(R.id.logout_btn);
+        loginBtn  = (Button)findViewById(R.id.login_btn);
+        loginBtn.setOnClickListener(new LoginInOnClickListener());
         logoutBtn.setOnClickListener(new LogoutOnClickListener());
         progressDialog = new ProgressDialog(this);
 
@@ -86,26 +87,57 @@ public class Login extends BaseActivity {
         public void onClick(View view) {
             progressDialog.setTitle(R.string.wait_please);
             progressDialog.show();
+            handler = new Handler(){
+                @Override
+                public void handleMessage(Message msg) {
+                    super.handleMessage(msg);
+                    switch (msg.what){
+                        case UPDATE_USER_SELECTOR:
+                            adapter.notifyDataSetChanged();
+                            break;
+                        default:
+                            break;
+
+                    }
+                }
+            };
+
 
             httpHelper.withUsers(null, new JsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONArray s) {
+//                    User.deleteAll();
                     try {
                         ArrayList<User> users = User.usersFromJsonArray(s);
+                        for(User u : users) u.save();
+                        m = new String[]{"abd", "def"};
+                        Message m = new Message();
+                        m.what = UPDATE_USER_SELECTOR;
+                        handler.sendMessage(m);
+
                     } catch (JSONException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        e.printStackTrace();
                     }
                     progressDialog.dismiss();
                 }
 
                 @Override
                 public void onFailure(Throwable throwable, JSONObject jsonObject) {
+                    progressDialog.dismiss();
                     Toast.makeText(Login.this, R.string.network_error, Toast.LENGTH_SHORT).show();
                 }
 
             });
 
 
+        }
+    }
+
+    private class LoginInOnClickListener implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            redirect(Login.this, Main.class);
         }
     }
 }

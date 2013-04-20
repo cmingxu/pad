@@ -8,4 +8,6 @@ package com.example.pad.common;
  * To change this template use File | Settings | File Templates.
  */
 public class Config {
+    public static final String SERVER_BASE_URL = "http://222.128.122.81:3000/";
+    public static final int HTTP_TIMEOUT = 15 * 1000;
 }

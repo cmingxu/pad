@@ -1,6 +1,8 @@
 package com.example.pad;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 
@@ -23,6 +25,14 @@ public class BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         AppManager.getAppManager().finishActivity(this);
+
+
+    }
+
+    protected void redirect(Context from, Class to){
+        Intent i = new Intent();
+        i.setClass(from, to);
+        from.startActivity(i);
 
     }
 }

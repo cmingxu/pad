@@ -1,16 +1,12 @@
-package com.example.pad;
+package com.example.pad.view;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageButton;
-import com.example.pad.view.Login;
-import com.example.pad.view.Maintain;
-
-import javax.security.auth.login.LoginException;
+import com.example.pad.BaseActivity;
+import com.example.pad.R;
 
 public class Main extends BaseActivity {
     private ImageButton logout_btn;
