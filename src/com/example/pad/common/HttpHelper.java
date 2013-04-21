@@ -29,16 +29,14 @@ public class HttpHelper {
     }
 
 
-    public void withUsers(RequestParams params, JsonHttpResponseHandler handler){
-        client.get(absoluteURL("users"), params, handler);
+    public void with(String path, RequestParams params, JsonHttpResponseHandler handler){
+        client.get(absoluteURL(path), params, handler);
     }
 
 
     private String absoluteURL(String path){
         return Config.SERVER_BASE_URL + path;
     }
-
-
 
 
 }

@@ -35,21 +35,21 @@
     <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366464417326" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
     <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1365232977155" ignored="false" />
-    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366468213182" ignored="false" />
+    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366518643120" ignored="false" />
     <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1365232116210" ignored="false" />
     <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1365231785665" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366467590403" ignored="false" />
-    <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366206984462" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366507193317" ignored="false" />
+    <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366506835645" ignored="false" />
     <file path="/AddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1365231700441" ignored="false" />
     <file path="/AppConfig.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1365245395997" ignored="false" />
     <file path="/AppContext.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1365245976013" ignored="false" />
     <file path="/BaseActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366464795302" ignored="false" />
-    <file path="/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366177096197" ignored="false" />
-    <file path="/Loupan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366177127324" ignored="false" />
-    <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366465201876" ignored="false" />
-    <file path="/User.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366468633930" ignored="false" />
-    <file path="/Louceng.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366177036407" ignored="false" />
-    <file path="/HttpHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366465101941" ignored="false" />
+    <file path="/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366518506959" ignored="false" />
+    <file path="/Loupan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366518516280" ignored="false" />
+    <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366518481905" ignored="false" />
+    <file path="/User.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366513061892" ignored="false" />
+    <file path="/Louceng.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366518494832" ignored="false" />
+    <file path="/HttpHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366512998679" ignored="false" />
     <file path="/Base.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366467746580" ignored="false" />
     <file path="/Config.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366465040248" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -112,22 +112,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Danyuan.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
+      <file leaf-file-name="Login.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="14" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
+            <state line="145" column="22" selection-start="4738" selection-end="4738" vertical-scroll-proportion="0.25">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1240#1249#0" expanded="true" />
+                <element signature="e#1795#1803#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/DBHelper.java">
+      <file leaf-file-name="Danyuan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+            <state line="58" column="18" selection-start="1912" selection-end="1912" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,40 +136,8 @@
       <file leaf-file-name="HttpHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="73" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0">
+            <state line="40" column="10" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Base.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Base.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="17" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/AppManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppContext.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/AppContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="89" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.32142857">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1039#1055#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -177,40 +145,46 @@
       <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="0" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0">
+            <state line="66" column="2" selection-start="1791" selection-end="1892" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1045#1051#0" expanded="true" />
+                <element signature="e#1099#1105#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
+      <file leaf-file-name="Louge.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Louge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="59" selection-start="3544" selection-end="3544" vertical-scroll-proportion="0.0">
+            <state line="47" column="31" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#896#903#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Manifest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gen/com/example/pad/Manifest.java">
+      <file leaf-file-name="Louceng.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Louceng.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="49" column="33" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#957#966#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="Loupan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Loupan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="39" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="27" column="45" selection-start="707" selection-end="707" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#829#837#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -230,22 +204,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/res/layout/new_form.xml" />
+        <option value="$PROJECT_DIR$/gen/com/example/pad/R.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/common/Config.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/AppContext.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Base.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/login.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/User.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Louceng.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Louge.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Loupan.java" />
-        <option value="$PROJECT_DIR$/res/layout/new_form.xml" />
-        <option value="$PROJECT_DIR$/gen/com/example/pad/R.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/res/layout/login.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/common/Config.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/AppContext.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Base.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/User.java" />
       </list>
     </option>
   </component>
@@ -321,6 +295,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -381,6 +377,8 @@
       <option name="NETWORK_SPEED" value="full" />
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -545,8 +543,9 @@
       <item index="2" class="java.lang.String" itemvalue="Android Application.Login" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Android Application.Login" />
+        <item index="1" class="java.lang.String" itemvalue="Android Application.Login" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -555,6 +554,23 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" name="Default" comment="" />
@@ -587,18 +603,18 @@
     <frame x="0" y="22" width="1920" height="1107" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.47508305" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.47508305" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.59574467" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.59574467" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32826748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.59574467" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39918947" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.56727827" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32783505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272543" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40425533" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -682,6 +698,39 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="23" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Desktop/pardom-ActiveAndroid-df9fb5b/dist/ActiveAndroid.jar!/com/activeandroid/Model.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="22" selection-start="169" selection-end="169" vertical-scroll-proportion="0.14018692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/AppContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="90" selection-start="774" selection-end="774" vertical-scroll-proportion="0.22435898">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1039#1055#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/AppManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="292" selection-end="292" vertical-scroll-proportion="0.22435898">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/login.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -692,71 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/BaseActivity.java">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="32" selection-start="876" selection-end="876" vertical-scroll-proportion="0.0">
+        <state line="5" column="23" selection-start="215" selection-end="215" vertical-scroll-proportion="0.08029979">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/AddressChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Louge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="48" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="73" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="14" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1240#1249#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/AppManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,43 +757,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="39" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.0">
+        <state line="27" column="85" selection-start="1110" selection-end="1170" vertical-scroll-proportion="0.4281184">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Base.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+        <state line="40" column="10" selection-start="1085" selection-end="1085" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="2" selection-start="1791" selection-end="1892" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1099#1105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Louceng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="33" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#957#966#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Louge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="31" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#896#903#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Loupan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="45" selection-start="707" selection-end="707" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#829#837#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="18" selection-start="1912" selection-end="1912" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="59" selection-start="3544" selection-end="3544" vertical-scroll-proportion="0.0">
+        <state line="145" column="22" selection-start="4738" selection-end="4738" vertical-scroll-proportion="0.25">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1045#1051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/AppContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="89" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.32142857">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1039#1055#0" expanded="true" />
+            <element signature="e#1795#1803#0" expanded="true" />
           </folding>
         </state>
       </provider>

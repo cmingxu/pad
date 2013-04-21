@@ -1,19 +1,17 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
+import com.activeandroid.query.Select;
 import android.widget.*;
-import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
-import com.example.pad.models.User;
+import com.example.pad.models.*;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,9 +30,9 @@ import java.util.ArrayList;
 public class Login extends BaseActivity {
     private Button logoutBtn;
     private Button loginBtn;
+    private Button downloadBtn;
     private TextView reloadUsers;
     private Spinner spinner;
-    private static String[] m={"user1", "user2", "user3"};
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
     private HttpHelper httpHelper = HttpHelper.getInstance("login", "password");
@@ -48,36 +46,32 @@ public class Login extends BaseActivity {
         setContentView(R.layout.login);
         logoutBtn = (Button)findViewById(R.id.logout_btn);
         loginBtn  = (Button)findViewById(R.id.login_btn);
+        downloadBtn = (Button)findViewById(R.id.download_btn);
         loginBtn.setOnClickListener(new LoginInOnClickListener());
         logoutBtn.setOnClickListener(new LogoutOnClickListener());
+        downloadBtn.setOnClickListener(new DownloadBtnOnClickListener());
         progressDialog = new ProgressDialog(this);
 
 
-
+        ArrayList<String> m= new ArrayList<String>();
+        for(User u : User.all(null)){
+            m.add(u.login);
+        }
+        Log.d("123", m.toString() );
         reloadUsers = (TextView)findViewById(R.id.reload_users);
         reloadUsers.setOnClickListener(new ReloadUserOnClickListener());
         spinner = (Spinner) findViewById(R.id.login_selector);
-        //将可选内容与ArrayAdapter连接起来
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
-
-        //设置下拉列表的风格
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, m);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        //将adapter 添加到spinner中
         spinner.setAdapter(adapter);
 
-        //添加事件Spinner事件监听
-//        spinner.setOnItemSelectedListener(new SpinnerSelectedListener());
-
-        //设置默认值
-//        spinner.setVisibility(View.VISIBLE);
     }
 
     protected class LogoutOnClickListener implements View.OnClickListener{
 
         @Override
         public void onClick(View view) {
-            Login.this.finish();
+
         }
     }
 
@@ -93,8 +87,9 @@ public class Login extends BaseActivity {
                     super.handleMessage(msg);
                     switch (msg.what){
                         case UPDATE_USER_SELECTOR:
-                            adapter.notifyDataSetChanged();
+                            spinner.invalidate();
                             break;
+
                         default:
                             break;
 
@@ -103,14 +98,15 @@ public class Login extends BaseActivity {
             };
 
 
-            httpHelper.withUsers(null, new JsonHttpResponseHandler(){
+            httpHelper.with("users", null, new JsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONArray s) {
-//                    User.deleteAll();
+                    User.deleteAll();
                     try {
-                        ArrayList<User> users = User.usersFromJsonArray(s);
+                        ArrayList<User> users = User.fromJsonArray(s);
                         for(User u : users) u.save();
-                        m = new String[]{"abd", "def"};
+                        Log.d("aaaa12333", new Select().from(User.class).where("1=1").orderBy("id").execute().toString() + "");
+
                         Message m = new Message();
                         m.what = UPDATE_USER_SELECTOR;
                         handler.sendMessage(m);
@@ -138,6 +134,86 @@ public class Login extends BaseActivity {
         @Override
         public void onClick(View view) {
             redirect(Login.this, Main.class);
+        }
+    }
+
+    private class DownloadBtnOnClickListener implements Button.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            progressDialog.show();
+            User.deleteAll();
+            Danyuan.deleteAll();
+            Louceng.deleteAll();
+            Loupan.deleteAll();
+            Louge.deleteAll();
+
+            httpHelper.with("users", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<User> users = User.fromJsonArray(jsonArray);
+                        for(User u : users) u.save();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            httpHelper.with("danyuans", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<Danyuan> danyuans = Danyuan.fromJsonArray(jsonArray);
+                        for(Danyuan d : danyuans) d.save();
+                        progressDialog.dismiss();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            httpHelper.with("loupans", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<Loupan> loupans = Loupan.fromJsonArray(jsonArray);
+                        for(Loupan l : loupans) l.save();
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            httpHelper.with("louges", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<Louge> louges = Louge.fromJsonArray(jsonArray);
+                        for(Louge l : louges) l.save();
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+            httpHelper.with("loucengs", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<Louceng> loucengs = Louceng.fromJsonArray(jsonArray);
+                        for(Louceng l : loucengs) l.save();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
     }
 }

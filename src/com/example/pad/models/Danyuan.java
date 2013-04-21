@@ -1,5 +1,9 @@
 package com.example.pad.models;
 
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Delete;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,50 +17,50 @@ import java.util.ArrayList;
  * Time: 8:48 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Danyuan extends Base {
+
+@Table(name="Danyuan")
+public class Danyuan extends Model {
+    @Column(name="mLougebianhao")
     public String mLougebianhao;
+    @Column(name="mLouceng")
     public String mLouceng;
+    @Column(name="mLoucengMingcheng")
     public String mLoucengMingcheng;
+    @Column(name="mDanyuanbianhao")
     public String mDanyuanbianhao;
+    @Column(name="mDanyuanmincheng")
     public String mDanyuanmingcheng;
+    @Column(name="mYezhubianhao")
     public String mYezhubianhao;
+    @Column(name="mJiange")
     public String mJiange;
-
-    public static final String DB_CREATE_STATEMENT = "" +
-            "drop table danyuans if exists danyuans;" +
-            "create table danyuans(" +
-            "mLougebianhao varchar(255)," +
-            "mLouceng varchar(255)," +
-            "mLoucengMingcheng varchar(255)," +
-            "mDanyuanbianhao varchar(255)," +
-            "mDanyuanmingcheng varchar(255)," +
-            "mYezhubianhao varchar(255)," +
-            "mJiange varchar(255)" +
-            ");"
-            ;
+    @Column(name="remoteId")
+    public int remoteId;
 
 
-
-
-
-    public static ArrayList<Danyuan> danyuansFromJsonArray(JSONArray s) throws JSONException {
+    public static ArrayList<Danyuan> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
         ArrayList<Danyuan> danyuans = new ArrayList<Danyuan>();
 
         for (int i = 0; i < s.length(); i++){
             Danyuan danyuan = new Danyuan();
             temp = s.getJSONObject(i);
-            danyuan.mDanyuanbianhao = temp.getString("");
-            danyuan.mLougebianhao   = temp.getString("");
-            danyuan.mLouceng        = temp.getString("");
-            danyuan.mLoucengMingcheng = temp.getString("");
-            danyuan.mDanyuanmingcheng = temp.getString("");
-            danyuan.mYezhubianhao   = temp.getString("");
-            danyuan.mJiange         = temp.getString("");
+            danyuan.mDanyuanbianhao = temp.getString("单元编号");
+            danyuan.mLougebianhao   = temp.getString("楼阁编号");
+            danyuan.mLouceng        = temp.getString("楼层");
+            danyuan.mLoucengMingcheng = temp.getString("楼层名称");
+            danyuan.mDanyuanmingcheng = temp.getString("单元名称");
+            danyuan.mYezhubianhao   = temp.getString("房号编号");
+//            danyuan.mJiange         = temp.getString("间隔");
+            danyuan.remoteId        = temp.getInt("id");
             danyuans.add(danyuan);
 
         }
         return danyuans;
+    }
+
+    public static void deleteAll(){
+        new Delete().from(Danyuan.class).where("1=1").execute();
     }
 
 }

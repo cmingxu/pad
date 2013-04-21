@@ -5,11 +5,13 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,11 +24,11 @@ import java.util.ArrayList;
 @Table(name = "User")
 public class User extends Model {
     @Column(name = "password")
-    private String password;
+    public String password;
     @Column(name = "login")
-    private String login;
+    public String login;
     @Column(name = "remoteId")
-    private int remoteId;
+    public int remoteId;
 
 
     public User(String password, String login, int remoteId) {
@@ -35,7 +37,7 @@ public class User extends Model {
         this.remoteId = remoteId;
     }
 
-    public static ArrayList<User> usersFromJsonArray(JSONArray s) throws JSONException {
+    public static ArrayList<User> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
         ArrayList<User> users = new ArrayList<User>();
 
@@ -49,7 +51,7 @@ public class User extends Model {
                 login = temp.getString("用户名");
                 password = temp.getString("密码");
                 remoteId = temp.getInt("id");
-                users.add(new User(login, password, remoteId));
+                users.add(new User(password, login, remoteId));
             }catch (JSONException e){
                 e.printStackTrace();
             }
@@ -59,10 +61,18 @@ public class User extends Model {
     }
 
     public static int count(){
-        return 1;
+        return new Select().from(User.class).orderBy("id").execute().size();
     }
 
     public static void deleteAll(){
         new Delete().from(User.class).where("1=1").execute();
     }
+
+    public static List<User> all(String wherence){
+        if (wherence == null) {
+            wherence = "1=1";
+        }
+        return new Select().from(User.class).where(wherence).orderBy("id").execute();
+    }
+
 }
