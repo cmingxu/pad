@@ -18,8 +18,8 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="密码"
-            android:id="@+id/editText" android:maxLines="1" android:singleLine="true"/>
+            android:id="@+id/editText" android:maxLines="1" android:singleLine="true" android:hint="密码"
+            android:inputType="textPassword"/>
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

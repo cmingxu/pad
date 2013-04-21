@@ -57,6 +57,8 @@ public class Login extends BaseActivity {
         for(User u : User.all(null)){
             m.add(u.login);
         }
+        m.add("System");
+        m.add("Administrator");
         Log.d("123", m.toString() );
         reloadUsers = (TextView)findViewById(R.id.reload_users);
         reloadUsers.setOnClickListener(new ReloadUserOnClickListener());
