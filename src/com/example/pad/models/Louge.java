@@ -50,6 +50,9 @@ public class Louge extends Model {
         new Delete().from(Louge.class).where("1=1").execute();
     }
 
+    public static List<Louge> all(){
+        return new Select().from(Louge.class).execute();
+    }
 
     public static Louge first(){
         return new Select().from(Louge.class).executeSingle();
@@ -57,5 +60,10 @@ public class Louge extends Model {
 
     public List<Louceng> loucengs(){
         return new Select().from(Louceng.class).where("mLougebianhao='" + this.mLougebianhao + "'").execute();
+    }
+
+    @Override
+    public String toString() {
+        return this.mLougemingcheng;
     }
 }

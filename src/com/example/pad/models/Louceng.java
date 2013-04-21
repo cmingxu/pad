@@ -59,4 +59,9 @@ public class Louceng extends Model{
     public List<Danyuan> danyuans(){
         return new Select().from(Danyuan.class).where("mLougebianhao='" + this.mLougebianhao + "' AND mLouceng='" + this.mLoucengbianhao + "'").execute();
     }
+
+    @Override
+    public String toString() {
+        return mLoucengmingcheng;
+    }
 }

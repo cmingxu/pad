@@ -24,8 +24,9 @@ import com.example.pad.R;
 public class NewForm extends BaseActivity {
     private Button back_btn;
     private Button take_pic_btn;
-    private EditText address_chose;
+    private EditText address_choose_text;
     private static final int IMAGE_CAPTURE = 0;
+    public static final int CHOOSE_ADDRESS = 1;
 
     private Uri imageUri;
 
@@ -40,8 +41,9 @@ public class NewForm extends BaseActivity {
         take_pic_btn = (Button)findViewById(R.id.take_pic_btn);
         take_pic_btn.setOnClickListener(new TakePicClickListener());
 
-//        address_chose = (EditText)findViewById(R.id.address_chose);
-//        address_chose.setOnClickListener(new AddressChoseClickListener());
+        address_choose_text = (EditText)findViewById(R.id.address_choose_text);
+
+        address_choose_text.setOnClickListener(new AddressChoseClickListener());
 
     }
 
@@ -61,7 +63,7 @@ public class NewForm extends BaseActivity {
         public void onClick(View view) {
             Intent i = new Intent();
             i.setClass(NewForm.this, AddressChooser.class);
-            startActivity(i);
+            startActivityForResult(i, CHOOSE_ADDRESS);
         }
     }
 
@@ -90,10 +92,16 @@ public class NewForm extends BaseActivity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        address_choose_text.setText(data.getStringExtra("selectedAddress"));
+
         if (requestCode == IMAGE_CAPTURE) {
             if (resultCode == RESULT_OK){
                 Log.d("ANDRO_CAMERA","Picture taken!!!");
 //                imageView.setImageURI(imageUri);
+            }
+
+            if (resultCode == CHOOSE_ADDRESS){
+                address_choose_text.setText(data.getStringExtra("selectedAddress"));
             }
         }
     }

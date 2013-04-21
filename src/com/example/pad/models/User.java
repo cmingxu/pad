@@ -60,9 +60,13 @@ public class User extends Model {
         return users;
     }
 
-    public static int count(){
-        return new Select().from(User.class).orderBy("id").execute().size();
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                '}';
     }
+
 
     public static void deleteAll(){
         new Delete().from(User.class).where("1=1").execute();
@@ -72,7 +76,9 @@ public class User extends Model {
         if (wherence == null) {
             wherence = "1=1";
         }
-        return new Select().from(User.class).where(wherence).orderBy("id").execute();
+        List<User> u = new Select().from(User.class).where(wherence).orderBy("id").execute();
+        Log.d("ass", u.toString());
+        return u;
     }
 
 }

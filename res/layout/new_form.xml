@@ -8,8 +8,8 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="我要上传(3)"
-            android:id="@+id/not_uploaded_btn" android:clickable="true" android:maxLines="1"/>
+            android:text="报修地址"
+            android:id="@+id/address_choose_text" android:clickable="true" android:maxLines="1"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

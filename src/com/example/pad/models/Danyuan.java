@@ -63,4 +63,9 @@ public class Danyuan extends Model {
         new Delete().from(Danyuan.class).where("1=1").execute();
     }
 
+    @Override
+    public String toString() {
+        return this.mDanyuanmingcheng;
+
+    }
 }

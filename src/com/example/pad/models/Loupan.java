@@ -54,4 +54,8 @@ public class Loupan extends Model {
         return new Select().from(Louge.class).where("mLoupanbianhao='" + this.mLoupanbianhao + "'").execute();
     }
 
+    @Override
+    public String toString() {
+        return  this.mLoupanmingcheng;
+    }
 }
