@@ -4,11 +4,13 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -46,5 +48,14 @@ public class Louge extends Model {
 
     public static void deleteAll(){
         new Delete().from(Louge.class).where("1=1").execute();
+    }
+
+
+    public static Louge first(){
+        return new Select().from(Louge.class).executeSingle();
+    }
+
+    public List<Louceng> loucengs(){
+        return new Select().from(Louceng.class).where("mLougebianhao='" + this.mLougebianhao + "'").execute();
     }
 }

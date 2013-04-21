@@ -71,6 +71,13 @@ public class Login extends BaseActivity {
 
         @Override
         public void onClick(View view) {
+            Log.d("aewfe", Loupan.first().mLoupanbianhao);
+            Log.d("aewfe", Loupan.first().mLoupanmingcheng);
+            Log.d("aewfe", Louge.first().mLougemingcheng);
+
+            Log.d("aewfe", Loupan.first().louges().size() + "");
+            Log.d("aewfe", Louge.first().loucengs().size() + "");
+            Log.d("aewfe", Louceng.first().danyuans().size() + "");
 
         }
     }
