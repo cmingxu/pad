@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference android:key="server_path"
+                        android:title="服务器地址"
+                        android:summary="请输入服务器IP地址"
+                        android:defaultValue="192.168.1.1"
+                        android:dialogTitle="服务器地址" >
+    </EditTextPreference>
+
+    <EditTextPreference android:key="port"
+                        android:title="PORT"
+                        android:summary="输入服务器端口"
+                        android:defaultValue="3000"
+                        android:dialogTitle="端口" />
+</PreferenceScreen>

@@ -76,7 +76,8 @@ public class User extends Model {
         if (wherence == null) {
             wherence = "1=1";
         }
-        List<User> u = new Select().from(User.class).where(wherence).orderBy("id").execute();
+        List<User> u = new Select().from(User.class).execute();
+        Log.d("aaa", new Select().from(User.class).where(wherence).orderBy("id").toSql());
         Log.d("ass", u.toString());
         return u;
     }

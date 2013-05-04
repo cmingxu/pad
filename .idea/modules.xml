@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/lib/abs/abs.iml" filepath="$PROJECT_DIR$/lib/abs/abs.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/JakeWharton-ActionBarSherlock-071a61c/actionbarsherlock/actionbarsherlock.iml" filepath="$USER_HOME$/Desktop/JakeWharton-ActionBarSherlock-071a61c/actionbarsherlock/actionbarsherlock.iml" />
       <module fileurl="file://$PROJECT_DIR$/pad.iml" filepath="$PROJECT_DIR$/pad.iml" />
     </modules>
   </component>

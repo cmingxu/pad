@@ -8,7 +8,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="乐天PDA"
+            android:text="PMPS"
             android:id="@+id/textView" android:layout_gravity="center" android:padding="18dip"
             android:textSize="30dip"/>
     <Spinner
@@ -49,7 +49,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="设置"
-                android:id="@+id/button3" android:layout_weight="1"/>
+                android:id="@+id/setting_btn" android:layout_weight="1"/>
         <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

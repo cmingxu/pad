@@ -35,7 +35,7 @@
                              android:layout_column="3" android:src="@drawable/shenpi" android:layout_gravity="center"
                              android:background="@null" android:layout_margin="2dip"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:text="测试" android:id="@+id/textView1" android:layout_gravity="center_horizontal"/>
+                          android:text="抄表" android:id="@+id/textView1" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
                           android:layout_height="fill_parent">
@@ -43,7 +43,7 @@
                              android:id="@+id/imageButton4" android:src="@drawable/renwu"
                              android:layout_gravity="left|center_vertical" android:background="@null"
                              android:layout_margin="2dip"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="测试"
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="巡检"
                           android:id="@+id/textView4" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
 
@@ -55,7 +55,7 @@
                 <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
                              android:id="@+id/imageButton2" android:src="@drawable/renwu"
                              android:layout_gravity="center" android:background="@null" android:layout_margin="2dip"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="测试"
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="验房"
                           android:id="@+id/textView2" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
@@ -64,7 +64,7 @@
                              android:id="@+id/imageButton3" android:layout_gravity="right|center_vertical"
                              android:layout_column="3" android:src="@drawable/shenpi" android:background="@null"
                              android:layout_margin="2dip"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="测试"
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="设置"
                           android:id="@+id/textView3" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"

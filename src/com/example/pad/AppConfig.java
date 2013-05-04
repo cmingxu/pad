@@ -25,6 +25,8 @@ public class AppConfig{
     public final static String CONF_ACCESSSECRET = "accessSecret";
     public final static String CONF_EXPIRESIN = "expiresIn";
     public final static String CONF_LOAD_IMAGE = "perf_loadimage";
+    public static final String CONF_SERVER = "192.168.0.111";
+    public static final String CONF_PORT = "3000";
 
     private Context mContext;
     private static AppConfig appConfig;

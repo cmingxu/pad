@@ -20,10 +20,11 @@ public class HttpHelper {
         if (instance == null) {
             instance = new HttpHelper();
             instance.client = new AsyncHttpClient();
+            instance.client.setTimeout(Config.HTTP_TIMEOUT);
             instance.client.setBasicAuth(login, password);
             instance.client.addHeader("Accept", "application/json");
             instance.client.addHeader("Content-Type", "application/json");
-            instance.client.setTimeout(Config.HTTP_TIMEOUT);
+
         }
         return instance;
     }

@@ -8,6 +8,7 @@ import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.webkit.CacheManager;
+import android.widget.Toast;
 import com.example.pad.common.StringUtils;
 
 import java.io.*;
@@ -387,5 +388,13 @@ public class AppContext extends com.activeandroid.app.Application {
     }
     public void removeProperty(String...key){
         AppConfig.getAppConfig(this).remove(key);
+    }
+
+    public static void showLongToast(Context context, String message){
+        Toast.makeText(context, message, Toast.LENGTH_LONG);
+    }
+
+    public static void showShortToast(Context context, String message){
+        Toast.makeText(context, message, Toast.LENGTH_SHORT);
     }
 }

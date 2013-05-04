@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import com.activeandroid.query.Select;
 import android.widget.*;
+import com.example.pad.AppConfig;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
@@ -31,6 +32,7 @@ public class Login extends BaseActivity {
     private Button logoutBtn;
     private Button loginBtn;
     private Button downloadBtn;
+    private Button settingButton;
     private TextView reloadUsers;
     private Spinner spinner;
     private ArrayAdapter<String> adapter;
@@ -47,13 +49,19 @@ public class Login extends BaseActivity {
         logoutBtn = (Button)findViewById(R.id.logout_btn);
         loginBtn  = (Button)findViewById(R.id.login_btn);
         downloadBtn = (Button)findViewById(R.id.download_btn);
+        settingButton = (Button)findViewById(R.id.setting_btn);
         loginBtn.setOnClickListener(new LoginInOnClickListener());
         logoutBtn.setOnClickListener(new LogoutOnClickListener());
+        settingButton.setOnClickListener(new SettingOnClickListener());
+
+
         downloadBtn.setOnClickListener(new DownloadBtnOnClickListener());
         progressDialog = new ProgressDialog(this);
 
 
         ArrayList<String> m= new ArrayList<String>();
+        Log.d("sdsssds", new Select().from(User.class).toSql());
+
         for(User u : User.all(null)){
             m.add(u.login);
         }
@@ -68,19 +76,29 @@ public class Login extends BaseActivity {
         spinner.setAdapter(adapter);
 
     }
+    protected class SettingOnClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            AppConfig.getAppConfig(Login.this).set("key", "value");
+            Log.d("absdddd", AppConfig.getAppConfig(Login.this).get("key"));
+            redirect(Login.this, Preference.class);
+
+        }
+    }
 
     protected class LogoutOnClickListener implements View.OnClickListener{
 
         @Override
         public void onClick(View view) {
-            Log.d("aewfe", Loupan.first().mLoupanbianhao);
-            Log.d("aewfe", Loupan.first().mLoupanmingcheng);
-            Log.d("aewfe", Louge.first().mLougemingcheng);
-
-            Log.d("aewfe", Loupan.first().louges().size() + "");
-            Log.d("aewfe", Louge.first().loucengs().size() + "");
-            Log.d("aewfe", Louceng.first().danyuans().size() + "");
-
+            Log.d("aas", User.all(null).toString());
+//            Log.d("aewfe", Loupan.first().mLoupanbianhao);
+//            Log.d("aewfe", Loupan.first().mLoupanmingcheng);
+//            Log.d("aewfe", Louge.first().mLougemingcheng);
+//
+//            Log.d("aewfe", Loupan.first().louges().size() + "");
+//            Log.d("aewfe", Louge.first().loucengs().size() + "");
+//            Log.d("aewfe", Louceng.first().danyuans().size() + "");
         }
     }
 
@@ -89,6 +107,7 @@ public class Login extends BaseActivity {
         @Override
         public void onClick(View view) {
             progressDialog.setTitle(R.string.wait_please);
+            progressDialog.setMessage(getString(R.string.users_reloading));
             progressDialog.show();
             handler = new Handler(){
                 @Override
@@ -114,8 +133,6 @@ public class Login extends BaseActivity {
                     try {
                         ArrayList<User> users = User.fromJsonArray(s);
                         for(User u : users) u.save();
-                        Log.d("aaaa12333", new Select().from(User.class).where("1=1").orderBy("id").execute().toString() + "");
-
                         Message m = new Message();
                         m.what = UPDATE_USER_SELECTOR;
                         handler.sendMessage(m);
@@ -151,6 +168,8 @@ public class Login extends BaseActivity {
         @Override
         public void onClick(View view) {
             progressDialog.show();
+            progressDialog.setTitle("消息同步");
+            progressDialog.setMessage("数据同步中...");
             User.deleteAll();
             Danyuan.deleteAll();
             Louceng.deleteAll();
@@ -189,8 +208,6 @@ public class Login extends BaseActivity {
                     try {
                         ArrayList<Loupan> loupans = Loupan.fromJsonArray(jsonArray);
                         for(Loupan l : loupans) l.save();
-
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -203,8 +220,6 @@ public class Login extends BaseActivity {
                     try {
                         ArrayList<Louge> louges = Louge.fromJsonArray(jsonArray);
                         for(Louge l : louges) l.save();
-
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
