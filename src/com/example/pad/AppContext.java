@@ -10,6 +10,7 @@ import android.net.NetworkInfo;
 import android.webkit.CacheManager;
 import android.widget.Toast;
 import com.example.pad.common.StringUtils;
+import com.example.pad.models.User;
 
 import java.io.*;
 import java.util.Hashtable;
@@ -33,6 +34,7 @@ public class AppContext extends com.activeandroid.app.Application {
     private boolean login = false;	//登录状态
     private int loginUid = 0;	//登录用户的id
     private Hashtable<String, Object> memCacheRegion = new Hashtable<String, Object>();
+    public static User current_user;
 
 
 
@@ -396,5 +398,9 @@ public class AppContext extends com.activeandroid.app.Application {
 
     public static void showShortToast(Context context, String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT);
+    }
+
+    public static void login(User u) {
+        current_user = u;
     }
 }

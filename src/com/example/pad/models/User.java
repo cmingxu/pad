@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.text.Editable;
 import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -31,6 +32,9 @@ public class User extends Model {
     public int remoteId;
 
 
+    public User() {
+    }
+
     public User(String password, String login, int remoteId) {
         this.password = password;
         this.login = login;
@@ -48,8 +52,8 @@ public class User extends Model {
             int remoteId;
             try {
                 Log.d("s", temp.toString());
-                login = temp.getString("用户名");
-                password = temp.getString("密码");
+                login = temp.optString("用户名");
+                password = temp.optString("密码", "");
                 remoteId = temp.getInt("id");
                 users.add(new User(password, login, remoteId));
             }catch (JSONException e){
@@ -77,9 +81,15 @@ public class User extends Model {
             wherence = "1=1";
         }
         List<User> u = new Select().from(User.class).execute();
+
+
         Log.d("aaa", new Select().from(User.class).where(wherence).orderBy("id").toSql());
         Log.d("ass", u.toString());
         return u;
+    }
+
+    public static  User find_by_login_and_password(String login, String password){
+        return new Select().from(User.class).where("login='" + login + "'").executeSingle();
     }
 
 }

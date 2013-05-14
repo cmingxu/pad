@@ -26,11 +26,10 @@ public class Preference extends PreferenceActivity{
             @Override
             public boolean onPreferenceChange(android.preference.Preference preference, Object o) {
                 if (preference.getKey() == "server_path"){
-                    Log.d("server paht", (String)o);
                     AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, (String)o);
-
+                    AppContext.showLongToast(Preference.this, getString(R.string.save_success));
                 }else if(preference.getKey() == "port"){
-                    Log.d("server paht", (String)o);
+
                     AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, (String)o);
                     AppContext.showLongToast(Preference.this, getString(R.string.save_success));
                 }else{

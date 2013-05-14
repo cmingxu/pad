@@ -19,12 +19,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="王树仁"
-            android:id="@+id/editText2" android:layout_gravity="center"/>
+            android:id="@+id/zhuhuName" android:layout_gravity="center"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="18610473786"
-            android:id="@+id/editText3" android:layout_gravity="center"/>
+            android:id="@+id/zhuHuPhone" android:layout_gravity="center"/>
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

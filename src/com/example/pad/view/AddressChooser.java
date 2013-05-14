@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,10 +13,7 @@ import android.widget.ListView;
 import com.activeandroid.Model;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.models.Danyuan;
-import com.example.pad.models.Louceng;
-import com.example.pad.models.Louge;
-import com.example.pad.models.User;
+import com.example.pad.models.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -89,9 +87,19 @@ public class AddressChooser extends BaseActivity {
             } else if (state.current_selecting.equals("danyuan")) {
 
                 state.current_danyuan = (Danyuan)adapter.getItem(i);
+
+                Log.d("sdsdsd", state.current_danyuan.zhuhu().toString());
                 Intent intent = new Intent();
                 intent.putExtra("selectedAddress", state.selectedAddress());
-//                intent.setClass(AddressChooser.this, NewForm.class);
+
+                Zhuhu zhuhu = state.current_danyuan.zhuhu();
+                if (zhuhu != null) {
+                    Log.d("abcd", zhuhu.mZhuhuMingcheng);
+                    intent.putExtra("selectedZhuhuName", zhuhu.mZhuhuMingcheng);
+                    intent.putExtra("selectedZhuhuShouji", zhuhu.mShoujiHaoma);
+                    intent.putExtra("selectedZhuhuDianhua", zhuhu.mLianxiDianhua);
+                }
+
                 setResult(1, intent);
                 AddressChooser.this.finish();
             } else {

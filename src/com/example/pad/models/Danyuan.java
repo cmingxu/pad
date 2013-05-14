@@ -4,11 +4,13 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -50,7 +52,7 @@ public class Danyuan extends Model {
             danyuan.mLouceng        = temp.getString("楼层");
             danyuan.mLoucengMingcheng = temp.getString("楼层名称");
             danyuan.mDanyuanmingcheng = temp.getString("单元名称");
-            danyuan.mYezhubianhao   = temp.getString("房号编号");
+            danyuan.mYezhubianhao   = temp.getString("业主编号");
 //            danyuan.mJiange         = temp.getString("间隔");
             danyuan.remoteId        = temp.getInt("id");
             danyuans.add(danyuan);
@@ -61,6 +63,11 @@ public class Danyuan extends Model {
 
     public static void deleteAll(){
         new Delete().from(Danyuan.class).where("1=1").execute();
+    }
+
+
+    public Zhuhu zhuhu(){
+        return new Select().from(Zhuhu.class).where("mZhuhuBianhao like '%" + this.mYezhubianhao + "'").executeSingle();
     }
 
     @Override

@@ -27,6 +27,14 @@ public class Loupan extends Model {
     @Column(name="mLoupanmingcheng")
     public String mLoupanmingcheng;
 
+    public Loupan() {
+    }
+
+    public Loupan(String mLoupanbianhao, String mLoupanmingcheng) {
+        this.mLoupanbianhao = mLoupanbianhao;
+        this.mLoupanmingcheng = mLoupanmingcheng;
+    }
+
     public static ArrayList<Loupan> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
         ArrayList<Loupan> loupans = new ArrayList<Loupan>();

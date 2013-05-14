@@ -1,6 +1,8 @@
 package com.example.pad.view;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,9 +10,7 @@ import android.util.Log;
 import android.view.View;
 import com.activeandroid.query.Select;
 import android.widget.*;
-import com.example.pad.AppConfig;
-import com.example.pad.BaseActivity;
-import com.example.pad.R;
+import com.example.pad.*;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.models.*;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -34,6 +34,7 @@ public class Login extends BaseActivity {
     private Button downloadBtn;
     private Button settingButton;
     private TextView reloadUsers;
+    private EditText passwordField;
     private Spinner spinner;
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
@@ -49,6 +50,7 @@ public class Login extends BaseActivity {
         logoutBtn = (Button)findViewById(R.id.logout_btn);
         loginBtn  = (Button)findViewById(R.id.login_btn);
         downloadBtn = (Button)findViewById(R.id.download_btn);
+        passwordField = (EditText)findViewById(R.id.passwordEt);
         settingButton = (Button)findViewById(R.id.setting_btn);
         loginBtn.setOnClickListener(new LoginInOnClickListener());
         logoutBtn.setOnClickListener(new LogoutOnClickListener());
@@ -60,14 +62,10 @@ public class Login extends BaseActivity {
 
 
         ArrayList<String> m= new ArrayList<String>();
-        Log.d("sdsssds", new Select().from(User.class).toSql());
-
         for(User u : User.all(null)){
             m.add(u.login);
         }
-        m.add("System");
-        m.add("Administrator");
-        Log.d("123", m.toString() );
+
         reloadUsers = (TextView)findViewById(R.id.reload_users);
         reloadUsers.setOnClickListener(new ReloadUserOnClickListener());
         spinner = (Spinner) findViewById(R.id.login_selector);
@@ -80,8 +78,6 @@ public class Login extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            AppConfig.getAppConfig(Login.this).set("key", "value");
-            Log.d("absdddd", AppConfig.getAppConfig(Login.this).get("key"));
             redirect(Login.this, Preference.class);
 
         }
@@ -90,15 +86,23 @@ public class Login extends BaseActivity {
     protected class LogoutOnClickListener implements View.OnClickListener{
 
         @Override
+
+
         public void onClick(View view) {
-            Log.d("aas", User.all(null).toString());
-//            Log.d("aewfe", Loupan.first().mLoupanbianhao);
-//            Log.d("aewfe", Loupan.first().mLoupanmingcheng);
-//            Log.d("aewfe", Louge.first().mLougemingcheng);
-//
-//            Log.d("aewfe", Loupan.first().louges().size() + "");
-//            Log.d("aewfe", Louge.first().loucengs().size() + "");
-//            Log.d("aewfe", Louceng.first().danyuans().size() + "");
+            new AlertDialog.Builder(Login.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    AppManager manager = AppManager.getAppManager();
+                    manager.AppExit(Login.this);
+                }
+            }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }).show();
+
+
         }
     }
 
@@ -115,7 +119,15 @@ public class Login extends BaseActivity {
                     super.handleMessage(msg);
                     switch (msg.what){
                         case UPDATE_USER_SELECTOR:
-                            spinner.invalidate();
+
+                            ArrayList<String> m= new ArrayList<String>();
+                            for(User u : User.all(null)){
+                                m.add(u.login);
+                            }
+
+                            adapter = new ArrayAdapter<String>(Login.this, android.R.layout.simple_spinner_item, m);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            spinner.setAdapter(adapter);
                             break;
 
                         default:
@@ -141,6 +153,8 @@ public class Login extends BaseActivity {
                         e.printStackTrace();
                     }
                     progressDialog.dismiss();
+                    Toast.makeText(Login.this, R.string.reload_ok, Toast.LENGTH_SHORT).show();
+
                 }
 
                 @Override
@@ -159,7 +173,13 @@ public class Login extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            redirect(Login.this, Main.class);
+            User u = User.find_by_login_and_password(spinner.getSelectedItem().toString(),  passwordField.getText().toString());
+            if (u != null){
+                 AppContext.login(u);
+                redirect(Login.this, Main.class);
+            }else{
+                Toast.makeText(Login.this, R.string.input_error, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -175,6 +195,7 @@ public class Login extends BaseActivity {
             Louceng.deleteAll();
             Loupan.deleteAll();
             Louge.deleteAll();
+            Zhuhu.deleteAll();
 
             httpHelper.with("users", null, new JsonHttpResponseHandler(){
                 @Override
@@ -195,7 +216,6 @@ public class Login extends BaseActivity {
                     try {
                         ArrayList<Danyuan> danyuans = Danyuan.fromJsonArray(jsonArray);
                         for(Danyuan d : danyuans) d.save();
-                        progressDialog.dismiss();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -226,6 +246,19 @@ public class Login extends BaseActivity {
                 }
             });
 
+            httpHelper.with("zhuhus", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<Zhuhu> zhuhus = Zhuhu.fromJsonArray(jsonArray);
+                        Log.d("asssss", zhuhus.toString());
+                        for(Zhuhu l : zhuhus) l.save();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
             httpHelper.with("loucengs", null, new JsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
@@ -236,6 +269,11 @@ public class Login extends BaseActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
+
+                    progressDialog.dismiss();
+                    Toast.makeText(Login.this, R.string.data_sync_ok, Toast.LENGTH_SHORT).show();
+
+
                 }
             });
         }

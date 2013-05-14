@@ -25,6 +25,8 @@ public class NewForm extends BaseActivity {
     private Button back_btn;
     private Button take_pic_btn;
     private EditText address_choose_text;
+    private EditText zhuhu_name_text;
+    private EditText zhuhu_phone_text;
     private static final int IMAGE_CAPTURE = 0;
     public static final int CHOOSE_ADDRESS = 1;
 
@@ -42,6 +44,8 @@ public class NewForm extends BaseActivity {
         take_pic_btn.setOnClickListener(new TakePicClickListener());
 
         address_choose_text = (EditText)findViewById(R.id.address_choose_text);
+        zhuhu_name_text     = (EditText)findViewById(R.id.zhuhuName);
+        zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
 
         address_choose_text.setOnClickListener(new AddressChoseClickListener());
 
@@ -102,6 +106,12 @@ public class NewForm extends BaseActivity {
 
             if (resultCode == CHOOSE_ADDRESS){
                 address_choose_text.setText(data.getStringExtra("selectedAddress"));
+                Log.d("asdsdsd",data.getStringExtra("selectedAddress"));
+                Log.d("selectedZhuhuName",data.getStringExtra("selectedZhuhuName"));
+                Log.d("selectedZhuhuShouji",data.getStringExtra("selectedZhuhuShouji"));
+
+                zhuhu_phone_text.setText(data.getStringExtra("selectedZhuhuShouji"));
+                zhuhu_name_text.setText(data.getStringExtra("selectedZhuhuName"));
             }
         }
     }
