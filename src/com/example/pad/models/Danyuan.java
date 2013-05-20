@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -52,7 +53,7 @@ public class Danyuan extends Model {
             danyuan.mLouceng        = temp.getString("楼层");
             danyuan.mLoucengMingcheng = temp.getString("楼层名称");
             danyuan.mDanyuanmingcheng = temp.getString("单元名称");
-            danyuan.mYezhubianhao   = temp.getString("业主编号");
+            danyuan.mYezhubianhao   = temp.optString("业主编号");
 //            danyuan.mJiange         = temp.getString("间隔");
             danyuan.remoteId        = temp.getInt("id");
             danyuans.add(danyuan);
@@ -67,6 +68,8 @@ public class Danyuan extends Model {
 
 
     public Zhuhu zhuhu(){
+        Log.d("sddd", new Select().from(Zhuhu.class).where("mZhuhuBianhao like '%" + this.mYezhubianhao + "'").toSql());
+        Log.d("wqww", this.getId().toString());
         return new Select().from(Zhuhu.class).where("mZhuhuBianhao like '%" + this.mYezhubianhao + "'").executeSingle();
     }
 

@@ -8,6 +8,7 @@ import android.util.Log;
 import com.example.pad.AppConfig;
 import com.example.pad.AppContext;
 import com.example.pad.R;
+import com.example.pad.common.UIHelper;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,11 +28,11 @@ public class Preference extends PreferenceActivity{
             public boolean onPreferenceChange(android.preference.Preference preference, Object o) {
                 if (preference.getKey() == "server_path"){
                     AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, (String)o);
-                    AppContext.showLongToast(Preference.this, getString(R.string.save_success));
+                    UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
                 }else if(preference.getKey() == "port"){
 
                     AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, (String)o);
-                    AppContext.showLongToast(Preference.this, getString(R.string.save_success));
+                    UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
                 }else{
                 }
                 return true;

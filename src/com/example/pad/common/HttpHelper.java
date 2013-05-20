@@ -1,6 +1,8 @@
 package com.example.pad.common;
 
 
+import android.util.Log;
+import com.example.pad.AppConfig;
 import com.loopj.android.http.*;
 
 
@@ -31,12 +33,14 @@ public class HttpHelper {
 
 
     public void with(String path, RequestParams params, JsonHttpResponseHandler handler){
+        Log.d("Getting ", absoluteURL(path));
         client.get(absoluteURL(path), params, handler);
     }
 
 
     private String absoluteURL(String path){
-        return Config.SERVER_BASE_URL + path;
+//        return Config.SERVER_BASE_URL + path;
+        return "http://" + AppConfig.CONF_SERVER + ":" + AppConfig.CONF_PORT + "/" + path;
     }
 
 

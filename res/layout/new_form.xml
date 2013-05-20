@@ -28,17 +28,16 @@
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner" android:layout_gravity="center"/>
+            android:id="@+id/categories" android:layout_gravity="center"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="报修内容"
-            android:id="@+id/editText4" android:layout_gravity="center" android:lines="3" android:longClickable="true"
-            android:gravity="top" android:maxLines="3"/>
+            android:id="@+id/content" android:layout_gravity="center" android:lines="3" android:longClickable="true"
+            android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" android:layout_gravity="center">
+            android:layout_height="fill_parent" android:layout_gravity="center" android:gravity="center_horizontal">
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,9 +47,6 @@
                 android:id="@+id/button1"/>
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
                 android:id="@+id/button2"/>
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="删除"
-                android:id="@+id/button3"/>
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="返回"
-                android:id="@+id/back_btn"/>
     </LinearLayout>
+
 </LinearLayout>

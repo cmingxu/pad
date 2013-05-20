@@ -20,8 +20,43 @@ import java.util.ArrayList;
 
 @Table(name="Weixiudan")
 public class Weixiudan extends Model {
-    @Column(name="mLougebianhao")
-    public String mLougebianhao;
+    @Column(name="mLougeName")
+    public String mLougeName;
+    @Column(name="mLoucengName")
+    public String mLoucengName;
+    @Column(name="mDanyuanName")
+    public String mDanyuanName;
+    @Column(name="mBaoXiuRiqi")
+    public String mBaoXiuRiqi;
+    @Column(name="mBaoxiuren")
+    public String mBaoxiuren;
+    @Column(name="mYezhuName")
+    public String mYezhuName;
+    @Column(name="mYezhuPhone")
+    public String mYezhuPhone;
+    @Column(name="mBaoxiuLeibie")
+    public String mBaoxiuLeibie;
+    @Column(name="mBaoxiuNeirong")
+    public String mBaoxiuNeirong;
+    @Column(name="mSaved")
+    public boolean mSaved;
+
+    public Weixiudan() {
+    }
+
+    public Weixiudan(String mLougeName, String mLoucengName, String mDanyuanName, String mBaoXiuRiqi, String mBaoxiuren, String mYezhuName, String mYezhuPhone, String mBaoxiuLeibie, String mBaoxiuNeirong) {
+        this.mLougeName = mLougeName;
+        this.mLoucengName = mLoucengName;
+        this.mDanyuanName = mDanyuanName;
+        this.mBaoXiuRiqi = mBaoXiuRiqi;
+        this.mBaoxiuren = mBaoxiuren;
+        this.mYezhuName = mYezhuName;
+        this.mYezhuPhone = mYezhuPhone;
+        this.mBaoxiuLeibie = mBaoxiuLeibie;
+        this.mBaoxiuNeirong = mBaoxiuNeirong;
+    }
+
+    public static String[] categories = new String[]{"客户区域", "公共区域",  "设备"};
 
 
     public static ArrayList<Weixiudan> fromJsonArray(JSONArray s) throws JSONException {
@@ -42,8 +77,5 @@ public class Weixiudan extends Model {
         new Delete().from(Weixiudan.class).where("1=1").execute();
     }
 
-    @Override
-    public String toString() {
-                    return  "";
-    }
+
 }

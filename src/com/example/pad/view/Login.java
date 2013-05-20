@@ -11,7 +11,10 @@ import android.view.View;
 import com.activeandroid.query.Select;
 import android.widget.*;
 import com.example.pad.*;
+import com.example.pad.common.Config;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.UIHelper;
+import com.example.pad.common.Util;
 import com.example.pad.models.*;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
@@ -34,6 +37,7 @@ public class Login extends BaseActivity {
     private Button downloadBtn;
     private Button settingButton;
     private TextView reloadUsers;
+    private TextView appNameTv;
     private EditText passwordField;
     private Spinner spinner;
     private ArrayAdapter<String> adapter;
@@ -41,7 +45,6 @@ public class Login extends BaseActivity {
     private HttpHelper httpHelper = HttpHelper.getInstance("login", "password");
     private Handler handler;
     public static final int UPDATE_USER_SELECTOR = 1;
-
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,8 @@ public class Login extends BaseActivity {
         downloadBtn = (Button)findViewById(R.id.download_btn);
         passwordField = (EditText)findViewById(R.id.passwordEt);
         settingButton = (Button)findViewById(R.id.setting_btn);
+        appNameTv = (TextView)findViewById(R.id.app_name);
+        appNameTv.setText(R.string.app_name);
         loginBtn.setOnClickListener(new LoginInOnClickListener());
         logoutBtn.setOnClickListener(new LogoutOnClickListener());
         settingButton.setOnClickListener(new SettingOnClickListener());
@@ -110,6 +115,9 @@ public class Login extends BaseActivity {
 
         @Override
         public void onClick(View view) {
+            if(!Util.instance().isNetworkConnected(Login.this)){
+                Toast.makeText(Login.this, R.string.network_error, Toast.LENGTH_SHORT);
+            }
             progressDialog.setTitle(R.string.wait_please);
             progressDialog.setMessage(getString(R.string.users_reloading));
             progressDialog.show();
@@ -173,9 +181,17 @@ public class Login extends BaseActivity {
 
         @Override
         public void onClick(View view) {
+            if (spinner.getSelectedItem()  == null) {
+                UIHelper.showLongToast(Login.this, R.string.select_a_login);
+                return;
+            }
+
+            if (Config.passwordRequired() && passwordField.getText().toString() == null) {
+                UIHelper.showLongToast(Login.this, R.string.input_password);
+                return;
+            }
             User u = User.find_by_login_and_password(spinner.getSelectedItem().toString(),  passwordField.getText().toString());
             if (u != null){
-                 AppContext.login(u);
                 redirect(Login.this, Main.class);
             }else{
                 Toast.makeText(Login.this, R.string.input_error, Toast.LENGTH_SHORT).show();
@@ -187,6 +203,10 @@ public class Login extends BaseActivity {
 
         @Override
         public void onClick(View view) {
+            if (!Util.instance().isNetworkConnected(Login.this)) {
+                Toast.makeText(Login.this, R.string.network_error, Toast.LENGTH_SHORT).show();
+                return;
+            }
             progressDialog.show();
             progressDialog.setTitle("消息同步");
             progressDialog.setMessage("数据同步中...");

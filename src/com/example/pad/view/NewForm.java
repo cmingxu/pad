@@ -3,16 +3,27 @@ package com.example.pad.view;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.*;
 import com.example.pad.BaseActivity;
 import android.provider.MediaStore;
 import com.example.pad.R;
+import com.example.pad.models.AddressChooserResult;
+import com.example.pad.models.Weixiudan;
+
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,26 +33,33 @@ import com.example.pad.R;
  * To change this template use File | Settings | File Templates.
  */
 public class NewForm extends BaseActivity {
-    private Button back_btn;
+
     private Button take_pic_btn;
     private EditText address_choose_text;
     private EditText zhuhu_name_text;
     private EditText zhuhu_phone_text;
+    private Spinner categories;
     private static final int IMAGE_CAPTURE = 0;
     public static final int CHOOSE_ADDRESS = 1;
 
     private Uri imageUri;
+    private ArrayAdapter<String> adapter;
+
 
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_form);
-        back_btn = (Button)findViewById(R.id.back_btn);
-        back_btn.setOnClickListener(new BackBtnClickListener());
+
 
         take_pic_btn = (Button)findViewById(R.id.take_pic_btn);
         take_pic_btn.setOnClickListener(new TakePicClickListener());
+
+        categories = (Spinner)findViewById(R.id.categories);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Weixiudan.categories);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categories.setAdapter(adapter);
 
         address_choose_text = (EditText)findViewById(R.id.address_choose_text);
         zhuhu_name_text     = (EditText)findViewById(R.id.zhuhuName);
@@ -49,25 +67,17 @@ public class NewForm extends BaseActivity {
 
         address_choose_text.setOnClickListener(new AddressChoseClickListener());
 
+
+
     }
 
-    protected class BackBtnClickListener implements Button.OnClickListener{
 
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(NewForm.this, Maintain.class);
-            startActivity(i);
-        }
-    }
 
     protected class AddressChoseClickListener implements Button.OnClickListener{
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(NewForm.this, AddressChooser.class);
-            startActivityForResult(i, CHOOSE_ADDRESS);
+
         }
     }
 
@@ -75,44 +85,45 @@ public class NewForm extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-             startCamera();
-        }
+            startActivityForResult(new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE), IMAGE_CAPTURE);
+    }
     }
 
-    public void startCamera() {
-        Log.d("ANDRO_CAMERA", "Starting camera on the phone...");
-        String fileName = "testphoto.jpg";
-        ContentValues values = new ContentValues();
-        values.put(MediaStore.Images.Media.TITLE, fileName);
-        values.put(MediaStore.Images.Media.DESCRIPTION,
-                "Image capture by camera");
-        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
-        imageUri = getContentResolver().insert(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
-        startActivityForResult(intent, IMAGE_CAPTURE);
-    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        address_choose_text.setText(data.getStringExtra("selectedAddress"));
 
         if (requestCode == IMAGE_CAPTURE) {
-            if (resultCode == RESULT_OK){
-                Log.d("ANDRO_CAMERA","Picture taken!!!");
-//                imageView.setImageURI(imageUri);
-            }
+                if (resultCode == RESULT_OK) {
+                    Bitmap bm = (Bitmap) data.getExtras().get("data");
+//                    img.setImageBitmap(bm);//想图像显示在ImageView视图上，private ImageView img;
+                    File myCaptureFile = new File("sdcard/123456.jpg");
+                    try {
+                        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
+      /* 采用压缩转档方法 */
+                        bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
 
-            if (resultCode == CHOOSE_ADDRESS){
-                address_choose_text.setText(data.getStringExtra("selectedAddress"));
-                Log.d("asdsdsd",data.getStringExtra("selectedAddress"));
-                Log.d("selectedZhuhuName",data.getStringExtra("selectedZhuhuName"));
-                Log.d("selectedZhuhuShouji",data.getStringExtra("selectedZhuhuShouji"));
+           /* 调用flush()方法，更新BufferStream */
+                        bos.flush();
 
-                zhuhu_phone_text.setText(data.getStringExtra("selectedZhuhuShouji"));
-                zhuhu_name_text.setText(data.getStringExtra("selectedZhuhuName"));
-            }
+           /* 结束OutputStream */
+                        bos.close();
+                    } catch (FileNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+        }
+
+            if (requestCode == CHOOSE_ADDRESS){
+                AddressChooserResult result = (AddressChooserResult)data.getSerializableExtra("result");
+                address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
+                zhuhu_phone_text.setText(result.getmYezhuDianhua());
+                zhuhu_name_text.setText(result.getmYezhuName());
+
         }
     }
 }

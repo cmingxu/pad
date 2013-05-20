@@ -88,17 +88,18 @@ public class AddressChooser extends BaseActivity {
 
                 state.current_danyuan = (Danyuan)adapter.getItem(i);
 
-                Log.d("sdsdsd", state.current_danyuan.zhuhu().toString());
-                Intent intent = new Intent();
-                intent.putExtra("selectedAddress", state.selectedAddress());
-
+                AddressChooserResult result = new AddressChooserResult();
+                result.setmDanyuanName(state.current_danyuan.mDanyuanmingcheng);
+                result.setmDanyuanId(state.current_danyuan.getId());
+                result.setmLoucengId(state.current_louceng.getId());
+                result.setmLoucengName(state.current_louceng.mLoucengmingcheng);
+                result.setmLougeId(state.current_louge.getId());
+                result.setmLougeName(state.current_louge.mLougemingcheng);
                 Zhuhu zhuhu = state.current_danyuan.zhuhu();
-                if (zhuhu != null) {
-                    Log.d("abcd", zhuhu.mZhuhuMingcheng);
-                    intent.putExtra("selectedZhuhuName", zhuhu.mZhuhuMingcheng);
-                    intent.putExtra("selectedZhuhuShouji", zhuhu.mShoujiHaoma);
-                    intent.putExtra("selectedZhuhuDianhua", zhuhu.mLianxiDianhua);
-                }
+                result.setmYezhuName(zhuhu.mZhuhuMingcheng);
+                result.setmYezhuDianhua(zhuhu.mShoujiHaoma);
+                Intent intent = new Intent();
+                intent.putExtra("result", result);
 
                 setResult(1, intent);
                 AddressChooser.this.finish();
@@ -115,6 +116,7 @@ public class AddressChooser extends BaseActivity {
         Louge current_louge;
         Louceng current_louceng;
         Danyuan current_danyuan;
+
 
         public State() {
             this.states = new ArrayList<String>();
