@@ -8,8 +8,7 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="报修地址"
-            android:id="@+id/address_choose_text" android:clickable="true" android:maxLines="1"/>
+            android:id="@+id/address_choose_text" android:clickable="true" android:maxLines="1" android:hint="报修地址"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -18,13 +17,11 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="王树仁"
-            android:id="@+id/zhuhuName" android:layout_gravity="center"/>
+            android:id="@+id/zhuhuName" android:layout_gravity="center" android:hint="业主姓名"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="18610473786"
-            android:id="@+id/zhuHuPhone" android:layout_gravity="center"/>
+            android:id="@+id/zhuHuPhone" android:layout_gravity="center" android:hint="业主电话"/>
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -32,7 +29,7 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/content" android:layout_gravity="center" android:lines="3" android:longClickable="true"
+            android:id="@+id/baoxiuneirong" android:layout_gravity="center" android:lines="3" android:longClickable="true"
             android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"/>
     <LinearLayout
             android:orientation="horizontal"
@@ -44,9 +41,9 @@
                 android:text="照片"
                 android:id="@+id/take_pic_btn"/>
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上传"
-                android:id="@+id/button1"/>
+                android:id="@+id/uploadBtn"/>
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
-                android:id="@+id/button2"/>
+                android:id="@+id/saveBtn"/>
     </LinearLayout>
 
 </LinearLayout>

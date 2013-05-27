@@ -37,6 +37,12 @@ public class HttpHelper {
         client.get(absoluteURL(path), params, handler);
     }
 
+    public void post(String path,  RequestParams params, JsonHttpResponseHandler handler){
+        Log.d("Posting ", absoluteURL(path));
+        client.post(absoluteURL(path), params, handler);
+
+    }
+
 
     private String absoluteURL(String path){
 //        return Config.SERVER_BASE_URL + path;

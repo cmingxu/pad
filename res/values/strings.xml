@@ -12,5 +12,8 @@
     <string name="logout_confirm">我要离开应用！</string>
     <string name="select_a_login">请选择登陆账户！</string>
     <string name="input_password">请输入登陆密码！</string>
+    <string name="weixiudan_saved">维修单保存成功！</string>
+    <string name="weixiudan_saved_failed">维修单保存失败， 检查网络设置！</string>
+
 
 </resources>

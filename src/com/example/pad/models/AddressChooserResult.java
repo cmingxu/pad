@@ -18,7 +18,18 @@ public class AddressChooserResult implements Serializable {
     public String mDanyuanName;
     public String mYezhuName;
     public String mYezhuDianhua;
+    public String mDanyuanbianhao;
+    public String mLougebianhao;
+    public String mLoucengbianhao;
+    public String mZhuhuBianhao;
 
+    public String getmZhuhuBianhao() {
+        return mZhuhuBianhao;
+    }
+
+    public void setmZhuhuBianhao(String mZhuhuBianhao) {
+        this.mZhuhuBianhao = mZhuhuBianhao;
+    }
 
     public long getmLougeId() {
         return mLougeId;
@@ -82,5 +93,29 @@ public class AddressChooserResult implements Serializable {
 
     public void setmYezhuDianhua(String mYezhuDianhua) {
         this.mYezhuDianhua = mYezhuDianhua;
+    }
+
+    public String getmDanyuanbianhao() {
+        return mDanyuanbianhao;
+    }
+
+    public void setmDanyuanbianhao(String mDanyuanbianhao) {
+        this.mDanyuanbianhao = mDanyuanbianhao;
+    }
+
+    public String getmLougebianhao() {
+        return mLougebianhao;
+    }
+
+    public void setmLougebianhao(String mLougebianhao) {
+        this.mLougebianhao = mLougebianhao;
+    }
+
+    public String getmLoucengbianhao() {
+        return mLoucengbianhao;
+    }
+
+    public void setmLoucengbianhao(String mLoucengbianhao) {
+        this.mLoucengbianhao = mLoucengbianhao;
     }
 }

@@ -15,6 +15,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ActiveAndroid" level="project" />
     <orderEntry type="module" module-name="abs" />
+    <orderEntry type="library" name="gson-2.2.4" level="project" />
   </component>
 </module>
 

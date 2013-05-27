@@ -95,9 +95,12 @@ public class AddressChooser extends BaseActivity {
                 result.setmLoucengName(state.current_louceng.mLoucengmingcheng);
                 result.setmLougeId(state.current_louge.getId());
                 result.setmLougeName(state.current_louge.mLougemingcheng);
+                result.setmDanyuanbianhao(state.current_danyuan.mDanyuanbianhao);
+                result.setmLougebianhao(state.current_louge.mLougebianhao);
                 Zhuhu zhuhu = state.current_danyuan.zhuhu();
                 result.setmYezhuName(zhuhu.mZhuhuMingcheng);
                 result.setmYezhuDianhua(zhuhu.mShoujiHaoma);
+                result.setmZhuhuBianhao(zhuhu.mZhuhuBianhao);
                 Intent intent = new Intent();
                 intent.putExtra("result", result);
 

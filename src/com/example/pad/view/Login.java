@@ -192,6 +192,7 @@ public class Login extends BaseActivity {
             }
             User u = User.find_by_login_and_password(spinner.getSelectedItem().toString(),  passwordField.getText().toString());
             if (u != null){
+                Util.instance().setCurrentUser(u);
                 redirect(Login.this, Main.class);
             }else{
                 Toast.makeText(Login.this, R.string.input_error, Toast.LENGTH_SHORT).show();

@@ -4,11 +4,13 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.google.gson.Gson;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,13 +40,26 @@ public class Weixiudan extends Model {
     public String mBaoxiuLeibie;
     @Column(name="mBaoxiuNeirong")
     public String mBaoxiuNeirong;
-    @Column(name="mSaved")
-    public boolean mSaved;
+    @Column(name="mDanyuanBianhao")
+    public String mDanyuanBianhao;
+    @Column(name="mLougeBianhao")
+    public String mLougeBianhao;
+    @Column(name="mLoucengBianhao")
+    public String mLoucengBianhao;
+    @Column(name="mZhuhuBianhao")
+    public String mZhuhuBianhao;
+    public boolean mDbSaved;
+    @Column(name="mRemoteSaved")
+    public boolean mRemoteSaved;
 
     public Weixiudan() {
     }
 
-    public Weixiudan(String mLougeName, String mLoucengName, String mDanyuanName, String mBaoXiuRiqi, String mBaoxiuren, String mYezhuName, String mYezhuPhone, String mBaoxiuLeibie, String mBaoxiuNeirong) {
+    public Weixiudan(String mLougeName, String mLoucengName, String mDanyuanName,
+                     String mBaoXiuRiqi, String mBaoxiuren, String mYezhuName,
+                     String mYezhuPhone, String mBaoxiuLeibie, String mBaoxiuNeirong,
+                     String mLoucengBianhao, String mLougeBianhao, String mDanyuanBianhao,
+                     String mZhuhuBianhao) {
         this.mLougeName = mLougeName;
         this.mLoucengName = mLoucengName;
         this.mDanyuanName = mDanyuanName;
@@ -54,6 +69,10 @@ public class Weixiudan extends Model {
         this.mYezhuPhone = mYezhuPhone;
         this.mBaoxiuLeibie = mBaoxiuLeibie;
         this.mBaoxiuNeirong = mBaoxiuNeirong;
+        this.mLougeBianhao = mLougeBianhao;
+        this.mLoucengBianhao = mLoucengBianhao;
+        this.mDanyuanBianhao = mDanyuanBianhao;
+        this.mZhuhuBianhao  = mZhuhuBianhao;
     }
 
     public static String[] categories = new String[]{"客户区域", "公共区域",  "设备"};
@@ -71,6 +90,24 @@ public class Weixiudan extends Model {
 
         }
         return weixiudans;
+    }
+
+    public String toJson(){
+        Gson gson = new Gson();
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("mLougeName", this.mLoucengName);
+        map.put("mLoucengName", this.mLoucengName);
+        map.put("mDanyuanName", this.mDanyuanName);
+        map.put("mBaoxiuRiqi", this.mBaoXiuRiqi);
+        map.put("mBaoxiuren", this.mBaoxiuren);
+        map.put("mYezhuName", this.mYezhuName);
+        map.put("mYezhuPhone", this.mYezhuPhone);
+        map.put("mBaoxiuLeibie", this.mBaoxiuLeibie);
+        map.put("mBaoxiuNeirong", this.mBaoxiuNeirong);
+        map.put("mLougebianhao", this.mLougeBianhao);
+        map.put("mLoucengBianhao", this.mLoucengBianhao);
+        map.put("mDanyuanBianhao", this.mDanyuanBianhao);
+        return gson.toJson(map);
     }
 
     public static void deleteAll(){

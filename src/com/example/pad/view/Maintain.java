@@ -18,7 +18,10 @@ public class Maintain extends BaseActivity {
     public static final String LOG_TAG = "Maintain_Activity";
     private Button back_btn;
     private Button new_form_btn;
-    private Button not_uploaded_btn;
+    private Button iwant_upload_btn;
+    private Button iwant_accept_btn;
+    private Button iwant_finish_btn;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +31,11 @@ public class Maintain extends BaseActivity {
         back_btn.setOnClickListener(new BackBtnOnClickListener());
         new_form_btn = (Button)findViewById(R.id.new_form_btn);
         new_form_btn.setOnClickListener(new NewFormOnClickListener());
-        not_uploaded_btn = (Button)findViewById(R.id.not_uploaded_btn);
-        not_uploaded_btn.setOnClickListener(new NotUploadedOnClickListener());
+        iwant_upload_btn = (Button)findViewById(R.id.iwant_upload_btn);
+        iwant_upload_btn.setOnClickListener(new IWantUploadOnClickListener());
+        iwant_accept_btn = (Button)findViewById(R.id.iwant_accept_btn);
+        iwant_finish_btn = (Button)findViewById(R.id.iwant_finish);
+
 
     }
 
@@ -52,12 +58,12 @@ public class Maintain extends BaseActivity {
         }
     }
 
-    protected class NotUploadedOnClickListener implements Button.OnClickListener{
+    protected class IWantUploadOnClickListener implements Button.OnClickListener{
 
         @Override
         public void onClick(View view) {
             Intent i = new Intent();
-            i.setClass(Maintain.this, NewForm.class);
+            i.setClass(Maintain.this, WeixiudanList.class);
             startActivity(i);
         }
     }

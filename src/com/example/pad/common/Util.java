@@ -3,6 +3,10 @@ package com.example.pad.common;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import com.example.pad.models.User;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,6 +23,7 @@ public class Util {
     public static final int PAGE_SIZE = 20;//默认分页大小
     private static final int CACHE_TIME = 60*60000;//缓存失效时
     private static Util instance;
+    public User current_user;
 
     public static Util instance(){
         if (instance == null) {
@@ -62,4 +67,16 @@ public class Util {
         return ni != null && ni.isConnectedOrConnecting();
     }
 
+    public void setCurrentUser(User u){
+        current_user = u;
+    }
+
+    public  User getCurrentUser(){
+        return current_user;
+    }
+
+    public String formatTime(String format, Date d){
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(d);
+    }
 }

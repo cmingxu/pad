@@ -16,8 +16,16 @@ import android.widget.*;
 import com.example.pad.BaseActivity;
 import android.provider.MediaStore;
 import com.example.pad.R;
+import com.example.pad.common.HttpHelper;
+import com.example.pad.common.UIHelper;
+import com.example.pad.common.Util;
 import com.example.pad.models.AddressChooserResult;
 import com.example.pad.models.Weixiudan;
+import com.google.gson.Gson;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -35,17 +43,20 @@ import java.util.TimerTask;
 public class NewForm extends BaseActivity {
 
     private Button take_pic_btn;
+    private Button saveBtn;
+    private Button uploadBtn;
     private EditText address_choose_text;
     private EditText zhuhu_name_text;
     private EditText zhuhu_phone_text;
+    private EditText baoxiuneirong;
     private Spinner categories;
     private static final int IMAGE_CAPTURE = 0;
     public static final int CHOOSE_ADDRESS = 1;
 
     private Uri imageUri;
     private ArrayAdapter<String> adapter;
-
-
+    Weixiudan weixiudan;
+    AddressChooserResult result;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -56,6 +67,11 @@ public class NewForm extends BaseActivity {
         take_pic_btn = (Button)findViewById(R.id.take_pic_btn);
         take_pic_btn.setOnClickListener(new TakePicClickListener());
 
+        saveBtn = (Button)findViewById(R.id.saveBtn);
+        saveBtn.setOnClickListener(new SaveOnClickListener());
+        uploadBtn = (Button)findViewById(R.id.uploadBtn);
+
+
         categories = (Spinner)findViewById(R.id.categories);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Weixiudan.categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -64,20 +80,68 @@ public class NewForm extends BaseActivity {
         address_choose_text = (EditText)findViewById(R.id.address_choose_text);
         zhuhu_name_text     = (EditText)findViewById(R.id.zhuhuName);
         zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
+        baoxiuneirong       = (EditText)findViewById(R.id.baoxiuneirong);
 
         address_choose_text.setOnClickListener(new AddressChoseClickListener());
+        weixiudan = new Weixiudan();
+    }
 
-
+    public void gatherWeixiudan(){
+        weixiudan = new Weixiudan();
+        weixiudan.mBaoxiuLeibie =categories.getSelectedItem().toString();
+        weixiudan.mBaoxiuNeirong = baoxiuneirong.getText().toString();
+        weixiudan.mBaoxiuren   = Util.instance().getCurrentUser().login;
+        weixiudan.mBaoXiuRiqi  = Util.instance().formatTime("yyyy/MM/dd", new Date());
+        weixiudan.mDanyuanName = result.mDanyuanName;
+        weixiudan.mDbSaved = false;
+        weixiudan.mLoucengName = result.mLoucengName;
+        weixiudan.mLougeName = result.mLougeName;
+        weixiudan.mRemoteSaved = false;
+        weixiudan.mYezhuName = result.mYezhuName;
+        weixiudan.mYezhuPhone = result.mYezhuDianhua;
+        weixiudan.mLougeBianhao = result.mLougebianhao;
+        weixiudan.mLoucengBianhao = result.mLoucengName;
+        weixiudan.mDanyuanBianhao = result.mDanyuanbianhao;
 
     }
 
+    private class SaveOnClickListener implements Button.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            gatherWeixiudan();
+            weixiudan.mDbSaved  = true;
+            weixiudan.save();
+            RequestParams rp = new RequestParams();
+            rp.put("weixiudan", weixiudan.toJson());
+            Log.d("toJSon", weixiudan.toJson());
+            HttpHelper.getInstance(Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans", null, new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int i, JSONArray jsonArray) {
 
+                    weixiudan.mRemoteSaved = true;
+                    weixiudan.save();
+                    UIHelper.showLongToast(NewForm.this, getResources().getString(R.string.weixiudan_saved));
+                    super.onSuccess(i, jsonArray);
+                    redirect(NewForm.this, Maintain.class);
+                }
+
+                @Override
+                public void onFailure(Throwable throwable, JSONObject jsonObject) {
+                    UIHelper.showLongToast(NewForm.this, getResources().getString(R.string.weixiudan_saved_failed));
+                    super.onFailure(throwable, jsonObject);
+                }
+            });
+
+        }
+    }
 
     protected class AddressChoseClickListener implements Button.OnClickListener{
 
         @Override
         public void onClick(View view) {
-
+            Intent i = new Intent();
+            i.setClass(NewForm.this, AddressChooser.class);
+            startActivityForResult(i, CHOOSE_ADDRESS);
         }
     }
 
@@ -95,31 +159,25 @@ public class NewForm extends BaseActivity {
         if (requestCode == IMAGE_CAPTURE) {
                 if (resultCode == RESULT_OK) {
                     Bitmap bm = (Bitmap) data.getExtras().get("data");
-//                    img.setImageBitmap(bm);//想图像显示在ImageView视图上，private ImageView img;
                     File myCaptureFile = new File("sdcard/123456.jpg");
                     try {
                         BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
-      /* 采用压缩转档方法 */
                         bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
 
-           /* 调用flush()方法，更新BufferStream */
                         bos.flush();
 
-           /* 结束OutputStream */
                         bos.close();
                     } catch (FileNotFoundException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
 
                     } catch (IOException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }
         }
 
             if (requestCode == CHOOSE_ADDRESS){
-                AddressChooserResult result = (AddressChooserResult)data.getSerializableExtra("result");
+                result  = (AddressChooserResult)data.getSerializableExtra("result");
                 address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
                 zhuhu_phone_text.setText(result.getmYezhuDianhua());
                 zhuhu_name_text.setText(result.getmYezhuName());
