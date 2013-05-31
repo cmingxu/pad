@@ -8,7 +8,7 @@ package com.example.pad.common;
  * To change this template use File | Settings | File Templates.
  */
 public class Config {
-    public static final String SERVER_BASE_URL = "http://192.155.85.119:9000/";
+    public static final String SERVER_BASE_URL = "http://101.20.142.1:9000/";
 //    public static final String SERVER_BASE_URL = "http://192.168.0.113:9000/";
 
     public static final int HTTP_TIMEOUT = 15 * 1000;

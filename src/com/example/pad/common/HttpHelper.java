@@ -45,7 +45,6 @@ public class HttpHelper {
 
 
     private String absoluteURL(String path){
-//        return Config.SERVER_BASE_URL + path;
         return "http://" + AppConfig.CONF_SERVER + ":" + AppConfig.CONF_PORT + "/" + path;
     }
 

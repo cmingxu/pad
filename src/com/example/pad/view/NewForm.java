@@ -111,10 +111,8 @@ public class NewForm extends BaseActivity {
             gatherWeixiudan();
             weixiudan.mDbSaved  = true;
             weixiudan.save();
-            RequestParams rp = new RequestParams();
-            rp.put("weixiudan", weixiudan.toJson());
-            Log.d("toJSon", weixiudan.toJson());
-            HttpHelper.getInstance(Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans", null, new JsonHttpResponseHandler() {
+            Log.d("toJSon", weixiudan.toQuery());
+            HttpHelper.getInstance(Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), null, new JsonHttpResponseHandler() {
                 @Override
                 public void onSuccess(int i, JSONArray jsonArray) {
 

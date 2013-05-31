@@ -19,6 +19,8 @@
         <activity android:name=".view.AddressChooser"/>
         <activity android:name=".view.Preference"/>
         <activity android:name=".view.WeixiudanList"/>
+        <activity android:name=".view.XunjianList"/>
+        <activity android:name=".view.Xunjian"/>
 
 
     </application>

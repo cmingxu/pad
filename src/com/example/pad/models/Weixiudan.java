@@ -4,7 +4,9 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.example.pad.common.StringUtils;
 import com.google.gson.Gson;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -92,10 +94,10 @@ public class Weixiudan extends Model {
         return weixiudans;
     }
 
-    public String toJson(){
-        Gson gson = new Gson();
+    public String toQuery(){
+        String result = "";
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("mLougeName", this.mLoucengName);
+        map.put("mLougeName", this.mLougeName);
         map.put("mLoucengName", this.mLoucengName);
         map.put("mDanyuanName", this.mDanyuanName);
         map.put("mBaoxiuRiqi", this.mBaoXiuRiqi);
@@ -107,8 +109,9 @@ public class Weixiudan extends Model {
         map.put("mLougebianhao", this.mLougeBianhao);
         map.put("mLoucengBianhao", this.mLoucengBianhao);
         map.put("mDanyuanBianhao", this.mDanyuanBianhao);
-        return gson.toJson(map);
+        return  StringUtils.mapToString(map);
     }
+
 
     public static void deleteAll(){
         new Delete().from(Weixiudan.class).where("1=1").execute();

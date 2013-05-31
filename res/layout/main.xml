@@ -40,7 +40,7 @@
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
                           android:layout_height="fill_parent">
                 <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
-                             android:id="@+id/imageButton4" android:src="@drawable/renwu"
+                             android:id="@+id/xunjian_btn" android:src="@drawable/renwu"
                              android:layout_gravity="left|center_vertical" android:background="@null"
                              android:layout_margin="2dip"/>
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="巡检"
