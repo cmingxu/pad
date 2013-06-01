@@ -40,8 +40,6 @@
                 android:layout_height="wrap_content"
                 android:text="照片"
                 android:id="@+id/take_pic_btn"/>
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上传"
-                android:id="@+id/uploadBtn"/>
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
                 android:id="@+id/saveBtn"/>
     </LinearLayout>

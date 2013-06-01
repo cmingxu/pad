@@ -14,6 +14,9 @@
     <string name="input_password">请输入登陆密码！</string>
     <string name="weixiudan_saved">维修单保存成功！</string>
     <string name="weixiudan_saved_failed">维修单保存失败， 检查网络设置！</string>
-
+    <string name="weixiudan_saved_exception">维修单保存失败， 请联系管理员！</string>
+    <string name="save_and_upload_inprogress">维修单保存并且上传中， 请稍后!</string>
+    <string name="weixiudan_saved_no_result">请选择维修地址</string>
 
 </resources>
+

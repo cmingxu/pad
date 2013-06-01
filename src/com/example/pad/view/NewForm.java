@@ -1,6 +1,7 @@
 package com.example.pad.view;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +9,8 @@ import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -42,9 +45,16 @@ import java.util.TimerTask;
  */
 public class NewForm extends BaseActivity {
 
+    public  static  final  int WEIXIUDAN_SAVE_OK = 1;
+    public  static final   int WEIXIUDAN_SAVE_FAILE = 2;
+    public  static final   int WEIXIUDAN_SAVE_EXCEPTION = 3;
+    public static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
+
+
+
+
     private Button take_pic_btn;
     private Button saveBtn;
-    private Button uploadBtn;
     private EditText address_choose_text;
     private EditText zhuhu_name_text;
     private EditText zhuhu_phone_text;
@@ -55,6 +65,8 @@ public class NewForm extends BaseActivity {
 
     private Uri imageUri;
     private ArrayAdapter<String> adapter;
+    private ProgressDialog progressDialog;
+    private Handler handler;
     Weixiudan weixiudan;
     AddressChooserResult result;
 
@@ -69,8 +81,6 @@ public class NewForm extends BaseActivity {
 
         saveBtn = (Button)findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new SaveOnClickListener());
-        uploadBtn = (Button)findViewById(R.id.uploadBtn);
-
 
         categories = (Spinner)findViewById(R.id.categories);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Weixiudan.categories);
@@ -84,6 +94,8 @@ public class NewForm extends BaseActivity {
 
         address_choose_text.setOnClickListener(new AddressChoseClickListener());
         weixiudan = new Weixiudan();
+
+        progressDialog = new ProgressDialog(this);
     }
 
     public void gatherWeixiudan(){
@@ -108,27 +120,84 @@ public class NewForm extends BaseActivity {
     private class SaveOnClickListener implements Button.OnClickListener{
         @Override
         public void onClick(View v) {
-            gatherWeixiudan();
-            weixiudan.mDbSaved  = true;
-            weixiudan.save();
-            Log.d("toJSon", weixiudan.toQuery());
-            HttpHelper.getInstance(Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), null, new JsonHttpResponseHandler() {
+            progressDialog.setTitle(R.string.wait_please);
+            progressDialog.setMessage(getString(R.string.save_and_upload_inprogress));
+            progressDialog.show();
+            handler = new Handler(){
                 @Override
-                public void onSuccess(int i, JSONArray jsonArray) {
+                public void handleMessage(Message msg) {
+                    super.handleMessage(msg);
+                    switch (msg.what){
+                        case WEIXIUDAN_SAVE_OK:
+                            progressDialog.dismiss();
+                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved));
+                            redirect(NewForm.this, Maintain.class);
+                            break;
+                        case WEIXIUDAN_SAVE_FAILE:
+                            progressDialog.dismiss();
+                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_failed));
+                            break;
+                        case WEIXIUDAN_SAVE_EXCEPTION:
+                            progressDialog.dismiss();
+                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_exception));
+                            break;
+                        case WEIXIUDAN_SAVE_NO_RESULT:
+                            progressDialog.dismiss();
+                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_no_result));
+                            break;
+                        default:
+                    }
 
-                    weixiudan.mRemoteSaved = true;
+                }
+            } ;
+            if(null != result){
+                gatherWeixiudan();
+                weixiudan.mDbSaved  = true;
+                try {
                     weixiudan.save();
-                    UIHelper.showLongToast(NewForm.this, getResources().getString(R.string.weixiudan_saved));
-                    super.onSuccess(i, jsonArray);
-                    redirect(NewForm.this, Maintain.class);
+
+                }  catch (Exception e){
+                    Message message = new Message();
+                    message.what = WEIXIUDAN_SAVE_EXCEPTION;
+                    handler.sendMessage(message);
                 }
 
-                @Override
-                public void onFailure(Throwable throwable, JSONObject jsonObject) {
-                    UIHelper.showLongToast(NewForm.this, getResources().getString(R.string.weixiudan_saved_failed));
-                    super.onFailure(throwable, jsonObject);
-                }
-            });
+                Log.d("toJSon", weixiudan.toQuery());
+                HttpHelper.getInstance(Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), null, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int i, JSONObject jsonObject) {
+                        Log.d("onSuccess", "onSuccess");
+                        weixiudan.mRemoteSaved = true;
+                        weixiudan.save();
+                        super.onSuccess(i, jsonObject);
+                        Message message = new Message();
+                        message.what = WEIXIUDAN_SAVE_OK;
+                        handler.sendMessage(message);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable, JSONObject jsonObject) {
+
+                        super.onFailure(throwable, jsonObject);
+                        Message message = new Message();
+                        message.what = WEIXIUDAN_SAVE_FAILE;
+                        handler.sendMessage(message);
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        super.onFinish();    //To change body of overridden methods use File | Settings | File Templates.
+
+
+                    }
+                });
+            }else{
+                Message message = new Message();
+                message.what = WEIXIUDAN_SAVE_NO_RESULT;
+                handler.sendMessage(message);
+            }
+
+
 
         }
     }
