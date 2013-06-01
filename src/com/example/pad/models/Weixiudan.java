@@ -51,9 +51,9 @@ public class Weixiudan extends Model {
     public String mLoucengBianhao;
     @Column(name="mZhuhuBianhao")
     public String mZhuhuBianhao;
-    public boolean mDbSaved;
+    public int mDbSaved;
     @Column(name="mRemoteSaved")
-    public boolean mRemoteSaved;
+    public int mRemoteSaved;
 
     public Weixiudan() {
     }

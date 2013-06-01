@@ -37,7 +37,7 @@
     <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369956554502" ignored="false" />
     <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369043132860" ignored="false" />
     <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370078529843" ignored="false" />
-    <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370084448410" ignored="false" />
+    <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370087939893" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369958727037" ignored="false" />
     <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370078392679" ignored="false" />
     <file path="/AddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369641550994" ignored="false" />
@@ -1040,7 +1040,7 @@
     <file path="$PROJECT_DIR$/gen/com/example/pad/R.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370081343761" ignored="false" />
     <file path="/ActionBar.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657173312" ignored="false" />
     <file path="/a.dummy" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369302460800" ignored="false" />
-    <file path="/Weixiudan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370078884465" ignored="false" />
+    <file path="/Weixiudan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370087324666" ignored="false" />
     <file path="/Zhuhu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368519094640" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/app/models/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/app/controllers/Weixiudans.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
@@ -1152,10 +1152,10 @@
       <file leaf-file-name="Weixiudan.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="25" selection-start="4191" selection-end="4191" vertical-scroll-proportion="0.0">
+            <state line="129" column="14" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3233#3249#0" expanded="true" />
+                <element signature="e#3225#3241#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1164,7 +1164,7 @@
       <file leaf-file-name="NewForm.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="33" selection-start="8230" selection-end="8230" vertical-scroll-proportion="0.45010182">
+            <state line="137" column="40" selection-start="4882" selection-end="4882" vertical-scroll-proportion="0.38807532">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1285,10 +1285,10 @@
         <option value="$PROJECT_DIR$/src/com/example/pad/common/Config.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Maintain.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/WeixiudanUpload.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java" />
         <option value="$PROJECT_DIR$/res/layout/new_form.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/NewForm.java" />
       </list>
     </option>
@@ -1832,7 +1832,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52040815" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1430096" sideWeight="0.25" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47256097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47256097" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-1280" y="258" width="1280" height="800" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -2036,17 +2036,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="25" selection-start="4191" selection-end="4191" vertical-scroll-proportion="0.0">
+        <state line="129" column="14" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3233#3249#0" expanded="true" />
+            <element signature="e#3225#3241#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="33" selection-start="8230" selection-end="8230" vertical-scroll-proportion="0.45010182">
+        <state line="137" column="40" selection-start="4882" selection-end="4882" vertical-scroll-proportion="0.38807532">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

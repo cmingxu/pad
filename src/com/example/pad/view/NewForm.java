@@ -132,16 +132,18 @@ public class NewForm extends BaseActivity {
     }
 
     public void gatherWeixiudan(){
-        weixiudan = new Weixiudan();
+        if (weixiudan == null) {
+            weixiudan = new Weixiudan();
+        }
         weixiudan.mBaoxiuLeibie =categories.getSelectedItem().toString();
         weixiudan.mBaoxiuNeirong = baoxiuneirong.getText().toString();
         weixiudan.mBaoxiuren   = Util.instance().getCurrentUser().login;
         weixiudan.mBaoXiuRiqi  = Util.instance().formatTime("yyyy/MM/dd", new Date());
         weixiudan.mDanyuanName = result.mDanyuanName;
-        weixiudan.mDbSaved = false;
+        weixiudan.mDbSaved = 0;
         weixiudan.mLoucengName = result.mLoucengName;
         weixiudan.mLougeName = result.mLougeName;
-        weixiudan.mRemoteSaved = false;
+        weixiudan.mRemoteSaved = 0;
         weixiudan.mYezhuName = result.mYezhuName;
         weixiudan.mYezhuPhone = result.mYezhuDianhua;
         weixiudan.mLougeBianhao = result.mLougebianhao;
@@ -185,7 +187,7 @@ public class NewForm extends BaseActivity {
             } ;
             if(null != result){
                 gatherWeixiudan();
-                weixiudan.mDbSaved  = true;
+                weixiudan.mDbSaved  = 1;
                 try {
                     weixiudan.save();
 
@@ -200,9 +202,9 @@ public class NewForm extends BaseActivity {
                     @Override
                     public void onSuccess(int i, JSONObject jsonObject) {
                         Log.d("onSuccess", "onSuccess");
-                        weixiudan.mRemoteSaved = true;
+                        weixiudan.mRemoteSaved = 1;
                         weixiudan.save();
-                        weixiudan
+
                         super.onSuccess(i, jsonObject);
                         Message message = new Message();
                         message.what = WEIXIUDAN_SAVE_OK;
