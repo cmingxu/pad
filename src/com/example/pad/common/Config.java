@@ -11,7 +11,7 @@ public class Config {
     public static final String SERVER_BASE_URL = "http://101.20.142.1:9000/";
 //    public static final String SERVER_BASE_URL = "http://192.168.0.113:9000/";
 
-    public static final int HTTP_TIMEOUT = 15 * 1000;
+    public static final int HTTP_TIMEOUT = 1 * 1000;
 
     public static boolean passwordRequired(){
         return false;

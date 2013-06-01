@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
+import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import android.provider.MediaStore;
 import com.example.pad.R;
@@ -59,6 +60,7 @@ public class NewForm extends BaseActivity {
     private EditText zhuhu_name_text;
     private EditText zhuhu_phone_text;
     private EditText baoxiuneirong;
+    private EditText time_text;
     private Spinner categories;
     private static final int IMAGE_CAPTURE = 0;
     public static final int CHOOSE_ADDRESS = 1;
@@ -76,6 +78,14 @@ public class NewForm extends BaseActivity {
         setContentView(R.layout.new_form);
 
 
+        Bundle extra = getIntent().getExtras();
+        if (extra != null){
+            long weixiudan_id = extra.getLong("weixiudan_id");
+            weixiudan = (Weixiudan) new Select().from(Weixiudan.class).where("id=" + weixiudan_id).executeSingle();
+        }else {
+            weixiudan = new Weixiudan();
+        }
+
         take_pic_btn = (Button)findViewById(R.id.take_pic_btn);
         take_pic_btn.setOnClickListener(new TakePicClickListener());
 
@@ -91,11 +101,34 @@ public class NewForm extends BaseActivity {
         zhuhu_name_text     = (EditText)findViewById(R.id.zhuhuName);
         zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
         baoxiuneirong       = (EditText)findViewById(R.id.baoxiuneirong);
+        time_text           = (EditText)findViewById(R.id.time);
+        time_text.setText( Util.instance().formatTime("yyyy/MM/dd", new Date()));
+        if(weixiudan.getId() != null){
+            address_choose_text.setText(weixiudan.address());
+            zhuhu_name_text.setText(weixiudan.mYezhuName);
+            zhuhu_phone_text.setText(weixiudan.mYezhuPhone);
+            baoxiuneirong.setText(weixiudan.mBaoxiuNeirong);
+            categories.setPrompt(weixiudan.mBaoxiuLeibie);
+            time_text.setText(weixiudan.mBaoXiuRiqi);
+
+            result = new AddressChooserResult();
+            result.setmDanyuanbianhao(weixiudan.mDanyuanBianhao);
+            result.setmDanyuanName(weixiudan.mDanyuanName);
+            result.setmLoucengbianhao(weixiudan.mLoucengBianhao);
+            result.setmLoucengName(weixiudan.mLoucengName);
+            result.setmLougebianhao(weixiudan.mLougeBianhao);
+            result.setmLougeName(weixiudan.mLougeName);
+            result.setmYezhuDianhua(weixiudan.mYezhuPhone);
+            result.setmYezhuName(weixiudan.mYezhuName);
+        }
 
         address_choose_text.setOnClickListener(new AddressChoseClickListener());
-        weixiudan = new Weixiudan();
+
+
 
         progressDialog = new ProgressDialog(this);
+
+
     }
 
     public void gatherWeixiudan(){
@@ -169,6 +202,7 @@ public class NewForm extends BaseActivity {
                         Log.d("onSuccess", "onSuccess");
                         weixiudan.mRemoteSaved = true;
                         weixiudan.save();
+                        weixiudan
                         super.onSuccess(i, jsonObject);
                         Message message = new Message();
                         message.what = WEIXIUDAN_SAVE_OK;
@@ -177,7 +211,7 @@ public class NewForm extends BaseActivity {
 
                     @Override
                     public void onFailure(Throwable throwable, JSONObject jsonObject) {
-
+                        Log.d("onFailure", "throwable");
                         super.onFailure(throwable, jsonObject);
                         Message message = new Message();
                         message.what = WEIXIUDAN_SAVE_FAILE;
@@ -186,8 +220,8 @@ public class NewForm extends BaseActivity {
 
                     @Override
                     public void onFinish() {
-                        super.onFinish();    //To change body of overridden methods use File | Settings | File Templates.
-
+                        super.onFinish();
+                        Log.d("onFInish", "finshi");
 
                     }
                 });

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.models.Weixiudan;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,6 +33,7 @@ public class Maintain extends BaseActivity {
         new_form_btn = (Button)findViewById(R.id.new_form_btn);
         new_form_btn.setOnClickListener(new NewFormOnClickListener());
         iwant_upload_btn = (Button)findViewById(R.id.iwant_upload_btn);
+        iwant_upload_btn.setText(getString(R.string.iwant_upload) + "(" + Weixiudan.not_uploaded_count() + ")");
         iwant_upload_btn.setOnClickListener(new IWantUploadOnClickListener());
         iwant_accept_btn = (Button)findViewById(R.id.iwant_accept_btn);
         iwant_finish_btn = (Button)findViewById(R.id.iwant_finish);

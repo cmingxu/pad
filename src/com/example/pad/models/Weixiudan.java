@@ -4,6 +4,7 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import com.example.pad.common.StringUtils;
 import com.google.gson.Gson;
 import org.apache.http.client.utils.URLEncodedUtils;
@@ -117,5 +118,12 @@ public class Weixiudan extends Model {
         new Delete().from(Weixiudan.class).where("1=1").execute();
     }
 
+    public String address(){
+        return this.mLougeName + "/" + this.mLoucengName + "/" + this.mDanyuanName;
+    }
 
+
+    public static String not_uploaded_count() {
+        return  Integer.toString(new Select().from(Weixiudan.class).where("mRemoteSaved=0").execute().size());
+    }
 }
