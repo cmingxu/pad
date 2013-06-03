@@ -38,7 +38,7 @@ public class AddressChooser extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.address_chooser);
         listView = (ListView)findViewById(R.id.listView);
-        adapter = new ArrayAdapter<Model>(getApplicationContext(), android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
+        adapter = new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListItemOnClickListener());
 
@@ -48,11 +48,11 @@ public class AddressChooser extends BaseActivity {
 
     private void changeAdapter(){
         if (state.current_selecting.equals("louge")) {
-            adapter =  new ArrayAdapter<Model>(getApplicationContext(), android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
+            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
         } else if (state.current_selecting.equals("louceng")) {
-            adapter =  new ArrayAdapter<Model>(getApplicationContext(), android.R.layout.simple_list_item_1, state.current_louge.loucengs().toArray(new Louceng[0]));
+            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_louge.loucengs().toArray(new Louceng[0]));
         } else if (state.current_selecting.equals("danyuan")) {
-            adapter =  new ArrayAdapter<Model>(getApplicationContext(), android.R.layout.simple_list_item_1, state.current_louceng.danyuans().toArray(new Danyuan[0]));
+            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_louceng.danyuans().toArray(new Danyuan[0]));
         } else {
         }
         listView.setAdapter(adapter);
@@ -73,6 +73,7 @@ public class AddressChooser extends BaseActivity {
             }
             state.pre();
             changeAdapter();
+
         }
     }
 

@@ -15,12 +15,14 @@ import com.actionbarsherlock.app.SherlockActivity;
  * Time: 10:26 AM
  * To change this template use File | Settings | File Templates.
  */
-public class BaseActivity extends SherlockActivity {
-    public void onCreate(Bundle savedInstanceState) {
+//public class BaseActivity extends SherlockActivity {
+    public class BaseActivity extends SherlockActivity {
+
+        public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams. FLAG_FULLSCREEN);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_ACTION_BAR);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams. FLAG_FULLSCREEN);
         AppManager.getAppManager().addActivity(this);
 
     }
@@ -37,6 +39,7 @@ public class BaseActivity extends SherlockActivity {
         Intent i = new Intent();
         i.setClass(from, to);
         from.startActivity(i);
+
 
     }
 }

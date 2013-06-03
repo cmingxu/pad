@@ -214,4 +214,21 @@ public class StringUtils
 
         return stringBuilder.toString();
     }
+
+    public static boolean isIPAddress(String ip){
+        if (ip.matches("^[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}")) return true;
+        else {
+            return false;
+        }
+    }
+
+    public static boolean isPort(String port) {
+            int p = Integer.parseInt(port);
+            if(p >= 1024 && p <= 65535){
+              return true;
+            }   else
+            {
+                return false;
+            }
+    }
 }

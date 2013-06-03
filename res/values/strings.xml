@@ -18,6 +18,9 @@
     <string name="save_and_upload_inprogress">维修单保存并且上传中， 请稍后!</string>
     <string name="weixiudan_saved_no_result">请选择维修地址</string>
     <string name="iwant_upload">我要上传</string>
+    <string name="value_should_not_empty">输入值不能为空</string>
+    <string name="ip_address_not_valid">IP地址格式不对</string>
+    <string name="port_not_valid">PORT格式不对</string>
 
 </resources>
 

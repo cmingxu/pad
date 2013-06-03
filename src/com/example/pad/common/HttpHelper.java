@@ -1,6 +1,7 @@
 package com.example.pad.common;
 
 
+import android.content.Context;
 import android.util.Log;
 import com.example.pad.AppConfig;
 import com.loopj.android.http.*;
@@ -16,19 +17,15 @@ import com.loopj.android.http.*;
  */
 public class HttpHelper {
     public  AsyncHttpClient client;
-    private static  HttpHelper instance;
+    private Context context;
 
-    public static  HttpHelper getInstance(String login, String password){
-        if (instance == null) {
-            instance = new HttpHelper();
-            instance.client = new AsyncHttpClient();
-            instance.client.setTimeout(Config.HTTP_TIMEOUT);
-            instance.client.setBasicAuth(login, password);
-            instance.client.addHeader("Accept", "application/json");
-            instance.client.addHeader("Content-Type", "application/json");
-
-        }
-        return instance;
+    public HttpHelper(Context context, String login, String password) {
+        this.context = context;
+        client = new AsyncHttpClient();
+        client.setTimeout(Config.HTTP_TIMEOUT);
+        client.setBasicAuth(login, password);
+        client.addHeader("Accept", "application/json");
+        client.addHeader("Content-Type", "application/json");
     }
 
 
@@ -45,7 +42,7 @@ public class HttpHelper {
 
 
     private String absoluteURL(String path){
-        return "http://" + AppConfig.CONF_SERVER + ":" + AppConfig.CONF_PORT + "/" + path;
+        return "http://" + AppConfig.getAppConfig(context).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(context).get(AppConfig.CONF_PORT) + "/" + path;
     }
 
 

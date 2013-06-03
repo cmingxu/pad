@@ -32,8 +32,5 @@ public static void showLongToast(Context context, String content){
     }
 
 
-    public static void showLongToast(Login context, int select_a_login) {
-        Toast.makeText(context, context.getString(select_a_login), Toast.LENGTH_SHORT).show();
 
-    }
 }

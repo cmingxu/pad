@@ -1,6 +1,7 @@
 package com.example.pad.view;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
@@ -8,6 +9,7 @@ import android.util.Log;
 import com.example.pad.AppConfig;
 import com.example.pad.AppContext;
 import com.example.pad.R;
+import com.example.pad.common.StringUtils;
 import com.example.pad.common.UIHelper;
 
 /**
@@ -23,16 +25,66 @@ public class Preference extends PreferenceActivity{
         addPreferencesFromResource(R.xml.preference);
 
         EditTextPreference etp_server = (EditTextPreference)findPreference("server_path");
+        EditTextPreference port       = (EditTextPreference)findPreference("port");
+
         etp_server.setOnPreferenceChangeListener(new android.preference.Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(android.preference.Preference preference, Object o) {
-                if (preference.getKey() == "server_path"){
-                    AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, (String)o);
-                    UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
-                }else if(preference.getKey() == "port"){
+                String input  = (String)o;
+                Log.d("eky", preference.getKey()) ;
+                if(StringUtils.isEmpty((input))){
+                    UIHelper.showLongToast(getApplicationContext(), getString(R.string.value_should_not_empty));
+                    return false;
+                }
+                if (preference.getKey().equals("server_path")){
+                    if(StringUtils.isIPAddress(input)){
+                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, (String)o);
+                        UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
+                    }   else {
+                        UIHelper.showLongToast(Preference.this, getString(R.string.ip_address_not_valid));
 
-                    AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, (String)o);
-                    UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
+                    }
+                }else if(preference.getKey().equals("port")){
+                    Log.d("port", input);
+                    if(StringUtils.isPort(input)){
+                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, (String)o);
+                        UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
+                    }
+                    else {
+                        UIHelper.showLongToast(Preference.this, getString(R.string.port_not_valid));
+                    }
+                }else{
+                }
+                return true;
+            }
+        });
+
+        port.setOnPreferenceChangeListener(new android.preference.Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(android.preference.Preference preference, Object newValue) {
+                String input  = (String)newValue;
+                Log.d("eky", preference.getKey()) ;
+                if(StringUtils.isEmpty((input))){
+                    UIHelper.showLongToast(getApplicationContext(), getString(R.string.value_should_not_empty));
+                    return false;
+                }
+                if (preference.getKey().equals("server_path")){
+                    if(StringUtils.isIPAddress(input)){
+                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, input);
+                        UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
+                    }   else {
+                        UIHelper.showLongToast(Preference.this, getString(R.string.ip_address_not_valid));
+
+                    }
+                }else if(preference.getKey().equals("port")){
+                    Log.d("port", input);
+                    if(StringUtils.isPort(input)){
+                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, input);
+                        UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
+                    }
+                    else {
+                        UIHelper.showLongToast(Preference.this, getString(R.string.port_not_valid));
+                    }
                 }else{
                 }
                 return true;

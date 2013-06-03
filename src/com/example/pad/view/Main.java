@@ -1,12 +1,17 @@
 package com.example.pad.view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
+import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.common.SyssendService;
+import com.example.pad.common.Util;
 
 public class Main extends BaseActivity {
     private ImageButton logout_btn;
@@ -15,7 +20,6 @@ public class Main extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
 
         logout_btn = (ImageButton)findViewById(R.id.logout_btn);
@@ -25,17 +29,27 @@ public class Main extends BaseActivity {
         xunjian_btn = (ImageButton)findViewById(R.id.xunjian_btn);
         xunjian_btn.setOnClickListener(new XunjianClickListener());
 
-
-
     }
 
     protected class LogoutClickListener implements View.OnClickListener{
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(Main.this, Login.class);
-            startActivity(i);
+            new AlertDialog.Builder(Main.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                 redirect(Main.this, Login.class);
+                  Main.this.finish();
+                    Util.instance().setCurrentUser(null);
+                    stopService(new Intent(Main.this, SyssendService.class)) ;
+                }
+            }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }).show();
+
         }
     }
 

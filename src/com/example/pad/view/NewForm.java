@@ -198,7 +198,7 @@ public class NewForm extends BaseActivity {
                 }
 
                 Log.d("toJSon", weixiudan.toQuery());
-                HttpHelper.getInstance(Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), null, new JsonHttpResponseHandler() {
+                new HttpHelper(NewForm.this, Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), null, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int i, JSONObject jsonObject) {
                         Log.d("onSuccess", "onSuccess");
@@ -280,10 +280,13 @@ public class NewForm extends BaseActivity {
         }
 
             if (requestCode == CHOOSE_ADDRESS){
-                result  = (AddressChooserResult)data.getSerializableExtra("result");
-                address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
-                zhuhu_phone_text.setText(result.getmYezhuDianhua());
-                zhuhu_name_text.setText(result.getmYezhuName());
+                if (data != null) {
+                    result  = (AddressChooserResult)data.getSerializableExtra("result");
+                    address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
+                    zhuhu_phone_text.setText(result.getmYezhuDianhua());
+                    zhuhu_name_text.setText(result.getmYezhuName());
+                }
+
 
         }
     }

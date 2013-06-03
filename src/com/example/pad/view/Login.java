@@ -3,6 +3,7 @@ package com.example.pad.view;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,10 +12,7 @@ import android.view.View;
 import com.activeandroid.query.Select;
 import android.widget.*;
 import com.example.pad.*;
-import com.example.pad.common.Config;
-import com.example.pad.common.HttpHelper;
-import com.example.pad.common.UIHelper;
-import com.example.pad.common.Util;
+import com.example.pad.common.*;
 import com.example.pad.models.*;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
@@ -42,7 +40,7 @@ public class Login extends BaseActivity {
     private Spinner spinner;
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
-    private HttpHelper httpHelper = HttpHelper.getInstance("login", "password");
+    private HttpHelper httpHelper;
     private Handler handler;
     public static final int UPDATE_USER_SELECTOR = 1;
 
@@ -77,6 +75,7 @@ public class Login extends BaseActivity {
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, m);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        httpHelper = new HttpHelper(getApplicationContext(), "login", "password");
 
     }
     protected class SettingOnClickListener implements View.OnClickListener{
@@ -84,7 +83,6 @@ public class Login extends BaseActivity {
         @Override
         public void onClick(View view) {
             redirect(Login.this, Preference.class);
-
         }
     }
 
@@ -182,18 +180,20 @@ public class Login extends BaseActivity {
         @Override
         public void onClick(View view) {
             if (spinner.getSelectedItem()  == null) {
-                UIHelper.showLongToast(Login.this, R.string.select_a_login);
+                UIHelper.showLongToast(Login.this, getString(R.string.select_a_login));
                 return;
             }
 
             if (Config.passwordRequired() && passwordField.getText().toString() == null) {
-                UIHelper.showLongToast(Login.this, R.string.input_password);
+                UIHelper.showLongToast(Login.this, getString(R.string.input_password));
                 return;
             }
             User u = User.find_by_login_and_password(spinner.getSelectedItem().toString(),  passwordField.getText().toString());
             if (u != null){
                 Util.instance().setCurrentUser(u);
                 redirect(Login.this, Main.class);
+                startService(new Intent(Login.this, SyssendService.class));
+
             }else{
                 Toast.makeText(Login.this, R.string.input_error, Toast.LENGTH_SHORT).show();
             }
