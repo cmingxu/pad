@@ -22,7 +22,7 @@ public class Maintain extends BaseActivity {
     private Button new_form_btn;
     private Button iwant_upload_btn;
     private Button iwant_accept_btn;
-    private Button iwant_finish_btn;
+    private Button iwant_complete_btn;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,9 @@ public class Maintain extends BaseActivity {
         iwant_accept_btn.setText(getString(R.string.iwant_accept) + "(" + Syssend.accept_count() + ")");
         iwant_accept_btn.setOnClickListener(new IWantAcceptOnClickListener());
 
-        iwant_finish_btn = (Button)findViewById(R.id.iwant_complete);
-        iwant_accept_btn.setText(getString(R.string.iwant_complete) + "(" + Syssend.complete_count() + ")");
+        iwant_complete_btn = (Button)findViewById(R.id.iwant_complete);
+        iwant_complete_btn.setText(getString(R.string.iwant_complete) + "(" + Syssend.complete_count() + ")");
+        iwant_complete_btn.setOnClickListener(new IWantCompleteOnClickListener());
 
 
 

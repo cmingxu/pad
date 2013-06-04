@@ -33,6 +33,7 @@ public class SyssendForm extends Activity {
     Syssend syssend;
     ProgressDialog progressDialog;
     HttpHelper httpHelper;
+    String path = "";
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,15 @@ public class SyssendForm extends Activity {
         content.setText(syssend.content);
 
         action     = (Button)findViewById(R.id.action);
-        action.setText("接单");
+        if(syssend.ifComplete.equals("0")){
+            action.setText("完成");
+            path  = "wancheng";
+        }
+        if(syssend.ifck.equals("0")){
+            action.setText("接单");
+            path = "jiedan";
+        }
+
         action.setOnClickListener(new OnClickListener());
 
         progressDialog = new ProgressDialog(SyssendForm.this);
@@ -66,7 +75,7 @@ public class SyssendForm extends Activity {
             progressDialog.setTitle(R.string.wait_please);
             progressDialog.setMessage(getString(R.string.users_reloading));
             progressDialog.show();
-            httpHelper.with("jiedan?syssend_id=" + syssend.remoteId, null, new JsonHttpResponseHandler(){
+            httpHelper.with(path + "?syssend_id=" + syssend.remoteId, null, new JsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONObject s) {
                     progressDialog.dismiss();

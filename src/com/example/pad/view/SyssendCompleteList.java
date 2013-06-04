@@ -32,7 +32,7 @@ public class SyssendCompleteList extends BaseActivity
         setContentView(R.layout.weixiudan_list);
         listView = (ListView)findViewById(R.id.list_view);
         final List<Syssend> syssends = new Select().from(Syssend.class).execute();
-        listView.setAdapter(new SysendListViewAdapter(syssends));
+        listView.setAdapter(new SysendCompleteListViewAdapter(syssends));
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,9 +50,9 @@ public class SyssendCompleteList extends BaseActivity
 
 
 
-    public class SysendListViewAdapter extends BaseAdapter{
+    public class SysendCompleteListViewAdapter extends BaseAdapter{
         List<Syssend> syssends;
-        public SysendListViewAdapter(List<Syssend> syssends) {
+        public SysendCompleteListViewAdapter(List<Syssend> syssends) {
             this.syssends = syssends;
         }
 
