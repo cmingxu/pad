@@ -22,6 +22,8 @@
         <activity android:name=".view.WeixiudanList"/>
         <activity android:name=".view.XunjianList"/>
         <activity android:name=".view.Xunjian"/>
+        <activity android:name=".view.SyssendForm"/>
+        <activity android:name=".view.SyssendAcceptList"/>
 
 
         <service android:name=".common.SyssendService"/>

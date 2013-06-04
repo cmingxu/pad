@@ -11,14 +11,17 @@ import android.os.Message;
 import android.util.Log;
 import android.widget.Toast;
 import com.example.pad.R;
+import com.example.pad.models.Syssend;
 import com.example.pad.models.User;
 import com.example.pad.view.Main;
+import com.example.pad.view.Maintain;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -47,30 +50,42 @@ public class SyssendService extends Service {
                 public void onSuccess(JSONArray s) {
                     Log.d("123", s.toString());
 
-                    NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-                    Notification n = new Notification(R.drawable.sns_qq_icon, "Hello,there!", System.currentTimeMillis());
-                    n.flags = Notification.FLAG_AUTO_CANCEL;
-                    Intent i = new Intent(SyssendService.this, Main.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-//PendingIntent
-                    PendingIntent contentIntent = PendingIntent.getActivity(
-                            SyssendService.this,
-                            R.string.app_name,
-                            i,
-                            PendingIntent.FLAG_UPDATE_CURRENT);
+                    try {
+                        ArrayList<Syssend> syssends = Syssend.fromJsonArray(s);
+                        for (Syssend syssend : syssends){
+                            if (Syssend.findByRemoteId(syssend.remoteId) == null) {
+                                syssend.save();
 
-                    n.setLatestEventInfo(
-                            SyssendService.this,
-                            "Hello,there!",
-                            "Hello,there,I'm john.",
-                            contentIntent);
-                    nm.notify(R.string.app_name, n);
+                                NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+                                Notification n = new Notification(R.drawable.sns_qq_icon, "新维修单!", System.currentTimeMillis());
+                                n.flags = Notification.FLAG_AUTO_CANCEL;
+                                Intent i = new Intent(SyssendService.this, Maintain.class);
+                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                PendingIntent contentIntent = PendingIntent.getActivity(
+                                        SyssendService.this,
+                                        R.string.app_name,
+                                        i,
+                                        PendingIntent.FLAG_UPDATE_CURRENT);
+
+                                n.setLatestEventInfo(
+                                        SyssendService.this,
+                                        "新维修单",
+                                        syssend.content,
+                                        contentIntent);
+                                nm.notify(R.string.app_name, n);
+                            }
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
                 }
 
                 @Override
                 public void onFailure(Throwable throwable, JSONObject jsonObject) {
                     Log.d("failed", jsonObject.toString());
-
                 }
 
             });

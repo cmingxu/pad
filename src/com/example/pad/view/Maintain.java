@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.models.Syssend;
 import com.example.pad.models.Weixiudan;
 
 /**
@@ -36,7 +37,12 @@ public class Maintain extends BaseActivity {
         iwant_upload_btn.setText(getString(R.string.iwant_upload) + "(" + Weixiudan.not_uploaded_count() + ")");
         iwant_upload_btn.setOnClickListener(new IWantUploadOnClickListener());
         iwant_accept_btn = (Button)findViewById(R.id.iwant_accept_btn);
-        iwant_finish_btn = (Button)findViewById(R.id.iwant_finish);
+        iwant_accept_btn.setText(getString(R.string.iwant_accept) + "(" + Syssend.accept_count() + ")");
+        iwant_accept_btn.setOnClickListener(new IWantAcceptOnClickListener());
+
+        iwant_finish_btn = (Button)findViewById(R.id.iwant_complete);
+        iwant_accept_btn.setText(getString(R.string.iwant_complete) + "(" + Syssend.complete_count() + ")");
+
 
 
     }
@@ -57,6 +63,7 @@ public class Maintain extends BaseActivity {
             Intent i = new Intent();
             i.setClass(Maintain.this, NewForm.class);
             startActivity(i);
+            Maintain.this.finish();;
         }
     }
 
@@ -67,6 +74,29 @@ public class Maintain extends BaseActivity {
             Intent i = new Intent();
             i.setClass(Maintain.this, WeixiudanList.class);
             startActivity(i);
+            Maintain.this.finish();;
+        }
+    }
+
+    protected class IWantAcceptOnClickListener implements Button.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent();
+            i.setClass(Maintain.this, SyssendAcceptList.class);
+            startActivity(i);
+            Maintain.this.finish();;
+        }
+    }
+
+    protected class IWantCompleteOnClickListener implements Button.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent i = new Intent();
+            i.setClass(Maintain.this, SyssendCompleteList.class);
+            startActivity(i);
+            Maintain.this.finish();;
         }
     }
 }

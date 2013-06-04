@@ -21,6 +21,12 @@
     <string name="value_should_not_empty">输入值不能为空</string>
     <string name="ip_address_not_valid">IP地址格式不对</string>
     <string name="port_not_valid">PORT格式不对</string>
+    <string name="iwant_accept">我要接单</string>
+    <string name="jiedan_ok">接单成功</string>
+    <string name="jiedan_failed">接单失败</string>
+    <string name="iwant_complete">我要完成</string>
+
+
 
 </resources>
 
