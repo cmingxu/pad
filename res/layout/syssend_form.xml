@@ -15,12 +15,6 @@
               android:id="@+id/sendtime" android:layout_gravity="center" android:layout_margin="5dip"
               android:textSize="20dip"/>
     <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="New Text"
-              android:id="@+id/textView2" android:layout_gravity="center" android:layout_margin="5dip"
-              android:textSize="20dip"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="New Text"
-              android:id="@+id/textView3" android:layout_gravity="center" android:layout_margin="5dip"
-              android:textSize="20dip"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="New Text"
               android:id="@+id/content" android:layout_gravity="center" android:layout_margin="5dip"
               android:textSize="20dip"/>
     <LinearLayout

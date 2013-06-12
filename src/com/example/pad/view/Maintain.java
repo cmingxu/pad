@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.common.Util;
 import com.example.pad.models.Syssend;
 import com.example.pad.models.Weixiudan;
 
@@ -23,12 +24,14 @@ public class Maintain extends BaseActivity {
     private Button iwant_upload_btn;
     private Button iwant_accept_btn;
     private Button iwant_complete_btn;
+    public String current_user_name;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.maintain);
+        current_user_name = Util.instance().getCurrentUser().login;
         back_btn = (Button)findViewById(R.id.back_btn);
         back_btn.setOnClickListener(new BackBtnOnClickListener());
         new_form_btn = (Button)findViewById(R.id.new_form_btn);
@@ -37,11 +40,11 @@ public class Maintain extends BaseActivity {
         iwant_upload_btn.setText(getString(R.string.iwant_upload) + "(" + Weixiudan.not_uploaded_count() + ")");
         iwant_upload_btn.setOnClickListener(new IWantUploadOnClickListener());
         iwant_accept_btn = (Button)findViewById(R.id.iwant_accept_btn);
-        iwant_accept_btn.setText(getString(R.string.iwant_accept) + "(" + Syssend.accept_count() + ")");
+        iwant_accept_btn.setText(getString(R.string.iwant_accept) + "(" + Syssend.accept_count(current_user_name) + ")");
         iwant_accept_btn.setOnClickListener(new IWantAcceptOnClickListener());
 
         iwant_complete_btn = (Button)findViewById(R.id.iwant_complete);
-        iwant_complete_btn.setText(getString(R.string.iwant_complete) + "(" + Syssend.complete_count() + ")");
+        iwant_complete_btn.setText(getString(R.string.iwant_complete) + "(" + Syssend.complete_count(current_user_name) + ")");
         iwant_complete_btn.setOnClickListener(new IWantCompleteOnClickListener());
 
 

@@ -48,7 +48,7 @@ public class Zhuhu extends Model {
             zhuhu.mZhuhuBianhao   = temp.getString("住户编号");
             zhuhu.mShoujiHaoma    = temp.optString("手机号码");
             zhuhu.mLianxiDianhua  = temp.optString("联系电话");
-            zhuhu.mLianxiDizhi    = temp.getString("联系地址");
+            zhuhu.mLianxiDizhi    = temp.optString("联系地址");
 
             zhuhus.add(zhuhu);
 

@@ -3,6 +3,7 @@ package com.example.pad.view;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.hardware.Camera;
@@ -21,6 +22,7 @@ import com.example.pad.BaseActivity;
 import android.provider.MediaStore;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.StringUtils;
 import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.AddressChooserResult;
@@ -33,6 +35,7 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -69,6 +72,8 @@ public class NewForm extends BaseActivity {
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
     private Handler handler;
+    private ArrayList<String> images;
+    private File tempFile = null;
     Weixiudan weixiudan;
     AddressChooserResult result;
 
@@ -127,6 +132,8 @@ public class NewForm extends BaseActivity {
 
 
         progressDialog = new ProgressDialog(this);
+
+        images = new ArrayList<String>();
 
 
     }
@@ -189,16 +196,33 @@ public class NewForm extends BaseActivity {
                 gatherWeixiudan();
                 weixiudan.mDbSaved  = 1;
                 try {
+                    Log.d("image", images.toString());
+                    for(String s : images){
+                        Log.d("image s", s);
+                        weixiudan.addImages(s);
+                    }
                     weixiudan.save();
 
                 }  catch (Exception e){
+                    Log.d("image exception", e.toString());
                     Message message = new Message();
                     message.what = WEIXIUDAN_SAVE_EXCEPTION;
                     handler.sendMessage(message);
                 }
 
                 Log.d("toJSon", weixiudan.toQuery());
-                new HttpHelper(NewForm.this, Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), null, new JsonHttpResponseHandler() {
+                RequestParams params = new RequestParams();
+                try {
+                    params.put("image_size", String.valueOf(weixiudan.images().size()));
+                    int index = 0;
+                    for (String file_name : weixiudan.images()){
+                        params.put("image" + index, new File("/sdcard/" + NewForm.this.getPackageName() + "/" + file_name));
+                        index++;
+                    }
+                } catch(FileNotFoundException e) {}
+
+                new HttpHelper(NewForm.this, Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), params, new JsonHttpResponseHandler() {
+
                     @Override
                     public void onSuccess(int i, JSONObject jsonObject) {
                         Log.d("onSuccess", "onSuccess");
@@ -223,7 +247,7 @@ public class NewForm extends BaseActivity {
                     @Override
                     public void onFinish() {
                         super.onFinish();
-                        Log.d("onFInish", "finshi");
+                        Log.d("onFInish", "finish");
 
                     }
                 });
@@ -232,8 +256,6 @@ public class NewForm extends BaseActivity {
                 message.what = WEIXIUDAN_SAVE_NO_RESULT;
                 handler.sendMessage(message);
             }
-
-
 
         }
     }
@@ -252,8 +274,21 @@ public class NewForm extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            startActivityForResult(new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE), IMAGE_CAPTURE);
+            final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            tempFile =  getTempFile(NewForm.this);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile( tempFile));
+            startActivityForResult(intent, IMAGE_CAPTURE);
     }
+    }
+
+    private File getTempFile(Context context){
+//        final File path = new File( Environment.getExternalStorageDirectory(), context.getPackageName() );
+        final File path = new File( "/sdcard"   ,context.getPackageName() );
+
+        if(!path.exists()){
+            path.mkdir();
+        }
+        return new File(path, StringUtils.randomString() + ".jpg");
     }
 
 
@@ -261,21 +296,9 @@ public class NewForm extends BaseActivity {
 
         if (requestCode == IMAGE_CAPTURE) {
                 if (resultCode == RESULT_OK) {
-                    Bitmap bm = (Bitmap) data.getExtras().get("data");
-                    File myCaptureFile = new File("sdcard/123456.jpg");
-                    try {
-                        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
-                        bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
+                    Log.d("sddd", tempFile.getName());
+                  images.add(tempFile.getName());
 
-                        bos.flush();
-
-                        bos.close();
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 }
         }
 

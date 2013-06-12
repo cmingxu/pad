@@ -46,6 +46,7 @@ public class Login extends BaseActivity {
 
 
     public void onCreate(Bundle savedInstanceState) {
+        Log.d("SDXACCCCCCCCCCCCCCCCCCCCCCCC", " " + Util.isSDCardExist());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         logoutBtn = (Button)findViewById(R.id.logout_btn);

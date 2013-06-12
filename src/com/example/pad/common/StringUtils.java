@@ -1,7 +1,9 @@
 package com.example.pad.common;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.net.URLEncoder;
+import java.security.SecureRandom;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -230,5 +232,10 @@ public class StringUtils
             {
                 return false;
             }
+    }
+
+    public static String randomString(){
+        SecureRandom random = new SecureRandom();
+        return new BigInteger(130, random).toString(32);
     }
 }

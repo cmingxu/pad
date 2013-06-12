@@ -31,7 +31,7 @@ public class SyssendCompleteList extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.weixiudan_list);
         listView = (ListView)findViewById(R.id.list_view);
-        final List<Syssend> syssends = new Select().from(Syssend.class).execute();
+        final List<Syssend> syssends = new Select().from(Syssend.class).where("ifComplete=0").execute();
         listView.setAdapter(new SysendCompleteListViewAdapter(syssends));
 
 

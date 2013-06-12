@@ -5,7 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import com.example.pad.AppConfig;
 import com.loopj.android.http.*;
-
+import org.apache.http.auth.AuthScope;
 
 
 /**
@@ -23,7 +23,7 @@ public class HttpHelper {
         this.context = context;
         client = new AsyncHttpClient();
         client.setTimeout(Config.HTTP_TIMEOUT);
-        client.setBasicAuth(login, password);
+        client.addHeader("Authorization", login + ":" + password);
         client.addHeader("Accept", "application/json");
         client.addHeader("Content-Type", "application/json");
     }

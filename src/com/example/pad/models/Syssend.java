@@ -40,6 +40,8 @@ public class Syssend extends Model {
     public String iftsfs;
     @Column(name="ifComplete")
     public String ifComplete;
+    @Column(name="jsr")
+    public String jsr;
     @Column(name="remoteId")
     public int remoteId;
 
@@ -59,7 +61,9 @@ public class Syssend extends Model {
             syssend.sendperson = temp.getString("sendperson");
             syssend.sendtime = temp.getString("sendtime");
             syssend.style = temp.getString("style");
-            syssend.wyid  = temp.getString("wyid");
+            syssend.jsr = temp.getString("jsr");
+            syssend.wyid  = temp.optString(
+                    "wyid");
             syssend.remoteId        = temp.getInt("id");
             syssends.add(syssend);
 
@@ -71,13 +75,13 @@ public class Syssend extends Model {
         new Delete().from(Syssend.class).where("1=1").execute();
     }
 
-    public static int accept_count(){
-        return new Select().from(Syssend.class).where("ifck=0").execute().size();
+    public static int accept_count(String jsr){
+        return new Select().from(Syssend.class).where("ifck=0 and jsr=?", jsr).execute().size();
     }
 
 
-    public static int complete_count(){
-        return new Select().from(Syssend.class).where("ifComplete=0").execute().size();
+    public static int complete_count(String jsr){
+        return new Select().from(Syssend.class).where("ifComplete=0 and jsr=?", jsr).execute().size();
     }
 
     public static Syssend findByRemoteId(int remoteId){

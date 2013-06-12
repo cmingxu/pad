@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -14,6 +15,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,6 +56,8 @@ public class Weixiudan extends Model {
     public int mDbSaved;
     @Column(name="mRemoteSaved")
     public int mRemoteSaved;
+    @Column(name="mImages")
+    public String images;
 
     public Weixiudan() {
     }
@@ -125,5 +129,35 @@ public class Weixiudan extends Model {
 
     public static String not_uploaded_count() {
         return  Integer.toString(new Select().from(Weixiudan.class).where("mRemoteSaved=0").execute().size());
+    }
+
+    public ArrayList<String> images(){
+        String images[] = null;
+        if (this.images == null) {
+            images = new String[]{};
+        }
+        else{
+            images = this.images.split(",");
+        }
+        ArrayList<String> imagesArrayList = new ArrayList<String>();
+        for(String s : images){
+            imagesArrayList.add(s);
+        }
+        return imagesArrayList;
+    }
+
+    public void  addImages(String image){
+        ArrayList<String> images =  this.images();
+        images.add(image);
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < images.size(); i++){
+            sb.append(images.get(i));
+            if(i != images.size() - 1){
+                sb.append(",");
+            }
+        }
+
+        this.images = sb.toString();
+        Log.d("add Images", this.images);
     }
 }

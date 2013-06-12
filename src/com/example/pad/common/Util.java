@@ -3,6 +3,7 @@ package com.example.pad.common;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import com.example.pad.models.User;
 
 import java.text.SimpleDateFormat;
@@ -78,5 +79,11 @@ public class Util {
     public String formatTime(String format, Date d){
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(d);
+    }
+
+    public static boolean isSDCardExist(){
+        boolean sdCardExist = Environment.getExternalStorageState()
+                .equals(android.os.Environment.MEDIA_MOUNTED);
+        return sdCardExist;
     }
 }
