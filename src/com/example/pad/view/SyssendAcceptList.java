@@ -40,7 +40,7 @@ public class SyssendAcceptList extends BaseActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
                 i.putExtra("syssend_id", syssends.get(position).getId());
-                i.setClass(SyssendAcceptList.this, SyssendForm.class);
+                i.setClass(SyssendAcceptList.this, SyssendAcceptForm.class);
                 startActivity(i);
             }
         });

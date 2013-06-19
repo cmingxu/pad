@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,6 @@ import com.example.pad.common.HttpHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.Syssend;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -25,15 +23,15 @@ import org.json.JSONObject;
  * Time: 9:38 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SyssendForm extends Activity {
+public class SyssendCompleteForm extends Activity {
     private TextView sendperson;
     private TextView sendtime;
     private TextView content;
     private Button action;
+    private EditText complete_desc;
     Syssend syssend;
     ProgressDialog progressDialog;
     HttpHelper httpHelper;
-    String path = "";
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,7 @@ public class SyssendForm extends Activity {
         long syssend_id = getIntent().getLongExtra("syssend_id", 0);
         syssend = Syssend.findById(syssend_id);
 
-        setContentView(R.layout.syssend_form);
+        setContentView(R.layout.syssend_accept_form);
 
         sendperson = (TextView)findViewById(R.id.sendperson);
         sendperson.setText(syssend.sendperson);
@@ -50,21 +48,14 @@ public class SyssendForm extends Activity {
         sendtime.setText(syssend.sendtime);
         content    = (TextView)findViewById(R.id.content);
         content.setText(syssend.content);
+        complete_desc = (EditText)findViewById(R.id.complete_desc);
 
         action     = (Button)findViewById(R.id.action);
-        if(syssend.ifComplete.equals("0")){
-            action.setText("完成");
-            path  = "wancheng";
-        }
-        if(syssend.ifck.equals("0")){
-            action.setText("接单");
-            path = "jiedan";
-        }
 
         action.setOnClickListener(new OnClickListener());
 
-        progressDialog = new ProgressDialog(SyssendForm.this);
-        httpHelper = new HttpHelper(SyssendForm.this, Util.instance().current_user.login, Util.instance().current_user.password);
+        progressDialog = new ProgressDialog(SyssendCompleteForm.this);
+        httpHelper = new HttpHelper(SyssendCompleteForm.this, Util.instance().current_user.login, Util.instance().current_user.password);
 
     }
 
@@ -75,21 +66,21 @@ public class SyssendForm extends Activity {
             progressDialog.setTitle(R.string.wait_please);
             progressDialog.setMessage(getString(R.string.users_reloading));
             progressDialog.show();
-            httpHelper.with(path + "?syssend_id=" + syssend.remoteId, null, new JsonHttpResponseHandler(){
+            httpHelper.with("syssends/complete" + "?syssend_id=" + syssend.remoteId, null, new JsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONObject s) {
+                    Toast.makeText(SyssendCompleteForm.this, R.string.jiedan_ok, Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
-                    Toast.makeText(SyssendForm.this, R.string.jiedan_ok, Toast.LENGTH_SHORT).show();
                     Intent i = new Intent();
-                    i.setClass(SyssendForm.this, Maintain.class);
+                    i.setClass(SyssendCompleteForm.this, Maintain.class);
                     startActivity(i);
-                    SyssendForm.this.finish();
+                    SyssendCompleteForm.this.finish();
                 }
 
                 @Override
                 public void onFailure(Throwable throwable, JSONObject jsonObject) {
                     progressDialog.dismiss();
-                    Toast.makeText(SyssendForm.this, R.string.jiedan_failed, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SyssendCompleteForm.this, R.string.jiedan_failed, Toast.LENGTH_SHORT).show();
                 }
             });
 

@@ -62,8 +62,7 @@ public class Syssend extends Model {
             syssend.sendtime = temp.getString("sendtime");
             syssend.style = temp.getString("style");
             syssend.jsr = temp.getString("jsr");
-            syssend.wyid  = temp.optString(
-                    "wyid");
+            syssend.wyid  = temp.optString("wyid");
             syssend.remoteId        = temp.getInt("id");
             syssends.add(syssend);
 

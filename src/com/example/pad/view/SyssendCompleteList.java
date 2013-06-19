@@ -40,7 +40,7 @@ public class SyssendCompleteList extends BaseActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
                 i.putExtra("syssend_id", syssends.get(position).getId());
-                i.setClass(SyssendCompleteList.this, SyssendForm.class);
+                i.setClass(SyssendCompleteList.this, SyssendCompleteForm.class);
                 startActivity(i);
             }
         });
