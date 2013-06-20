@@ -5,12 +5,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageButton;
-import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.common.SyssendService;
+import com.example.pad.common.NoticeService;
 import com.example.pad.common.Util;
 
 public class Main extends BaseActivity {
@@ -41,7 +39,7 @@ public class Main extends BaseActivity {
                  redirect(Main.this, Login.class);
                   Main.this.finish();
                     Util.instance().setCurrentUser(null);
-                    stopService(new Intent(Main.this, SyssendService.class)) ;
+                    stopService(new Intent(Main.this, NoticeService.class)) ;
                 }
             }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                 @Override

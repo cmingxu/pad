@@ -7,13 +7,9 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
 import com.example.pad.R;
-import com.example.pad.models.Syssend;
-import com.example.pad.models.User;
-import com.example.pad.view.Main;
+import com.example.pad.models.Notice;
 import com.example.pad.view.Maintain;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
@@ -21,7 +17,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -32,12 +27,12 @@ import java.util.TimerTask;
  * Time: 6:34 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SyssendService extends Service {
+public class NoticeService extends Service {
     private Timer timer;
     HttpHelper httpHelper;
 
-    public SyssendService() {
-        httpHelper = new HttpHelper(SyssendService.this, Util.instance().current_user.login, Util.instance().current_user.password);
+    public NoticeService() {
+        httpHelper = new HttpHelper(NoticeService.this, Util.instance().current_user.login, Util.instance().current_user.password);
     }
 
     private TimerTask updateTask = new TimerTask() {
@@ -45,32 +40,31 @@ public class SyssendService extends Service {
         public void run() {
             Log.i("ddd", "Timer task doing work");
 
-            httpHelper.with("syssends", null, new JsonHttpResponseHandler(){
+            httpHelper.with("notices", null, new JsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONArray s) {
-                    Log.d("123", s.toString());
 
                     try {
-                        ArrayList<Syssend> syssends = Syssend.fromJsonArray(s);
-                        for (Syssend syssend : syssends){
-                            if (Syssend.findByRemoteId(syssend.remoteId) == null) {
-                                syssend.save();
+                        ArrayList<Notice> notices = Notice.fromJsonArray(s);
+                        for (Notice notice : notices){
+                            if (Notice.findByRemoteId(notice.remoteId) == null) {
+                                notice.save();
 
                                 NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
                                 Notification n = new Notification(R.drawable.sns_qq_icon, "新维修单!", System.currentTimeMillis());
                                 n.flags = Notification.FLAG_AUTO_CANCEL;
-                                Intent i = new Intent(SyssendService.this, Maintain.class);
+                                Intent i = new Intent(NoticeService.this, Maintain.class);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                                 PendingIntent contentIntent = PendingIntent.getActivity(
-                                        SyssendService.this,
+                                        NoticeService.this,
                                         R.string.app_name,
                                         i,
                                         PendingIntent.FLAG_UPDATE_CURRENT);
 
                                 n.setLatestEventInfo(
-                                        SyssendService.this,
+                                        NoticeService.this,
                                         "新维修单",
-                                        syssend.content,
+                                        notice.danjuNeirong,
                                         contentIntent);
                                 nm.notify(R.string.app_name, n);
                             }
@@ -100,7 +94,7 @@ public class SyssendService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.d("qhwuqwwe", "service stop");
-        UIHelper.showLongToast(SyssendService.this, "Syssend Service on stop");
+        UIHelper.showLongToast(NoticeService.this, "Notice Service on stop");
         timer.cancel();
         timer = null;
 
@@ -110,9 +104,10 @@ public class SyssendService extends Service {
     public void onCreate() {
         Log.d("sfwefew", "service start");
         super.onCreate();
-        UIHelper.showLongToast(SyssendService.this, "Syssend Service on create");
+        UIHelper.showLongToast(NoticeService.this, "Notice Service on create");
         timer = new Timer("TweetCollectorTimer");
-        timer.schedule(updateTask, 1000L, 10 * 1000L);
+        timer.schedule(updateTask, 1000L, Config.NOTICE_FETCH_INTERVAL);
+
     }
 
     @Override

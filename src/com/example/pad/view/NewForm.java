@@ -144,7 +144,7 @@ public class NewForm extends BaseActivity {
         }
         weixiudan.mBaoxiuLeibie =categories.getSelectedItem().toString();
         weixiudan.mBaoxiuNeirong = baoxiuneirong.getText().toString();
-        weixiudan.mBaoxiuren   = Util.instance().getCurrentUser().login;
+        weixiudan.mBaoxiuren   = result.mYezhuName;
         weixiudan.mBaoXiuRiqi  = Util.instance().formatTime("yyyy/MM/dd", new Date());
         weixiudan.mDanyuanName = result.mDanyuanName;
         weixiudan.mDbSaved = 0;

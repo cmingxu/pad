@@ -25,6 +25,8 @@
     <string name="jiedan_ok">接单成功</string>
     <string name="jiedan_failed">接单失败</string>
     <string name="iwant_complete">我要完成</string>
+    <string name="wancheng_ok">完成单据成功</string>
+    <string name="wancheng_failed">完成单据失败</string>
 
 
 

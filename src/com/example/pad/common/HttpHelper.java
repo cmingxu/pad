@@ -23,7 +23,7 @@ public class HttpHelper {
         this.context = context;
         client = new AsyncHttpClient();
         client.setTimeout(Config.HTTP_TIMEOUT);
-        client.addHeader("Authorization", login + ":" + password);
+        client.addHeader("authorization", login + ":" + password);
         client.addHeader("Accept", "application/json");
         client.addHeader("Content-Type", "application/json");
     }

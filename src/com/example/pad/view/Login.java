@@ -9,7 +9,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import com.activeandroid.query.Select;
 import android.widget.*;
 import com.example.pad.*;
 import com.example.pad.common.*;
@@ -192,7 +191,7 @@ public class Login extends BaseActivity {
             if (u != null){
                 Util.instance().setCurrentUser(u);
                 redirect(Login.this, Main.class);
-                startService(new Intent(Login.this, SyssendService.class));
+                startService(new Intent(Login.this, NoticeService.class));
 
             }else{
                 Toast.makeText(Login.this, R.string.input_error, Toast.LENGTH_SHORT).show();
