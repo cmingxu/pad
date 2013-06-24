@@ -42,7 +42,6 @@ public class NoticeAcceptForm extends BaseActivity {
         content    = (TextView)findViewById(R.id.content);
         accept_btn = (Button)findViewById(R.id.action);
 
-
         sendPerson.setText(n.sendPerson);
         sendTime.setText(n.sendTime);
         content.setText(n.danjuNeirong);
@@ -53,21 +52,22 @@ public class NoticeAcceptForm extends BaseActivity {
         accept_btn.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
+                n.accept();
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage(getString(R.string.users_reloading));
                 progressDialog.show();
 
-                httpHelper.with("/jiedan?id" + n.remoteId, null, new JsonHttpResponseHandler(){
+                httpHelper.with("jiedan?id=" + n.remoteId, null, new JsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
                         progressDialog.dismiss();
-                        n.accept();
+                        n.acceptUpload = true;
+                        n.save();
                         Toast.makeText(NoticeAcceptForm.this, R.string.jiedan_ok, Toast.LENGTH_SHORT).show();
                         Intent i = new Intent();
                         i.setClass(NoticeAcceptForm.this, Maintain.class);
                         startActivity(i);
                         NoticeAcceptForm.this.finish();
-
                     }
 
                     @Override

@@ -2,7 +2,9 @@ package com.example.pad.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,12 +40,14 @@ public class NoticeCompleteList extends BaseActivity {
         notice_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                redirect(NoticeCompleteList.this, NoticeCompleteForm.class);
-            }
+                Notice n = notices.get(position);
+                Intent i = new Intent();
+                i.setClass(NoticeCompleteList.this, NoticeCompleteForm.class);
+                i.putExtra("notice_id", n.getId());
+                startActivity(i);            }
         });
 
     }
-
 
     class NoticeListViewAdapter extends BaseAdapter {
 
@@ -75,9 +79,10 @@ public class NoticeCompleteList extends BaseActivity {
             LayoutInflater inflater = (LayoutInflater)NoticeCompleteList.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.notice_item, null);
             TextView title = (TextView)view.findViewById(R.id.title);
-            TextView content = (TextView)findViewById(R.id.content);
+            TextView content = (TextView)view.findViewById(R.id.content);
 
             title.setText(notice.danjuBiaoti);
+            Log.d("weeefe", notice.danjuNeirong);
             content.setText(notice.danjuNeirong);
 
             return view;

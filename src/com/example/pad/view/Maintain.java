@@ -19,7 +19,6 @@ import com.example.pad.models.Weixiudan;
  */
 public class Maintain extends BaseActivity {
     public static final String LOG_TAG = "Maintain_Activity";
-    private Button back_btn;
     private Button new_form_btn;
     private Button iwant_upload_btn;
     private Button iwant_accept_btn;
@@ -32,8 +31,6 @@ public class Maintain extends BaseActivity {
 
         setContentView(R.layout.maintain);
         current_user_name = Util.instance().getCurrentUser().login;
-        back_btn = (Button)findViewById(R.id.back_btn);
-        back_btn.setOnClickListener(new BackBtnOnClickListener());
         new_form_btn = (Button)findViewById(R.id.new_form_btn);
         new_form_btn.setOnClickListener(new NewFormOnClickListener());
         iwant_upload_btn = (Button)findViewById(R.id.iwant_upload_btn);

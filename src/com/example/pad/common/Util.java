@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
+import android.util.Log;
 import com.example.pad.models.User;
 
 import java.text.SimpleDateFormat;
@@ -63,9 +64,12 @@ public class Util {
 
 
     public boolean isNetworkConnected(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo ni = cm.getActiveNetworkInfo();
-        return ni != null && ni.isConnectedOrConnecting();
+//        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo ni = cm.getActiveNetworkInfo();
+//        return ni != null && ni.isConnectedOrConnecting();
+
+        Log.d("esd=========================", "" + this.getNetworkType(context));
+        return this.getNetworkType(context) != 0;
     }
 
     public void setCurrentUser(User u){

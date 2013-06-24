@@ -4,18 +4,20 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.Util;
+import com.example.pad.models.Cidian;
 import com.example.pad.models.Notice;
+import com.example.pad.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,44 +30,107 @@ public class NoticeCompleteForm extends BaseActivity {
     private TextView sendPerson;
     private TextView sendTime;
     private TextView content;
-    private EditText description;
-    private Button accept_btn;
+    private Spinner description;
+    private Button submit;
     ProgressDialog progressDialog;
+    private RadioGroup radioGroup;
+    private RadioButton wancheng_radio;
+    private RadioButton daixiu_raidio;
     HttpHelper httpHelper;
+    ArrayAdapter<String> adapter;
 
     public void onCreate(Bundle savedInstanceState) {
         final Notice n = Notice.findById(getIntent().getLongExtra("notice_id", 0l));
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.notice_accept_form);
+        setContentView(R.layout.notice_complete_form);
 
         sendPerson = (TextView)findViewById(R.id.sendperson);
         sendTime   = (TextView)findViewById(R.id.sendtime);
         content    = (TextView)findViewById(R.id.content);
-        accept_btn = (Button)findViewById(R.id.action);
-        description = (EditText)findViewById(R.id.complete_desc) ;
+        submit = (Button)findViewById(R.id.submit_btn);
+        description = (Spinner)findViewById(R.id.description);
+        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
+        wancheng_radio = (RadioButton)findViewById(R.id.wancheng_radio);
+        daixiu_raidio  = (RadioButton)findViewById(R.id.daixiu_radio);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (group.getCheckedRadioButtonId()){
+                    case R.id.wancheng_radio:
+                        ArrayList<String> m= new ArrayList<String>();
+                        for(Cidian u : Cidian.allWanCheng()){
+                            m.add(u.mMingcheng);
+                        }
+
+                        adapter = new ArrayAdapter<String>(NoticeCompleteForm.this,android.R.layout.simple_spinner_item, m);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        description.setAdapter(adapter);
+                        break;
+                    case R.id.daixiu_radio:
+                        ArrayList<String> s= new ArrayList<String>();
+                        for(Cidian u : Cidian.allJiedan()){
+                            s.add(u.mMingcheng);
+                        }
+
+                        adapter = new ArrayAdapter<String>(NoticeCompleteForm.this,android.R.layout.simple_spinner_item, s);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        description.setAdapter(adapter);
+                        break;
+                    default:
+                        break;
+                }
+
+
+            }
+        });
 
         sendPerson.setText(n.sendPerson);
         sendTime.setText(n.sendTime);
         content.setText(n.danjuNeirong);
         progressDialog = new ProgressDialog(this);
 
+        ArrayList<String> m= new ArrayList<String>();
+        for(Cidian u : Cidian.allWanCheng()){
+            m.add(u.mMingcheng);
+        }
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, m);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        description.setAdapter(adapter);
+
+
         httpHelper = new HttpHelper(this, Util.instance().current_user.login, Util.instance().current_user.password);
 
-        accept_btn.setOnClickListener(new Button.OnClickListener(){
+        submit.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String desc = description.getText().toString();
+                String desc ="";
+                if(description.getSelectedItem() != null) {
+                    description.getSelectedItem().toString();
+                }
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage(getString(R.string.users_reloading));
                 progressDialog.show();
 
 
-                httpHelper.with("/wancheng?id" + n.remoteId + "&desc="  + desc, null, new JsonHttpResponseHandler(){
+                String path;
+                if(radioGroup.getCheckedRadioButtonId() == R.id.wancheng_radio){
+                    path = "wancheng";
+                    n.complete();
+                }  else{
+                    path = "daixiu";
+                    n.daixiu();
+                }
+                httpHelper.with(path + "?id=" + n.remoteId + "&desc="  + desc, null, new JsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
                         progressDialog.dismiss();
-                        n.complete();
+                        if (radioGroup.getCheckedRadioButtonId() == R.id.wancheng_radio){
+                           n.completeUpload = true;
+                        }   else {
+                            n.daixiuUpload = true;
+                        }
+                        n.save();
                         Toast.makeText(NoticeCompleteForm.this, R.string.wancheng_ok, Toast.LENGTH_SHORT).show();
                         Intent i = new Intent();
                         i.setClass(NoticeCompleteForm.this, Maintain.class);
@@ -87,6 +152,7 @@ public class NoticeCompleteForm extends BaseActivity {
 
             }
         });
+
 
 
 

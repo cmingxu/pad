@@ -17,19 +17,27 @@
     <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="维修内容"
               android:id="@+id/content" android:layout_gravity="center" android:layout_margin="5dip"
               android:textSize="20dip"/>
-    <EditText
+    <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:orientation="horizontal" android:id="@+id/radioGroup">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="完成"
+                android:id="@+id/wancheng_radio" android:checked="true" android:layout_weight="1"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="待修"
+                android:id="@+id/daixiu_radio" android:checked="false" android:layout_weight="1"/>
+    </RadioGroup>
+    <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="完成情况"
-            android:id="@+id/complete_desc" android:lines="3" android:password="false" android:gravity="left|top"/>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:gravity="center_horizontal">
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="完成"
-                android:id="@+id/action"/>
-    </LinearLayout>
+            android:id="@+id/description"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="51dp"
+            android:text="提交"
+            android:id="@+id/submit_btn" android:layout_gravity="center"/>
 </LinearLayout>

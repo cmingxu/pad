@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import com.example.pad.BaseActivity;
@@ -33,20 +34,7 @@ public class Main extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            new AlertDialog.Builder(Main.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                 redirect(Main.this, Login.class);
-                  Main.this.finish();
-                    Util.instance().setCurrentUser(null);
-                    stopService(new Intent(Main.this, NoticeService.class)) ;
-                }
-            }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-                }
-            }).show();
+        exit();
 
         }
     }
@@ -61,6 +49,18 @@ public class Main extends BaseActivity {
         }
     }
 
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
+                && event.getAction() != 1) {
+
+            exit();
+            return true;
+        }
+
+        return super.dispatchKeyEvent(event);
+    }
+
     protected class XunjianClickListener implements View.OnClickListener{
 
         @Override
@@ -68,4 +68,23 @@ public class Main extends BaseActivity {
             redirect(Main.this, XunjianList.class);
         }
     }
+
+    public void exit(){
+        new AlertDialog.Builder(Main.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                redirect(Main.this, Login.class);
+                Main.this.finish();
+                Util.instance().setCurrentUser(null);
+                stopService(new Intent(Main.this, NoticeService.class)) ;
+            }
+        }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
+
+    }
+
 }

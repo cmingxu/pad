@@ -45,7 +45,6 @@ public class Login extends BaseActivity {
 
 
     public void onCreate(Bundle savedInstanceState) {
-        Log.d("SDXACCCCCCCCCCCCCCCCCCCCCCCC", " " + Util.isSDCardExist());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
         logoutBtn = (Button)findViewById(R.id.logout_btn);
@@ -89,8 +88,6 @@ public class Login extends BaseActivity {
     protected class LogoutOnClickListener implements View.OnClickListener{
 
         @Override
-
-
         public void onClick(View view) {
             new AlertDialog.Builder(Login.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
@@ -113,8 +110,12 @@ public class Login extends BaseActivity {
         @Override
         public void onClick(View view) {
             if(!Util.instance().isNetworkConnected(Login.this)){
-                Toast.makeText(Login.this, R.string.network_error, Toast.LENGTH_SHORT);
+                UIHelper.showLongToast(Login.this, getString(R.string.network_error));
+
+                return;
             }
+
+
             progressDialog.setTitle(R.string.wait_please);
             progressDialog.setMessage(getString(R.string.users_reloading));
             progressDialog.show();
@@ -177,11 +178,18 @@ public class Login extends BaseActivity {
     private class LoginInOnClickListener implements View.OnClickListener {
 
         @Override
+
         public void onClick(View view) {
             if (spinner.getSelectedItem()  == null) {
                 UIHelper.showLongToast(Login.this, getString(R.string.select_a_login));
                 return;
             }
+
+            if (StringUtils.isEmpty(spinner.getSelectedItem().toString())) {
+                UIHelper.showLongToast(Login.this, getString(R.string.select_a_login));
+                return;
+            }
+
 
             if (Config.passwordRequired() && passwordField.getText().toString() == null) {
                 UIHelper.showLongToast(Login.this, getString(R.string.input_password));
@@ -285,6 +293,24 @@ public class Login extends BaseActivity {
                     try {
                         ArrayList<Louceng> loucengs = Louceng.fromJsonArray(jsonArray);
                         for(Louceng l : loucengs) l.save();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    progressDialog.dismiss();
+                    Toast.makeText(Login.this, R.string.data_sync_ok, Toast.LENGTH_SHORT).show();
+
+
+                }
+            });
+
+            httpHelper.with("dicts", null, new JsonHttpResponseHandler(){
+                @Override
+                public void onSuccess(JSONArray jsonArray) {
+                    try {
+                        ArrayList<Cidian> cidians = Cidian.fromJsonArray(jsonArray);
+                        for(Cidian l : cidians) l.save();
 
                     } catch (JSONException e) {
                         e.printStackTrace();

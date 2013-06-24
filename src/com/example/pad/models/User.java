@@ -83,8 +83,6 @@ public class User extends Model {
         List<User> u = new Select().from(User.class).execute();
 
 
-        Log.d("aaa", new Select().from(User.class).where(wherence).orderBy("id").toSql());
-        Log.d("ass", u.toString());
         return u;
     }
 

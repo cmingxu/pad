@@ -10,18 +10,10 @@
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="我要上传(3)"
-            android:id="@+id/iwant_upload_btn"/>
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:text="我要接单(3)"
             android:id="@+id/iwant_accept_btn"/>
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我要完成(5)"
             android:id="@+id/iwant_complete" android:layout_gravity="center"/>
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="确定完成"
-            android:id="@+id/back_btn" android:layout_gravity="center|left"/>
+    <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我要上传(3)"
+            android:id="@+id/iwant_upload_btn" android:layout_gravity="right|center_vertical"/>
 </LinearLayout>

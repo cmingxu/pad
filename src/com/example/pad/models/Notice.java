@@ -39,8 +39,17 @@ public class Notice extends Model{
     public boolean isAccept;
     @Column(name="isComplete")
     public boolean isComplete;
+    @Column(name="isDaixiu")
+    public boolean isDaixiu;
     @Column(name="jsr")
+
     public String jsr;
+    @Column(name="acceptUploaded")
+    public boolean acceptUpload;
+    @Column(name="completeUploaded")
+    public boolean completeUpload;
+    @Column(name="daixiuUpload")
+    public boolean daixiuUpload;
 
     public static ArrayList<Notice> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
@@ -55,6 +64,12 @@ public class Notice extends Model{
             notice.danjuNeirong = temp.getString("单据内容");
             notice.remoteId     = temp.getInt("id");
             notice.jsr          = temp.getString("接收人");
+            notice.isAccept = false;
+            notice.isComplete = false;
+            notice.isDaixiu = false;
+            notice.acceptUpload = false;
+            notice.completeUpload = false;
+            notice.daixiuUpload = false;
             notices.add(notice);
 
         }
@@ -78,9 +93,13 @@ public class Notice extends Model{
         this.isComplete = true;
         this.save();
     }
+    public void daixiu(){
+        this.isDaixiu = true;
+        this.save();
+    }
 
     public static int complete_count(String jsr){
-        return new Select().from(Notice.class).where("isAccept = 1 and isComplete=0 and jsr=?", jsr).execute().size();
+        return new Select().from(Notice.class).where("isAccept = 1 and isComplete=0 and isDaixiu=0 and jsr=?", jsr).execute().size();
     }
 
     public static Notice findByRemoteId(int remoteId){

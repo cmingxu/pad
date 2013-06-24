@@ -23,9 +23,9 @@ public class UIHelper {
     }
 
 
-public static void showLongToast(Context context, String content){
+    public static void showLongToast(Context context, String content){
     Toast.makeText(context, content, Toast.LENGTH_LONG).show();
-}
+    }
 
     public static void showShortToast(Context context, String content){
         Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
