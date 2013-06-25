@@ -27,6 +27,12 @@
     <string name="iwant_complete">我要完成</string>
     <string name="wancheng_ok">完成单据成功</string>
     <string name="wancheng_failed">完成单据失败</string>
+    <string name="accept_notice_saved_ok">接单信息保存成功</string>
+    <string name="accept_notice_saved_failed">接单信息保存失败</string>
+    <string name="complete_notice_saved_ok">完成单据保存成功</string>
+    <string name="complete_notice_saved_fail">完成单据保存失败</string>
+
+
 
 
 

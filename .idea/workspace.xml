@@ -36,14 +36,14 @@
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
     <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371826697367" ignored="false" />
     <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372071370173" ignored="false" />
-    <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371705399541" ignored="false" />
-    <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371613290847" ignored="false" />
+    <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372144215165" ignored="false" />
+    <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372154982067" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370353999390" ignored="false" />
-    <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371712194905" ignored="false" />
+    <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372149423260" ignored="false" />
     <file path="/AddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370245178346" ignored="false" />
     <file path="/AppConfig.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367638698216" ignored="false" />
     <file path="/AppContext.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368849502316" ignored="false" />
-    <file path="/BaseActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371609894605" ignored="false" />
+    <file path="/BaseActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372151202799" ignored="false" />
     <file path="/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366527919040" ignored="false" />
     <file path="/Loupan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366527673034" ignored="false" />
     <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368862466296" ignored="false" />
@@ -1039,7 +1039,7 @@
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/widget/ActivityChooserModel.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019778" ignored="false" />
     <file path="/ActionBar.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657173312" ignored="false" />
     <file path="/a.dummy" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369302460800" ignored="false" />
-    <file path="/Weixiudan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371010225321" ignored="false" />
+    <file path="/Weixiudan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372144197800" ignored="false" />
     <file path="/Zhuhu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371027508855" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/app/models/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370254462704" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/app/controllers/Weixiudans.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
@@ -1067,7 +1067,7 @@
     <file path="/new_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368868051732" ignored="false" />
     <file path="/TakePic.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368870073492" ignored="false" />
     <file path="/take_pic.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368869411401" ignored="false" />
-    <file path="/WeixiudanList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372063426701" ignored="false" />
+    <file path="/WeixiudanList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372150027168" ignored="false" />
     <file path="/XunjianList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369963691104" ignored="false" />
     <file path="/Xunjian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1369957497451" ignored="false" />
     <file path="/WeixiudanUpload.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370081064453" ignored="false" />
@@ -1086,12 +1086,12 @@
     <file path="/SyssendAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370421325752" ignored="false" />
     <file path="/SyssendCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371608231339" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/example/pad/R.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371707523124" ignored="false" />
-    <file path="/Notice.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372081514500" ignored="false" />
+    <file path="/Notice.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372142618236" ignored="false" />
     <file path="/NoticeService.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371704909700" ignored="false" />
-    <file path="/NoticeAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372066848998" ignored="false" />
-    <file path="/NoticeCompleteList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372068560169" ignored="false" />
-    <file path="/NoticeAcceptForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372081368707" ignored="false" />
-    <file path="/NoticeCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372083314131" ignored="false" />
+    <file path="/NoticeAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372153890158" ignored="false" />
+    <file path="/NoticeCompleteList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372138321257" ignored="false" />
+    <file path="/NoticeAcceptForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372151300371" ignored="false" />
+    <file path="/NoticeCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372144726045" ignored="false" />
     <file path="/weixiudan_list_seperator.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372064906212" ignored="false" />
     <file path="/styles.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372065435571" ignored="false" />
     <file path="/Zidian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372071151746" ignored="false" />
@@ -1173,19 +1173,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="WeixiudanList.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java">
+      <file leaf-file-name="NoticeAcceptList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="0" selection-start="6623" selection-end="6623" vertical-scroll-proportion="0.33333334">
+            <state line="38" column="63" selection-start="1155" selection-end="1225" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoticeAcceptList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptList.java">
+      <file leaf-file-name="NoticeCompleteList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="33" selection-start="1371" selection-end="1606" vertical-scroll-proportion="0.0">
+            <state line="40" column="0" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewForm.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="212" column="21" selection-start="8219" selection-end="8219" vertical-scroll-proportion="0.611332">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/BaseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="9" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1194,31 +1212,19 @@
       <file leaf-file-name="NoticeCompleteForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="21" selection-start="4381" selection-end="4381" vertical-scroll-proportion="0.0">
+            <state line="150" column="123" selection-start="6197" selection-end="6197" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#1959#3399#0" expanded="true" />
-                <element signature="e#3388#3389#0" expanded="true" />
-                <element signature="e#4093#6204#0" expanded="true" />
-                <element signature="e#6193#6194#0" expanded="true" />
+                <element signature="e#1999#3439#0" expanded="true" />
+                <element signature="e#3428#3429#0" expanded="true" />
+                <element signature="e#4133#6340#0" expanded="true" />
+                <element signature="e#6329#6330#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cidian.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Cidian.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="75" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#867#875#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notice_complete_form.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/notice_complete_form.xml">
+      <file leaf-file-name="notice_list.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/notice_list.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
@@ -1229,19 +1235,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoticeCompleteList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="70" selection-start="1546" selection-end="1546" vertical-scroll-proportion="0.0">
+      <file leaf-file-name="new_form.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/new_form.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
+      <file leaf-file-name="Weixiudan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2466" selection-end="2680" vertical-scroll-proportion="0.0">
+            <state line="136" column="0" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notice_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/notice_item.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1250,25 +1271,7 @@
       <file leaf-file-name="NoticeAcceptForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="37" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Notice.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Notice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="99" selection-start="3035" selection-end="3035" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maintain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="90" selection-start="1809" selection-end="1809" vertical-scroll-proportion="0.0">
+            <state line="72" column="51" selection-start="2629" selection-end="2714" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1289,29 +1292,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/drawable-mdpi/custom_btn_shakespeare.xml" />
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/res/layout/weixiudan_list_seperator.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Maintain.java" />
-        <option value="$PROJECT_DIR$/res/layout/maintain.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Zidian.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/User.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Cidian.java" />
         <option value="$PROJECT_DIR$/res/layout/notice_complete_form.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Maintain.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Notice.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/BaseActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteForm.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Notice.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptList.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java" />
+        <option value="$PROJECT_DIR$/res/layout/notice_list.xml" />
+        <option value="$PROJECT_DIR$/res/layout/new_form.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NewForm.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="718" />
+    <option name="width" value="1920" />
+    <option name="height" value="1102" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1429,28 +1432,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1470,6 +1451,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-mdpi" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1785,29 +1784,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="718" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1102" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.6497561" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.6497561" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.5183752" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2145144" sideWeight="0.5183752" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.67346936" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32565284" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.47857141" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.397351" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39634147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52040815" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18409818" sideWeight="0.09878419" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4819512" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="0" y="22" width="1280" height="718" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48162475" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-1329" y="258" width="1280" height="800" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27748132" sideWeight="0.6497561" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.55230767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27748132" sideWeight="0.5183752" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34719536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1884,67 +1883,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/weixiudan_list_seperator.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="724" selection-end="724" vertical-scroll-proportion="-8.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/maintain.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/NoticeService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="52" selection-start="3842" selection-end="3842" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="115" selection-end="161" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/notice_item.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="1982" selection-end="2195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2466" selection-end="2680" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="70" selection-start="1546" selection-end="1546" vertical-scroll-proportion="0.0">
+        <state line="36" column="68" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1959,59 +1900,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptList.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="33" selection-start="1371" selection-end="1606" vertical-scroll-proportion="0.0">
+        <state line="111" column="8" selection-start="3879" selection-end="4062" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="37" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Cidian.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="75" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#867#875#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="21" selection-start="4381" selection-end="4381" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1959#3399#0" expanded="true" />
-            <element signature="e#3388#3389#0" expanded="true" />
-            <element signature="e#4093#6204#0" expanded="true" />
-            <element signature="e#6193#6194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="90" selection-start="1809" selection-end="1809" vertical-scroll-proportion="0.0">
+        <state line="31" column="31" selection-start="1610" selection-end="1610" vertical-scroll-proportion="-18.6">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Notice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="99" selection-start="3035" selection-end="3035" vertical-scroll-proportion="0.0">
+        <state line="102" column="54" selection-start="3013" selection-end="3013" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="0" selection-start="6623" selection-end="6623" vertical-scroll-proportion="0.33333334">
+        <state line="326" column="38" selection-start="15002" selection-end="15002" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="9" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="51" selection-start="2629" selection-end="2714" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="123" selection-start="6197" selection-end="6197" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1999#3439#0" expanded="true" />
+            <element signature="e#3428#3429#0" expanded="true" />
+            <element signature="e#4133#6340#0" expanded="true" />
+            <element signature="e#6329#6330#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/notice_item.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="63" selection-start="1155" selection-end="1225" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1285" selection-end="1285" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/notice_list.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/new_form.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Weixiudan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="0" selection-start="4490" selection-end="4490" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="21" selection-start="8219" selection-end="8219" vertical-scroll-proportion="0.611332">
           <folding />
         </state>
       </provider>

@@ -162,9 +162,7 @@ public class NewForm extends BaseActivity {
     private class SaveOnClickListener implements Button.OnClickListener{
         @Override
         public void onClick(View v) {
-            progressDialog.setTitle(R.string.wait_please);
-            progressDialog.setMessage(getString(R.string.save_and_upload_inprogress));
-            progressDialog.show();
+
             handler = new Handler(){
                 @Override
                 public void handleMessage(Message msg) {
@@ -173,7 +171,8 @@ public class NewForm extends BaseActivity {
                         case WEIXIUDAN_SAVE_OK:
                             progressDialog.dismiss();
                             UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved));
-                            redirect(NewForm.this, Maintain.class);
+
+                            redirectWithClearTop(NewForm.this, Maintain.class);
                             break;
                         case WEIXIUDAN_SAVE_FAILE:
                             progressDialog.dismiss();
@@ -196,11 +195,6 @@ public class NewForm extends BaseActivity {
                 gatherWeixiudan();
                 weixiudan.mDbSaved  = 1;
                 try {
-                    Log.d("image", images.toString());
-                    for(String s : images){
-                        Log.d("image s", s);
-                        weixiudan.addImages(s);
-                    }
                     weixiudan.save();
 
                 }  catch (Exception e){
@@ -213,14 +207,20 @@ public class NewForm extends BaseActivity {
                 Log.d("toJSon", weixiudan.toQuery());
                 RequestParams params = new RequestParams();
                 try {
-                    params.put("image_size", String.valueOf(weixiudan.images().size()));
-                    int index = 0;
-                    for (String file_name : weixiudan.images()){
-                        params.put("image" + index, new File("/sdcard/" + NewForm.this.getPackageName() + "/" + file_name));
-                        index++;
-                    }
-                } catch(FileNotFoundException e) {}
 
+                     params.put("image1", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image1));
+                     params.put("image2", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image2));
+                     params.put("image3", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image3));
+                } catch(FileNotFoundException e) {}
+                if(!Util.instance().isNetworkConnected(NewForm.this)){
+                    UIHelper.showLongToast(NewForm.this, getString(R.string.network_error));
+
+                    return;
+                }
+
+                progressDialog.setTitle(R.string.wait_please);
+                progressDialog.setMessage(getString(R.string.save_and_upload_inprogress));
+                progressDialog.show();
                 new HttpHelper(NewForm.this, Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), params, new JsonHttpResponseHandler() {
 
                     @Override

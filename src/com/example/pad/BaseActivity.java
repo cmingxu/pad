@@ -38,9 +38,18 @@ import com.actionbarsherlock.app.SherlockActivity;
         AppManager.getAppManager().finishActivity(this);
     }
 
+
     protected void redirect(Context from, Class to){
         Intent i = new Intent();
         i.setClass(from, to);
+        from.startActivity(i);
+
+    }
+    protected void redirectWithClearTop(Context from, Class to){
+        Intent i = new Intent();
+        i.setClass(from, to);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         from.startActivity(i);
 
     }

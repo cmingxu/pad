@@ -36,6 +36,8 @@ public class NoticeAcceptList extends BaseActivity{
         notice_list = (ListView)findViewById(R.id.list_view);
         notice_list.setAdapter(new NoticeListViewAdapter(notices));
 
+        notice_list.setEmptyView((TextView)findViewById(R.id.empty));
+
         notice_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

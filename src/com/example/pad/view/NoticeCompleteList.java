@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.common.Util;
 import com.example.pad.models.Notice;
 
 import java.util.List;
@@ -32,10 +33,11 @@ public class NoticeCompleteList extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice_list);
-        final List<Notice> notices = new Select().from(Notice.class).where("isComplete=0").execute();
+        final List<Notice> notices = Notice.allComplete(Util.instance().getCurrentUser().login);
 
         notice_list = (ListView)findViewById(R.id.list_view);
         notice_list.setAdapter(new NoticeListViewAdapter(notices));
+        notice_list.setEmptyView((TextView)findViewById(R.id.empty));
 
         notice_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

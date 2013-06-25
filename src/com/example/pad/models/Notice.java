@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -98,8 +99,16 @@ public class Notice extends Model{
         this.save();
     }
 
+    public static int notUploadCount(String jsr){
+        return new Select().from(Notice.class).where("((isAccept = 1 and acceptUploaded=0) or (isComplete=1 and completeUploaded=0) or (isDaixiu=1 and daixiuUpload=0)) and jsr=?", jsr).execute().size();
+    }
+
     public static int complete_count(String jsr){
-        return new Select().from(Notice.class).where("isAccept = 1 and isComplete=0 and isDaixiu=0 and jsr=?", jsr).execute().size();
+        return new Select().from(Notice.class).where("(isAccept = 1 and isComplete=0 and isDaixiu=0) and jsr=?", jsr).execute().size();
+    }
+
+    public static List<Notice> allComplete(String jsr){
+        return new Select().from(Notice.class).where("(isAccept = 1 and isComplete=0 and isDaixiu=0) and jsr=?", jsr).execute();
     }
 
     public static Notice findByRemoteId(int remoteId){

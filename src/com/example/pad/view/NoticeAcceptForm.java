@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.Notice;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -53,6 +54,12 @@ public class NoticeAcceptForm extends BaseActivity {
             @Override
             public void onClick(View v) {
                 n.accept();
+                if(!Util.instance().isNetworkConnected(NoticeAcceptForm.this)){
+                    UIHelper.showLongToast(NoticeAcceptForm.this, getString(R.string.network_error));
+
+                    return;
+                }
+
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage(getString(R.string.users_reloading));
                 progressDialog.show();
@@ -63,11 +70,7 @@ public class NoticeAcceptForm extends BaseActivity {
                         progressDialog.dismiss();
                         n.acceptUpload = true;
                         n.save();
-                        Toast.makeText(NoticeAcceptForm.this, R.string.jiedan_ok, Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent();
-                        i.setClass(NoticeAcceptForm.this, Maintain.class);
-                        startActivity(i);
-                        NoticeAcceptForm.this.finish();
+                        redirectWithClearTop(NoticeAcceptForm.this, Maintain.class);
                     }
 
                     @Override

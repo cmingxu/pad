@@ -10,6 +10,7 @@ import android.widget.*;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.Cidian;
 import com.example.pad.models.Notice;
@@ -108,9 +109,6 @@ public class NoticeCompleteForm extends BaseActivity {
                 if(description.getSelectedItem() != null) {
                     description.getSelectedItem().toString();
                 }
-                progressDialog.setTitle(R.string.wait_please);
-                progressDialog.setMessage(getString(R.string.users_reloading));
-                progressDialog.show();
 
 
                 String path;
@@ -121,6 +119,15 @@ public class NoticeCompleteForm extends BaseActivity {
                     path = "daixiu";
                     n.daixiu();
                 }
+                if(!Util.instance().isNetworkConnected(NoticeCompleteForm.this)){
+                    UIHelper.showLongToast(NoticeCompleteForm.this, getString(R.string.network_error));
+
+                    return;
+                }
+                progressDialog.setTitle(R.string.wait_please);
+                progressDialog.setMessage(getString(R.string.users_reloading));
+                progressDialog.show();
+
                 httpHelper.with(path + "?id=" + n.remoteId + "&desc="  + desc, null, new JsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
@@ -132,10 +139,8 @@ public class NoticeCompleteForm extends BaseActivity {
                         }
                         n.save();
                         Toast.makeText(NoticeCompleteForm.this, R.string.wancheng_ok, Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent();
-                        i.setClass(NoticeCompleteForm.this, Maintain.class);
-                        startActivity(i);
-                        NoticeCompleteForm.this.finish();
+                        redirectWithClearTop(NoticeCompleteForm.this, Maintain.class);
+
                     }
 
                     @Override
