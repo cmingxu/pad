@@ -38,26 +38,21 @@
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView" android:layout_weight="1" android:minHeight="50dip"
-                android:src="@drawable/a"/>
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView1" android:layout_weight="1" android:src="@drawable/a"/>
+                android:id="@+id/imageView1" android:layout_weight="1" android:minHeight="50dip"
+                android:src="@drawable/a" android:longClickable="false"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageView2" android:layout_weight="1" android:src="@drawable/a"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3" android:layout_weight="1" android:src="@drawable/a"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" android:layout_gravity="center" android:gravity="center_horizontal">
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="照片"
-                android:id="@+id/take_pic_btn"/>
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
                 android:id="@+id/saveBtn"/>
     </LinearLayout>

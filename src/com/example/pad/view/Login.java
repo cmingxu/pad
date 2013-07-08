@@ -198,7 +198,11 @@ public class Login extends BaseActivity {
             User u = User.find_by_login_and_password(spinner.getSelectedItem().toString(),  passwordField.getText().toString());
             if (u != null){
                 Util.instance().setCurrentUser(u);
-                redirect(Login.this, Main.class);
+                if(Util.isTablet(Login.this)){
+                    redirect(Login.this, MainFragmentListActivity.class);
+                }else{
+                    redirect(Login.this, Main.class);
+                }
                 startService(new Intent(Login.this, NoticeService.class));
 
             }else{
@@ -224,6 +228,7 @@ public class Login extends BaseActivity {
             Loupan.deleteAll();
             Louge.deleteAll();
             Zhuhu.deleteAll();
+            Cidian.deleteAll();
 
             httpHelper.with("users", null, new JsonHttpResponseHandler(){
                 @Override

@@ -107,9 +107,8 @@ public class NoticeCompleteForm extends BaseActivity {
             public void onClick(View v) {
                 String desc ="";
                 if(description.getSelectedItem() != null) {
-                    description.getSelectedItem().toString();
+                    desc = description.getSelectedItem().toString();
                 }
-
 
                 String path;
                 if(radioGroup.getCheckedRadioButtonId() == R.id.wancheng_radio){
@@ -125,7 +124,7 @@ public class NoticeCompleteForm extends BaseActivity {
                     return;
                 }
                 progressDialog.setTitle(R.string.wait_please);
-                progressDialog.setMessage(getString(R.string.users_reloading));
+                progressDialog.setMessage("保存中");
                 progressDialog.show();
 
                 httpHelper.with(path + "?id=" + n.remoteId + "&desc="  + desc, null, new JsonHttpResponseHandler(){

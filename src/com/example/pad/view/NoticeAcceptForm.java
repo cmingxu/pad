@@ -61,7 +61,7 @@ public class NoticeAcceptForm extends BaseActivity {
                 }
 
                 progressDialog.setTitle(R.string.wait_please);
-                progressDialog.setMessage(getString(R.string.users_reloading));
+                progressDialog.setMessage("接单中");
                 progressDialog.show();
 
                 httpHelper.with("jiedan?id=" + n.remoteId, null, new JsonHttpResponseHandler(){

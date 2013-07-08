@@ -237,11 +237,15 @@ public class WeixiudanList extends BaseActivity
                 for(final Weixiudan weixiudan : weixiudans)    {
                     RequestParams params = new RequestParams();
                     try {
-                        params.put("image_size", String.valueOf(weixiudan.images().size()));
-                        int index = 0;
-                        for (String file_name : weixiudan.images()){
-                            params.put("image" + index, new File("/sdcard/" + WeixiudanList.this.getPackageName() + "/" + file_name));
-                            index++;
+
+                        if( weixiudan.image1 != null) {
+                            params.put("image1", new File("/sdcard/" + WeixiudanList.this.getPackageName() + "/" + weixiudan.image1));
+                        }
+                        if (weixiudan.image2 != null) {
+                            params.put("image2", new File("/sdcard/" + WeixiudanList.this.getPackageName() + "/" + weixiudan.image2));
+                        }
+                        if (weixiudan.image3 != null) {
+                            params.put("image3", new File("/sdcard/" + WeixiudanList.this.getPackageName() + "/" + weixiudan.image3));
                         }
                     } catch(FileNotFoundException e) {}
                     httpHelper.post("weixiudans?" + weixiudan.toQuery(), params, new JsonHttpResponseHandler() {

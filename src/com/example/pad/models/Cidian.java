@@ -57,7 +57,7 @@ public class Cidian extends Model {
     }
 
     public static List<Cidian> allJiedan(){
-        List<Cidian> u = new Select().from(Cidian.class).where("mLeibie='客服_维修_未完成原因'").execute();
+        List<Cidian> u = new Select().from(Cidian.class).where("mLeibie='客服_维修_未进行原因'").execute();
         return u;
     }
 

@@ -6,7 +6,9 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import com.example.pad.R;
 import com.example.pad.models.Notice;
@@ -52,6 +54,8 @@ public class NoticeService extends Service {
 
                                 NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
                                 Notification n = new Notification(R.drawable.sns_qq_icon, "新维修单!", System.currentTimeMillis());
+                                long[] vibrate = new long[] { 1000, 1000, 1000, 1000, 1000 };
+                                n.vibrate = vibrate;
                                 n.flags = Notification.FLAG_AUTO_CANCEL;
                                 Intent i = new Intent(NoticeService.this, Maintain.class);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);

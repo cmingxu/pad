@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
@@ -54,25 +55,30 @@ public class NewForm extends BaseActivity {
     public  static final   int WEIXIUDAN_SAVE_EXCEPTION = 3;
     public static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
 
+    public static final int IMAGE1 = 1;
+    public static final int IMAGE2 = 2;
+    public static final int IMAGE3 = 3;
 
 
 
-    private Button take_pic_btn;
+
     private Button saveBtn;
     private EditText address_choose_text;
     private EditText zhuhu_name_text;
     private EditText zhuhu_phone_text;
     private EditText baoxiuneirong;
     private EditText time_text;
+    private ImageView imageView1;
+    private ImageView imageView2;
+    private ImageView imageView3;
+    public int currentImageView = IMAGE1;
     private Spinner categories;
     private static final int IMAGE_CAPTURE = 0;
     public static final int CHOOSE_ADDRESS = 1;
 
-    private Uri imageUri;
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
     private Handler handler;
-    private ArrayList<String> images;
     private File tempFile = null;
     Weixiudan weixiudan;
     AddressChooserResult result;
@@ -82,7 +88,6 @@ public class NewForm extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_form);
 
-
         Bundle extra = getIntent().getExtras();
         if (extra != null){
             long weixiudan_id = extra.getLong("weixiudan_id");
@@ -90,9 +95,6 @@ public class NewForm extends BaseActivity {
         }else {
             weixiudan = new Weixiudan();
         }
-
-        take_pic_btn = (Button)findViewById(R.id.take_pic_btn);
-        take_pic_btn.setOnClickListener(new TakePicClickListener());
 
         saveBtn = (Button)findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new SaveOnClickListener());
@@ -107,6 +109,12 @@ public class NewForm extends BaseActivity {
         zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
         baoxiuneirong       = (EditText)findViewById(R.id.baoxiuneirong);
         time_text           = (EditText)findViewById(R.id.time);
+        imageView1 = (ImageView)findViewById(R.id.imageView1);
+        imageView2 = (ImageView)findViewById(R.id.imageView2);
+        imageView3 = (ImageView)findViewById(R.id.imageView3);
+        imageView1.setOnClickListener(new TakePicClickListener(IMAGE1));
+        imageView2.setOnClickListener(new TakePicClickListener(IMAGE2));
+        imageView3.setOnClickListener(new TakePicClickListener(IMAGE3));
         time_text.setText( Util.instance().formatTime("yyyy/MM/dd", new Date()));
         if(weixiudan.getId() != null){
             address_choose_text.setText(weixiudan.address());
@@ -129,12 +137,7 @@ public class NewForm extends BaseActivity {
 
         address_choose_text.setOnClickListener(new AddressChoseClickListener());
 
-
-
         progressDialog = new ProgressDialog(this);
-
-        images = new ArrayList<String>();
-
 
     }
 
@@ -208,9 +211,12 @@ public class NewForm extends BaseActivity {
                 RequestParams params = new RequestParams();
                 try {
 
-                     params.put("image1", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image1));
-                     params.put("image2", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image2));
-                     params.put("image3", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image3));
+                    if( weixiudan.image1 != null)
+                       params.put("image1", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image1));
+                    if (weixiudan.image2 != null)
+                        params.put("image2", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image2));
+                    if (weixiudan.image3 != null)
+                        params.put("image3", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image3));
                 } catch(FileNotFoundException e) {}
                 if(!Util.instance().isNetworkConnected(NewForm.this)){
                     UIHelper.showLongToast(NewForm.this, getString(R.string.network_error));
@@ -271,9 +277,14 @@ public class NewForm extends BaseActivity {
     }
 
     protected class TakePicClickListener implements Button.OnClickListener{
+        public int currentImageView;
+        public TakePicClickListener(int currentImageView) {
+            this.currentImageView = currentImageView;
+        }
 
         @Override
         public void onClick(View view) {
+            NewForm.this.currentImageView = this.currentImageView;
             final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             tempFile =  getTempFile(NewForm.this);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile( tempFile));
@@ -282,7 +293,6 @@ public class NewForm extends BaseActivity {
     }
 
     private File getTempFile(Context context){
-//        final File path = new File( Environment.getExternalStorageDirectory(), context.getPackageName() );
         final File path = new File( "/sdcard"   ,context.getPackageName() );
 
         if(!path.exists()){
@@ -297,7 +307,24 @@ public class NewForm extends BaseActivity {
         if (requestCode == IMAGE_CAPTURE) {
                 if (resultCode == RESULT_OK) {
                     Log.d("sddd", tempFile.getName());
-                  images.add(tempFile.getName());
+                    switch (NewForm.this.currentImageView)    {
+
+                    case IMAGE1:
+                        weixiudan.image1 = tempFile.getName();
+                        imageView1.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
+                        break;
+                        case IMAGE2:
+                            weixiudan.image2 = tempFile.getName();
+                            imageView2.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
+                            break;
+                        case IMAGE3:
+                            weixiudan.image3 = tempFile.getName();
+                            imageView3.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
+                            break;
+                        default:
+                            break;
+                    }
+
 
                 }
         }

@@ -1,5 +1,7 @@
 package com.example.pad.common;
 
+import java.util.HashMap;
+
 /**
  * Created with IntelliJ IDEA.
  * User: xcm
@@ -8,6 +10,7 @@ package com.example.pad.common;
  * To change this template use File | Settings | File Templates.
  */
 public class Config {
+    public static final String[] LINKS = new String[]{"维修", "巡检", "收楼", "配置"} ;
     public static final String SERVER_BASE_URL = "http://101.20.142.1:9000/";
 //    public static final String SERVER_BASE_URL = "http://192.168.0.113:9000/";
 
