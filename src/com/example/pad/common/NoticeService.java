@@ -53,7 +53,7 @@ public class NoticeService extends Service {
                                 notice.save();
 
                                 NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-                                Notification n = new Notification(R.drawable.sns_qq_icon, "新维修单!", System.currentTimeMillis());
+                                Notification n = new Notification(R.drawable.icon_gengxin, "新维修单!", System.currentTimeMillis());
                                 long[] vibrate = new long[] { 1000, 1000, 1000, 1000, 1000 };
                                 n.vibrate = vibrate;
                                 n.flags = Notification.FLAG_AUTO_CANCEL;

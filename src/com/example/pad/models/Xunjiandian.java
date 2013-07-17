@@ -38,6 +38,8 @@ public class Xunjiandian extends Model {
     public String mLeibie;
     @Column(name="mYuanLeixing")
     public String mYuanLeixing;
+    @Column(name="mRemoteId")
+    public int mRemoteId;
 
 
 
@@ -58,6 +60,7 @@ public class Xunjiandian extends Model {
             xunjiandian.mFangchanQuyu   = temp.optString("房产区域");
             xunjiandian.mLeibie   = temp.optString("类别");
             xunjiandian.mYuanLeixing   = temp.optString("源类型");
+            xunjiandian.mRemoteId = temp.optInt("id");
 
             xunjiandians.add(xunjiandian);
 

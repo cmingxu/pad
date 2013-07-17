@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/action_reloaduser"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom"
+            android:icon="@drawable/icon_gengxin"
+            android:title="Refresh"/>
+
+    <item
+            android:id="@+id/action_downloaddata"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom"
+            android:icon="@drawable/icon_shuaxin"
+            android:title="Refresh"/>
+    <item
+            android:id="@+id/action_settings"
+            android:title="设置">
+    </item>
+    <item
+            android:id="@+id/action_logout"
+            android:title="退出">
+    </item>
+</menu>

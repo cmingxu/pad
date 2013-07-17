@@ -6,14 +6,20 @@
               android:layout_height="match_parent">
 
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="新增单据"
-            android:id="@+id/new_form_btn" android:layout_gravity="bottom" android:layout_marginTop="50dip"/>
+            android:id="@+id/new_form_btn" android:layout_gravity="bottom" android:layout_marginTop="50dp"
+            android:background="@drawable/anniu_on" android:layout_margin="10dp"
+            android:textColor="@color/abs__background_holo_light" android:textSize="25dp"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="我要接单(3)"
-            android:id="@+id/iwant_accept_btn"/>
+            android:id="@+id/iwant_accept_btn" android:layout_margin="10dp" android:background="@drawable/anniu_on"
+            android:textSize="25dp" android:textColor="@color/abs__background_holo_light"/>
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我要完成(5)"
-            android:id="@+id/iwant_complete" android:layout_gravity="center"/>
+            android:id="@+id/iwant_complete" android:layout_gravity="center" android:background="@drawable/anniu_on"
+            android:layout_margin="10dp" android:textColor="@color/abs__background_holo_light" android:textSize="25dp"/>
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我要上传(3)"
-            android:id="@+id/iwant_upload_btn" android:layout_gravity="right|center_vertical"/>
+            android:id="@+id/iwant_upload_btn" android:layout_gravity="right|center_vertical"
+            android:background="@drawable/anniu_on" android:layout_margin="10dp" android:textSize="25dp"
+            android:textColor="@color/abs__background_holo_light"/>
 </LinearLayout>

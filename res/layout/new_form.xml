@@ -8,29 +8,35 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/address_choose_text" android:clickable="true" android:maxLines="1" android:hint="报修地址"/>
+            android:id="@+id/address_choose_text" android:clickable="true" android:maxLines="1" android:hint="报修地址"
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="2013/3/28"
-            android:id="@+id/time" android:editable="false" android:enabled="false" android:maxLines="1"/>
+            android:id="@+id/time" android:editable="false" android:enabled="false" android:maxLines="1"
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/zhuhuName" android:layout_gravity="center" android:hint="业主姓名"/>
+            android:id="@+id/zhuhuName" android:layout_gravity="center" android:hint="业主姓名"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/zhuHuPhone" android:layout_gravity="center" android:hint="业主电话"/>
+            android:id="@+id/zhuHuPhone" android:layout_gravity="center" android:hint="业主电话"
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/categories" android:layout_gravity="center"/>
+            android:id="@+id/categories" android:layout_gravity="center" android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/baoxiuneirong" android:layout_gravity="center" android:lines="3" android:longClickable="true"
-            android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"/>
+            android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -54,7 +60,9 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" android:layout_gravity="center" android:gravity="center_horizontal">
         <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
-                android:id="@+id/saveBtn"/>
+                android:id="@+id/saveBtn" android:background="@drawable/anniu_on" android:layout_marginTop="20dp"
+                android:textColorHighlight="@color/abs__background_holo_light"
+                android:textColor="@color/abs__background_holo_light" android:textSize="25dp"/>
     </LinearLayout>
 
 </LinearLayout>

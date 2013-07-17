@@ -9,7 +9,9 @@ import android.util.Log;
 import com.example.pad.models.User;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -96,5 +98,14 @@ public class Util {
         boolean xlarge = ((context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == 4);
         boolean large = ((context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE);
         return (xlarge || large);
+    }
+
+    public static ArrayList<String>  mapKeys(Map map){
+        ArrayList<String> keys = new ArrayList<String>();
+        for (Object key : map.keySet()){
+               String s = (String)key;
+            keys.add(s);
+        }
+        return keys;
     }
 }

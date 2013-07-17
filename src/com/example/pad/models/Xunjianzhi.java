@@ -34,6 +34,8 @@ public class Xunjianzhi extends Model {
     public boolean mShifouMoren;
     @Column(name="mShifouZhenggai")
     public boolean mShifouZhenggai;
+    @Column(name="mRemoteID")
+    public int mRemoteID;
    
 
 
@@ -53,6 +55,7 @@ public class Xunjianzhi extends Model {
             xunjianzhi.mZhi   = temp.getString("值");
             xunjianzhi.mShifouMoren   = temp.getBoolean("是否默认");
             xunjianzhi.mShifouZhenggai   = temp.getBoolean("是否整改");
+            xunjianzhi.mRemoteID = temp.optInt("id");
 
             xunjianzhis.add(xunjianzhi);
 

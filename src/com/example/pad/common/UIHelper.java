@@ -22,6 +22,10 @@ public class UIHelper {
         return instance;
     }
 
+    public static void showLongToast(Context context, int stringId){
+        Toast.makeText(context, context.getString(stringId), Toast.LENGTH_LONG).show();
+    }
+
 
     public static void showLongToast(Context context, String content){
     Toast.makeText(context, content, Toast.LENGTH_LONG).show();

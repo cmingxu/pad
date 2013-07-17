@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent" android:background="@drawable/bg">
 
     <TextView
             android:layout_width="wrap_content"
@@ -13,18 +13,12 @@
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/login_selector" android:layout_gravity="center"/>
+            android:id="@+id/login_selector" android:layout_gravity="center" android:layout_margin="10dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/passwordEt" android:maxLines="1" android:singleLine="true" android:hint="密码"
-            android:inputType="textPassword"/>
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="重新加载用户"
-            android:id="@+id/reload_users" android:layout_margin="10dip" android:clickable="true"
-            android:focusable="true"/>
+            android:inputType="textPassword" android:layout_margin="10dp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -32,27 +26,8 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
-                android:text="登录"
-                android:id="@+id/login_btn" android:layout_weight="1"/>
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="退出"
-                android:id="@+id/logout_btn" android:layout_gravity="center" android:layout_weight="1"/>
-    </LinearLayout>
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:weightSum="2">
-        <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="设置"
-                android:id="@+id/setting_btn" android:layout_weight="1"/>
-        <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="下载"
-                android:id="@+id/download_btn" android:layout_weight="1"/>
+                android:text="登  录"
+                android:id="@+id/login_btn" android:layout_weight="1" android:background="@drawable/denglu"
+                android:textSize="30dp" android:textColor="#ffffff" android:layout_margin="10dp"/>
     </LinearLayout>
 </LinearLayout>

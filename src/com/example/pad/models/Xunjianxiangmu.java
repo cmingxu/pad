@@ -30,6 +30,8 @@ public class Xunjianxiangmu extends Model {
     public String mBiaozhun;
     @Column(name="mShuoming")
     public String mShuoming;
+    @Column(name="mRemoteID")
+    public int mRemoteID;
 
 
 
@@ -46,6 +48,7 @@ public class Xunjianxiangmu extends Model {
             xunjianxiangmu.mMingcheng   = temp.getString("名称");
             xunjianxiangmu.mBiaozhun   = temp.getString("标准");
             xunjianxiangmu.mShuoming   = temp.getString("说明");
+            xunjianxiangmu.mRemoteID  = temp.optInt("id");
 
             xunjianxiangmus.add(xunjianxiangmu);
 

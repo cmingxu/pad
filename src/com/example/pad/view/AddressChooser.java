@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import com.actionbarsherlock.view.MenuItem;
 import com.activeandroid.Model;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
@@ -37,13 +38,15 @@ public class AddressChooser extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.address_chooser);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.icon_fanhui_on));
+        getSupportActionBar().setTitle("维修地址");
+
         listView = (ListView)findViewById(R.id.listView);
         adapter = new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListItemOnClickListener());
 
-        back_btn = (Button)findViewById(R.id.back_btn);
-        back_btn.setOnClickListener(new BackBtnClickListener());
     }
 
     private void changeAdapter(){
@@ -60,9 +63,7 @@ public class AddressChooser extends BaseActivity {
         listView.invalidate();
     }
 
-    protected class BackBtnClickListener implements Button.OnClickListener{
-        @Override
-        public void onClick(View view) {
+        public void back() {
             if (state.current_selecting.equals("louge")) {
                 Intent i = new Intent();
                 i.setClass(AddressChooser.this, NewForm.class);
@@ -75,6 +76,19 @@ public class AddressChooser extends BaseActivity {
             changeAdapter();
 
         }
+
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                back();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
     private class ListItemOnClickListener implements ListView.OnItemClickListener{

@@ -1,14 +1,14 @@
 package com.example.pad;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.MenuInflater;
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,8 +22,12 @@ import com.actionbarsherlock.app.SherlockActivity;
 
         public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams. FLAG_FULLSCREEN);
         AppManager.getAppManager().addActivity(this);
+
+            ActionBar bar = getSupportActionBar();
+            bar.setIcon(R.drawable.icon_zhuye);
+            bar.setTitle("PMP");
+            bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
 
     }
 
@@ -53,4 +57,5 @@ import com.actionbarsherlock.app.SherlockActivity;
         from.startActivity(i);
 
     }
+
 }
