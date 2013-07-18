@@ -34,10 +34,8 @@ public class Xunjiandanmingxi extends Model {
     public String mZhi;
     @Column(name="mShuoming")
     public String mShuoming;
-
-
-
-
+    @Column(name="mRemoteId")
+    public int mRemoteID;
 
     public static ArrayList<Xunjiandanmingxi> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
@@ -47,13 +45,13 @@ public class Xunjiandanmingxi extends Model {
             temp = s.getJSONObject(i);
             Xunjiandanmingxi xunjiandanmingxi = new Xunjiandanmingxi();
             xunjiandanmingxi.mXunjiandanId = temp.optString("巡检单id", "");
-            xunjiandanmingxi.mXiangmuId   = temp.optString("项目Id");
-            xunjiandanmingxi.mZhi   = temp.optString("mZhi");
-            xunjiandanmingxi.mZhiId   = temp.optString("mZhiId");
-            xunjiandanmingxi.mXunjianShijian   = temp.optString("mXunjianShijian");
-            xunjiandanmingxi.mBiaoshi   = temp.optString("mBiaoshi");
-            xunjiandanmingxi.mZhiId   = temp.optString("mZhiId");
-            xunjiandanmingxi.mShuoming   = temp.optString("mShuoming");
+            xunjiandanmingxi.mXiangmuId   = temp.optString("项目id");
+            xunjiandanmingxi.mZhi   = temp.optString("值");
+            xunjiandanmingxi.mZhiId   = temp.optString("值id");
+            xunjiandanmingxi.mXunjianShijian   = temp.optString("巡检时间");
+            xunjiandanmingxi.mBiaoshi   = temp.optString("标识");
+            xunjiandanmingxi.mShuoming   = temp.optString("说明");
+            xunjiandanmingxi.mRemoteID   = temp.optInt("id");
 
             xunjiandanmingxis.add(xunjiandanmingxi);
 

@@ -10,7 +10,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -97,9 +99,41 @@ public class Xunjiandan extends Model {
         return new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + this.mRemoteID).execute();
     }
 
+    public List<Xunjiandian> finishedXunjiandians(){
+        return this.xunjiandians(true);
+    }
 
-    public List<Xunjiandanmingxi> xunjiandiansh(){
-        return new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + this.mRemoteID).execute();
+    public List<Xunjiandian> notFinishedXunjiandians(){
+        return this.xunjiandians(false);
+    }
+
+
+     public List<Xunjiandian> xunjiandians(boolean finished){
+            List<Xunjiandanmingxi> xunjiandanmingxis;
+            if(finished)  {
+                xunjiandanmingxis= new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + this.mRemoteID + " and mXunjianShijian != ''").execute();
+             }
+            else{
+                xunjiandanmingxis = new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + this.mRemoteID+ " and mXunjianShijian = ''").execute();
+             }
+        StringBuilder sb = new StringBuilder("");
+        for(Xunjiandanmingxi mx : xunjiandanmingxis){
+            if(!sb.toString().equals(""))
+                sb.append(",");
+            sb.append(mx.mRemoteID);
+        }
+        List<Xunjianxiangmu> xunjianxiangmus = new Select().from(Xunjianxiangmu.class).where("mRemoteID in (" + sb.toString() + ")").execute();
+        Set set = new HashSet();
+        for(Xunjianxiangmu xm : xunjianxiangmus){
+            set.add(xm.mXunjiandianId);
+        }
+        StringBuilder sb1 = new StringBuilder("");
+        for(Object id: set){
+            if(!sb1.toString().equals(""))
+                sb1.append(",");
+            sb1.append((String)id);
+        }
+        return new Select().from(Xunjiandian.class).where("mRemoteId in (" + sb1.toString() + ")").execute();
     }
 
     public static List<Xunjiandian> xunjiandians(String username){
@@ -107,7 +141,8 @@ public class Xunjiandan extends Model {
     }
 
     public static List<Xunjiandian> finishedXunjiandian(String username){
-        return new Select().from(Xunjiandan.class).where("mXunjianren='" + username + "' and mShifouWancheng=1").execute();
+//        return new Select().from(Xunjiandan.class).where("mXunjianren='" + username + "' and mShifouWancheng=1").execute();
+        return null;
 
     }
 
@@ -116,6 +151,10 @@ public class Xunjiandan extends Model {
     }
 
 
+    public static Xunjiandan findByRemoteId(int id){
+        return new Select().from(Xunjiandan.class).where("mRemoteID=" + id + "").executeSingle();
+
+    }
 
     @Override
     public String toString() {

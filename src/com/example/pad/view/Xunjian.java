@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.actionbarsherlock.app.ActionBar;
@@ -32,45 +34,53 @@ import java.util.ArrayList;
 
 public class Xunjian extends SherlockFragmentActivity implements ActionBar.TabListener{
     private ListView listView;
+    Xunjiandan xunjiandan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian);
 
+        xunjiandan = Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
+
         ActionBar bar = getSupportActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        bar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
         bar.setDisplayHomeAsUpEnabled(true);
         bar.setDisplayShowTitleEnabled(true);
-        bar.setTitle("Activity Title");
+        bar.setIcon(getResources().getDrawable(R.drawable.icon_zhuye));
+        bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
+        bar.setTitle("巡检单： " + xunjiandan.mDanjuBianHao);
 
         ActionBar.Tab tab = getSupportActionBar().newTab();
-        tab.setText("未完成");
-        tab.setTag(1);
+        tab.setText("已完成");
+        tab.setTag("tab1");
         tab.setTabListener(this);
         getSupportActionBar().addTab(tab);
 
 
         ActionBar.Tab tab2 = getSupportActionBar().newTab();
-        tab2.setText("已完成");
+        tab2.setText("未完成");
         tab2.setTabListener(this);
-        tab.setTag(2);
+        tab2.setTag("tab2");
         getSupportActionBar().addTab(tab2);
 
         if (savedInstanceState != null) {
-            bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 0));
+            bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 1));
         }
 
         listView = (ListView)findViewById(R.id.xunjianxiangmus);
         ArrayList<String> xunjiandians = new ArrayList<String>();
-        for(Xunjiandian xunjiandian : Xunjiandan.xunjiandians("")){
-//            for(Xunjiandian xunjiandian : Xunjiandan.xunjiandians(Util.instance().current_user.login)){
-
-                xunjiandians.add(xunjiandian.mBianhao);
+        for(Xunjiandian xunjiandian : xunjiandan.finishedXunjiandians()){
+            xunjiandians.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
         }
+        AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            }
+        };
 
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, xunjiandians);
         listView.setAdapter(listViewAdapter);
+        listView.setOnItemClickListener(onItemClickListener);
 
     }
 
@@ -78,10 +88,9 @@ public class Xunjian extends SherlockFragmentActivity implements ActionBar.TabLi
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                // app icon in action bar clicked; go home
-//                Intent intent = new Intent(this, DashboardActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                startActivity(intent);
+                Intent intent = new Intent(this, Main.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -98,7 +107,25 @@ public class Xunjian extends SherlockFragmentActivity implements ActionBar.TabLi
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        listView = (ListView)findViewById(R.id.xunjianxiangmus);
+
+        if(tab.getTag()!=null && ((String)tab.getTag()).equals("tab1")){
+            ArrayList<String> xunjiandians = new ArrayList<String>();
+            for(Xunjiandian xunjiandian : xunjiandan.finishedXunjiandians()){
+                xunjiandians.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
+            }
+
+            ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, xunjiandians);
+            listView.setAdapter(listViewAdapter);
+        }   else{
+            ArrayList<String> xunjiandians = new ArrayList<String>();
+            for(Xunjiandian xunjiandian : xunjiandan.notFinishedXunjiandians()){
+                xunjiandians.add(xunjiandian.mMingcheng);
+            }
+
+            ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, xunjiandians);
+            listView.setAdapter(listViewAdapter);
+        }
     }
 
     @Override

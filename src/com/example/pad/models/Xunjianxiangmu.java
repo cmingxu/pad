@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -44,7 +45,7 @@ public class Xunjianxiangmu extends Model {
         for (int i = 0; i < s.length(); i++){
             temp = s.getJSONObject(i);
             Xunjianxiangmu xunjianxiangmu = new Xunjianxiangmu();
-            xunjianxiangmu.mXunjiandianId = temp.optString("巡检单Id", "");
+            xunjianxiangmu.mXunjiandianId = temp.optString("巡检点id", "");
             xunjianxiangmu.mMingcheng   = temp.getString("名称");
             xunjianxiangmu.mBiaozhun   = temp.getString("标准");
             xunjianxiangmu.mShuoming   = temp.getString("说明");

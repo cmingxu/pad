@@ -12,6 +12,7 @@ import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.User;
 import com.example.pad.models.Xunjiandan;
+import com.example.pad.models.Xunjiandanmingxi;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -94,6 +95,20 @@ public class XunjiandanListSelection extends BaseActivity {
                             }
                             progressDialog.hide();
                             UIHelper.showLongToast(XunjiandanListSelection.this, R.string.save_success);
+
+                        }
+                    });
+
+                    httpHelper.with("xunjiandanmingxis", null, new JsonHttpResponseHandler(){
+                        @Override
+                        public void onSuccess(JSONArray jsonArray) {
+                            try {
+                                ArrayList<Xunjiandanmingxi> xunjiandanmingxis = Xunjiandanmingxi.fromJsonArray(jsonArray);
+                                for(Xunjiandanmingxi u : xunjiandanmingxis) u.save();
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
 
                         }
                     });

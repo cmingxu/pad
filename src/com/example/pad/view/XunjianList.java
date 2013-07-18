@@ -32,12 +32,13 @@ public class XunjianList extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian_list);
         listView = (ListView)findViewById(R.id.xunjian_list);
-        List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).execute();
+        final List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).execute();
         listView.setAdapter(new XunjianDanAdapter(xunjians));
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
+                i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
                 i.setClass(XunjianList.this, Xunjian.class);
                 startActivity(i);
             }
