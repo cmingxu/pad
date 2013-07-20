@@ -3,13 +3,9 @@ package com.example.pad.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -17,8 +13,6 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.R;
-import com.example.pad.common.Util;
-import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandian;
 
 import java.util.ArrayList;
@@ -32,15 +26,22 @@ import java.util.ArrayList;
  */
 
 
-public class Xunjian extends SherlockFragmentActivity implements ActionBar.TabListener{
+public class Xunjiandan extends SherlockFragmentActivity implements ActionBar.TabListener{
     private ListView listView;
-    Xunjiandan xunjiandan;
+    com.example.pad.models.Xunjiandan xunjiandan;
+    ArrayList<Xunjiandian> mFinishedXunjiandians;
+    ArrayList<Xunjiandian> mNotFinishedxunjiandians;
+    ArrayAdapter<String> mFinishedListViewAdapter;
+    ArrayAdapter<String> mNotFinishedListViewAdapter;
+    boolean tabOneSelected;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian);
 
-        xunjiandan = Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
+        xunjiandan = com.example.pad.models.Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
 
         ActionBar bar = getSupportActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -67,22 +68,49 @@ public class Xunjian extends SherlockFragmentActivity implements ActionBar.TabLi
             bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 1));
         }
 
-        listView = (ListView)findViewById(R.id.xunjianxiangmus);
-        ArrayList<String> xunjiandians = new ArrayList<String>();
-        for(Xunjiandian xunjiandian : xunjiandan.finishedXunjiandians()){
-            xunjiandians.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
-        }
-        AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            }
-        };
+        mFinishedXunjiandians = (ArrayList<Xunjiandian>)xunjiandan.finishedXunjiandians();
+        mNotFinishedxunjiandians = (ArrayList<Xunjiandian>)xunjiandan.notFinishedXunjiandians();
 
-        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, xunjiandians);
-        listView.setAdapter(listViewAdapter);
-        listView.setOnItemClickListener(onItemClickListener);
+        listView = (ListView)findViewById(R.id.xunjianxiangmus);
+
+        ArrayList<String> finishedXunjiandianStrs = new ArrayList<String>();
+        ArrayList<String> notFinishedXunjiandianStrs = new ArrayList<String>();
+
+        for(Xunjiandian xunjiandian : mFinishedXunjiandians){
+            finishedXunjiandianStrs.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
+        }
+
+        for(Xunjiandian xunjiandian : mNotFinishedxunjiandians){
+            notFinishedXunjiandianStrs.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
+        }
+
+        tabOneSelected = true;
+
+        mFinishedListViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, finishedXunjiandianStrs);
+        mNotFinishedListViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notFinishedXunjiandianStrs);
+        listView.setAdapter(mFinishedListViewAdapter);
+        listView.setOnItemClickListener(new OnItemClickListener());
 
     }
+
+    public class OnItemClickListener implements ListView.OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            if(tabOneSelected){
+//                do nothing
+                Log.d("qoo", mFinishedXunjiandians.get(position).mBianhao);
+            }else{
+//                redirct to new activity
+                Log.d("weeeee", mNotFinishedxunjiandians.get(position).mBianhao);
+                Intent intent = new Intent();
+                intent.setClass(com.example.pad.view.Xunjiandan.this, com.example.pad.view.Xunjiandian.class);
+                intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
+                startActivity(intent);
+            }
+        }
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -110,21 +138,12 @@ public class Xunjian extends SherlockFragmentActivity implements ActionBar.TabLi
         listView = (ListView)findViewById(R.id.xunjianxiangmus);
 
         if(tab.getTag()!=null && ((String)tab.getTag()).equals("tab1")){
-            ArrayList<String> xunjiandians = new ArrayList<String>();
-            for(Xunjiandian xunjiandian : xunjiandan.finishedXunjiandians()){
-                xunjiandians.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
-            }
-
-            ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, xunjiandians);
-            listView.setAdapter(listViewAdapter);
+            tabOneSelected = true;
+            listView.setAdapter(mFinishedListViewAdapter);
         }   else{
-            ArrayList<String> xunjiandians = new ArrayList<String>();
-            for(Xunjiandian xunjiandian : xunjiandan.notFinishedXunjiandians()){
-                xunjiandians.add(xunjiandian.mMingcheng);
-            }
 
-            ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, xunjiandians);
-            listView.setAdapter(listViewAdapter);
+            tabOneSelected = false;
+            listView.setAdapter(mNotFinishedListViewAdapter);
         }
     }
 

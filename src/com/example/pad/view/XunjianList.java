@@ -2,17 +2,14 @@ package com.example.pad.view;
 
 import com.actionbarsherlock.app.ActionBar;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
-import com.actionbarsherlock.app.SherlockActivity;
 import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.models.Xunjiandan;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.Menu;
 
@@ -32,14 +29,14 @@ public class XunjianList extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian_list);
         listView = (ListView)findViewById(R.id.xunjian_list);
-        final List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).execute();
+        final List<com.example.pad.models.Xunjiandan> xunjians =  new Select().from(com.example.pad.models.Xunjiandan.class).execute();
         listView.setAdapter(new XunjianDanAdapter(xunjians));
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
                 i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
-                i.setClass(XunjianList.this, Xunjian.class);
+                i.setClass(XunjianList.this, Xunjiandan.class);
                 startActivity(i);
             }
         });
@@ -71,9 +68,9 @@ public class XunjianList extends BaseActivity
     }
 
     public class XunjianDanAdapter extends BaseAdapter{
-        List<Xunjiandan> xunjiandans = null;
+        List<com.example.pad.models.Xunjiandan> xunjiandans = null;
 
-        public XunjianDanAdapter(List<Xunjiandan> xunjiandans) {
+        public XunjianDanAdapter(List<com.example.pad.models.Xunjiandan> xunjiandans) {
             this.xunjiandans = xunjiandans;
         }
 
@@ -95,7 +92,7 @@ public class XunjianList extends BaseActivity
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Xunjiandan xunjiandan = (Xunjiandan)xunjiandans.get(position);
+            com.example.pad.models.Xunjiandan xunjiandan = (com.example.pad.models.Xunjiandan)xunjiandans.get(position);
             LayoutInflater inflator = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflator.inflate(R.layout.xunjiandan_item, null);
 

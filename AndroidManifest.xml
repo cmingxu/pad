@@ -34,18 +34,33 @@
                   android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name=".view.XunjianList"
                   android:configChanges="keyboardHidden|orientation|screenSize"/>
-        <activity android:name=".view.Xunjian"
+        <activity android:name=".view.Xunjiandan"
                   android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name=".view.NoticeAcceptList"/>
         <activity android:name=".view.NoticeCompleteList"/>
         <activity android:name=".view.NoticeAcceptForm"/>
         <activity android:name=".view.NoticeCompleteForm"/>
         <activity android:name=".view.MainFragmentListActivity"/>
-        <activity android:name=".view.DetailFragment"/>
-        <activity android:name=".view.ListFragment"/>
         <activity android:name=".view.XunjiandanListSelection"/>
+        <activity android:name=".view.Xunjiandian"/>
 
+        <activity
+                android:name="com.google.zxing.client.android.CaptureActivity"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="landscape"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <service android:name=".common.NoticeService"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

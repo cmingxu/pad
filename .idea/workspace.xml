@@ -24,8 +24,7 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="wewe" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" name="Default" comment="" />
@@ -33,13 +32,13 @@
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../game_studio/android-client/.idea/workspace.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364083820664" ignored="false" />
     <file path="/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371798067192" ignored="false" />
-    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373623995594" ignored="false" />
+    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374290357636" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
-    <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373789252480" ignored="false" />
-    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374064155337" ignored="false" />
+    <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374287762853" ignored="false" />
+    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289784615" ignored="false" />
     <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372144215165" ignored="false" />
     <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372160274427" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374058859224" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291745423" ignored="false" />
     <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372149423260" ignored="false" />
     <file path="/AddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374067946157" ignored="false" />
     <file path="/AppConfig.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367638698216" ignored="false" />
@@ -1070,7 +1069,7 @@
     <file path="/take_pic.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368869411401" ignored="false" />
     <file path="/WeixiudanList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372160156441" ignored="false" />
     <file path="/XunjianList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374124770568" ignored="false" />
-    <file path="/Xunjian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374130421539" ignored="false" />
+    <file path="/Xunjian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374290799762" ignored="false" />
     <file path="/WeixiudanUpload.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370081064453" ignored="false" />
     <file path="/StringUtils.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370423236568" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/test/ApplicationTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370254462704" ignored="false" />
@@ -1086,7 +1085,6 @@
     <file path="/Application.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370421121494" ignored="false" />
     <file path="/SyssendAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370421325752" ignored="false" />
     <file path="/SyssendCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371608231339" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/example/pad/R.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374058866904" ignored="false" />
     <file path="/Notice.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372142618236" ignored="false" />
     <file path="/NoticeService.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374058931078" ignored="false" />
     <file path="/NoticeAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372153890158" ignored="false" />
@@ -1104,7 +1102,7 @@
     <file path="/Xunjianzhi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373711021893" ignored="false" />
     <file path="/Xunjiandan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374125814784" ignored="false" />
     <file path="/Xunjianxiangmu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374117002678" ignored="false" />
-    <file path="/Xunjiandian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373710930848" ignored="false" />
+    <file path="/Xunjiandian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374288217803" ignored="false" />
     <file path="/Xunjiandanmingxi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374117672539" ignored="false" />
     <file path="$USER_HOME$/Documents/android/gen/com/kevin/Manifest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373521091677" ignored="false" />
     <file path="$USER_HOME$/Documents/android/gen/com/kevin/R.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373521091677" ignored="false" />
@@ -1115,6 +1113,293 @@
     <file path="/BaseListActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373622234026" ignored="false" />
     <file path="/login.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374058114372" ignored="false" />
     <file path="/login_menu.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374063846394" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/EdifactEncoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/Base256Encoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/ASCIIEncoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/TextEncoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/X12Encoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/SymbolInfo.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/C40Encoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/Encoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/decoder/DecodedBitStreamParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/decoder/BitMatrixParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/decoder/DataBlock.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/decoder/Version.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/decoder/Decoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/maxicode/decoder/DecodedBitStreamParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/maxicode/decoder/BitMatrixParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/maxicode/decoder/Decoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/QRCodeWriter.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/QRCodeReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/detector/AlignmentPatternFinder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/detector/FinderPatternFinder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/detector/FinderPatternInfo.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/detector/AlignmentPattern.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/detector/FinderPattern.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/detector/Detector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/encoder/MatrixUtil.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/encoder/ByteMatrix.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/encoder/BlockPair.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/encoder/MaskUtil.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/encoder/Encoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/encoder/QRCode.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/DecodedBitStreamParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459545" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/ErrorCorrectionLevel.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/FormatInformation.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/BitMatrixParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/DataBlock.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/DataMask.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/Version.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/Decoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/qrcode/decoder/Mode.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/PDF417ResultMetadata.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/PDF417Writer.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/PDF417Reader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/PDF417Common.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/detector/PDF417DetectorResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/detector/Detector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/PDF417HighLevelEncoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/PDF417ErrorCorrection.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/BarcodeMatrix.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/Dimensions.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/Compaction.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/BarcodeRow.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/encoder/PDF417.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/DecodedBitStreamParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/PDF417ScanningDecoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/PDF417CodewordDecoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/DetectionResultColumn.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/DetectionResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/BarcodeMetadata.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/BarcodeValue.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/BoundingBox.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/Codeword.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/ec/ErrorCorrection.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/ec/ModulusPoly.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/pdf417/decoder/ec/ModulusGF.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/GlobalHistogramBinarizer.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/PerspectiveTransform.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/DefaultGridSampler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/HybridBinarizer.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/CharacterSetECI.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/DetectorResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/DecoderResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/StringUtils.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/GridSampler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/BitSource.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/BitMatrix.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/BitArray.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/reedsolomon/ReedSolomonException.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/reedsolomon/ReedSolomonEncoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/reedsolomon/ReedSolomonDecoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/reedsolomon/GenericGFPoly.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/reedsolomon/GenericGF.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/detector/MonochromeRectangleDetector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/detector/WhiteRectangleDetector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/common/detector/MathUtils.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/BufferedImageLuminanceSource.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/AllPositiveBlackBoxTester.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/DataMatrixBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/DataMatrixBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/DataMatrixWriterTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/encoder/HighLevelEncodeTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/encoder/ErrorCorrectionTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/encoder/SymbolInfoTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/encoder/PlacementTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/encoder/DebugPlacement.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/AddressBookDoCoMoResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/datamatrix/decoder/DecodedBitStreamParserTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ExpandedProductResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ExpandedProductParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/BookmarkDoCoMoResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/AbstractDoCoMoResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/AddressBookAUResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/EmailAddressResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/EmailAddressParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/EmailDoCoMoResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/AddressBookParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/SMSTOMMSTOResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/negative/FalsePositives2BlackBoxTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/CalendarParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/negative/FalsePositivesBlackBoxTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ProductResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/negative/UnsupportedBlackBoxTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ProductParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/negative/PartialBlackBoxTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/BizcardResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/VEventResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/SMSMMSResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/VCardResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/URLTOResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/WifiResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeBlackBox6TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/WifiParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeBlackBox5TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeBlackBox4TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeBlackBox3TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/QRCodeWriterTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/encoder/MatrixUtilTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/encoder/BitVectorTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/encoder/MaskUtilTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/encoder/EncoderTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/encoder/QRCodeTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/TextParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/SMTPResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/decoder/DecodedBitStreamParserTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ParsedResultType.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/decoder/ErrorCorrectionLevelTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ISBNResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/decoder/FormatInformationTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ISBNParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459546" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/decoder/DataMaskTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/URIResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/decoder/VersionTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/URIParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/qrcode/decoder/ModeTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/TelResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/TelParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/SMSParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/GeoResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/GeoParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ResultParser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/client/result/ParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/PDF417BlackBox4TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/PDF417BlackBox3TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/PDF417BlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/PDF417BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/detector/DetectorTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/decoder/ec/AbstractErrorCorrectionTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/pdf417/decoder/ec/ErrorCorrectionTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/AbstractNegativeBlackBoxTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/PerspectiveTransformTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/AbstractBlackBoxTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/StringUtilsTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/BitSourceTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/BitMatrixTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/multi/GenericMultipleBarcodeReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/BitSourceBuilder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/multi/MultipleBarcodeReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/BitArrayTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/multi/ByQuadrantReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/SummaryResults.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/multi/qrcode/QRCodeMultiReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/TestResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/multi/qrcode/detector/MultiFinderPatternFinder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/common/reedsolomon/ReedSolomonTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/multi/qrcode/detector/MultiDetector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/AztecDetectorResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/AztecWriter.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/AztecReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/ExpandedProductParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/detector/Detector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/EmailAddressParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/AddressBookParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/CalendarParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/encoder/AztecCode.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/ProductParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/encoder/Encoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/SMSMMSParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/ParsedReaderResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/WifiParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/ISBNParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/aztec/decoder/Decoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/URIParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/TelParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/client/result/GeoParsedResultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/aztec/AztecBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/aztec/AztecBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/aztec/encoder/EncoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCEANExtensionBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCEBlackBox3ReflectiveTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCABlackBox3ReflectiveTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code39ExtendedBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EANManufacturerOrgSupportTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN13BlackBox5BlurryTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCABlackBox6BlurryTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code128BlackBox3TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code128BlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code128BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/CodabarBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code93BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code39BlackBox3TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/Code39BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN13BlackBox4TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN13BlackBox3TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN13BlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN13BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCEBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459547" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCEBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCABlackBox5TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCABlackBox4TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCABlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCABlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN8BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/CodaBarWriterTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/ITFBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/ITFBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN13WriterTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/UPCAWriterTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/EAN8WriterTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/RSS14BlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/RSS14BlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedStackedBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedStackedBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedStackedInternalTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedImage2stringTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedImage2resultTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedImage2binaryTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/ExpandedInformationDecoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedBlackBox3TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedBlackBox2TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedBlackBox1TestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/RSSExpandedInternalTestCase.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/BitArrayBuilderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/BinaryUtilTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/TestCaseUtil.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/BinaryUtil.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/decoders/AI01_3202_3203_DecoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/decoders/AI01_3X0X_1X_DecoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/decoders/AI01_3103_DecoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/decoders/AbstractDecoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/decoders/AnyAIDecoderTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/test/src/com/google/zxing/oned/rss/expanded/decoders/FieldParserTest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459548" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/DataMatrixWriter.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/DataMatrixReader.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/detector/Detector.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/DataMatrixSymbolInfo144.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/HighLevelEncoder.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/DefaultPlacement.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/SymbolShapeHint.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/ErrorCorrection.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/core/src/com/google/zxing/datamatrix/encoder/EncoderContext.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374289459551" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/common/executor/AsyncTaskExecInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/camera/CameraManager.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/camera/open/DefaultOpenCameraInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/camera/open/OpenCameraInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/camera/open/GingerbreadOpenCameraInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/common/executor/HoneycombAsyncTaskExecInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/src/com/google/zxing/client/android/common/executor/DefaultAsyncTaskExecInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374291378735" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/core/src/com/google/zxing/Result.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/javase/src/com/google/zxing/client/j2se/MatrixToImageWriter.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/DecodeHintManager.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/camera/CameraManager.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/core/src/com/google/zxing/oned/UPCEANExtension5Support.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/core/src/com/google/zxing/oned/UPCEANExtension2Support.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/core/src/com/google/zxing/common/GridSampler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android-integration/src/com/google/zxing/integration/android/IntentIntegrator.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/camera/open/GingerbreadOpenCameraInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/camera/open/DefaultOpenCameraInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/camera/open/OpenCameraInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/HttpHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/common/executor/HoneycombAsyncTaskExecInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/core/src/com/google/zxing/client/result/CalendarParsedResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/core/src/com/google/zxing/DecodeHintType.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/common/executor/DefaultAsyncTaskExecInterface.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/zxingorg/src/com/google/zxing/web/ServletContextLogHandler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
+    <file path="$PROJECT_DIR$/lib/zxing-2.2/android/src/com/google/zxing/client/android/result/ResultHandler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374299444851" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1129,23 +1414,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -1182,7 +1451,23 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -1192,104 +1477,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="XunjiandanListSelection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanListSelection.java">
+      <file leaf-file-name="Xunjiandian.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Xunjiandian.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="55" selection-start="3880" selection-end="3880" vertical-scroll-proportion="0.0">
+            <state line="31" column="92" selection-start="971" selection-end="971" vertical-scroll-proportion="0.42959917">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Xunjian.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Xunjian.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="48" selection-start="2986" selection-end="3048" vertical-scroll-proportion="0.1646489">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2381#2389#0" expanded="true" />
-                <element signature="e#2873#2881#0" expanded="true" />
-                <element signature="e#4003#4011#0" expanded="true" />
-                <element signature="e#4267#4275#0" expanded="true" />
-                <element signature="e#4460#4468#0" expanded="true" />
-                <element signature="e#4693#4701#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Xunjianxiangmu.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjianxiangmu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="75" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
+            <state line="11" column="12" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddressChooser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/AddressChooser.java">
+      <file leaf-file-name="preference.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/xml/preference.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="69" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Xunjiandan.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="53" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#1848#1860#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="20" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="78" selection-start="9167" selection-end="9167" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Xunjiandanmingxi.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandanmingxi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="34" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="address_chooser.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/address_chooser.xml">
-          <provider editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="XunjianList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="14" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1310,13 +1528,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/login.xml" />
-        <option value="$PROJECT_DIR$/res/menu/login_menu.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Preference.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/res/layout/maintain.xml" />
         <option value="$PROJECT_DIR$/res/layout/new_form.xml" />
         <option value="$PROJECT_DIR$/res/layout/address_chooser.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/AddressChooser.java" />
@@ -1325,14 +1536,21 @@
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjianxiangmu.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteForm.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Xunjian.java" />
+        <option value="$PROJECT_DIR$/res/layout/xunjiandian.xml" />
+        <option value="$PROJECT_DIR$/src/core/src/com/google/zxing/oned/rss/expanded/decoders/AI01decoder.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Xunjiandan.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Xunjiandian.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1920" />
-    <option name="height" value="1104" />
+    <option name="height" value="1103" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1369,6 +1587,11 @@
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
+  <component name="ProjectStructureProblems">
+    <ignored-problems>
+      <problem id="unused-library(library:project:android-support-v4)" />
+    </ignored-problems>
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
@@ -1382,6 +1605,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1389,14 +1613,6 @@
               <option name="myItemId" value="pad" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; Android 4.1.2 Platform &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1418,11 +1634,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1436,39 +1648,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="gen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="SHOW_ALL_PROCESSES" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="ExportedApkPath" value="$PROJECT_DIR$/pad.apk" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="ExportedApkPath" value="$PROJECT_DIR$/pad.apk" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="ExportedModule" value="pad" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/gson-2.2.4.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ZXing-2.2.zip!/" />
     <property name="DEBUGGABLE_DEVICE" value="00641f89cc52a22b" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="pad" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -1480,13 +1687,13 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.lastSelected" value="appearance" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -1499,11 +1706,11 @@
       <recent name="com.example.pad.view" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/res" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/res/menu" />
       <recent name="$PROJECT_DIR$/res/drawable-mdpi" />
-      <recent name="$PROJECT_DIR$/res/drawable-mdpi/ui" />
-      <recent name="$PROJECT_DIR$/res/animator" />
-      <recent name="$PROJECT_DIR$/res/layout" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.pad" />
@@ -1519,6 +1726,24 @@
       <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Xunjian" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
+      <module name="pad" />
+      <option name="ACTIVITY_CLASS" value="com.example.pad.view.Login" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -1563,19 +1788,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1601,6 +1813,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1707,16 +1932,19 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Android Application.pad" />
       <item index="1" class="java.lang.String" itemvalue="Android Application.emulator" />
       <item index="2" class="java.lang.String" itemvalue="Android Application.android-17" />
       <item index="3" class="java.lang.String" itemvalue="Android Application.Login" />
+      <item index="4" class="java.lang.String" itemvalue="Android Application.Xunjian" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Android Application.Login" />
-        <item index="1" class="java.lang.String" itemvalue="Android Application.Login" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Android Application.Xunjian" />
+        <item index="1" class="java.lang.String" itemvalue="Android Application.Xunjian" />
+        <item index="2" class="java.lang.String" itemvalue="Android Application.Login" />
+        <item index="3" class="java.lang.String" itemvalue="Android Application.Login" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1771,32 +1999,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1104" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1920" height="1103" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22145145" sideWeight="0.7584541" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2913554" sideWeight="0.7584541" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.67346936" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.47857141" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39523336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52040815" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18409818" sideWeight="0.09878419" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2857143" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-1280" y="258" width="1280" height="800" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="107" y="338" width="1280" height="725" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18569905" sideWeight="0.8480635" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15193644" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18522485" sideWeight="0.7144279" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24278606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22109208" sideWeight="0.75721395" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29122055" sideWeight="0.75721395" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32565284" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28557214" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1870,140 +2098,82 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-16/android/widget/AdapterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="261" column="13" selection-start="7928" selection-end="7928" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="82" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0">
+        <state line="45" column="26" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/xunjiandian.xml">
       <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="99" selection-start="4213" selection-end="4213" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/maintain.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/new_form.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/not_uploaded_forms.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/address_chooser.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/AddressChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="69" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="78" selection-start="9167" selection-end="9167" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanListSelection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="55" selection-start="3880" selection-end="3880" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandanmingxi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="34" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjianxiangmu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="75" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="14" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="53" selection-start="3679" selection-end="3679" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1848#1860#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="20" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Xunjian.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="48" selection-start="2986" selection-end="3048" vertical-scroll-proportion="0.1646489">
+        <state line="246" column="51" selection-start="8794" selection-end="8794" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2381#2389#0" expanded="true" />
-            <element signature="e#2873#2881#0" expanded="true" />
-            <element signature="e#4003#4011#0" expanded="true" />
-            <element signature="e#4267#4275#0" expanded="true" />
-            <element signature="e#4460#4468#0" expanded="true" />
-            <element signature="e#4693#4701#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Xunjiandan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="94" selection-start="4114" selection-end="4114" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#2636#2644#0" expanded="true" />
+            <element signature="e#2716#2724#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/preference.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Xunjiandian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="92" selection-start="971" selection-end="971" vertical-scroll-proportion="0.42959917">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2094,7 +2264,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>android-support-v41</last-edited>
+          <last-edited>gson-2.2.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
