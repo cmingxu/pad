@@ -26,7 +26,7 @@ import java.util.ArrayList;
  */
 
 
-public class Xunjiandan extends SherlockFragmentActivity implements ActionBar.TabListener{
+public class XunjiandanView extends SherlockFragmentActivity implements ActionBar.TabListener{
     private ListView listView;
     com.example.pad.models.Xunjiandan xunjiandan;
     ArrayList<Xunjiandian> mFinishedXunjiandians;
@@ -104,7 +104,7 @@ public class Xunjiandan extends SherlockFragmentActivity implements ActionBar.Ta
 //                redirct to new activity
                 Log.d("weeeee", mNotFinishedxunjiandians.get(position).mBianhao);
                 Intent intent = new Intent();
-                intent.setClass(com.example.pad.view.Xunjiandan.this, com.example.pad.view.Xunjiandian.class);
+                intent.setClass(XunjiandanView.this, XunjiandianView.class);
                 intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
                 startActivity(intent);
             }

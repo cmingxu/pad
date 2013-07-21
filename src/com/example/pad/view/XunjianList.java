@@ -36,7 +36,7 @@ public class XunjianList extends BaseActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
                 i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
-                i.setClass(XunjianList.this, Xunjiandan.class);
+                i.setClass(XunjianList.this, XunjiandanView.class);
                 startActivity(i);
             }
         });

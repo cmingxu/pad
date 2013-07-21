@@ -62,6 +62,14 @@ public class Xunjianxiangmu extends Model {
     }
 
 
+    public static Xunjianxiangmu findByRemoteId(int remoteId){
+        return new Select().from(Xunjianxiangmu.class).where("mRemoteId=" + remoteId).executeSingle();
+    }
+
+    public Xunjiandian xunjiandian(){
+        return Xunjiandian.findByRemoteId(Integer.parseInt(this.mXunjiandianId));
+    }
+
     @Override
     public String toString() {
         return "";

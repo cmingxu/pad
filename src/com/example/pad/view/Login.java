@@ -235,7 +235,7 @@ public class Login extends BaseActivity {
             Louge.deleteAll();
             Zhuhu.deleteAll();
             Cidian.deleteAll();
-            com.example.pad.models.Xunjiandian.deleteAll();
+            Xunjiandian.deleteAll();
             Xunjianxiangmu.deleteAll();
             Xunjianzhi.deleteAll();
 
@@ -243,8 +243,8 @@ public class Login extends BaseActivity {
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
-                        ArrayList<com.example.pad.models.Xunjiandian> xunjiandians = com.example.pad.models.Xunjiandian.fromJsonArray(jsonArray);
-                        for(com.example.pad.models.Xunjiandian d : xunjiandians) d.save();
+                        ArrayList<Xunjiandian> xunjiandians = Xunjiandian.fromJsonArray(jsonArray);
+                        for(Xunjiandian d : xunjiandians) d.save();
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

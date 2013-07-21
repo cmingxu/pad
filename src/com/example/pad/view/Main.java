@@ -13,7 +13,6 @@ import com.example.pad.common.NoticeService;
 import com.example.pad.common.Util;
 
 public class Main extends BaseActivity {
-    private ImageButton logout_btn;
     private ImageButton maintain_btn;
     private ImageButton xunjian_btn;
     @Override
@@ -21,8 +20,6 @@ public class Main extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        logout_btn = (ImageButton)findViewById(R.id.logout_btn);
-        logout_btn.setOnClickListener(new LogoutClickListener());
         maintain_btn = (ImageButton)findViewById(R.id.maintain_btn);
         maintain_btn.setOnClickListener(new MaintainClickListener());
         xunjian_btn = (ImageButton)findViewById(R.id.xunjian_btn);
@@ -30,14 +27,6 @@ public class Main extends BaseActivity {
 
     }
 
-    protected class LogoutClickListener implements View.OnClickListener{
-
-        @Override
-        public void onClick(View view) {
-        exit();
-
-        }
-    }
 
     protected class MaintainClickListener implements View.OnClickListener{
 

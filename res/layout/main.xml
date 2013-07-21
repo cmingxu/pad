@@ -60,21 +60,9 @@
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
                           android:layout_height="fill_parent">
-                <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
-                             android:id="@+id/imageButton3" android:layout_gravity="right|center_vertical"
-                             android:layout_column="3" android:src="@drawable/xunjian_on" android:background="@null"
-                             android:layout_margin="2dip"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="设置"
-                          android:id="@+id/textView3" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
             <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
                           android:layout_height="fill_parent">
-                <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
-                             android:id="@+id/logout_btn" android:layout_gravity="right|center_vertical"
-                             android:layout_column="3" android:src="@drawable/shoulou_on" android:background="@null"
-                             android:layout_margin="2dip"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="退出"
-                          android:id="@+id/textView5" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
         </TableRow>
 
