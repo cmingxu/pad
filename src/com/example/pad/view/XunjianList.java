@@ -29,7 +29,7 @@ public class XunjianList extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian_list);
         listView = (ListView)findViewById(R.id.xunjian_list);
-        final List<com.example.pad.models.Xunjiandan> xunjians =  new Select().from(com.example.pad.models.Xunjiandan.class).execute();
+        final List<com.example.pad.models.Xunjiandan> xunjians =  new Select().from(com.example.pad.models.Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
         listView.setAdapter(new XunjianDanAdapter(xunjians));
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override

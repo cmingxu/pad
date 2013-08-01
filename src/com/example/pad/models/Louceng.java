@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -39,9 +40,9 @@ public class Louceng extends Model{
         for (int i = 0; i < s.length(); i++){
             Louceng louceng = new Louceng();
             temp = s.getJSONObject(i);
-            louceng.mLoucengbianhao       = temp.getString("楼层编号");
-            louceng.mLougebianhao         = temp.getString("楼阁编号");
-            louceng.mLoucengmingcheng     = temp.getString("楼层名称");
+            louceng.mLoucengbianhao       = temp.optString("楼层编号");
+            louceng.mLougebianhao         = temp.optString("楼阁编号");
+            louceng.mLoucengmingcheng     = temp.optString("楼层名称");
             louceng.remoteId              = temp.getInt("id");
             loucengs.add(louceng);
         }
@@ -57,7 +58,8 @@ public class Louceng extends Model{
     }
 
     public List<Danyuan> danyuans(){
-        return new Select().from(Danyuan.class).where("mLougebianhao='" + this.mLougebianhao + "' AND mLouceng='" + this.mLoucengbianhao + "'").execute();
+        Log.d("Sql", new Select().from(Danyuan.class).where("mLougebianhao='" + this.mLougebianhao + "' AND mLoucengMingcheng='" + this.mLoucengmingcheng + "'").toSql());
+        return new Select().from(Danyuan.class).where("mLougebianhao='" + this.mLougebianhao + "' AND mLoucengMingcheng='" + this.mLoucengmingcheng + "'").execute();
     }
 
     @Override

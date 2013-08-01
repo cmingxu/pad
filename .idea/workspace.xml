@@ -24,6 +24,7 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="xunjiandan" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
@@ -32,10 +33,10 @@
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../game_studio/android-client/.idea/workspace.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364083820664" ignored="false" />
     <file path="/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371798067192" ignored="false" />
-    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374290357636" ignored="false" />
+    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375178111698" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
     <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374312740544" ignored="false" />
-    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374313465020" ignored="false" />
+    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375193646472" ignored="false" />
     <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372144215165" ignored="false" />
     <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372160274427" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374386047446" ignored="false" />
@@ -48,7 +49,7 @@
     <file path="/Loupan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366527673034" ignored="false" />
     <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368862466296" ignored="false" />
     <file path="/User.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368519111039" ignored="false" />
-    <file path="/Louceng.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366520177976" ignored="false" />
+    <file path="/Louceng.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374400683601" ignored="false" />
     <file path="/HttpHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370417338623" ignored="false" />
     <file path="/Base.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366467746580" ignored="false" />
     <file path="/Config.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372905435555" ignored="false" />
@@ -1010,7 +1011,7 @@
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/BackupRestore/res/layout/backup_restore.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116101110" ignored="false" />
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/NotePad/src/com/example/android/notepad/NotesList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116101110" ignored="false" />
     <file path="/preference.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367639853242" ignored="false" />
-    <file path="/Preference.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374064492911" ignored="false" />
+    <file path="/Preference.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375178021981" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/internal/app/ActionBarImpl.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019777" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/internal/app/ActionBarWrapper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019777" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/internal/nineoldandroids/animation/Animator.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019778" ignored="false" />
@@ -1068,7 +1069,7 @@
     <file path="/TakePic.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368870073492" ignored="false" />
     <file path="/take_pic.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368869411401" ignored="false" />
     <file path="/WeixiudanList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372160156441" ignored="false" />
-    <file path="/XunjianList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374124770568" ignored="false" />
+    <file path="/XunjianList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375194073420" ignored="false" />
     <file path="/Xunjian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374290799762" ignored="false" />
     <file path="/WeixiudanUpload.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370081064453" ignored="false" />
     <file path="/StringUtils.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370423236568" ignored="false" />
@@ -1092,7 +1093,7 @@
     <file path="/NoticeAcceptForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372307046664" ignored="false" />
     <file path="/NoticeCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372386348076" ignored="false" />
     <file path="/weixiudan_list_seperator.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372064906212" ignored="false" />
-    <file path="/styles.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372065435571" ignored="false" />
+    <file path="/styles.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375195646452" ignored="false" />
     <file path="/Zidian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372071151746" ignored="false" />
     <file path="/Cidian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372384862319" ignored="false" />
     <file path="/MainFragement.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372901817576" ignored="false" />
@@ -1100,7 +1101,7 @@
     <file path="/DetailFragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372901073654" ignored="false" />
     <file path="/ListFragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372905277888" ignored="false" />
     <file path="/Xunjianzhi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373711021893" ignored="false" />
-    <file path="/Xunjiandan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374125814784" ignored="false" />
+    <file path="/Xunjiandan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375193466552" ignored="false" />
     <file path="/Xunjianxiangmu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374315617555" ignored="false" />
     <file path="/Xunjiandian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374314026528" ignored="false" />
     <file path="/Xunjiandanmingxi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374117672539" ignored="false" />
@@ -1475,23 +1476,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -1528,7 +1513,23 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -1538,87 +1539,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="XunjianList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="87" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+            <state line="42" column="0" selection-start="1523" selection-end="1523" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
+      <file leaf-file-name="XunjianxiangmuView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianxiangmuView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+            <state line="18" column="13" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="xunjianxiangmu.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/layout/xunjianxiangmu.xml">
           <provider editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new_form.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/new_form.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="44" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xuanze.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/xuanze.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="Preference.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Preference.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="0" selection-start="3784" selection-end="3784" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weixiu.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/weixiu.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="245" column="55" selection-start="8629" selection-end="8629" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="top.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/top.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="Xunjiandan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="91" column="0" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shoulou_on.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/shoulou_on.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="Maintain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="13" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shoulou.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/shoulou.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="WeixiudanList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="13" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xunjian.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/xunjian.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="XunjiandanView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="0" selection-start="4191" selection-end="4191" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -1637,15 +1647,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java" />
-        <option value="$PROJECT_DIR$/res/layout/xunjiandian.xml" />
-        <option value="$PROJECT_DIR$/res/layout/xunjiandan_item.xml" />
-        <option value="$PROJECT_DIR$/res/layout/xunjianxiangmu.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Xunjiandian.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Xunjianxiangmu.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjianxiangmu.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianxiangmuView.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
@@ -1653,6 +1654,15 @@
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Main.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/new_form.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Louceng.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Preference.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java" />
+        <option value="$PROJECT_DIR$/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/res/layout/xunjianxiangmu.xml" />
       </list>
     </option>
   </component>
@@ -1714,6 +1724,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1782,6 +1793,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1804,60 +1837,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable-mdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="ExportedApkPath" value="$PROJECT_DIR$/pad.apk" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="ExportedApkPath" value="$PROJECT_DIR$/pad.apk" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="ExportedModule" value="pad" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/android-integration.jar!/" />
@@ -1872,13 +1868,13 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.lastSelected" value="appearance" />
     <property name="AndroidLayoutSelectedEditor" value="android-designer" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -1941,6 +1937,24 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="Preference" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
+      <module name="pad" />
+      <option name="ACTIVITY_CLASS" value="com.example.pad.view.Preference" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -1973,19 +1987,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -2011,6 +2012,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2117,19 +2131,21 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Android Application.pad" />
       <item index="1" class="java.lang.String" itemvalue="Android Application.emulator" />
       <item index="2" class="java.lang.String" itemvalue="Android Application.android-17" />
       <item index="3" class="java.lang.String" itemvalue="Android Application.Login" />
       <item index="4" class="java.lang.String" itemvalue="Android Application.Xunjian" />
+      <item index="5" class="java.lang.String" itemvalue="Android Application.Preference" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Android Application.Xunjian" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Android Application.Preference" />
         <item index="1" class="java.lang.String" itemvalue="Android Application.Xunjian" />
-        <item index="2" class="java.lang.String" itemvalue="Android Application.Login" />
+        <item index="2" class="java.lang.String" itemvalue="Android Application.Xunjian" />
         <item index="3" class="java.lang.String" itemvalue="Android Application.Login" />
+        <item index="4" class="java.lang.String" itemvalue="Android Application.Login" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -2188,28 +2204,28 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22109208" sideWeight="0.75721395" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29122055" sideWeight="0.75721395" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28800857" sideWeight="0.75721395" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.67346936" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32537314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.47857141" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39523336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52040815" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18409818" sideWeight="0.09878419" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28557214" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="318" y="851" width="1920" height="1103" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="640" y="236" width="1280" height="822" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19539614" sideWeight="0.75721395" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24278606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19539614" sideWeight="0.7144279" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3920398" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32537314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2283,98 +2299,120 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/kuai.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/icon_zhuye.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/icon_shezhi.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/xuanze_on.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/yonghukuang.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/zm.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/xunjian.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/xuanze.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/weixiu.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/top.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/shoulou_on.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/shoulou.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Loupan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="87" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
+        <state line="22" column="13" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="33" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Notice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="25" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/xunjian_list.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+        <state line="56" column="37" selection-start="1667" selection-end="1667" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanListSelection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="13" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="13" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="0" selection-start="4191" selection-end="4191" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Preference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="3784" selection-end="3784" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="245" column="55" selection-start="8629" selection-end="8629" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="0" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1523" selection-end="1523" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianxiangmuView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="44" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/xunjianxiangmu.xml">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/new_form.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>

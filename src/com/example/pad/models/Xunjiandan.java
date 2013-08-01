@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -63,7 +64,6 @@ public class Xunjiandan extends Model {
     public static ArrayList<Xunjiandan> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
         ArrayList<Xunjiandan> xunjiandans = new ArrayList<Xunjiandan>();
-
         for (int i = 0; i < s.length(); i++){
             temp = s.getJSONObject(i);
             Xunjiandan xunjiandan = new Xunjiandan();
@@ -83,6 +83,7 @@ public class Xunjiandan extends Model {
             xunjiandan.mRemoteID = temp.optInt("id");
             xunjiandan.mXunjianren = temp.optString("巡检人");
 
+            Log.d("xunjiandan", temp.toString());
             xunjiandans.add(xunjiandan);
 
         }

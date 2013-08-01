@@ -1,13 +1,10 @@
 package com.example.pad.view;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
 import android.util.Log;
 import com.example.pad.AppConfig;
-import com.example.pad.AppContext;
 import com.example.pad.R;
 import com.example.pad.common.StringUtils;
 import com.example.pad.common.UIHelper;
@@ -21,6 +18,7 @@ import com.example.pad.common.UIHelper;
  */
 public class Preference extends PreferenceActivity{
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preference);
 
@@ -96,4 +94,5 @@ public class Preference extends PreferenceActivity{
             }
         });
     }
+
 }

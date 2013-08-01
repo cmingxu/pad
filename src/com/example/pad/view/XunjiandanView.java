@@ -102,7 +102,6 @@ public class XunjiandanView extends SherlockFragmentActivity implements ActionBa
                 Log.d("qoo", mFinishedXunjiandians.get(position).mBianhao);
             }else{
 //                redirct to new activity
-                Log.d("weeeee", mNotFinishedxunjiandians.get(position).mBianhao);
                 Intent intent = new Intent();
                 intent.setClass(XunjiandanView.this, XunjiandianView.class);
                 intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
