@@ -1,9 +1,11 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -62,8 +64,17 @@ public class Xunjiandanmingxi extends Model {
     public static void deleteAll(){
         new Delete().from(Xunjiandanmingxi.class).where("1=1").execute();
     }
+
+    public static Xunjiandanmingxi findByRemoteXunjiandanidAndRemoteXunjianxiangmuid(int remoteXunjiandanId, int remoteXunjianxiangmuId){
+        Log.d("xunjdanmingxi",  new Select().from(Xunjiandanmingxi.class).where("mXiangmuId= "+ remoteXunjianxiangmuId +" AND mXunjiandanId=" + remoteXunjiandanId ).toSql());
+        return new Select().from(Xunjiandanmingxi.class).where("mXiangmuId= "+ remoteXunjianxiangmuId +" AND mXunjiandanId=" + remoteXunjiandanId ).executeSingle();
+
+    }
     @Override
     public String toString() {
-        return "";
-       }
+        return "mBiaoshi" + this.mBiaoshi + "\nremoteId" + this.mRemoteID + "\nshuoming" + this.mShuoming + "\nxiangmuid" +
+                this.mXiangmuId + "xunjiandanid" + this.mXunjiandanId + "xunjianshijian" + this.mXunjianShijian + " zhi " + this.mZhi
+                + "zhi id " + this.mZhiId;
+
+    }
 }

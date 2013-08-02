@@ -105,6 +105,7 @@ public class XunjiandanView extends SherlockFragmentActivity implements ActionBa
                 Intent intent = new Intent();
                 intent.setClass(XunjiandanView.this, XunjiandianView.class);
                 intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
+                intent.putExtra("xunjiandan_id", xunjiandan.mRemoteID);
                 startActivity(intent);
             }
         }

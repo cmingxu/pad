@@ -67,6 +67,9 @@ public class Xunjianzhi extends Model {
         new Delete().from(Xunjianzhi.class).where("1=1").execute();
     }
 
+    public static Xunjianzhi findByRemoteId(int remoteID){
+        return new Select().from(Xunjianzhi.class).where("mRemoteID=" + remoteID).executeSingle();
+    }
 
 
     @Override

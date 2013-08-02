@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:columnCount="4" android:rowCount="7" android:useDefaultMargins="true">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    巡检点"
+            android:id="@+id/textView" style="@style/ltLabel"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New Text"
+              android:id="@+id/xunjiandian" android:layout_columnSpan="3" style="@style/ltText"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="巡检项目"
+              android:id="@+id/textView2" style="@style/ltLabel"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New Text"
+              android:id="@+id/xunjianxiangmu" android:layout_columnSpan="3" style="@style/ltText"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="巡检标准"
+            android:id="@+id/textView1" style="@style/ltLabel"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/xunjianbiaozhun" android:layout_columnSpan="3" style="@style/ltText"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="巡检时间"
+            android:id="@+id/textView5" style="@style/ltLabel"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/xunjianshijian" android:layout_columnSpan="3" style="@style/ltText"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="巡检结果"
+            android:id="@+id/textView7" style="@style/ltLabel"/>
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" style="@style/ltText"
+            android:measureWithLargestChild="true" android:layout_columnSpan="3" android:id="@+id/radio_group">
+    </RadioGroup>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="巡检说明"
+              android:id="@+id/textView8" style="@style/ltLabel"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_columnSpan="3" style="@style/ltText"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xunjianshuoming" android:layout_columnSpan="4" android:lines="2" android:minWidth="400dp"/>
+</GridLayout>

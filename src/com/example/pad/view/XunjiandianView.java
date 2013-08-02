@@ -9,6 +9,7 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandian;
 import com.example.pad.models.Xunjianxiangmu;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class XunjiandianView extends BaseActivity {
+    private Xunjiandan mXunjiandan;
     private EditText mBarCodeEditText;
     private Button mScanButton;
     private ListView mXunjianxiangmus;
@@ -35,6 +37,7 @@ public class XunjiandianView extends BaseActivity {
         setContentView(R.layout.xunjiandian);
 
         this.mXunjiandian = com.example.pad.models.Xunjiandian.findByRemoteId(getIntent().getIntExtra("xunjiandian_id", 0));
+        this.mXunjiandan = Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
 
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
@@ -56,7 +59,7 @@ public class XunjiandianView extends BaseActivity {
         });
 
 
-        xunjianxiangmus = (ArrayList<Xunjianxiangmu>)this.mXunjiandian.xunjianxiangmus();
+        xunjianxiangmus = (ArrayList<Xunjianxiangmu>)this.mXunjiandian.xunjianxiangmusForXunjiandan(this.mXunjiandan.mRemoteID);
         ArrayList<String> xunjianxiangmuStrs = new ArrayList<String>();
         for (Xunjianxiangmu xujianxiangmu : xunjianxiangmus) {
            xunjianxiangmuStrs.add(xujianxiangmu.mMingcheng);
@@ -66,8 +69,9 @@ public class XunjiandianView extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
-                intent.setClass(XunjiandianView.this, XunjianxiangmuView.class);
+                intent.setClass(XunjiandianView.this, XunjianmingxiView.class);
                 intent.putExtra("xunjianxiangmu_id", xunjianxiangmus.get(position).mRemoteID);
+                intent.putExtra("xunjiandan_id", mXunjiandan.mRemoteID);
                 startActivity(intent);
             }
         });

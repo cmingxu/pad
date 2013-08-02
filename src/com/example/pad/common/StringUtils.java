@@ -238,4 +238,9 @@ public class StringUtils
         SecureRandom random = new SecureRandom();
         return new BigInteger(130, random).toString(32);
     }
+
+    public static String currentTime(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+        return sdf.format(new Date());
+    }
 }

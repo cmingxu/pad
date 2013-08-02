@@ -70,6 +70,10 @@ public class Xunjianxiangmu extends Model {
         return Xunjiandian.findByRemoteId(Integer.parseInt(this.mXunjiandianId));
     }
 
+    public List<Xunjianzhi> xunjianzhis(){
+        return new Select().from(Xunjianzhi.class).where("mXiangmuId=" + this.mRemoteID).orderBy("mShunxu").execute();
+    }
+
     @Override
     public String toString() {
         return "";

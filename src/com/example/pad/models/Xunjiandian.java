@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -10,7 +11,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -75,6 +78,23 @@ public class Xunjiandian extends Model {
 
     public List<Xunjianxiangmu> xunjianxiangmus(){
         return new Select().from(Xunjianxiangmu.class).where("mXunjiandianId=" + this.mRemoteId).execute();
+    }
+
+    public List<Xunjianxiangmu> xunjianxiangmusForXunjiandan (int remoteXunjiandanId){
+        List<Xunjiandanmingxi> xunjiandanmingxis = new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + remoteXunjiandanId).execute();
+        Set xunjianxiangmuIds = new HashSet<String>();
+        for (Xunjiandanmingxi xunjiandanmingxi : xunjiandanmingxis) {
+           xunjianxiangmuIds.add(xunjiandanmingxi.mXiangmuId);
+        }
+        StringBuilder sb1 = new StringBuilder("");
+        for(Xunjiandanmingxi id: xunjiandanmingxis){
+            if(!sb1.toString().equals(""))
+                sb1.append(",");
+            sb1.append((String)id.mXiangmuId);
+        }
+
+        Log.d("", new Select().from(Xunjianxiangmu.class).where("mXunjiandianId=" + this.mRemoteId + " AND mRemoteID IN (" + sb1.toString() + ")").toSql());
+        return new Select().from(Xunjianxiangmu.class).where("mXunjiandianId=" + this.mRemoteId + " AND mRemoteID IN (" + sb1.toString() + ")").execute();
     }
 
     public static Xunjiandian findByRemoteId(int remoteId){
