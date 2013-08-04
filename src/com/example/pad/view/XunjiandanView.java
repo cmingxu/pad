@@ -68,6 +68,20 @@ public class XunjiandanView extends SherlockFragmentActivity implements ActionBa
             bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 1));
         }
 
+        setupData();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("wee", "onresume");
+        setupData();
+        mFinishedListViewAdapter.notifyDataSetChanged();
+        mNotFinishedListViewAdapter.notifyDataSetChanged();
+    }
+
+    public void setupData(){
         mFinishedXunjiandians = (ArrayList<Xunjiandian>)xunjiandan.finishedXunjiandians();
         mNotFinishedxunjiandians = (ArrayList<Xunjiandian>)xunjiandan.notFinishedXunjiandians();
 
@@ -90,7 +104,6 @@ public class XunjiandanView extends SherlockFragmentActivity implements ActionBa
         mNotFinishedListViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notFinishedXunjiandianStrs);
         listView.setAdapter(mFinishedListViewAdapter);
         listView.setOnItemClickListener(new OnItemClickListener());
-
     }
 
     public class OnItemClickListener implements ListView.OnItemClickListener{

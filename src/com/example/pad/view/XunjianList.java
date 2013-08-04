@@ -1,5 +1,7 @@
 package com.example.pad.view;
 
+import android.app.ProgressDialog;
+import android.util.Log;
 import com.actionbarsherlock.app.ActionBar;
 
 import android.content.Context;
@@ -12,6 +14,13 @@ import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.Menu;
+import com.example.pad.common.HttpHelper;
+import com.example.pad.common.PadJsonHttpResponseHandler;
+import com.example.pad.common.Util;
+import com.example.pad.models.Xunjiandan;
+import com.example.pad.models.Xunjiandanmingxi;
+import com.loopj.android.http.RequestParams;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -25,12 +34,17 @@ import java.util.List;
 public class XunjianList extends BaseActivity
 {
     ListView listView;
+    XunjianDanAdapter adapter;
+    ProgressDialog progressDialog;
+    HttpHelper httpHelper;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian_list);
         listView = (ListView)findViewById(R.id.xunjian_list);
         final List<com.example.pad.models.Xunjiandan> xunjians =  new Select().from(com.example.pad.models.Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
-        listView.setAdapter(new XunjianDanAdapter(xunjians));
+        adapter = new XunjianDanAdapter(xunjians);
+        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -44,9 +58,23 @@ public class XunjianList extends BaseActivity
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM
                 | ActionBar.DISPLAY_SHOW_HOME);
+
+
+        httpHelper = new HttpHelper(XunjianList.this, Util.instance().current_user.login, Util.instance().current_user.password);
+        progressDialog = new ProgressDialog(XunjianList.this);
+        progressDialog.setTitle("巡检单上传中");
+        progressDialog.setMessage("巡检单上传中");
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        final List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
+        adapter = new XunjianDanAdapter(xunjians);
+        Log.d("adapter", "" + xunjians.size());
+        adapter.notifyDataSetChanged();
+        listView.setAdapter(adapter);
+    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflator = getMenuInflater();
@@ -62,6 +90,48 @@ public class XunjianList extends BaseActivity
             i.setClass(XunjianList.this, XunjiandanListSelection.class);
             startActivity(i);
             overridePendingTransition(R.animator.push_down_in, R.animator.push_down_out);
+
+        }
+
+        if(item.getItemId() == R.id.action_upload){
+
+            if(Xunjiandan.findAll().size() > 0)
+                progressDialog.show();
+            for (final Xunjiandan o : Xunjiandan.findAll()) {
+               if(o.finished()){
+                   RequestParams rp = new RequestParams("id", o.mRemoteID);
+                   rp.put("minTime", o.minTime());
+                   rp.put("maxTime", o.maxTime());
+                   httpHelper.post("xunjiandans", rp, new PadJsonHttpResponseHandler(XunjianList.this, progressDialog) {
+
+                       @Override
+                       public void onSuccess(JSONObject jsonObject) {
+                           super.onSuccess(jsonObject);    //To change body of overridden methods use File | Settings | File Templates.
+                           Xunjiandan.delete(Xunjiandan.class, o.getId());
+                       }
+
+                   });
+
+                   for (final Xunjiandanmingxi xunjiandanmingxi : o.xunjiandanmingxis()) {
+                       RequestParams mingxirp = new RequestParams("id", xunjiandanmingxi.mRemoteID);
+                       mingxirp.put("zhiid", xunjiandanmingxi.mZhiId);
+                       mingxirp.put("zhi", xunjiandanmingxi.mZhi);
+                       mingxirp.put("xunjianshijian", xunjiandanmingxi.mXunjianShijian);
+                       mingxirp.put("biaoshi", xunjiandanmingxi.mBiaoshi);
+                       mingxirp.put("shuoming", xunjiandanmingxi.mShuoming);
+
+                       httpHelper.post("xunjiandanmingxis", mingxirp, new PadJsonHttpResponseHandler(XunjianList.this, progressDialog) {
+
+                           @Override
+                           public void onSuccess(JSONObject jsonObject) {
+                               super.onSuccess(jsonObject);
+                               Xunjiandanmingxi.delete(Xunjiandanmingxi.class, xunjiandanmingxi.getId());
+                               progressDialog.hide();
+                           }
+                       });
+                   }
+               }
+            }
 
         }
         return true;

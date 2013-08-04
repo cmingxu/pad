@@ -3,23 +3,22 @@ package com.example.pad.view;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.common.HttpHelper;
-import com.example.pad.common.UIHelper;
-import com.example.pad.common.Util;
+import com.example.pad.common.*;
 import com.example.pad.models.User;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandanmingxi;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -45,7 +44,7 @@ public class XunjiandanListSelection extends BaseActivity {
         timeRange = new HashMap<String, Integer>();
         timeRange.put("最近一小时", 60 * 60)       ;
         timeRange.put("最近三小时", 3 * 60 * 60);
-        timeRange.put("最近五小时", 3 * 60 * 60);
+        timeRange.put("最近五小时", 5 * 60 * 60);
         timeRange.put("最近一天", 24 * 60 * 60);
         timeRange.put("最近三天", 3 * 24 * 60 * 60);
         timeRange.put("最近一周", 7 * 24 * 60 * 60);
@@ -83,12 +82,20 @@ public class XunjiandanListSelection extends BaseActivity {
                 if(Util.instance().isNetworkConnected(XunjiandanListSelection.this)){
                     progressDialog.show();
 
-                    httpHelper.with("xunjiandans", null, new JsonHttpResponseHandler(){
+                    RequestParams rp = new RequestParams();
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(new Date());
+                    c.add(Calendar.SECOND, (Integer)timeRange.get(spinner.getSelectedItem().toString()));
+                    rp.put("before", StringUtils.formatTime(c.getTime()));
+
+                    httpHelper.with("xunjiandans", rp, new PadJsonHttpResponseHandler(XunjiandanListSelection.this, progressDialog) {
                         @Override
                         public void onSuccess(JSONArray jsonArray) {
                             try {
                                 ArrayList<Xunjiandan> xunjiandans = Xunjiandan.fromJsonArray(jsonArray);
-                                for(Xunjiandan u : xunjiandans) u.save();
+                                for (Xunjiandan u : xunjiandans)
+                                    if (!Xunjiandan.exists(u.mRemoteID))
+                                        u.save();
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -97,14 +104,18 @@ public class XunjiandanListSelection extends BaseActivity {
                             UIHelper.showLongToast(XunjiandanListSelection.this, R.string.save_success);
 
                         }
+
+
                     });
 
-                    httpHelper.with("xunjiandanmingxis", null, new JsonHttpResponseHandler(){
+                    httpHelper.with("xunjiandanmingxis", null, new PadJsonHttpResponseHandler(XunjiandanListSelection.this, progressDialog){
                         @Override
                         public void onSuccess(JSONArray jsonArray) {
                             try {
                                 ArrayList<Xunjiandanmingxi> xunjiandanmingxis = Xunjiandanmingxi.fromJsonArray(jsonArray);
-                                for(Xunjiandanmingxi u : xunjiandanmingxis) u.save();
+                                for(Xunjiandanmingxi u : xunjiandanmingxis)
+                                    if(!Xunjiandanmingxi.exists(u.mRemoteID))
+                                        u.save();
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

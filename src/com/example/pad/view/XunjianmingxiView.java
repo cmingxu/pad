@@ -1,5 +1,6 @@
 package com.example.pad.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuInflater;
@@ -64,10 +65,13 @@ public class XunjianmingxiView extends BaseActivity {
         mXunjiandianTv.setText(this.mXunjiandian.mMingcheng);
         mXunjianxiangmuTv.setText(this.mXunjianxiangmu.mMingcheng);
         mXunjianbiaozhun.setText(this.mXunjianxiangmu.mBiaozhun);
-        if (mXunjiandanmingxi.mXunjianShijian == null) {
+        if (!StringUtils.isEmpty(mXunjiandanmingxi.mXunjianShijian)) {
             mXunjianshijian.setText(mXunjiandanmingxi.mXunjianShijian);
         }else
             mXunjianshijian.setText(StringUtils.currentTime());
+
+        if (!StringUtils.isEmpty(mXunjiandanmingxi.mShuoming))
+            mXunjianshuoming.setText(mXunjiandanmingxi.mShuoming);
 
         for (Xunjianzhi xunjianzhi : mXunjianxiangmu.xunjianzhis()) {
             addRadioButton(xunjianzhi);
@@ -75,15 +79,26 @@ public class XunjianmingxiView extends BaseActivity {
 
     }
 
+    public boolean isDefault(Xunjianzhi xunjianzhi){
+        boolean moren = false;
+        if(mXunjiandanmingxi.mZhiId != null){
+            if(mXunjiandanmingxi.mZhiId.equals(String.valueOf(xunjianzhi.mRemoteID))) {
+                moren = true;
+            }
+        }else
+        {
+            moren = xunjianzhi.mShifouMoren;
+        }
+        return moren;
+    }
 
     public void addRadioButton(Xunjianzhi xunjianzhi){
 
         int WC = RadioGroup.LayoutParams.WRAP_CONTENT;
         RadioGroup.LayoutParams rParams;
-        boolean moren = (mXunjiandanmingxi.mZhiId == String.valueOf(xunjianzhi.mRemoteID)) || xunjianzhi.mShifouMoren;
 
         RadioButton radioButton = new RadioButton(this);
-        radioButton.setChecked(moren);
+        radioButton.setChecked(isDefault(xunjianzhi));
         radioButton.setText(xunjianzhi.mBiaoshi);
         radioButton.setId(xunjianzhi.mRemoteID);
         rParams = new RadioGroup.LayoutParams(WC, WC);

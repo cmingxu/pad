@@ -6,6 +6,7 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
+import com.example.pad.common.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,5 +77,13 @@ public class Xunjiandanmingxi extends Model {
                 this.mXiangmuId + "xunjiandanid" + this.mXunjiandanId + "xunjianshijian" + this.mXunjianShijian + " zhi " + this.mZhi
                 + "zhi id " + this.mZhiId;
 
+    }
+
+    public boolean isFinished(){
+        return  !StringUtils.isEmpty(this.mXunjianShijian);
+    }
+
+    public static boolean exists(int remoteId){
+        return new Select().from(Xunjiandanmingxi.class).where("mRemoteID=" + remoteId).executeSingle() != null;
     }
 }

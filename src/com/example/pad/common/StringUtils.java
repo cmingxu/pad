@@ -243,4 +243,19 @@ public class StringUtils
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
         return sdf.format(new Date());
     }
+
+    public static Date parseTime(String string){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+        try {
+            return sdf.parse(string);
+        } catch (ParseException e) {
+            System.out.println(e.fillInStackTrace());
+            return null;
+        }
+    }
+
+    public static String formatTime(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+        return sdf.format(date);
+    }
 }

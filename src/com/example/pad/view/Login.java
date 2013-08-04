@@ -17,10 +17,8 @@ import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.*;
 import com.example.pad.common.*;
 import com.example.pad.models.*;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 
 import java.util.ArrayList;
@@ -157,7 +155,7 @@ public class Login extends BaseActivity {
             };
 
 
-            httpHelper.with("users", null, new JsonHttpResponseHandler(){
+            httpHelper.with("users", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray s) {
                     User.deleteAll();
@@ -174,12 +172,6 @@ public class Login extends BaseActivity {
                     progressDialog.dismiss();
                     Toast.makeText(Login.this, R.string.reload_ok, Toast.LENGTH_SHORT).show();
 
-                }
-
-                @Override
-                public void onFailure(Throwable throwable, JSONObject jsonObject) {
-                    progressDialog.dismiss();
-                    Toast.makeText(Login.this, R.string.network_error, Toast.LENGTH_SHORT).show();
                 }
 
             });
@@ -238,8 +230,11 @@ public class Login extends BaseActivity {
             Xunjiandian.deleteAll();
             Xunjianxiangmu.deleteAll();
             Xunjianzhi.deleteAll();
+            Xunjiandan.deleteAll();
+            Xunjiandanmingxi.deleteAll();
 
-            httpHelper.with("xunjiandians", null, new JsonHttpResponseHandler(){
+
+            httpHelper.with("xunjiandians", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -251,7 +246,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("xunjianxiangmus", null, new JsonHttpResponseHandler(){
+            httpHelper.with("xunjianxiangmus", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -263,7 +258,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("xunjianzhis", null, new JsonHttpResponseHandler(){
+            httpHelper.with("xunjianzhis", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -275,7 +270,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("users", null, new JsonHttpResponseHandler(){
+            httpHelper.with("users", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -288,7 +283,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("danyuans", null, new JsonHttpResponseHandler(){
+            httpHelper.with("danyuans", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -300,7 +295,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("loupans", null, new JsonHttpResponseHandler(){
+            httpHelper.with("loupans", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -312,7 +307,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("louges", null, new JsonHttpResponseHandler(){
+            httpHelper.with("louges", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -324,7 +319,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("zhuhus", null, new JsonHttpResponseHandler(){
+            httpHelper.with("zhuhus", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -337,7 +332,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("loucengs", null, new JsonHttpResponseHandler(){
+            httpHelper.with("loucengs", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
@@ -355,7 +350,7 @@ public class Login extends BaseActivity {
                 }
             });
 
-            httpHelper.with("dicts", null, new JsonHttpResponseHandler(){
+            httpHelper.with("dicts", null, new PadJsonHttpResponseHandler(Login.this, progressDialog){
                 @Override
                 public void onSuccess(JSONArray jsonArray) {
                     try {
