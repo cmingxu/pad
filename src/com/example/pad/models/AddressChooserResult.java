@@ -118,4 +118,11 @@ public class AddressChooserResult implements Serializable {
     public void setmLoucengbianhao(String mLoucengbianhao) {
         this.mLoucengbianhao = mLoucengbianhao;
     }
+
+    @Override
+    public String toString() {
+        return this.getmDanyuanbianhao() + this.getmDanyuanId() + this.getmDanyuanName() +
+                this.getmLoucengbianhao() + this.getmLoucengName() + "  " + this.getmZhuhuBianhao();
+
+    }
 }

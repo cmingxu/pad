@@ -54,6 +54,7 @@ public class NewForm extends BaseActivity {
     public  static final   int WEIXIUDAN_SAVE_FAILE = 2;
     public  static final   int WEIXIUDAN_SAVE_EXCEPTION = 3;
     public static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
+    public  static final   int WEIXIUDAN_SAVE_EMPTY = 5;
 
     public static final int IMAGE1 = 1;
     public static final int IMAGE2 = 2;
@@ -162,6 +163,32 @@ public class NewForm extends BaseActivity {
 
     }
 
+
+    public boolean allFieldsFilled(){
+        boolean result = true;
+
+        if (StringUtils.isEmpty(address_choose_text.getText().toString())) {
+            result = false;
+        }
+
+        if (StringUtils.isEmpty(zhuhu_name_text.getText().toString())) {
+           result = false;
+        }
+
+        if (StringUtils.isEmpty(zhuhu_phone_text.getText().toString())) {
+           result = false ;
+        }
+
+        if (StringUtils.isEmpty(baoxiuneirong.getText().toString())) {
+
+            result = false;
+        }
+
+
+        return result;
+
+
+    }
     private class SaveOnClickListener implements Button.OnClickListener{
         @Override
         public void onClick(View v) {
@@ -189,11 +216,23 @@ public class NewForm extends BaseActivity {
                             progressDialog.dismiss();
                             UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_no_result));
                             break;
+                        case WEIXIUDAN_SAVE_EMPTY:
+                            progressDialog.dismiss();
+                            UIHelper.showLongToast(NewForm.this, "业主姓名,电话不能空");
+                            break;
                         default:
                     }
 
                 }
             } ;
+
+            if(!allFieldsFilled()){
+                Message message = new Message();
+                message.what = WEIXIUDAN_SAVE_EMPTY;
+                handler.sendMessage(message);
+                return;
+            }
+
             if(null != result){
                 gatherWeixiudan();
                 weixiudan.mDbSaved  = 1;
@@ -332,6 +371,7 @@ public class NewForm extends BaseActivity {
             if (requestCode == CHOOSE_ADDRESS){
                 if (data != null) {
                     result  = (AddressChooserResult)data.getSerializableExtra("result");
+                    Log.d("result", result.toString());
                     address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
                     zhuhu_phone_text.setText(result.getmYezhuDianhua());
                     zhuhu_name_text.setText(result.getmYezhuName());

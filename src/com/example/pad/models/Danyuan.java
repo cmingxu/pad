@@ -68,9 +68,8 @@ public class Danyuan extends Model {
 
 
     public Zhuhu zhuhu(){
-        Log.d("sddd", new Select().from(Zhuhu.class).where("mZhuhuBianhao like '%" + this.mYezhubianhao + "'").toSql());
-        Log.d("wqww", this.getId().toString());
-        return new Select().from(Zhuhu.class).where("mZhuhuBianhao like '%" + this.mYezhubianhao + "'").executeSingle();
+        Log.d("sddd", new Select().from(Zhuhu.class).where("mZhuhuBianhao = '" + this.mYezhubianhao + "'").toSql());
+        return new Select().from(Zhuhu.class).where("mZhuhuBianhao = '" + this.mYezhubianhao + "'").executeSingle();
     }
 
     @Override
