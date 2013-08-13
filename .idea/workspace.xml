@@ -24,7 +24,7 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="string" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="xunjiandian" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
@@ -1101,7 +1101,7 @@
     <file path="/DetailFragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372901073654" ignored="false" />
     <file path="/ListFragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372905277888" ignored="false" />
     <file path="/Xunjianzhi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375343417325" ignored="false" />
-    <file path="/Xunjiandan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375582730963" ignored="false" />
+    <file path="/Xunjiandan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1376360141266" ignored="false" />
     <file path="/Xunjianxiangmu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375328404565" ignored="false" />
     <file path="/Xunjiandian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375328172747" ignored="false" />
     <file path="/Xunjiandanmingxi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375521210145" ignored="false" />
@@ -1502,6 +1502,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -1538,7 +1539,6 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -1548,19 +1548,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Xunjiandan.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Xunjiandan.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="18" selection-start="7316" selection-end="7316" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Xunjiandanmingxi.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandanmingxi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="5" selection-start="2244" selection-end="2244" vertical-scroll-proportion="0.0">
+            <state line="115" column="35" selection-start="4434" selection-end="4434" vertical-scroll-proportion="-0.1292517">
               <folding />
             </state>
           </provider>
@@ -1569,16 +1560,7 @@
       <file leaf-file-name="XunjiandanView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="59" selection-start="2592" selection-end="2592" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeixiudanList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="260" column="57" selection-start="12488" selection-end="12488" vertical-scroll-proportion="0.0">
+            <state line="84" column="76" selection-start="2705" selection-end="2705" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1611,10 +1593,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewForm.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NewForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="0" selection-start="8819" selection-end="8819" vertical-scroll-proportion="1.6211218">
+            <state line="232" column="0" selection-start="8819" selection-end="8819" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Xunjiandian.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="13" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XunjiandianView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="13" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1662,20 +1662,20 @@
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandanmingxi.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/common/PadJsonHttpResponseHandler.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/common/StringUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandanListSelection.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/AddressChooserResult.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/AddressChooser.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/NewForm.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1200" />
-    <option name="height" value="1846" />
+    <option name="height" value="1844" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1904,16 +1904,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="SHOW_ALL_PROCESSES" value="true" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="ExportedApkPath" value="$PROJECT_DIR$/pad.apk" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="ExportedApkPath" value="$PROJECT_DIR$/pad.apk" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="ExportedModule" value="pad" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/android-integration.jar!/" />
@@ -1928,13 +1928,13 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="options.lastSelected" value="appearance" />
     <property name="AndroidLayoutSelectedEditor" value="android-designer" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="AndroidRunProguardForReleaseBuild" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -2047,19 +2047,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -2085,6 +2072,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2260,7 +2260,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1200" height="1846" extended-state="6" />
+    <frame x="0" y="22" width="1200" height="1844" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -2271,7 +2271,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2854691" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19512194" sideWeight="0.3506865" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2854691" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28522336" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-1280" y="0" width="1280" height="800" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -2359,20 +2359,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="39" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianmingxiView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="0" selection-start="4692" selection-end="4692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="89" column="54" selection-start="3275" selection-end="3275" vertical-scroll-proportion="0.0">
@@ -2382,9 +2368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/xunjiandan_list_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="40" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="40" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
@@ -2396,23 +2380,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="259" column="0" selection-start="7283" selection-end="7283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="18" selection-start="7316" selection-end="7316" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="59" selection-start="2592" selection-end="2592" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="259" column="0" selection-start="7283" selection-end="7283" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandanmingxi.java">
@@ -2425,13 +2393,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/WeixiudanList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="260" column="57" selection-start="12488" selection-end="12488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/PadJsonHttpResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="45" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -2464,9 +2425,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/PadJsonHttpResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="45" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="0" selection-start="8819" selection-end="8819" vertical-scroll-proportion="1.6211218">
+        <state line="232" column="0" selection-start="8819" selection-end="8819" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="76" selection-start="2705" selection-end="2705" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="35" selection-start="4434" selection-end="4434" vertical-scroll-proportion="-0.1292517">
           <folding />
         </state>
       </provider>

@@ -105,6 +105,7 @@ public class Xunjiandan extends Model {
     }
 
     public List<Xunjiandian> xunjiandians(boolean finished) {
+        Log.d("xunjiandian",  (new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + this.mRemoteID)).toSql());
         List<Xunjiandanmingxi> xunjiandanmingxis = new Select().from(Xunjiandanmingxi.class).where("mXunjiandanId=" + this.mRemoteID).execute();
         //find out xunjianxiangmuid and mark finished xiangmus
         Set finishedXunjianxiangmuIds = new HashSet();
@@ -112,12 +113,13 @@ public class Xunjiandan extends Model {
         for (Xunjiandanmingxi mx : xunjiandanmingxis) {
             if (!sb.toString().equals(""))
                 sb.append(",");
-            sb.append(mx.mRemoteID);
+            sb.append(mx.mXiangmuId);
             if(!StringUtils.isEmpty(mx.mXunjianShijian)){
                 finishedXunjianxiangmuIds.add(mx.mXiangmuId);
             }
         }
         // find out xunjiandians
+        Log.d("xunjiandian",new Select().from(Xunjianxiangmu.class).where("mRemoteID in (" + sb.toString() + ")").toSql()  );
         List<Xunjianxiangmu> xunjianxiangmus = new Select().from(Xunjianxiangmu.class).where("mRemoteID in (" + sb.toString() + ")").execute();
         Set set = new HashSet();
         for (Xunjianxiangmu xm : xunjianxiangmus) {
@@ -129,6 +131,8 @@ public class Xunjiandan extends Model {
                 sb1.append(",");
             sb1.append((String) id);
         }
+        Log.d("xunjiandian",  new Select().from(Xunjiandian.class).where("mRemoteId in (" + sb1.toString() + ")").toSql());
+        Log.d("xunjiandian", finishedXunjianxiangmuIds.toString());
         List<Xunjiandian> xunjiandians = new Select().from(Xunjiandian.class).where("mRemoteId in (" + sb1.toString() + ")").execute();
         ArrayList<Xunjiandian> results = new ArrayList<Xunjiandian>();
 
