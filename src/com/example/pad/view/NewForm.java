@@ -110,12 +110,12 @@ public class NewForm extends BaseActivity {
         zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
         baoxiuneirong       = (EditText)findViewById(R.id.baoxiuneirong);
         time_text           = (EditText)findViewById(R.id.time);
-        imageView1 = (ImageView)findViewById(R.id.imageView1);
-        imageView2 = (ImageView)findViewById(R.id.imageView2);
-        imageView3 = (ImageView)findViewById(R.id.imageView3);
-        imageView1.setOnClickListener(new TakePicClickListener(IMAGE1));
-        imageView2.setOnClickListener(new TakePicClickListener(IMAGE2));
-        imageView3.setOnClickListener(new TakePicClickListener(IMAGE3));
+//        imageView1 = (ImageView)findViewById(R.id.imageView1);
+//        imageView2 = (ImageView)findViewById(R.id.imageView2);
+//        imageView3 = (ImageView)findViewById(R.id.imageView3);
+//        imageView1.setOnClickListener(new TakePicClickListener(IMAGE1));
+//        imageView2.setOnClickListener(new TakePicClickListener(IMAGE2));
+//        imageView3.setOnClickListener(new TakePicClickListener(IMAGE3));
         time_text.setText( Util.instance().formatTime("yyyy/MM/dd", new Date()));
         if(weixiudan.getId() != null){
             address_choose_text.setText(weixiudan.address());
@@ -218,7 +218,7 @@ public class NewForm extends BaseActivity {
                             break;
                         case WEIXIUDAN_SAVE_EMPTY:
                             progressDialog.dismiss();
-                            UIHelper.showLongToast(NewForm.this, "业主姓名,电话不能空");
+                            UIHelper.showLongToast(NewForm.this, "业主姓名,电话， 维修内容均不能空");
                             break;
                         default:
                     }

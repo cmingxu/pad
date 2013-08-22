@@ -47,11 +47,10 @@ public class Login extends BaseActivity {
         setContentView(R.layout.login);
 
 
-        ActionBar bar = getSupportActionBar();
-        bar.setIcon(R.drawable.icon_zhuye);
-        bar.setTitle("PMP");
-        bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
-
+            ActionBar bar = getSupportActionBar();
+            bar.setIcon(R.drawable.icon_zhuye);
+            bar.setTitle("PMP");
+            bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
         loginBtn  = (Button)findViewById(R.id.login_btn);
         passwordField = (EditText)findViewById(R.id.passwordEt);
         appNameTv = (TextView)findViewById(R.id.app_name);

@@ -6,9 +6,11 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuInflater;
+import android.view.WindowManager;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.Window;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,12 +24,12 @@ import com.actionbarsherlock.view.Menu;
 
         public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppManager.getAppManager().addActivity(this);
+                AppManager.getAppManager().addActivity(this);
 
-            ActionBar bar = getSupportActionBar();
-            bar.setIcon(R.drawable.icon_zhuye);
-            bar.setTitle("PMP");
-            bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
+                ActionBar bar = getSupportActionBar();
+                bar.setIcon(R.drawable.icon_zhuye);
+                bar.setTitle("PMP");
+                bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
 
     }
 

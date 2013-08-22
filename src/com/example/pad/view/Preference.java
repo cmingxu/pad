@@ -22,10 +22,12 @@ public class Preference extends PreferenceActivity{
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preference);
 
+        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB){
         getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
         getActionBar().setIcon(getResources().getDrawable(R.drawable.icon_zhuye));
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setTitle("PMP");
+        }
 
         EditTextPreference etp_server = (EditTextPreference)findPreference("server_path");
         EditTextPreference port       = (EditTextPreference)findPreference("port");

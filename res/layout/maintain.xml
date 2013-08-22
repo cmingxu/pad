@@ -6,9 +6,10 @@
               android:layout_height="match_parent">
 
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="新增单据"
-            android:id="@+id/new_form_btn" android:layout_gravity="bottom" android:layout_marginTop="50dp"
+            android:id="@+id/new_form_btn" android:layout_marginTop="50dp"
             android:background="@drawable/anniu_on" android:layout_margin="10dp"
-            android:textColor="@color/abs__background_holo_light" android:textSize="25dp"/>
+            android:textColor="@color/abs__background_holo_light" android:textSize="25dp"
+            android:layout_gravity="center_horizontal"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
