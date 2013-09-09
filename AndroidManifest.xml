@@ -7,7 +7,7 @@
         >
     <uses-sdk android:minSdkVersion="8"/>
     <application android:label="@string/app_name" android:icon="@drawable/icon_zhuye_on"
-                 android:name="com.activeandroid.app.Application"  android:theme="@style/Theme.Sherlock.Light.DarkActionBar"
+                 android:name=".AppContext"  android:theme="@style/Theme.Sherlock.Light.DarkActionBar"
 
             >
         <activity android:name=".view.Login"

@@ -2,13 +2,16 @@ package com.example.pad;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.webkit.CacheManager;
 import android.widget.Toast;
+import com.example.pad.common.NoticeService;
 import com.example.pad.common.StringUtils;
 import com.example.pad.models.User;
 
@@ -31,5 +34,11 @@ public class AppContext extends com.activeandroid.app.Application {
         //注册App异常崩溃处理器
     }
 
+    @Override
+    public void onTerminate() {
+        stopService(new Intent(this, NoticeService.class)) ;
+        Log.d("stop service", "stop service");
+        super.onTerminate();    //To change body of overridden methods use File | Settings | File Templates.
 
+    }
 }

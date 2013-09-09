@@ -37,24 +37,24 @@
             android:id="@+id/baoxiuneirong" android:layout_gravity="center" android:lines="1" android:longClickable="true"
             android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"
             android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
-    <!--<LinearLayout-->
-            <!--android:orientation="horizontal"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="wrap_content">-->
-        <!--<ImageView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:id="@+id/imageView1" android:layout_weight="1" android:minHeight="50dip"-->
-                <!--android:src="@drawable/shotme" android:longClickable="false"/>-->
-        <!--<ImageView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:id="@+id/imageView2" android:layout_weight="1" android:src="@drawable/shotme"/>-->
-        <!--<ImageView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:id="@+id/imageView3" android:layout_weight="1" android:src="@drawable/shotme"/>-->
-    <!--</LinearLayout>-->
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView1" android:layout_weight="1" android:minHeight="50dip"
+                android:src="@drawable/shotme" android:longClickable="false"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2" android:layout_weight="1" android:src="@drawable/shotme"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3" android:layout_weight="1" android:src="@drawable/shotme"/>
+    </LinearLayout>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"

@@ -1,7 +1,9 @@
 package com.example.pad.view;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
@@ -11,9 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.activeandroid.query.Select;
+import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.NoticeService;
 import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.Notice;
@@ -67,6 +71,7 @@ public class WeixiudanList extends BaseActivity
         final List<Notice> notUploadCompleteList = new Select().from(Notice.class).where("(isComplete=1 and completeUploaded=0) or (isDaixiu=1 and daixiuUpload=0)").execute();
 
         listView.setAdapter(new ListViewAdapter(weixiudans, notUploadedAcceptList, notUploadCompleteList));
+        listView.setOnItemLongClickListener(new LongClickListener(weixiudans, notUploadedAcceptList, notUploadCompleteList));
 
         progressDialog = new ProgressDialog(WeixiudanList.this);
         progressDialog.setTitle(R.string.wait_please);
@@ -112,6 +117,105 @@ public class WeixiudanList extends BaseActivity
         httpHelper = new HttpHelper(WeixiudanList.this, Util.instance().current_user.login, Util.instance().current_user.password);
     }
 
+    private class LongClickListener implements ListView.OnItemLongClickListener{
+        List<Weixiudan> weixiudans;
+        List<Notice> notAcceptNoticeList;
+        List<Notice> notCompleteNoticetList;
+        ArrayList<ViewType> viewTypes = new ArrayList<ViewType>();
+
+        private LongClickListener(List<Weixiudan> weixiudans, List<Notice> notAcceptNoticeList, List<Notice> notCompleteNoticetList) {
+            this.weixiudans = weixiudans;
+            this.notAcceptNoticeList = notAcceptNoticeList;
+            this.notCompleteNoticetList = notCompleteNoticetList;
+
+            viewTypes.add(ViewType.WEIXIUDAN_HEADER);
+            for (int i = 0; i < weixiudans.size(); i++){
+                viewTypes.add(ViewType.WEIXIUDAN_VIEW);
+            }
+            viewTypes.add(ViewType.NOT_ACCEPT_NOTICE_HEADER);
+            for (int i = 0; i < notAcceptNoticeList.size(); i++)      {
+                viewTypes.add(ViewType.NOT_ACCEPT_NOTICE_VIEW);
+            }
+
+            viewTypes.add(ViewType.NOT_COMPLETE_NOTICE_HEADER);
+
+            for(int i = 0; i < notCompleteNoticetList.size(); i ++){
+                viewTypes.add(ViewType.NOT_COMPLETE_NOTICE_VIEW);
+            }
+        }
+
+
+
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            Log.d("position", " " + position);
+
+            switch (viewTypes.get(position)){
+                case WEIXIUDAN_HEADER:
+                    break;
+                case WEIXIUDAN_VIEW:
+                    final Weixiudan  weixiudan = weixiudans.get( position - 1);
+                    new AlertDialog.Builder(WeixiudanList.this).setMessage(R.string.delete_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            weixiudan.delete();
+                            finish();
+                            startActivity(getIntent());
+
+                        }
+                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+
+                    break;
+                case NOT_ACCEPT_NOTICE_HEADER:
+                    break;
+                case NOT_ACCEPT_NOTICE_VIEW:
+                    final Notice notice =  notAcceptNoticeList.get(position - 2 - weixiudans.size());
+                    new AlertDialog.Builder(WeixiudanList.this).setMessage(R.string.delete_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            notice.delete();
+                            finish();
+                            startActivity(getIntent());
+                        }
+                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+                    break;
+                case NOT_COMPLETE_NOTICE_HEADER:
+
+                    break;
+                case NOT_COMPLETE_NOTICE_VIEW:
+                    final Notice na_notice = notCompleteNoticetList.get(position - 3 - weixiudans.size() - notAcceptNoticeList.size());
+                    new AlertDialog.Builder(WeixiudanList.this).setMessage(R.string.delete_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            na_notice.delete();
+                            finish();
+                            startActivity(getIntent());
+
+                        }
+                    }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+                    break;
+                default:
+                    break;
+
+            }
+            return false;
+        }
+    }
 
     public class ListViewAdapter extends BaseAdapter{
         List<Weixiudan> weixiudans;

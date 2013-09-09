@@ -16,49 +16,48 @@ import com.example.pad.common.UIHelper;
  * Time: 11:57 AM
  * To change this template use File | Settings | File Templates.
  */
-public class Preference extends PreferenceActivity{
+public class Preference extends PreferenceActivity {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preference);
 
-        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB){
-        getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
-        getActionBar().setIcon(getResources().getDrawable(R.drawable.icon_zhuye));
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setTitle("PMP");
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
+            getActionBar().setIcon(getResources().getDrawable(R.drawable.icon_zhuye));
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+            getActionBar().setTitle("PMP");
         }
 
-        EditTextPreference etp_server = (EditTextPreference)findPreference("server_path");
-        EditTextPreference port       = (EditTextPreference)findPreference("port");
+        EditTextPreference etp_server = (EditTextPreference) findPreference("server_path");
+        EditTextPreference port = (EditTextPreference) findPreference("port");
 
         etp_server.setOnPreferenceChangeListener(new android.preference.Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(android.preference.Preference preference, Object o) {
-                String input  = (String)o;
-                Log.d("eky", preference.getKey()) ;
-                if(StringUtils.isEmpty((input))){
+                String input = (String) o;
+                Log.d("eky", preference.getKey());
+                if (StringUtils.isEmpty((input))) {
                     UIHelper.showLongToast(getApplicationContext(), getString(R.string.value_should_not_empty));
                     return false;
                 }
-                if (preference.getKey().equals("server_path")){
-                    if(StringUtils.isIPAddress(input)){
-                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, (String)o);
+                if (preference.getKey().equals("server_path")) {
+                    if (StringUtils.isIPAddress(input)) {
+                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, (String) o);
                         UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
-                    }   else {
+                    } else {
                         UIHelper.showLongToast(Preference.this, getString(R.string.ip_address_not_valid));
 
                     }
-                }else if(preference.getKey().equals("port")){
+                } else if (preference.getKey().equals("port")) {
                     Log.d("port", input);
-                    if(StringUtils.isPort(input)){
-                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, (String)o);
+                    if (StringUtils.isPort(input)) {
+                        AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, (String) o);
                         UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
-                    }
-                    else {
+                    } else {
                         UIHelper.showLongToast(Preference.this, getString(R.string.port_not_valid));
                     }
-                }else{
+                } else {
                 }
                 return true;
             }
@@ -67,30 +66,29 @@ public class Preference extends PreferenceActivity{
         port.setOnPreferenceChangeListener(new android.preference.Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(android.preference.Preference preference, Object newValue) {
-                String input  = (String)newValue;
-                Log.d("eky", preference.getKey()) ;
-                if(StringUtils.isEmpty((input))){
+                String input = (String) newValue;
+                Log.d("eky", preference.getKey());
+                if (StringUtils.isEmpty((input))) {
                     UIHelper.showLongToast(getApplicationContext(), getString(R.string.value_should_not_empty));
                     return false;
                 }
-                if (preference.getKey().equals("server_path")){
-                    if(StringUtils.isIPAddress(input)){
+                if (preference.getKey().equals("server_path")) {
+                    if (StringUtils.isIPAddress(input)) {
                         AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_SERVER, input);
                         UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
-                    }   else {
+                    } else {
                         UIHelper.showLongToast(Preference.this, getString(R.string.ip_address_not_valid));
 
                     }
-                }else if(preference.getKey().equals("port")){
+                } else if (preference.getKey().equals("port")) {
                     Log.d("port", input);
-                    if(StringUtils.isPort(input)){
+                    if (StringUtils.isPort(input)) {
                         AppConfig.getAppConfig(Preference.this).set(AppConfig.CONF_PORT, input);
                         UIHelper.showLongToast(Preference.this, getString(R.string.save_success));
-                    }
-                    else {
+                    } else {
                         UIHelper.showLongToast(Preference.this, getString(R.string.port_not_valid));
                     }
-                }else{
+                } else {
                 }
                 return true;
             }

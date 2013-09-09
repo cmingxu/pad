@@ -27,6 +27,8 @@ import java.util.HashMap;
 
 @Table(name="Weixiudan")
 public class Weixiudan extends Model {
+    @Column(name="mLoupanName")
+    public String mLoupanName;
     @Column(name="mLougeName")
     public String mLougeName;
     @Column(name="mLoucengName")
@@ -47,6 +49,7 @@ public class Weixiudan extends Model {
     public String mBaoxiuNeirong;
     @Column(name="mDanyuanBianhao")
     public String mDanyuanBianhao;
+    public String mLoupanBianhao;
     @Column(name="mLougeBianhao")
     public String mLougeBianhao;
     @Column(name="mLoucengBianhao")
@@ -66,11 +69,12 @@ public class Weixiudan extends Model {
     public Weixiudan() {
     }
 
-    public Weixiudan(String mLougeName, String mLoucengName, String mDanyuanName,
+    public Weixiudan(String mLoupanName, String mLougeName, String mLoucengName, String mDanyuanName,
                      String mBaoXiuRiqi, String mBaoxiuren, String mYezhuName,
                      String mYezhuPhone, String mBaoxiuLeibie, String mBaoxiuNeirong,
                      String mLoucengBianhao, String mLougeBianhao, String mDanyuanBianhao,
-                     String mZhuhuBianhao) {
+                     String mZhuhuBianhao, String mLoupanBianhao) {
+        this.mLoupanName = mLoupanName;
         this.mLougeName = mLougeName;
         this.mLoucengName = mLoucengName;
         this.mDanyuanName = mDanyuanName;
@@ -84,6 +88,8 @@ public class Weixiudan extends Model {
         this.mLoucengBianhao = mLoucengBianhao;
         this.mDanyuanBianhao = mDanyuanBianhao;
         this.mZhuhuBianhao  = mZhuhuBianhao;
+        this.mLoupanBianhao = mLoupanBianhao;
+
     }
 
     public static String[] categories = new String[]{"客户区域", "公共区域",  "设备"};
@@ -106,6 +112,7 @@ public class Weixiudan extends Model {
     public String toQuery(){
         String result = "";
         HashMap<String, String> map = new HashMap<String, String>();
+        map.put("mLoupanName", this.mLoupanName);
         map.put("mLougeName", this.mLougeName);
         map.put("mLoucengName", this.mLoucengName);
         map.put("mDanyuanName", this.mDanyuanName);
@@ -115,9 +122,10 @@ public class Weixiudan extends Model {
         map.put("mYezhuPhone", this.mYezhuPhone);
         map.put("mBaoxiuLeibie", this.mBaoxiuLeibie);
         map.put("mBaoxiuNeirong", this.mBaoxiuNeirong);
-        map.put("mLougebianhao", this.mLougeBianhao);
+        map.put("mLougeBianhao", this.mLougeBianhao);
         map.put("mLoucengBianhao", this.mLoucengBianhao);
         map.put("mDanyuanBianhao", this.mDanyuanBianhao);
+        map.put("mLoupanBianhao", this.mLoupanBianhao);
         return  StringUtils.mapToString(map);
     }
 

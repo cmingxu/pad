@@ -10,6 +10,8 @@ import java.io.Serializable;
  * To change this template use File | Settings | File Templates.
  */
 public class AddressChooserResult implements Serializable {
+    public long mLoupanId;
+    public String mLoupanName;
     public long mLougeId;
     public String mLougeName;
     public long mLoucengId;
@@ -20,6 +22,32 @@ public class AddressChooserResult implements Serializable {
     public String mYezhuDianhua;
     public String mDanyuanbianhao;
     public String mLougebianhao;
+    public String mLoupanbianhao;
+
+    public String getmLoupanbianhao() {
+        return mLoupanbianhao;
+    }
+
+    public void setmLoupanbianhao(String mLoupanbianhao) {
+        this.mLoupanbianhao = mLoupanbianhao;
+    }
+
+    public long getmLoupanId() {
+        return mLoupanId;
+    }
+
+    public void setmLoupanId(long mLoupanId) {
+        this.mLoupanId = mLoupanId;
+    }
+
+    public String getmLoupanName() {
+        return mLoupanName;
+    }
+
+    public void setmLoupanName(String mLoupanName) {
+        this.mLoupanName = mLoupanName;
+    }
+
     public String mLoucengbianhao;
     public String mZhuhuBianhao;
 

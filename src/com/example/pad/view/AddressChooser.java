@@ -1,10 +1,7 @@
 package com.example.pad.view;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,9 +14,6 @@ import com.example.pad.R;
 import com.example.pad.models.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -43,15 +37,18 @@ public class AddressChooser extends BaseActivity {
         getSupportActionBar().setTitle("维修地址");
 
         listView = (ListView)findViewById(R.id.listView);
-        adapter = new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
+        adapter = new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListItemOnClickListener());
 
     }
 
     private void changeAdapter(){
-        if (state.current_selecting.equals("louge")) {
-            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Louge.all().toArray(new Louge[0]));
+        if(state.current_selecting.equals("loupan")){
+            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
+        }
+        else if (state.current_selecting.equals("louge")) {
+            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_loupan.louges().toArray(new Louge[0]));
         } else if (state.current_selecting.equals("louceng")) {
             adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_louge.loucengs().toArray(new Louceng[0]));
         } else if (state.current_selecting.equals("danyuan")) {
@@ -64,10 +61,11 @@ public class AddressChooser extends BaseActivity {
     }
 
         public void back() {
-            if (state.current_selecting.equals("louge")) {
+            if (state.current_selecting.equals("loupan")) {
                 Intent i = new Intent();
                 i.setClass(AddressChooser.this, NewForm.class);
                 startActivity(i);
+            } else if (state.current_selecting.equals("louge")) {
             } else if (state.current_selecting.equals("louceng")) {
             } else if (state.current_selecting.equals("danyuan")) {
             } else {
@@ -95,7 +93,10 @@ public class AddressChooser extends BaseActivity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-            if (state.current_selecting.equals("louge")) {
+            if(state.current_selecting.equals("loupan")){
+                state.current_loupan = (Loupan) adapter.getItem(i);
+            }
+            else if (state.current_selecting.equals("louge")) {
                 state.current_louge = (Louge) adapter.getItem(i);
             } else if (state.current_selecting.equals("louceng")) {
                 state.current_louceng = (Louceng) adapter.getItem(i);
@@ -112,6 +113,8 @@ public class AddressChooser extends BaseActivity {
                 result.setmLougeName(state.current_louge.mLougemingcheng);
                 result.setmDanyuanbianhao(state.current_danyuan.mDanyuanbianhao);
                 result.setmLougebianhao(state.current_louge.mLougebianhao);
+                result.setmLoupanbianhao(state.current_loupan.mLoupanbianhao);
+                result.setmLoupanName(state.current_loupan.mLoupanmingcheng);
                 Zhuhu zhuhu = state.current_danyuan.zhuhu();
                 if (zhuhu != null) {
                     result.setmYezhuName(zhuhu.mZhuhuMingcheng);
@@ -131,8 +134,9 @@ public class AddressChooser extends BaseActivity {
     }
 
     protected class State{
-        public String current_selecting = "louge";
+        public String current_selecting = "loupan";
         public ArrayList<String> states = null;
+        Loupan current_loupan;
         Louge current_louge;
         Louceng current_louceng;
         Danyuan current_danyuan;
@@ -140,13 +144,15 @@ public class AddressChooser extends BaseActivity {
 
         public State() {
             this.states = new ArrayList<String>();
+            this.states.add("loupan");
             this.states.add("louge");
             this.states.add("louceng");
             this.states.add("danyuan");
         }
 
         public String selectedAddress(){
-            return this.current_louge.toString() + "/" +
+            return this.current_loupan.toString() + "/" +
+                    this.current_louge.toString() + "/" +
                     this.current_louceng.toString() + "/" +
                     this.current_danyuan.toString();
         }

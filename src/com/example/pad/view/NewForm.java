@@ -110,12 +110,12 @@ public class NewForm extends BaseActivity {
         zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
         baoxiuneirong       = (EditText)findViewById(R.id.baoxiuneirong);
         time_text           = (EditText)findViewById(R.id.time);
-//        imageView1 = (ImageView)findViewById(R.id.imageView1);
-//        imageView2 = (ImageView)findViewById(R.id.imageView2);
-//        imageView3 = (ImageView)findViewById(R.id.imageView3);
-//        imageView1.setOnClickListener(new TakePicClickListener(IMAGE1));
-//        imageView2.setOnClickListener(new TakePicClickListener(IMAGE2));
-//        imageView3.setOnClickListener(new TakePicClickListener(IMAGE3));
+        imageView1 = (ImageView)findViewById(R.id.imageView1);
+        imageView2 = (ImageView)findViewById(R.id.imageView2);
+        imageView3 = (ImageView)findViewById(R.id.imageView3);
+        imageView1.setOnClickListener(new TakePicClickListener(IMAGE1));
+        imageView2.setOnClickListener(new TakePicClickListener(IMAGE2));
+        imageView3.setOnClickListener(new TakePicClickListener(IMAGE3));
         time_text.setText( Util.instance().formatTime("yyyy/MM/dd", new Date()));
         if(weixiudan.getId() != null){
             address_choose_text.setText(weixiudan.address());
@@ -160,6 +160,10 @@ public class NewForm extends BaseActivity {
         weixiudan.mLougeBianhao = result.mLougebianhao;
         weixiudan.mLoucengBianhao = result.mLoucengName;
         weixiudan.mDanyuanBianhao = result.mDanyuanbianhao;
+        weixiudan.mLoupanName = result.mLoupanName;
+        weixiudan.mLoupanBianhao = result.mLoupanbianhao;
+
+
 
     }
 

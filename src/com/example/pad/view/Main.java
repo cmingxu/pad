@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.NoticeService;
@@ -62,10 +63,11 @@ public class Main extends BaseActivity {
         new AlertDialog.Builder(Main.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                redirect(Main.this, Login.class);
                 Main.this.finish();
                 Util.instance().setCurrentUser(null);
                 stopService(new Intent(Main.this, NoticeService.class)) ;
+                AppManager appManager = AppManager.getAppManager();
+                appManager.finishAllActivity();
             }
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override

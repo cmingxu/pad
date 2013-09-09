@@ -32,6 +32,8 @@ public class Louceng extends Model{
     public String mLoucengbianhao;
     @Column(name="mLoucengmingheng")
     public String mLoucengmingcheng;
+    @Column(name="mTishu")
+    public String mTishu;
 
     public static ArrayList<Louceng> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
@@ -43,6 +45,7 @@ public class Louceng extends Model{
             louceng.mLoucengbianhao       = temp.optString("楼层编号");
             louceng.mLougebianhao         = temp.optString("楼阁编号");
             louceng.mLoucengmingcheng     = temp.optString("楼层名称");
+            louceng.mTishu     =           temp.optString("梯数");
             louceng.remoteId              = temp.getInt("id");
             loucengs.add(louceng);
         }

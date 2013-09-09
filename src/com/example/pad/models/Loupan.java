@@ -54,6 +54,11 @@ public class Loupan extends Model {
         new Delete().from(Loupan.class).where("1=1").execute();
     }
 
+
+    public static List<Loupan> all(){
+        return new Select().from(Loupan.class).execute();
+    }
+
     public static Loupan first(){
         return new Select().from(Loupan.class).executeSingle();
     }

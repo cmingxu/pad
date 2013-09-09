@@ -1,7 +1,9 @@
 package com.example.pad.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +49,29 @@ public class NoticeCompleteList extends BaseActivity {
                 i.setClass(NoticeCompleteList.this, NoticeCompleteForm.class);
                 i.putExtra("notice_id", n.getId());
                 startActivity(i);            }
+
+
+        });
+
+        notice_list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final Notice notice = notices.get(position);
+                new AlertDialog.Builder(NoticeCompleteList.this).setMessage(R.string.delete_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        notice.delete();
+                        finish();
+                        startActivity(getIntent());
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).show();
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
         });
 
     }

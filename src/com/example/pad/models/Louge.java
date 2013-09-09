@@ -59,7 +59,7 @@ public class Louge extends Model {
     }
 
     public List<Louceng> loucengs(){
-        return new Select().from(Louceng.class).where("mLougebianhao='" + this.mLougebianhao + "'").execute();
+        return new Select().from(Louceng.class).where("mLougebianhao='" + this.mLougebianhao + "'").groupBy("mLoucengmingheng").execute();
     }
 
     @Override
