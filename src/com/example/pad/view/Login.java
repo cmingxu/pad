@@ -15,12 +15,12 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.example.pad.*;
+import com.example.pad.AppManager;
+import com.example.pad.R;
 import com.example.pad.common.*;
 import com.example.pad.models.*;
 import org.json.JSONArray;
 import org.json.JSONException;
-
 
 import java.util.ArrayList;
 
@@ -86,20 +86,18 @@ public class Login extends SherlockActivity {
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (item.getItemId() == R.id.action_downloaddata) {
-
             reloadData();
 
         } else if (item.getItemId() == R.id.action_reloaduser) {
             reloadUser();
         } else if (item.getItemId() == R.id.action_settings) {
-
             Intent i = new Intent();
             i.setClass(Login.this, Preference.class);
             startActivity(i);
             overridePendingTransition(R.animator.push_down_in, R.animator.push_down_out);
 
         } else if (item.getItemId() == R.id.action_logout) {
-            new AlertDialog.Builder(Login.this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     AppManager manager = AppManager.getAppManager();

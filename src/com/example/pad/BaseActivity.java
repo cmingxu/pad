@@ -1,18 +1,17 @@
 package com.example.pad;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuInflater;
-import android.view.WindowManager;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.Window;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,17 +20,18 @@ import com.actionbarsherlock.view.Window;
  * Time: 10:26 AM
  * To change this template use File | Settings | File Templates.
  */
-//public class BaseActivity extends SherlockActivity {
-    public class BaseActivity extends SherlockActivity {
+public class BaseActivity extends SherlockActivity {
 
-        public void onCreate(Bundle savedInstanceState) {
+    AppConfig config;
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-                AppManager.getAppManager().addActivity(this);
-                ActionBar bar = getSupportActionBar();
-                bar.setIcon(R.drawable.icon_zhuye);
-                bar.setTitle("PMP");
-                bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
-        }
+        AppManager.getAppManager().addActivity(this);
+        ActionBar bar = getSupportActionBar();
+        bar.setHomeButtonEnabled(true);
+        bar.setIcon(R.drawable.icon_zhuye);
+        bar.setTitle("PMP");
+        bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
+    }
 
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -59,6 +59,39 @@ import com.actionbarsherlock.view.Window;
         from.startActivity(i);
 
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getSupportMenuInflater().inflate(R.menu.common, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d("home item", "home item");
+        switch (item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                break;
+            case R.id.action_logout:
+                new AlertDialog.Builder(this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        AppManager manager = AppManager.getAppManager();
+                        manager.AppExit(BaseActivity.this);
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).show();
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 
 }

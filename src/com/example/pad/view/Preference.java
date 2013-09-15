@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.PreferenceActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import com.example.pad.AppConfig;
 import com.example.pad.R;
 import com.example.pad.common.StringUtils;
@@ -95,4 +96,18 @@ public class Preference extends PreferenceActivity {
         });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home:
+                Preference.this.finish();
+                break;
+
+            default:
+                break;
+        };
+
+        return super.onOptionsItemSelected(item);
+    }
 }

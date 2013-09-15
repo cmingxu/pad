@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">物业移动管理系统</string>
     <string name="wait_please">请稍后</string>
-    <string name="network_error">网络错误， 稍后重试</string>
+    <string name="network_error">网络连接错误， 请检查是否连接到网络或网络环境不稳定</string>
     <string name="users_reloading">登陆用户重新载入中...</string>
     <string name="reload_ok">用户同步成功</string>
     <string name="save_success">保存成功</string>

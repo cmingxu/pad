@@ -1,19 +1,22 @@
 package com.example.pad.view;
 
 import android.app.ProgressDialog;
-import android.util.Log;
-import com.actionbarsherlock.app.ActionBar;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
 import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.Menu;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.PadJsonHttpResponseHandler;
 import com.example.pad.common.Util;
@@ -42,7 +45,13 @@ public class XunjianList extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian_list);
         listView = (ListView)findViewById(R.id.xunjian_list);
+
+        httpHelper = new HttpHelper(XunjianList.this, Util.instance().current_user.login, Util.instance().current_user.password);
+        progressDialog = new ProgressDialog(XunjianList.this);
+        progressDialog.setTitle("巡检单上传中");
+        progressDialog.setMessage("巡检单上传中");
         final List<com.example.pad.models.Xunjiandan> xunjians =  new Select().from(com.example.pad.models.Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
+
         adapter = new XunjianDanAdapter(xunjians);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListView.OnItemClickListener() {
@@ -55,15 +64,6 @@ public class XunjianList extends BaseActivity
             }
         });
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM
-                | ActionBar.DISPLAY_SHOW_HOME);
-
-
-        httpHelper = new HttpHelper(XunjianList.this, Util.instance().current_user.login, Util.instance().current_user.password);
-        progressDialog = new ProgressDialog(XunjianList.this);
-        progressDialog.setTitle("巡检单上传中");
-        progressDialog.setMessage("巡检单上传中");
     }
 
     @Override
@@ -77,24 +77,24 @@ public class XunjianList extends BaseActivity
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflator = getMenuInflater();
         getSupportMenuInflater().inflate(R.menu.xunjiandan_list_menu, menu);
         return true;
     }
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            super.onOptionsItemSelected(item);
+        }
         if(item.getItemId() == R.id.action_download){
 
             Intent i = new Intent();
             i.setClass(XunjianList.this, XunjiandanListSelection.class);
             startActivity(i);
             overridePendingTransition(R.animator.push_down_in, R.animator.push_down_out);
-
         }
 
         if(item.getItemId() == R.id.action_upload){
-
             if(Xunjiandan.findAll().size() > 0)
                 progressDialog.show();
             for (final Xunjiandan o : Xunjiandan.findAll()) {
@@ -106,7 +106,7 @@ public class XunjianList extends BaseActivity
 
                        @Override
                        public void onSuccess(JSONObject jsonObject) {
-                           super.onSuccess(jsonObject);    //To change body of overridden methods use File | Settings | File Templates.
+                           super.onSuccess(jsonObject);
                            Xunjiandan.delete(Xunjiandan.class, o.getId());
                        }
 
@@ -136,6 +136,7 @@ public class XunjianList extends BaseActivity
         }
         return true;
     }
+
 
     public class XunjianDanAdapter extends BaseAdapter{
         List<com.example.pad.models.Xunjiandan> xunjiandans = null;

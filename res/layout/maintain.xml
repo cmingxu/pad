@@ -7,20 +7,21 @@
 
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="新增单据"
             android:id="@+id/new_form_btn" android:layout_marginTop="50dp"
-            android:background="@drawable/anniu_on" android:layout_margin="10dp"
-            android:textColor="@color/abs__background_holo_light" android:textSize="25dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_margin="10dp"
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal" style="@style/big_button"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="我要接单(3)"
-            android:id="@+id/iwant_accept_btn" android:layout_margin="10dp" android:background="@drawable/anniu_on"
-            android:textSize="25dp" android:textColor="@color/abs__background_holo_light"/>
+            android:id="@+id/iwant_accept_btn" android:layout_margin="10dp"
+            android:textSize="25dp" style="@style/big_button"/>
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我要完成(5)"
-            android:id="@+id/iwant_complete" android:layout_gravity="center" android:background="@drawable/anniu_on"
-            android:layout_margin="10dp" android:textColor="@color/abs__background_holo_light" android:textSize="25dp"/>
+            android:id="@+id/iwant_complete" android:layout_gravity="center"
+            android:layout_margin="10dp" android:textSize="25dp"
+            style="@style/big_button"/>
     <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="我要上传(3)"
             android:id="@+id/iwant_upload_btn" android:layout_gravity="right|center_vertical"
-            android:background="@drawable/anniu_on" android:layout_margin="10dp" android:textSize="25dp"
-            android:textColor="@color/abs__background_holo_light"/>
+            android:layout_margin="10dp" android:textSize="25dp"
+            android:textColor="@color/abs__background_holo_light" style="@style/big_button"/>
 </LinearLayout>

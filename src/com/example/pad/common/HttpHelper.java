@@ -4,8 +4,9 @@ package com.example.pad.common;
 import android.content.Context;
 import android.util.Log;
 import com.example.pad.AppConfig;
-import com.loopj.android.http.*;
-import org.apache.http.auth.AuthScope;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 
 /**
@@ -30,12 +31,12 @@ public class HttpHelper {
 
 
     public void with(String path, RequestParams params, JsonHttpResponseHandler handler){
-        Log.d("Getting ", absoluteURL(path));
+        Log.d("network Getting ", absoluteURL(path));
         client.get(absoluteURL(path), params, handler);
     }
 
     public void post(String path,  RequestParams params, JsonHttpResponseHandler handler){
-        Log.d("Posting ", absoluteURL(path));
+        Log.d("network Posting ", absoluteURL(path));
         client.post(absoluteURL(path), params, handler);
 
     }

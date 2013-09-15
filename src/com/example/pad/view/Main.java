@@ -4,9 +4,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.AppManager;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
@@ -51,6 +53,19 @@ public class Main extends BaseActivity {
         return super.dispatchKeyEvent(event);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d("home item", "item" + item.getItemId());
+        switch (item.getItemId()){
+            case android.R.id.home:
+                exit();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     protected class XunjianClickListener implements View.OnClickListener{
 
         @Override
@@ -68,6 +83,7 @@ public class Main extends BaseActivity {
                 stopService(new Intent(Main.this, NoticeService.class)) ;
                 AppManager appManager = AppManager.getAppManager();
                 appManager.finishAllActivity();
+                System.exit(0);
             }
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override

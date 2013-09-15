@@ -1,26 +1,19 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
-import android.provider.MediaStore;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.StringUtils;
@@ -28,18 +21,13 @@ import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.AddressChooserResult;
 import com.example.pad.models.Weixiudan;
-import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created with IntelliJ IDEA.
@@ -53,14 +41,12 @@ public class NewForm extends BaseActivity {
     public  static  final  int WEIXIUDAN_SAVE_OK = 1;
     public  static final   int WEIXIUDAN_SAVE_FAILE = 2;
     public  static final   int WEIXIUDAN_SAVE_EXCEPTION = 3;
-    public static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
+    public  static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
     public  static final   int WEIXIUDAN_SAVE_EMPTY = 5;
 
     public static final int IMAGE1 = 1;
     public static final int IMAGE2 = 2;
     public static final int IMAGE3 = 3;
-
-
 
 
     private Button saveBtn;
@@ -176,11 +162,11 @@ public class NewForm extends BaseActivity {
         }
 
         if (StringUtils.isEmpty(zhuhu_name_text.getText().toString())) {
-           result = false;
+            result = false;
         }
 
         if (StringUtils.isEmpty(zhuhu_phone_text.getText().toString())) {
-           result = false ;
+            result = false ;
         }
 
         if (StringUtils.isEmpty(baoxiuneirong.getText().toString())) {
@@ -255,7 +241,7 @@ public class NewForm extends BaseActivity {
                 try {
 
                     if( weixiudan.image1 != null)
-                       params.put("image1", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image1));
+                        params.put("image1", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image1));
                     if (weixiudan.image2 != null)
                         params.put("image2", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image2));
                     if (weixiudan.image3 != null)
@@ -332,7 +318,7 @@ public class NewForm extends BaseActivity {
             tempFile =  getTempFile(NewForm.this);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile( tempFile));
             startActivityForResult(intent, IMAGE_CAPTURE);
-    }
+        }
     }
 
     private File getTempFile(Context context){
@@ -348,38 +334,38 @@ public class NewForm extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (requestCode == IMAGE_CAPTURE) {
-                if (resultCode == RESULT_OK) {
-                    Log.d("sddd", tempFile.getName());
-                    switch (NewForm.this.currentImageView)    {
+            if (resultCode == RESULT_OK) {
+                Log.d("sddd", tempFile.getName());
+                switch (NewForm.this.currentImageView)    {
 
                     case IMAGE1:
                         weixiudan.image1 = tempFile.getName();
                         imageView1.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
                         break;
-                        case IMAGE2:
-                            weixiudan.image2 = tempFile.getName();
-                            imageView2.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
-                            break;
-                        case IMAGE3:
-                            weixiudan.image3 = tempFile.getName();
-                            imageView3.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
-                            break;
-                        default:
-                            break;
-                    }
-
-
+                    case IMAGE2:
+                        weixiudan.image2 = tempFile.getName();
+                        imageView2.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
+                        break;
+                    case IMAGE3:
+                        weixiudan.image3 = tempFile.getName();
+                        imageView3.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
+                        break;
+                    default:
+                        break;
                 }
+
+
+            }
         }
 
-            if (requestCode == CHOOSE_ADDRESS){
-                if (data != null) {
-                    result  = (AddressChooserResult)data.getSerializableExtra("result");
-                    Log.d("result", result.toString());
-                    address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
-                    zhuhu_phone_text.setText(result.getmYezhuDianhua());
-                    zhuhu_name_text.setText(result.getmYezhuName());
-                }
+        if (requestCode == CHOOSE_ADDRESS){
+            if (data != null) {
+                result  = (AddressChooserResult)data.getSerializableExtra("result");
+                Log.d("result", result.toString());
+                address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
+                zhuhu_phone_text.setText(result.getmYezhuDianhua());
+                zhuhu_name_text.setText(result.getmYezhuName());
+            }
 
 
         }

@@ -3,6 +3,7 @@ package com.example.pad;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Date;
 import java.util.Properties;
 
 import android.content.Context;
@@ -30,12 +31,14 @@ public class AppConfig{
 
     private Context mContext;
     private static AppConfig appConfig;
+    private Date lastActive;
 
     public static AppConfig getAppConfig(Context context)
     {
         if(appConfig == null){
             appConfig = new AppConfig();
             appConfig.mContext = context;
+            appConfig.lastActive = new Date();
         }
         return appConfig;
     }
@@ -156,5 +159,18 @@ public class AppConfig{
         for(String k : key)
             props.remove(k);
         setProps(props);
+    }
+
+    public Date getLastActive() {
+        return lastActive;
+    }
+
+    public void setLastActive(Date lastActive) {
+        this.lastActive = lastActive;
+    }
+
+    public boolean lastActiveTimeExceed(int duration){
+        Date now = new Date();
+        return now.compareTo(new Date(lastActive.getTime() + duration)) == 1;
     }
 }

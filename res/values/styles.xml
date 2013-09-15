@@ -26,6 +26,11 @@
     </style>
 
     <style name="ltText">
-        <item name="android:textSize">18sp</item>
+    <item name="android:textSize">18sp</item>
+</style>
+
+    <style name="big_button">
+        <item name="android:background">@drawable/anniu_on</item>
+        <item name="android:textColor">@color/abs__background_holo_light</item>
     </style>
 </resources>

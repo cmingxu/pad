@@ -2,7 +2,7 @@ package com.example.pad.common;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import com.example.pad.view.XunjianList;
+import android.util.Log;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,7 +38,28 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
     }
 
     @Override
+    public void onFailure(Throwable throwable, JSONObject jsonObject) {
+        Log.d("network", "onFailure");
+        super.onFailure(throwable, jsonObject);
+        if (progressDialog != null) {
+            progressDialog.hide();
+        }
+        UIHelper.showLongToast(context, throwable.toString());
+    }
+
+    @Override
+    public void onFailure(Throwable throwable, JSONArray jsonArray) {
+        Log.d("network", "onFailure");
+        super.onFailure(throwable, jsonArray);
+        if (progressDialog != null) {
+            progressDialog.hide();
+        }
+        UIHelper.showLongToast(context, throwable.toString());
+    }
+
+    @Override
     public void onFailure(Throwable throwable, String string) {
+        Log.d("network", "onFailure");
         super.onFailure(throwable, string);
 
         if (progressDialog != null) {

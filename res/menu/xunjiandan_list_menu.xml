@@ -16,11 +16,8 @@
             android:icon="@drawable/icon_shezhi"
             android:title="Refresh"/>
     <item
-            android:id="@+id/action_settings"
-            android:title="Settings">
+            android:id="@+id/action_logout"
+            android:title="退出">
     </item>
-    <item
-            android:id="@+id/action_settingsa"
-            android:title="Settings">
-    </item>
+
 </menu>
