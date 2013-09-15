@@ -50,7 +50,9 @@ public class XunjianList extends BaseActivity
         progressDialog = new ProgressDialog(XunjianList.this);
         progressDialog.setTitle("巡检单上传中");
         progressDialog.setMessage("巡检单上传中");
-        final List<com.example.pad.models.Xunjiandan> xunjians =  new Select().from(com.example.pad.models.Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
+
+        final List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
+        Log.d("xunjian", xunjians.toString());
 
         adapter = new XunjianDanAdapter(xunjians);
         listView.setAdapter(adapter);
@@ -58,6 +60,7 @@ public class XunjianList extends BaseActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
+                Log.d("xunjian", xunjians.toString());
                 i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
                 i.setClass(XunjianList.this, XunjiandanView.class);
                 startActivity(i);
@@ -74,6 +77,16 @@ public class XunjianList extends BaseActivity
         Log.d("adapter", "" + xunjians.size());
         adapter.notifyDataSetChanged();
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent();
+                Log.d("xunjian", xunjians.toString());
+                i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
+                i.setClass(XunjianList.this, XunjiandanView.class);
+                startActivity(i);
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

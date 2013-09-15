@@ -32,7 +32,6 @@ public class Main extends BaseActivity {
 
 
     protected class MaintainClickListener implements View.OnClickListener{
-
         @Override
         public void onClick(View view) {
             Intent i = new Intent();
