@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Environment;
 import android.util.Log;
 import com.example.pad.models.User;
 
@@ -24,9 +23,6 @@ public class Util {
     public static final int NETTYPE_WIFI = 0x01;
     public static final int NETTYPE_CMWAP = 0x02;
     public static final int NETTYPE_CMNET = 0x03;
-
-    public static final int PAGE_SIZE = 20;//默认分页大小
-    private static final int CACHE_TIME = 60*60000;//缓存失效时
     private static Util instance;
     public User current_user;
 
@@ -88,11 +84,6 @@ public class Util {
         return sdf.format(d);
     }
 
-    public static boolean isSDCardExist(){
-        boolean sdCardExist = Environment.getExternalStorageState()
-                .equals(android.os.Environment.MEDIA_MOUNTED);
-        return sdCardExist;
-    }
 
     public static boolean isTablet(Context context) {
         boolean xlarge = ((context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == 4);

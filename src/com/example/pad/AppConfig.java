@@ -1,15 +1,12 @@
 package com.example.pad;
 
+import android.content.Context;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.Properties;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import com.example.pad.common.StringUtils;
 
 /**
  * 应用程序配置类：用于保存用户相关信息及设置
@@ -20,12 +17,6 @@ import com.example.pad.common.StringUtils;
 public class AppConfig{
 
     private final static String APP_CONFIG = "config";
-
-    public final static String CONF_COOKIE = "cookie";
-    public final static String CONF_ACCESSTOKEN = "accessToken";
-    public final static String CONF_ACCESSSECRET = "accessSecret";
-    public final static String CONF_EXPIRESIN = "expiresIn";
-    public final static String CONF_LOAD_IMAGE = "perf_loadimage";
     public static final String CONF_SERVER = "SERVER_IP";
     public static final String CONF_PORT = "SERVER_PORT";
 
@@ -42,52 +33,6 @@ public class AppConfig{
         }
         return appConfig;
     }
-
-    /**
-     * 获取Preference设置
-     */
-    public static SharedPreferences getSharedPreferences(Context context)
-    {
-        return PreferenceManager.getDefaultSharedPreferences(context);
-    }
-
-    /**
-     * 是否加载显示文章图片
-     */
-    public static boolean isLoadImage(Context context)
-    {
-        return getSharedPreferences(context)
-                .getBoolean(CONF_LOAD_IMAGE, true);
-    }
-
-    public String getCookie(){
-        return get(CONF_COOKIE);
-    }
-
-    public void setAccessToken(String accessToken){
-        set(CONF_ACCESSTOKEN, accessToken);
-    }
-
-    public String getAccessToken(){
-        return get(CONF_ACCESSTOKEN);
-    }
-
-    public void setAccessSecret(String accessSecret){
-        set(CONF_ACCESSSECRET, accessSecret);
-    }
-
-    public String getAccessSecret(){
-        return get(CONF_ACCESSSECRET);
-    }
-
-    public void setExpiresIn(long expiresIn){
-        set(CONF_EXPIRESIN, String.valueOf(expiresIn));
-    }
-
-    public long getExpiresIn(){
-        return StringUtils.toLong(get(CONF_EXPIRESIN));
-    }
-
 
 
     public String get(String key)
