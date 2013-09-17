@@ -6,7 +6,7 @@
             android:id="@+id/action_upload"
             android:orderInCategory="100"
             android:showAsAction="ifRoom"
-            android:icon="@drawable/shenpi"
+            android:icon="@drawable/up"
             android:title="Refresh"/>
 
     <item

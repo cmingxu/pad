@@ -22,12 +22,14 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:weightSum="2">
+            android:layout_height="wrap_content" android:weightSum="2" android:layout_gravity="center"
+            android:gravity="center">
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="登  录"
-                android:id="@+id/login_btn" android:layout_weight="1" android:background="@drawable/denglu"
-                android:textSize="30dp" android:textColor="#ffffff" android:layout_margin="10dp"/>
+                android:id="@+id/login_btn" android:layout_weight="1"
+                android:textSize="30dp" android:textColor="#ffffff"
+                style="@style/big_button" android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 </LinearLayout>

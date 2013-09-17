@@ -8,14 +8,22 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="条形码"
+            android:text=""
             android:id="@+id/barcode" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
-    <Button
+    <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="扫描"
-            android:id="@+id/scan" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
-            android:background="@drawable/denglu" android:textColor="#ffffff" android:textSize="25dp"/>
+            android:layout_height="wrap_content" android:layout_marginLeft="20dp">
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="扫描"
+                android:id="@+id/scan" style="@style/big_button"
+                android:layout_weight="1"/>
+        <Button style="@style/big_button" android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:text="确定" android:id="@+id/done"
+                android:layout_weight="1" android:layout_marginRight="20dp"/>
+    </LinearLayout>
     <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
