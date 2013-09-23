@@ -4,28 +4,26 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text=""
-            android:id="@+id/barcode" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+            android:id="@+id/barcode"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:layout_marginLeft="20dp">
+            android:layout_height="wrap_content">
         <Button
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="扫描"
-                android:id="@+id/scan" style="@style/big_button"
-                android:layout_weight="1"/>
-        <Button style="@style/big_button" android:layout_width="fill_parent" android:layout_height="wrap_content"
-                android:text="确定" android:id="@+id/done"
-                android:layout_weight="1" android:layout_marginRight="20dp"/>
+                android:id="@+id/scan" android:layout_weight="1" style="@style/big_button"/>
+        <Button style="@style/big_button" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="查询" android:id="@+id/chaxun_btn" android:layout_weight="1"/>
     </LinearLayout>
     <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/xunjianxiangmus" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+
 </LinearLayout>

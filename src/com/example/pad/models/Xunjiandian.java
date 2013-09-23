@@ -44,6 +44,9 @@ public class Xunjiandian extends Model {
     @Column(name="mRemoteId")
     public int mRemoteId;
 
+    @Column(name="mBianma")
+    public String mBianma;
+
 
 
 
@@ -64,6 +67,7 @@ public class Xunjiandian extends Model {
             xunjiandian.mLeibie   = temp.optString("类别");
             xunjiandian.mYuanLeixing   = temp.optString("源类型");
             xunjiandian.mRemoteId = temp.optInt("id");
+            xunjiandian.mBianma = temp.optString("编码");
 
             xunjiandians.add(xunjiandian);
 
@@ -100,6 +104,11 @@ public class Xunjiandian extends Model {
     public static Xunjiandian findByRemoteId(int remoteId){
         return new Select().from(Xunjiandian.class).where("mRemoteId=" + remoteId).executeSingle();
     }
+
+    public static Xunjiandian findByBianma(String bianma){
+        return new Select().from(Xunjiandian.class).where("mBianma=" + bianma).executeSingle();
+    }
+
 
     @Override
     public String toString() {

@@ -32,7 +32,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../game_studio/android-client/.idea/workspace.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364083820664" ignored="false" />
     <file path="/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379912062708" ignored="false" />
-    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379910191599" ignored="false" />
+    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379936685221" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
     <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379911025274" ignored="false" />
     <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379910463381" ignored="false" />
@@ -1102,7 +1102,7 @@
     <file path="/Xunjianzhi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375343417325" ignored="false" />
     <file path="/Xunjiandan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1376360141266" ignored="false" />
     <file path="/Xunjianxiangmu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375328404565" ignored="false" />
-    <file path="/Xunjiandian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375328172747" ignored="false" />
+    <file path="/Xunjiandian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379940431449" ignored="false" />
     <file path="/Xunjiandanmingxi.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375521210145" ignored="false" />
     <file path="$USER_HOME$/Documents/android/gen/com/kevin/Manifest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373521091677" ignored="false" />
     <file path="$USER_HOME$/Documents/android/gen/com/kevin/R.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373521091677" ignored="false" />
@@ -1463,7 +1463,7 @@
     <file path="/XunjianxiangmuView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374314237735" ignored="false" />
     <file path="/XunjianmingxiView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1377091235249" ignored="false" />
     <file path="/XunjiandanView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379908309217" ignored="false" />
-    <file path="/XunjiandianView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1375327604266" ignored="false" />
+    <file path="/XunjiandianView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379941721367" ignored="false" />
     <file path="/xunjianmingxi.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379905956750" ignored="false" />
     <file path="/PadJsonHttpResponseHandler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379250612975" ignored="false" />
     <file path="$PROJECT_DIR$/../../../open-source-code/android/ProAndAppDev/gen/com/example/ProAndAppDev/BuildConfig.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379426339060" ignored="false" />
@@ -1559,14 +1559,69 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DanyuanbiaochaobiaoList.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DanyuanbiaochaobiaoList.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="102" selection-start="1270" selection-end="1350" vertical-scroll-proportion="0.4990458">
+            <state line="38" column="16" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#1137#1439#0" expanded="true" />
-                <element signature="e#1428#1429#0" expanded="true" />
+                <element signature="e#1137#1360#0" expanded="true" />
+                <element signature="e#1349#1350#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="big_button.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/drawable/big_button.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="58" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Xunjiandian.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="108" column="66" selection-start="3912" selection-end="3912" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XunjiandianView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="146" column="0" selection-start="0" selection-end="6290" vertical-scroll-proportion="0.96374047">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2397#2637#0" expanded="true" />
+                <element signature="e#2625#2626#0" expanded="true" />
+                <element signature="e#2923#2931#0" expanded="true" />
+                <element signature="e#3260#3773#0" expanded="true" />
+                <element signature="e#3762#3763#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Xunjiandan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xunjiandian.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/xunjiandian.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="10" column="39" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1580,57 +1635,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="45" column="115" selection-start="2866" selection-end="2866" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chaobiao.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/chaobiao.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chaobiao_on.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/chaobiao_on.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NewForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="297" column="20" selection-start="11688" selection-end="11688" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chaobiao_list.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/chaobiao_list.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DanyuanbiaochaobiaoForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -1660,15 +1668,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/NewForm.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/AppContext.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/LandingPage.java" />
         <option value="$PROJECT_DIR$/res/layout/xunjianmingxi.xml" />
-        <option value="$PROJECT_DIR$/res/drawable/big_button.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/models/DanyuanbiaoChaobiao.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
@@ -1676,6 +1680,10 @@
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Main.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java" />
+        <option value="$PROJECT_DIR$/res/drawable/big_button.xml" />
+        <option value="$PROJECT_DIR$/res/layout/xunjiandian.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java" />
       </list>
     </option>
   </component>
@@ -1738,6 +1746,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1870,7 +1879,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2059,8 +2067,8 @@
       <option name="ACTIVITY_CLASS" value="com.example.pad.view.LandingPage" />
       <option name="MODE" value="specific_activity" />
       <option name="DEPLOY" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="2.3" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
       <option name="WIPE_USER_DATA" value="false" />
@@ -2128,31 +2136,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1861" height="1178" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21835268" sideWeight="0.71574074" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28579324" sideWeight="0.71574074" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.67346936" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.47857141" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39523336" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39074075" sideWeight="0.5005519" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19512194" sideWeight="0.3506865" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-1280" y="258" width="1280" height="800" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28425926" sideWeight="0.49944812" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-1280" y="258" width="1280" height="800" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1551629" sideWeight="0.71574074" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15478165" sideWeight="0.71574074" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38981482" sideWeight="0.49944812" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21866372" sideWeight="0.60925925" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28602982" sideWeight="0.60925925" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3249428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28425926" sideWeight="0.49944812" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2226,31 +2234,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/LandingPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="21" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianmingxiView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="45" selection-start="1335" selection-end="1348" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="53" selection-start="740" selection-end="790" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/drawable/big_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="702" selection-end="702" vertical-scroll-proportion="0.2605289" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/xunjianmingxi.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -2326,10 +2309,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="102" selection-start="1270" selection-end="1350" vertical-scroll-proportion="0.4990458">
+        <state line="38" column="16" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#1137#1439#0" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#1137#1360#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/big_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="58" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandian.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="66" selection-start="3912" selection-end="3912" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/xunjiandian.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="0" selection-start="0" selection-end="6290" vertical-scroll-proportion="0.96374047">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2397#2637#0" expanded="true" />
+            <element signature="e#2625#2626#0" expanded="true" />
+            <element signature="e#2923#2931#0" expanded="true" />
+            <element signature="e#3260#3773#0" expanded="true" />
+            <element signature="e#3762#3763#0" expanded="true" />
           </folding>
         </state>
       </provider>

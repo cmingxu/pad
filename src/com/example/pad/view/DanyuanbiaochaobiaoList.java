@@ -36,7 +36,7 @@ public class DanyuanbiaochaobiaoList extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent();
-                i.setClass(DanyuanbiaochaobiaoList.this, AddressChooser.class);
+
                 startActivityForResult(i, ADDRESS_REQUEST_CODE);
             }
         });

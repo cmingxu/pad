@@ -9,6 +9,8 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.common.StringUtils;
+import com.example.pad.common.UIHelper;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandian;
 import com.example.pad.models.Xunjianxiangmu;
@@ -25,19 +27,25 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class XunjiandianView extends BaseActivity {
+    public String barcode;
     private Xunjiandan mXunjiandan;
     private EditText mBarCodeEditText;
     private Button mScanButton;
+    private Button mChaxunButton;
     private ListView mXunjianxiangmus;
     private ArrayList<Xunjianxiangmu> xunjianxiangmus;
     private Xunjiandian mXunjiandian;
+    private int xunjiandian_id;
+    private int xunjiandan_id;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjiandian);
+        this.xunjiandan_id = getIntent().getIntExtra("xunjiandan_id", 0);
+        this.xunjiandian_id = getIntent().getIntExtra("xunjiandian_id", 0);
 
-        this.mXunjiandian = com.example.pad.models.Xunjiandian.findByRemoteId(getIntent().getIntExtra("xunjiandian_id", 0));
-        this.mXunjiandan = Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
+        this.mXunjiandian = Xunjiandian.findByRemoteId(this.xunjiandian_id);
+        this.mXunjiandan = Xunjiandan.findByRemoteId(this.xunjiandan_id);
 
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
@@ -46,9 +54,11 @@ public class XunjiandianView extends BaseActivity {
         bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
         bar.setTitle(this.mXunjiandian.mMingcheng);
 
-        mBarCodeEditText = (EditText)findViewById(R.id.barcode);
-        mScanButton      = (Button)findViewById(R.id.scan);
-        mXunjianxiangmus = (ListView)findViewById(R.id.xunjianxiangmus);
+        mBarCodeEditText = (EditText) findViewById(R.id.barcode);
+        mBarCodeEditText.setText(this.mXunjiandian.mBianma);
+        mScanButton = (Button) findViewById(R.id.scan);
+        mChaxunButton = (Button) findViewById(R.id.chaxun_btn);
+        mXunjianxiangmus = (ListView) findViewById(R.id.xunjianxiangmus);
 
         mScanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -58,11 +68,12 @@ public class XunjiandianView extends BaseActivity {
 
         });
 
+        mChaxunButton.setOnClickListener(new ChaxunButtonClickListener(this.mXunjiandan));
 
-        xunjianxiangmus = (ArrayList<Xunjianxiangmu>)this.mXunjiandian.xunjianxiangmusForXunjiandan(this.mXunjiandan.mRemoteID);
+        xunjianxiangmus = (ArrayList<Xunjianxiangmu>) this.mXunjiandian.xunjianxiangmusForXunjiandan(this.mXunjiandan.mRemoteID);
         ArrayList<String> xunjianxiangmuStrs = new ArrayList<String>();
         for (Xunjianxiangmu xujianxiangmu : xunjianxiangmus) {
-           xunjianxiangmuStrs.add(xujianxiangmu.mMingcheng);
+            xunjianxiangmuStrs.add(xujianxiangmu.mMingcheng);
         }
         mXunjianxiangmus.setAdapter(new ArrayAdapter<String>(XunjiandianView.this, android.R.layout.simple_list_item_1, xunjianxiangmuStrs));
         mXunjianxiangmus.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -81,14 +92,14 @@ public class XunjiandianView extends BaseActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(scanResult != null) {
+        if (scanResult != null) {
             Log.i("SCAN", "scan result: " + scanResult);
             mBarCodeEditText.setText(scanResult.getContents());
+            barcode = scanResult.getContents();
         } else
             Log.e("SCAN", "Sorry, the scan was unsuccessful...");
+        UIHelper.showLongToast(XunjiandianView.this, "对不起， 扫描编码失败！");
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -98,6 +109,51 @@ public class XunjiandianView extends BaseActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    class ChaxunButtonClickListener implements Button.OnClickListener {
+        Xunjiandan xunjiandan;
+        Xunjiandian xunjiandian;
+        ArrayList<Xunjiandian> xunjiandians;
+
+
+        public ChaxunButtonClickListener(Xunjiandan xunjiandan) {
+            this.xunjiandan = xunjiandan;
+            xunjiandians = (ArrayList<Xunjiandian>) xunjiandan.xunjiandians(false);
+        }
+
+        @Override
+        public void onClick(View v) {
+            barcode = mBarCodeEditText.getText().toString();
+            if (StringUtils.isEmpty(barcode)) {
+                UIHelper.showLongToast(XunjiandianView.this, "对不起， 请扫描或者输入编码！");
+                return;
+            }
+
+            for (Xunjiandian x : xunjiandians) {
+                if (x.mBianma.equals(barcode)) {
+                    xunjiandian = x;
+                    break;
+                }
+            }
+
+            if (xunjiandian == null) {
+                UIHelper.showLongToast(XunjiandianView.this, "对不起， 没能找到此未完成巡检点！");
+                return;
+            } else {
+                Log.d("xunjiandian", xunjiandian.mBianma);
+                Log.d("xunjiandian", xunjiandan.mDanjuBianHao);
+
+                Intent intent = new Intent();
+                intent.putExtra("xunjiandan_id", mXunjiandan.mRemoteID);
+                intent.putExtra("xunjiandian_id", xunjiandian.mRemoteId);
+                intent.setClass(XunjiandianView.this, XunjiandianView.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
+                startActivity(intent);
+            }
+
         }
     }
 
