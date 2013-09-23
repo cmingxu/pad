@@ -1,23 +1,9 @@
 package com.example.pad;
 
-import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.media.AudioManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.util.Log;
-import android.webkit.CacheManager;
-import android.widget.Toast;
 import com.example.pad.common.NoticeService;
-import com.example.pad.common.StringUtils;
 import com.example.pad.models.User;
-
-import java.io.*;
-import java.util.Hashtable;
-import java.util.Properties;
 
 /**
  * 全局应用程序类：用于保存和调用全局应用配置及访问网络数据
@@ -27,7 +13,21 @@ import java.util.Properties;
  */
 public class AppContext extends com.activeandroid.app.Application {
 
+    private User current_user;
 
+    public User getCurrentUser() {
+        return current_user;
+    }
+
+    public void logout(){
+        this.current_user = null;
+        AppConfig.getAppConfig(getApplicationContext()).setLoggedUser("");
+    }
+
+    public void login(User user){
+        this.current_user = user;
+        AppConfig.getAppConfig(getApplicationContext()).setLoggedUser(user.login);
+    }
     @Override
     public void onCreate() {
         super.onCreate();
@@ -38,7 +38,7 @@ public class AppContext extends com.activeandroid.app.Application {
     public void onTerminate() {
         stopService(new Intent(this, NoticeService.class)) ;
         Log.d("stop service", "stop service");
-        super.onTerminate();    //To change body of overridden methods use File | Settings | File Templates.
+        super.onTerminate();
 
     }
 }

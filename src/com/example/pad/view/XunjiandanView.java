@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.models.Xunjiandian;
 
@@ -25,7 +25,7 @@ import java.util.ArrayList;
  */
 
 
-public class XunjiandanView extends SherlockFragmentActivity implements ActionBar.TabListener{
+public class XunjiandanView extends BaseActivity implements ActionBar.TabListener{
     private ListView listView;
     com.example.pad.models.Xunjiandan xunjiandan;
     ArrayList<Xunjiandian> mFinishedXunjiandians;
@@ -36,7 +36,7 @@ public class XunjiandanView extends SherlockFragmentActivity implements ActionBa
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian);
 
@@ -155,4 +155,5 @@ public class XunjiandanView extends SherlockFragmentActivity implements ActionBa
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
+
 }

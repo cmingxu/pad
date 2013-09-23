@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
@@ -13,11 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.activeandroid.query.Select;
-import com.example.pad.AppManager;
+import com.example.pad.AppContext;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
-import com.example.pad.common.NoticeService;
 import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.Notice;
@@ -30,7 +28,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Handler;
 
 /**
  * Created with IntelliJ IDEA.
@@ -114,7 +111,7 @@ public class WeixiudanList extends BaseActivity
             }
         } ;
 
-        httpHelper = new HttpHelper(WeixiudanList.this, Util.instance().current_user.login, Util.instance().current_user.password);
+        httpHelper = new HttpHelper((AppContext)getApplication());
     }
 
     private class LongClickListener implements ListView.OnItemLongClickListener{

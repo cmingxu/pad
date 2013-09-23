@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import com.example.pad.AppContext;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.common.Util;
 import com.example.pad.models.Notice;
 import com.example.pad.models.Weixiudan;
 
@@ -30,11 +30,12 @@ public class Maintain extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.maintain);
-        current_user_name = Util.instance().getCurrentUser().login;
+        appContext = (AppContext)getApplication();
+        current_user_name = appContext.getCurrentUser().login;
         new_form_btn = (Button)findViewById(R.id.new_form_btn);
         new_form_btn.setOnClickListener(new NewFormOnClickListener());
         iwant_upload_btn = (Button)findViewById(R.id.iwant_upload_btn);
-        int count = Weixiudan.not_uploaded_count() + Notice.notUploadCount(Util.instance().getCurrentUser().login);
+        int count = Weixiudan.not_uploaded_count() + Notice.notUploadCount(appContext.getCurrentUser().login);
         iwant_upload_btn.setText(getString(R.string.iwant_upload) + "(" + count + ")");
         iwant_upload_btn.setOnClickListener(new IWantUploadOnClickListener());
         iwant_accept_btn = (Button)findViewById(R.id.iwant_accept_btn);

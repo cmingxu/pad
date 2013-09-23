@@ -19,7 +19,6 @@ import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.PadJsonHttpResponseHandler;
-import com.example.pad.common.Util;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandanmingxi;
 import com.loopj.android.http.RequestParams;
@@ -46,7 +45,7 @@ public class XunjianList extends BaseActivity
         setContentView(R.layout.xunjian_list);
         listView = (ListView)findViewById(R.id.xunjian_list);
 
-        httpHelper = new HttpHelper(XunjianList.this, Util.instance().current_user.login, Util.instance().current_user.password);
+        httpHelper = new HttpHelper(appContext);
         progressDialog = new ProgressDialog(XunjianList.this);
         progressDialog.setTitle("巡检单上传中");
         progressDialog.setMessage("巡检单上传中");

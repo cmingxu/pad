@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
-import com.example.pad.models.User;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,7 +22,6 @@ public class Util {
     public static final int NETTYPE_CMWAP = 0x02;
     public static final int NETTYPE_CMNET = 0x03;
     private static Util instance;
-    public User current_user;
 
     public static Util instance(){
         if (instance == null) {
@@ -63,21 +60,9 @@ public class Util {
 
 
     public boolean isNetworkConnected(Context context) {
-//        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo ni = cm.getActiveNetworkInfo();
-//        return ni != null && ni.isConnectedOrConnecting();
-
-        Log.d("esd=========================", "" + this.getNetworkType(context));
         return this.getNetworkType(context) != 0;
     }
 
-    public void setCurrentUser(User u){
-        current_user = u;
-    }
-
-    public  User getCurrentUser(){
-        return current_user;
-    }
 
     public String formatTime(String format, Date d){
         SimpleDateFormat sdf = new SimpleDateFormat(format);

@@ -1,8 +1,6 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,7 +46,7 @@ public class NoticeAcceptForm extends BaseActivity {
         content.setText(n.danjuNeirong);
 
         progressDialog = new ProgressDialog(this);
-        httpHelper = new HttpHelper(this, Util.instance().current_user.login, Util.instance().current_user.password);
+        httpHelper = new HttpHelper(appContext);
 
         accept_btn.setOnClickListener(new Button.OnClickListener(){
             @Override

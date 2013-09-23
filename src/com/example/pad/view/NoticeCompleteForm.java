@@ -1,12 +1,10 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import com.example.pad.AppContext;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
@@ -14,7 +12,6 @@ import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
 import com.example.pad.models.Cidian;
 import com.example.pad.models.Notice;
-import com.example.pad.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONObject;
 
@@ -100,7 +97,7 @@ public class NoticeCompleteForm extends BaseActivity {
         description.setAdapter(adapter);
 
 
-        httpHelper = new HttpHelper(this, Util.instance().current_user.login, Util.instance().current_user.password);
+        httpHelper = new HttpHelper((AppContext)getApplication());
 
         submit.setOnClickListener(new Button.OnClickListener(){
             @Override

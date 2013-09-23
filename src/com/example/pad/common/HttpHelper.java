@@ -1,9 +1,9 @@
 package com.example.pad.common;
 
 
-import android.content.Context;
 import android.util.Log;
 import com.example.pad.AppConfig;
+import com.example.pad.AppContext;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -17,11 +17,20 @@ import com.loopj.android.http.RequestParams;
  * To change this template use File | Settings | File Templates.
  */
 public class HttpHelper {
-    public  AsyncHttpClient client;
-    private Context context;
+    public AsyncHttpClient client;
+    public String login;
+    public String password;
+    private AppContext appContext;
 
-    public HttpHelper(Context context, String login, String password) {
-        this.context = context;
+    public HttpHelper(AppContext context) {
+        this.appContext = context;
+        if (context.getCurrentUser() == null) {
+            login = "login";
+            password = "password";
+        } else {
+            login = appContext.getCurrentUser().login;
+            password = appContext.getCurrentUser().password;
+        }
         client = new AsyncHttpClient();
         client.setTimeout(Config.HTTP_TIMEOUT);
         client.addHeader("authorization", login + ":" + password);
@@ -29,21 +38,19 @@ public class HttpHelper {
         client.addHeader("Content-Type", "application/json");
     }
 
-
-    public void with(String path, RequestParams params, JsonHttpResponseHandler handler){
+    public void with(String path, RequestParams params, JsonHttpResponseHandler handler) {
         Log.d("network Getting ", absoluteURL(path));
         client.get(absoluteURL(path), params, handler);
     }
 
-    public void post(String path,  RequestParams params, JsonHttpResponseHandler handler){
+    public void post(String path, RequestParams params, JsonHttpResponseHandler handler) {
         Log.d("network Posting ", absoluteURL(path));
         client.post(absoluteURL(path), params, handler);
 
     }
 
-
-    private String absoluteURL(String path){
-        return "http://" + AppConfig.getAppConfig(context).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(context).get(AppConfig.CONF_PORT) + "/" + path;
+    private String absoluteURL(String path) {
+        return "http://" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_PORT) + "/" + path;
     }
 
 

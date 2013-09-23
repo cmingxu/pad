@@ -21,8 +21,6 @@ import java.util.regex.Pattern;
 public class StringUtils
 {
     private final static Pattern emailer = Pattern.compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
-    //private final static SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    //private final static SimpleDateFormat dateFormater2 = new SimpleDateFormat("yyyy-MM-dd");
 
     private final static ThreadLocal<SimpleDateFormat> dateFormater = new ThreadLocal<SimpleDateFormat>() {
         @Override

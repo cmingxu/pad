@@ -22,7 +22,9 @@ import com.actionbarsherlock.view.MenuItem;
  */
 public class BaseActivity extends SherlockActivity {
 
-    AppConfig config;
+    public AppConfig appConfig;
+    public AppContext appContext;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppManager.getAppManager().addActivity(this);
@@ -31,6 +33,9 @@ public class BaseActivity extends SherlockActivity {
         bar.setIcon(R.drawable.icon_zhuye);
         bar.setTitle("PMP");
         bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
+
+        appContext = (AppContext)getApplication();
+        appConfig  = AppConfig.getAppConfig(appContext);
     }
 
     public void onConfigurationChanged(Configuration newConfig) {

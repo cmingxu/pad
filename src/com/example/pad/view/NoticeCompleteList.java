@@ -1,6 +1,5 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,10 +13,8 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.common.Util;
 import com.example.pad.models.Notice;
 
 import java.util.List;
@@ -35,7 +32,7 @@ public class NoticeCompleteList extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice_list);
-        final List<Notice> notices = Notice.allComplete(Util.instance().getCurrentUser().login);
+        final List<Notice> notices = Notice.allComplete(appContext.getCurrentUser().login);
 
         notice_list = (ListView)findViewById(R.id.list_view);
         notice_list.setAdapter(new NoticeListViewAdapter(notices));

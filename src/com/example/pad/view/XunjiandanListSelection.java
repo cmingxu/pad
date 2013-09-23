@@ -1,22 +1,20 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import com.example.pad.AppContext;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.*;
-import com.example.pad.models.User;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandanmingxi;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.*;
 
@@ -33,13 +31,16 @@ public class XunjiandanListSelection extends BaseActivity {
     Button downloadBtn;
     Map timeRange;
     ArrayList<String> timeRangeList;
-    int defaultTime = 60 * 60;
     ProgressDialog progressDialog;
+    AppContext appContext;
+
     HttpHelper httpHelper;
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        appContext = (AppContext)getApplication();
 
         timeRange = new HashMap<String, Integer>();
         timeRange.put("最近一小时", 60 * 60)       ;
@@ -71,7 +72,7 @@ public class XunjiandanListSelection extends BaseActivity {
                 timeRangeList);
         spinner.setAdapter(spinnerArrayAdapter);
 
-        httpHelper =  new HttpHelper(this, Util.instance().current_user.login, Util.instance().current_user.password);
+        httpHelper =  new HttpHelper(appContext);
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("下载中");
         progressDialog.setMessage("巡检单下载中， 请耐心等候");

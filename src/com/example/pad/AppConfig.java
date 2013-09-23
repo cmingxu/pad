@@ -5,7 +5,6 @@ import android.content.Context;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.Date;
 import java.util.Properties;
 
 /**
@@ -19,17 +18,16 @@ public class AppConfig{
     private final static String APP_CONFIG = "config";
     public static final String CONF_SERVER = "SERVER_IP";
     public static final String CONF_PORT = "SERVER_PORT";
+    public static final String LOGGED_IN_USER = "LOGGED_IN_USER";
 
     private Context mContext;
     private static AppConfig appConfig;
-    private Date lastActive;
 
     public static AppConfig getAppConfig(Context context)
     {
         if(appConfig == null){
             appConfig = new AppConfig();
             appConfig.mContext = context;
-            appConfig.lastActive = new Date();
         }
         return appConfig;
     }
@@ -45,10 +43,7 @@ public class AppConfig{
         FileInputStream fis = null;
         Properties props = new Properties();
         try{
-            //读取files目录下的config
-            //fis = activity.openFileInput(APP_CONFIG);
 
-            //读取app_config目录下的config
             File dirConf = mContext.getDir(APP_CONFIG, Context.MODE_PRIVATE);
             fis = new FileInputStream(dirConf.getPath() + File.separator + APP_CONFIG);
 
@@ -98,24 +93,14 @@ public class AppConfig{
         setProps(props);
     }
 
-    public void remove(String...key)
-    {
-        Properties props = get();
-        for(String k : key)
-            props.remove(k);
-        setProps(props);
+
+    public void setLoggedUser(String login){
+        set(AppConfig.LOGGED_IN_USER, login);
     }
 
-    public Date getLastActive() {
-        return lastActive;
+    public String getLoggedUser(){
+        return get(AppConfig.LOGGED_IN_USER);
     }
 
-    public void setLastActive(Date lastActive) {
-        this.lastActive = lastActive;
-    }
 
-    public boolean lastActiveTimeExceed(int duration){
-        Date now = new Date();
-        return now.compareTo(new Date(lastActive.getTime() + duration)) == 1;
-    }
 }

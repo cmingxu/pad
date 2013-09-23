@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.MenuInflater;
 import android.view.View;
 import android.widget.*;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.example.pad.AppContext;
 import com.example.pad.AppManager;
 import com.example.pad.R;
 import com.example.pad.common.*;
@@ -42,10 +42,13 @@ public class Login extends SherlockActivity {
     private ProgressDialog progressDialog;
     private HttpHelper httpHelper;
     private Handler handler;
+    private AppContext appContext;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+        appContext = (AppContext)getApplication();
 
         AppManager.getAppManager().addActivity(this);
         ActionBar bar = getSupportActionBar();
@@ -72,13 +75,12 @@ public class Login extends SherlockActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, m);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        httpHelper = new HttpHelper(getApplicationContext(), "login", "password");
+        httpHelper = new HttpHelper(appContext);
 
 
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflator = getMenuInflater();
         getSupportMenuInflater().inflate(R.menu.login_menu, menu);
         return true;
     }
@@ -100,6 +102,7 @@ public class Login extends SherlockActivity {
             new AlertDialog.Builder(this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+                    appContext.logout();
                     AppManager manager = AppManager.getAppManager();
                     manager.AppExit(Login.this);
                 }
@@ -195,7 +198,7 @@ public class Login extends SherlockActivity {
         progressDialog.setMessage("数据同步中, 请不要关闭程序");
         handler = new Handler() {
 
-            int total_resource_count = 10;
+            int total_resource_count = 11;
 
             @Override
             public void handleMessage(Message msg) {
@@ -229,6 +232,21 @@ public class Login extends SherlockActivity {
         Xunjianzhi.deleteAll();
         Xunjiandan.deleteAll();
         Xunjiandanmingxi.deleteAll();
+        DanyuanbiaoChaobiao.deleteAll();
+
+
+        httpHelper.with("danyuanbiaochaobiaos", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos = DanyuanbiaoChaobiao.fromJsonArray(jsonArray);
+                    for (DanyuanbiaoChaobiao d : danyuanbiaoChaobiaos) d.save();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
 
 
         httpHelper.with("xunjiandians", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
@@ -392,13 +410,8 @@ public class Login extends SherlockActivity {
             }
             User u = User.find_by_login_and_password(spinner.getSelectedItem().toString(), passwordField.getText().toString());
             if (u != null) {
-                Util.instance().setCurrentUser(u);
-                if (Util.isTablet(Login.this)) {
-//                    redirect(MainFragmentListActivity.class);
-                    redirect(Main.class);
-                } else {
-                    redirect(Main.class);
-                }
+                appContext.login(u);
+                redirect(Main.class);
                 startService(new Intent(Login.this, NoticeService.class));
 
             } else {

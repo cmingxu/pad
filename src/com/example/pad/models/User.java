@@ -1,6 +1,5 @@
 package com.example.pad.models;
 
-import android.text.Editable;
 import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -89,5 +88,13 @@ public class User extends Model {
     public static  User find_by_login_and_password(String login, String password){
         return new Select().from(User.class).where("login='" + login + "'").executeSingle();
     }
+
+    public static User find_by_login(String login){
+        if (login == null) {
+            return null;
+        }
+        return new Select().from(User.class).where("login='" + login + "'").executeSingle();
+    }
+
 
 }

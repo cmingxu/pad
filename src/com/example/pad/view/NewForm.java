@@ -256,7 +256,7 @@ public class NewForm extends BaseActivity {
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage(getString(R.string.save_and_upload_inprogress));
                 progressDialog.show();
-                new HttpHelper(NewForm.this, Util.instance().current_user.login, Util.instance().current_user.password).post("weixiudans?" + weixiudan.toQuery(), params, new JsonHttpResponseHandler() {
+                new HttpHelper(appContext).post("weixiudans?" + weixiudan.toQuery(), params, new JsonHttpResponseHandler() {
 
                     @Override
                     public void onSuccess(int i, JSONObject jsonObject) {

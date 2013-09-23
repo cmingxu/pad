@@ -6,10 +6,9 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.IBinder;
-import android.preference.PreferenceManager;
 import android.util.Log;
+import com.example.pad.AppContext;
 import com.example.pad.R;
 import com.example.pad.models.Notice;
 import com.example.pad.view.Maintain;
@@ -32,9 +31,9 @@ import java.util.TimerTask;
 public class NoticeService extends Service {
     private Timer timer;
     HttpHelper httpHelper;
+    AppContext appContext;
 
     public NoticeService() {
-        httpHelper = new HttpHelper(NoticeService.this, Util.instance().current_user.login, Util.instance().current_user.password);
     }
 
     private TimerTask updateTask = new TimerTask() {
@@ -109,6 +108,8 @@ public class NoticeService extends Service {
         Log.d("sfwefew", "service start");
         super.onCreate();
         UIHelper.showLongToast(NoticeService.this, "Notice Service on create");
+        appContext =(AppContext)getApplication();
+        httpHelper = new HttpHelper(appContext);
         timer = new Timer("TweetCollectorTimer");
         timer.schedule(updateTask, 1000L, Config.NOTICE_FETCH_INTERVAL);
 
