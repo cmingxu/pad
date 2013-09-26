@@ -41,6 +41,7 @@ public class AddressChooser extends BaseActivity {
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListItemOnClickListener());
 
+
     }
 
     private void changeAdapter(){
@@ -64,6 +65,7 @@ public class AddressChooser extends BaseActivity {
             if (state.current_selecting.equals("loupan")) {
                 Intent i = new Intent();
                 i.setClass(AddressChooser.this, NewForm.class);
+                appManager.finishActivity();
                 startActivity(i);
             } else if (state.current_selecting.equals("louge")) {
             } else if (state.current_selecting.equals("louceng")) {
@@ -131,6 +133,11 @@ public class AddressChooser extends BaseActivity {
             state.next();
             changeAdapter();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     protected class State{

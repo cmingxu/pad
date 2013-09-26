@@ -1,5 +1,7 @@
 package com.example.pad.common;
 
+import android.util.Log;
+
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.net.URLEncoder;
@@ -255,5 +257,11 @@ public class StringUtils
     public static String formatTime(Date date){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
         return sdf.format(date);
+    }
+
+    public static String parseToDushu(String dushu){
+        Double d = Double.parseDouble(dushu);
+        Log.d("double", "" + d);
+        return String.format("%.1f", d);
     }
 }

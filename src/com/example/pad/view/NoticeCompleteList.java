@@ -34,6 +34,7 @@ public class NoticeCompleteList extends BaseActivity {
         setContentView(R.layout.notice_list);
         final List<Notice> notices = Notice.allComplete(appContext.getCurrentUser().login);
 
+
         notice_list = (ListView)findViewById(R.id.list_view);
         notice_list.setAdapter(new NoticeListViewAdapter(notices));
         notice_list.setEmptyView((TextView)findViewById(R.id.empty));

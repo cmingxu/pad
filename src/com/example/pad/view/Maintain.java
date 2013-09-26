@@ -1,6 +1,5 @@
 package com.example.pad.view;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,24 +46,13 @@ public class Maintain extends BaseActivity {
         iwant_complete_btn.setOnClickListener(new IWantCompleteOnClickListener());
 
 
-
     }
 
-    protected class BackBtnOnClickListener implements Button.OnClickListener{
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(Maintain.this, Main.class);
-            startActivity(i);
-        }
-    }
 
     protected class NewFormOnClickListener implements Button.OnClickListener{
         @Override
         public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(Maintain.this, NewForm.class);
-            startActivity(i);
+            redirect(Maintain.this, NewForm.class);
         }
     }
 
@@ -72,9 +60,8 @@ public class Maintain extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(Maintain.this, WeixiudanList.class);
-            startActivity(i);
+
+            redirect(Maintain.this, WeixiudanList.class);
         }
     }
 
@@ -82,9 +69,7 @@ public class Maintain extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(Maintain.this, NoticeAcceptList.class);
-            startActivity(i);
+            redirect(Maintain.this, NoticeAcceptList.class);
         }
     }
 
@@ -92,9 +77,7 @@ public class Maintain extends BaseActivity {
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent();
-            i.setClass(Maintain.this, NoticeCompleteList.class);
-            startActivity(i);
+            redirect(Maintain.this, NoticeCompleteList.class);
         }
     }
 }

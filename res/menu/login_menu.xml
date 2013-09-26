@@ -19,8 +19,4 @@
             android:id="@+id/action_settings"
             android:title="设置">
     </item>
-    <item
-            android:id="@+id/action_logout"
-            android:title="退出">
-    </item>
 </menu>

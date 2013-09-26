@@ -126,6 +126,7 @@ public class NewForm extends BaseActivity {
 
         progressDialog = new ProgressDialog(this);
 
+
     }
 
     public void gatherWeixiudan(){
@@ -301,6 +302,7 @@ public class NewForm extends BaseActivity {
         public void onClick(View view) {
             Intent i = new Intent();
             i.setClass(NewForm.this, AddressChooser.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivityForResult(i, CHOOSE_ADDRESS);
         }
     }

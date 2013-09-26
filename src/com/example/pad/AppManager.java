@@ -1,10 +1,11 @@
 package com.example.pad;
 
-import java.util.Stack;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.util.Log;
+
+import java.util.Stack;
 
 /**
  * 应用程序Activity管理类：用于Activity管理和应用程序退出
@@ -34,6 +35,7 @@ public class AppManager {
         if(activityStack==null){
             activityStack=new Stack<Activity>();
         }
+        Log.d("activityManager size", "" + activityStack.size());
         activityStack.add(activity);
     }
     /**
@@ -49,6 +51,7 @@ public class AppManager {
     public void finishActivity(){
         Activity activity=activityStack.lastElement();
         finishActivity(activity);
+        Log.d("activityManager size", "" + activityStack.size());
     }
     /**
      * 结束指定的Activity

@@ -43,6 +43,7 @@ public class NoticeCompleteForm extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice_complete_form);
 
+
         sendPerson = (TextView)findViewById(R.id.sendperson);
         sendTime   = (TextView)findViewById(R.id.sendtime);
         content    = (TextView)findViewById(R.id.content);
@@ -82,6 +83,7 @@ public class NoticeCompleteForm extends BaseActivity {
 
             }
         });
+
 
         sendPerson.setText(n.sendPerson);
         sendTime.setText(n.sendTime);

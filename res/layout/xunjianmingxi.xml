@@ -6,7 +6,7 @@
         >
 
     <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content"
-              android:gravity="center_horizontal">
+              android:gravity="center_horizontal" style="@style/ltTableRow" android:layout_marginTop="10dp">
         <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
                   android:id="@+id/xunjiandian" style="@style/ltText" android:layout_weight="3"/>
 
     </TableRow>
-    <TableRow android:gravity="center_horizontal">
+    <TableRow android:gravity="center_horizontal" style="@style/ltTableRow">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="巡检项目"
                   android:id="@+id/textView2" style="@style/ltLabel" android:layout_weight="1"/>
@@ -24,7 +24,7 @@
                   android:id="@+id/xunjianxiangmu"  style="@style/ltText" android:layout_weight="3"
                   android:autoText="true"/>
     </TableRow>
-    <TableRow android:gravity="center_horizontal">
+    <TableRow android:gravity="center_horizontal" style="@style/ltTableRow">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
                 android:text="New Text"
                 android:id="@+id/xunjianbiaozhun"  style="@style/ltText" android:layout_weight="3"/>
     </TableRow>
-    <TableRow android:gravity="center_horizontal">
+    <TableRow android:gravity="center_horizontal" style="@style/ltTableRow">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                 android:id="@+id/xunjianshijian"  style="@style/ltText" android:layout_weight="3"/>
 
     </TableRow>
-    <TableRow android:gravity="center_horizontal">
+    <TableRow android:gravity="center_horizontal" style="@style/ltTableRow">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,15 +62,16 @@
         </RadioGroup>
 
     </TableRow>
-    <TableRow android:gravity="center_horizontal">
+    <TableRow android:gravity="center_horizontal" style="@style/ltTableRow">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="巡检说明"
                   android:id="@+id/textView8" style="@style/ltLabel" android:layout_weight="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                    style="@style/ltText" android:layout_weight="3"/>
     </TableRow>
-    <TableRow android:gravity="center_horizontal" android:layout_width="fill_parent">
+    <TableRow android:layout_width="fill_parent"
+              android:layout_gravity="center_horizontal" android:gravity="fill_horizontal">
         <EditText
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/xunjianshuoming" android:lines="2"
                 android:layout_span="2" android:layout_weight="1"/>

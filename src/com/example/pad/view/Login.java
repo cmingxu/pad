@@ -1,8 +1,6 @@
 package com.example.pad.view;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,11 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.AppContext;
 import com.example.pad.AppManager;
+import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.*;
 import com.example.pad.models.*;
@@ -31,7 +29,7 @@ import java.util.ArrayList;
  * Time: 7:18 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Login extends SherlockActivity {
+public class Login extends BaseActivity {
     public static final int UPDATE_USER_SELECTOR = 1;
     public static final int ARESOURCE_DONE = 2;
     private Button loginBtn;
@@ -53,7 +51,7 @@ public class Login extends SherlockActivity {
         AppManager.getAppManager().addActivity(this);
         ActionBar bar = getSupportActionBar();
         bar.setIcon(R.drawable.icon_zhuye);
-        bar.setTitle("PMP");
+        bar.setTitle(getResources().getString(R.string.app_name));
         bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
 
         loginBtn = (Button) findViewById(R.id.login_btn);
@@ -78,6 +76,7 @@ public class Login extends SherlockActivity {
         httpHelper = new HttpHelper(appContext);
 
 
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -98,20 +97,6 @@ public class Login extends SherlockActivity {
             startActivity(i);
             overridePendingTransition(R.animator.push_down_in, R.animator.push_down_out);
 
-        } else if (item.getItemId() == R.id.action_logout) {
-            new AlertDialog.Builder(this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    appContext.logout();
-                    AppManager manager = AppManager.getAppManager();
-                    manager.AppExit(Login.this);
-                }
-            }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-                }
-            }).show();
         }
         return true;
     }

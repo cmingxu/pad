@@ -19,6 +19,7 @@ import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.PadJsonHttpResponseHandler;
+import com.example.pad.common.UIHelper;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandanmingxi;
 import com.loopj.android.http.RequestParams;
@@ -49,7 +50,11 @@ public class XunjianList extends BaseActivity
         progressDialog = new ProgressDialog(XunjianList.this);
         progressDialog.setTitle("巡检单上传中");
         progressDialog.setMessage("巡检单上传中");
+        setupListView();
 
+    }
+
+    public void setupListView(){
         final List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
         Log.d("xunjian", xunjians.toString());
 
@@ -59,33 +64,18 @@ public class XunjianList extends BaseActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent();
-                Log.d("xunjian", xunjians.toString());
                 i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
                 i.setClass(XunjianList.this, XunjiandanView.class);
                 startActivity(i);
             }
         });
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        final List<Xunjiandan> xunjians =  new Select().from(Xunjiandan.class).orderBy("mJihuaQishiShijian").execute();
-        adapter = new XunjianDanAdapter(xunjians);
-        Log.d("adapter", "" + xunjians.size());
-        adapter.notifyDataSetChanged();
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent();
-                Log.d("xunjian", xunjians.toString());
-                i.putExtra("xunjiandan_id", xunjians.get(position).mRemoteID);
-                i.setClass(XunjianList.this, XunjiandanView.class);
-                startActivity(i);
-            }
-        });
+        setupListView();
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -100,16 +90,19 @@ public class XunjianList extends BaseActivity
         }
         if(item.getItemId() == R.id.action_download){
 
-            Intent i = new Intent();
-            i.setClass(XunjianList.this, XunjiandanListSelection.class);
-            startActivity(i);
+            redirect(XunjianList.this, XunjiandanListSelection.class);
             overridePendingTransition(R.animator.push_down_in, R.animator.push_down_out);
         }
 
         if(item.getItemId() == R.id.action_upload){
-            if(Xunjiandan.findAll().size() > 0)
+            if(Xunjiandan.findAllFinished().size() > 0) {
                 progressDialog.show();
-            for (final Xunjiandan o : Xunjiandan.findAll()) {
+            }else{
+                UIHelper.showLongToast(XunjianList.this, "尚无完成的巡检单， 请完成后上传");
+                return true;
+            }
+
+            for (final Xunjiandan o : Xunjiandan.findAllFinished()) {
                if(o.finished()){
                    RequestParams rp = new RequestParams("id", o.mRemoteID);
                    rp.put("minTime", o.minTime());
@@ -120,6 +113,7 @@ public class XunjianList extends BaseActivity
                        public void onSuccess(JSONObject jsonObject) {
                            super.onSuccess(jsonObject);
                            Xunjiandan.delete(Xunjiandan.class, o.getId());
+                           setupListView();
                        }
 
                    });
@@ -146,7 +140,7 @@ public class XunjianList extends BaseActivity
             }
 
         }
-        return true;
+        return super.onMenuItemSelected( featureId, item);
     }
 
 
@@ -175,7 +169,7 @@ public class XunjianList extends BaseActivity
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            com.example.pad.models.Xunjiandan xunjiandan = (com.example.pad.models.Xunjiandan)xunjiandans.get(position);
+            Xunjiandan xunjiandan = (Xunjiandan)xunjiandans.get(position);
             LayoutInflater inflator = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflator.inflate(R.layout.xunjiandan_item, null);
 

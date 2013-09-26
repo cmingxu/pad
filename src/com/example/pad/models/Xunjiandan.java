@@ -164,6 +164,18 @@ public class Xunjiandan extends Model {
        return  new Select().from(Xunjiandan.class).execute();
     }
 
+    public static ArrayList<Xunjiandan> findAllFinished(){
+        ArrayList<Xunjiandan> xunjiandans = (ArrayList<Xunjiandan>)findAll();
+        ArrayList<Xunjiandan> finishedXunjiandans = new ArrayList<Xunjiandan>();
+        for (Xunjiandan xunjiandan : xunjiandans) {
+            if(xunjiandan.finished()){
+            finishedXunjiandans.add(xunjiandan) ;
+            }
+        }
+        return  finishedXunjiandans;
+    }
+
+
     public boolean finished(){
         boolean finish = true;
         for (Xunjiandanmingxi xunjiandanmingxi : this.xunjiandanmingxis()) {

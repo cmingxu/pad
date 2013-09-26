@@ -1,14 +1,18 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.view.ViewGroup;
+import android.widget.*;
+import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.common.StringUtils;
 import com.example.pad.models.AddressChooserResult;
+import com.example.pad.models.DanyuanbiaoChaobiao;
+
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,7 +21,7 @@ import com.example.pad.models.AddressChooserResult;
  * Time: 12:28 PM
  * To change this template use File | Settings | File Templates.
  */
-public class DanyuanbiaochaobiaoList extends Activity {
+public class DanyuanbiaochaobiaoList extends BaseActivity {
     public static final int ADDRESS_REQUEST_CODE = 1;
     public EditText danyuanChooserEditText;
     public ListView danyuanbiaosListView;
@@ -31,15 +35,17 @@ public class DanyuanbiaochaobiaoList extends Activity {
         danyuanChooserEditText = (EditText) findViewById(R.id.chooseDanyuan);
         danyuanbiaosListView = (ListView) findViewById(R.id.danyuanbiaos);
 
-//        danyuanChooserEditText.setEnabled(false);
         danyuanChooserEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent();
-
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                i.setClass(DanyuanbiaochaobiaoList.this, AddressChooser.class);
                 startActivityForResult(i, ADDRESS_REQUEST_CODE);
+
             }
         });
+
     }
 
     @Override
@@ -51,6 +57,21 @@ public class DanyuanbiaochaobiaoList extends Activity {
                     Log.d("result", result.toString());
                     danyuanBianhao = result.getmDanyuanbianhao();
                     danyuanChooserEditText.setText(result.getmLoupanName() + "/" + result.getmLougeName() + "/" + result.getmDanyuanName());
+
+                    final ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos = (ArrayList<DanyuanbiaoChaobiao>) DanyuanbiaoChaobiao.findByDanyuanbianhao(result.getmDanyuanbianhao()) ;
+                    danyuanbiaosListView.setAdapter(new ListViewAdapter(danyuanbiaoChaobiaos));
+                    danyuanbiaosListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            DanyuanbiaoChaobiao danyuanbiaoChaobiao = danyuanbiaoChaobiaos.get(position);
+                            Intent intent = new Intent();
+                            intent.setClass(DanyuanbiaochaobiaoList.this, DanyuanbiaochaobiaoForm.class);
+                            intent.putExtra("danyuanbiaochaobiao_id", danyuanbiaoChaobiao.mRemoteID);
+                            intent.putExtra("danyuan", result.getmDanyuanName());
+                            startActivity(intent);
+                        }
+                    });
+                    danyuanbiaosListView.invalidate();
                 }
                 break;
             default:
@@ -58,5 +79,43 @@ public class DanyuanbiaochaobiaoList extends Activity {
 
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    class ListViewAdapter extends BaseAdapter{
+        ArrayList<DanyuanbiaoChaobiao> danyuanbiaochaobiaos;
+
+        ListViewAdapter(ArrayList<DanyuanbiaoChaobiao> danyuanbiaochaobiaos) {
+            this.danyuanbiaochaobiaos = danyuanbiaochaobiaos;
+        }
+
+        @Override
+        public int getCount() {
+            return danyuanbiaochaobiaos.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return danyuanbiaochaobiaos.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            DanyuanbiaoChaobiao danyuanbiaoChaobiao = danyuanbiaochaobiaos.get(position);
+
+            View view =  getLayoutInflater().inflate(R.layout.danyuanbiaochaobiao_item, null);
+            TextView biaomingcheng = (TextView)view.findViewById(R.id.biaomingcheng);
+            TextView shangcidushu = (TextView)view.findViewById(R.id.shangcibiaoshu);
+
+            biaomingcheng.setText(danyuanbiaoChaobiao.mBiaomingcheng);
+            shangcidushu.setText(StringUtils.parseToDushu(danyuanbiaoChaobiao.mShangciDushu));
+
+            return view;
+        }
     }
 }

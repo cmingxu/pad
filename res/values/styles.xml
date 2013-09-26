@@ -23,11 +23,19 @@
         <item name="android:shadowRadius">0.2</item>
         <item name="android:padding">8dp</item>
         <item name="android:background">#8ae6ff</item>
+        <item name="android:layout_marginLeft">5dp</item>
+
     </style>
 
     <style name="ltText">
     <item name="android:textSize">18sp</item>
-</style>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+
+    <style name="ltTableRow">
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
 
     <style name="big_button">
         <item name="android:textSize">15sp</item>

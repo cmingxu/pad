@@ -1,9 +1,6 @@
 package com.example.pad.view;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuInflater;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -14,9 +11,6 @@ import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.StringUtils;
 import com.example.pad.models.*;
-
-import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -113,9 +107,11 @@ public class XunjianmingxiView extends BaseActivity {
 
     public void save(){
         mXunjianzhi = Xunjianzhi.findByRemoteId(radioGroup.getCheckedRadioButtonId());
+        if (mXunjianzhi != null) {
+            mXunjiandanmingxi.mZhi = mXunjianzhi.mZhi;
+            mXunjiandanmingxi.mZhiId = String.valueOf(mXunjianzhi.mRemoteID);
+        }
         mXunjiandanmingxi.mShuoming = mXunjianshuoming.getText().toString();
-        mXunjiandanmingxi.mZhi = mXunjianzhi.mZhi;
-        mXunjiandanmingxi.mZhiId = String.valueOf(mXunjianzhi.mRemoteID);
         mXunjiandanmingxi.mXunjianShijian = StringUtils.currentTime();
         mXunjiandanmingxi.save();
 
@@ -126,14 +122,10 @@ public class XunjianmingxiView extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:
-                XunjianmingxiView.this.finish();
-                break;
-
             case R.id.action_save:
                 save();
             default:
-                return super.onOptionsItemSelected(item);
+                super.onOptionsItemSelected(item);
         }
 
         return true;

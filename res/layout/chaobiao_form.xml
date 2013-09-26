@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent">
+
+        <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow"
+                  android:layout_marginTop="10dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="当前抄表"
+                android:id="@+id/textView" android:layout_weight="1"
+                android:gravity="right" style="@style/ltLabel"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/biaomingcheng" android:layout_weight="3" style="@style/ltText"/>
+        </TableRow>
+
+
+        <TableRow style="@style/ltTableRow" android:layout_height="wrap_content" android:layout_width="fill_parent"
+                  android:id="@+id/tableRow">
+            <TextView style="@style/ltLabel" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="上次读数" android:id="@+id/textView2" android:layout_weight="1" android:gravity="right"/>
+            <TextView style="@style/ltText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="New Text" android:id="@+id/lastCount" android:layout_weight="3"/>
+        </TableRow>
+    <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="本次读数"
+                  android:id="@+id/textView1" android:layout_weight="1"
+                  android:gravity="right" style="@style/ltLabel"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dangqiandushu" android:layout_weight="3" style="@style/ltText"
+                android:inputType="numberDecimal"/>
+
+        </TableRow>
+
+
+        <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow"
+                  android:gravity="center_horizontal">
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抄表"
+            android:id="@+id/chaobiao" android:layout_gravity="center" style="@style/big_button"/>
+
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

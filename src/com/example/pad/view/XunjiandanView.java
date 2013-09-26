@@ -25,15 +25,14 @@ import java.util.ArrayList;
  */
 
 
-public class XunjiandanView extends BaseActivity implements ActionBar.TabListener{
-    private ListView listView;
+public class XunjiandanView extends BaseActivity implements ActionBar.TabListener {
     com.example.pad.models.Xunjiandan xunjiandan;
     ArrayList<Xunjiandian> mFinishedXunjiandians;
     ArrayList<Xunjiandian> mNotFinishedxunjiandians;
     ArrayAdapter<String> mFinishedListViewAdapter;
     ArrayAdapter<String> mNotFinishedListViewAdapter;
     boolean tabOneSelected;
-
+    private ListView listView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,22 +77,23 @@ public class XunjiandanView extends BaseActivity implements ActionBar.TabListene
         setupData();
         mFinishedListViewAdapter.notifyDataSetChanged();
         mNotFinishedListViewAdapter.notifyDataSetChanged();
+        listView.invalidate();
     }
 
-    public void setupData(){
-        mFinishedXunjiandians = (ArrayList<Xunjiandian>)xunjiandan.finishedXunjiandians();
-        mNotFinishedxunjiandians = (ArrayList<Xunjiandian>)xunjiandan.notFinishedXunjiandians();
+    public void setupData() {
+        mFinishedXunjiandians = (ArrayList<Xunjiandian>) xunjiandan.finishedXunjiandians();
+        mNotFinishedxunjiandians = (ArrayList<Xunjiandian>) xunjiandan.notFinishedXunjiandians();
 
-        listView = (ListView)findViewById(R.id.xunjianxiangmus);
+        listView = (ListView) findViewById(R.id.xunjianxiangmus);
 
         ArrayList<String> finishedXunjiandianStrs = new ArrayList<String>();
         ArrayList<String> notFinishedXunjiandianStrs = new ArrayList<String>();
 
-        for(Xunjiandian xunjiandian : mFinishedXunjiandians){
+        for (Xunjiandian xunjiandian : mFinishedXunjiandians) {
             finishedXunjiandianStrs.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
         }
 
-        for(Xunjiandian xunjiandian : mNotFinishedxunjiandians){
+        for (Xunjiandian xunjiandian : mNotFinishedxunjiandians) {
             notFinishedXunjiandianStrs.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
         }
 
@@ -103,26 +103,8 @@ public class XunjiandanView extends BaseActivity implements ActionBar.TabListene
         mNotFinishedListViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notFinishedXunjiandianStrs);
         listView.setAdapter(mFinishedListViewAdapter);
         listView.setOnItemClickListener(new OnItemClickListener());
+
     }
-
-    public class OnItemClickListener implements ListView.OnItemClickListener{
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            if(tabOneSelected){
-//                do nothing
-                Log.d("qoo", mFinishedXunjiandians.get(position).mBianhao);
-            }else{
-//                redirct to new activity
-                Intent intent = new Intent();
-                intent.setClass(XunjiandanView.this, XunjiandianView.class);
-                intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
-                intent.putExtra("xunjiandan_id", xunjiandan.mRemoteID);
-                startActivity(intent);
-            }
-        }
-    }
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -131,15 +113,14 @@ public class XunjiandanView extends BaseActivity implements ActionBar.TabListene
                 .getSelectedNavigationIndex());
     }
 
-
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-        listView = (ListView)findViewById(R.id.xunjianxiangmus);
+        listView = (ListView) findViewById(R.id.xunjianxiangmus);
 
-        if(tab.getTag()!=null && ((String)tab.getTag()).equals("tab1")){
+        if (tab.getTag() != null && ((String) tab.getTag()).equals("tab1")) {
             tabOneSelected = true;
             listView.setAdapter(mFinishedListViewAdapter);
-        }   else{
+        } else {
 
             tabOneSelected = false;
             listView.setAdapter(mNotFinishedListViewAdapter);
@@ -154,6 +135,24 @@ public class XunjiandanView extends BaseActivity implements ActionBar.TabListene
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
         //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public class OnItemClickListener implements ListView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            if (tabOneSelected) {
+//                do nothing
+                Log.d("qoo", mFinishedXunjiandians.get(position).mBianhao);
+            } else {
+//                redirct to new activity
+                Intent intent = new Intent();
+                intent.setClass(XunjiandanView.this, XunjiandianView.class);
+                intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
+                intent.putExtra("xunjiandan_id", xunjiandan.mRemoteID);
+                startActivity(intent);
+            }
+        }
     }
 
 }

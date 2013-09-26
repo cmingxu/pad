@@ -4,11 +4,13 @@ import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -54,6 +56,15 @@ public class DanyuanbiaoChaobiao extends Model {
 
     public static void deleteAll(){
         new Delete().from(DanyuanbiaoChaobiao.class).where("1=1").execute();
+    }
+
+
+    public static List<DanyuanbiaoChaobiao> findByDanyuanbianhao(String danyuanbianhao){
+        return new Select().from(DanyuanbiaoChaobiao.class).where("mDanyuanBianhao='" + danyuanbianhao + "'").execute();
+    }
+
+    public static DanyuanbiaoChaobiao findByRemoteId(int mRemoteID){
+        return new Select().from(DanyuanbiaoChaobiao.class).where("mRemoteId='" + mRemoteID + "'").executeSingle();
     }
 
 
