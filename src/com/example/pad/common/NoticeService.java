@@ -46,7 +46,7 @@ public class NoticeService extends Service {
                 public void onSuccess(JSONArray s) {
 
                     try {
-                        ArrayList<Notice> notices = Notice.fromJsonArray(s);
+                        ArrayList<Notice> notices = Notice.fromJsonArray(s, (AppContext)getApplication());
                         for (Notice notice : notices){
                             if (Notice.findByRemoteId(notice.remoteId) == null) {
                                 notice.save();
@@ -96,7 +96,6 @@ public class NoticeService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("qhwuqwwe", "service stop");
         UIHelper.showLongToast(NoticeService.this, "Notice Service on stop");
         timer.cancel();
         timer = null;
@@ -105,7 +104,6 @@ public class NoticeService extends Service {
 
     @Override
     public void onCreate() {
-        Log.d("sfwefew", "service start");
         super.onCreate();
         UIHelper.showLongToast(NoticeService.this, "Notice Service on create");
         appContext =(AppContext)getApplication();

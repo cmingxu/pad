@@ -2,29 +2,64 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              style="@style/overall"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="wrap_content">
 
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="接单人"
-            android:id="@+id/sendperson" android:layout_gravity="center" android:layout_margin="5dip"
-            android:textSize="20dip"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="sendtime"
-              android:id="@+id/sendtime" android:layout_gravity="center" android:layout_margin="5dip"
-              android:textSize="20dip"/>
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="维修单内容"
-              android:id="@+id/content" android:layout_gravity="center" android:layout_margin="5dip"
-              android:textSize="20dip"/>
+    <TableLayout android:layout_height="wrap_content" android:layout_width="fill_parent">
+
+        <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow"
+                  android:layout_marginTop="10dp">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="接单人"
+                    android:id="@+id/textView" android:layout_weight="1"
+                    android:gravity="right" style="@style/ltLabel"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sendperson" android:layout_gravity="center" android:layout_margin="5dip"
+                    android:textSize="20dip" android:layout_weight="2"/>
+        </TableRow>
+
+        <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow"
+                  android:layout_marginTop="10dp">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="接单时间"
+                    android:id="@+id/textView" android:layout_weight="1"
+                    android:gravity="right" style="@style/ltLabel"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/sendtime" android:layout_gravity="center" android:layout_margin="5dip"
+                      android:textSize="20dip" android:layout_weight="2"/>
+        </TableRow>
+
+        <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow"
+                  android:layout_marginTop="10dp" >
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="维修单内容"
+                    android:id="@+id/textView" android:layout_weight="1"
+                    android:gravity="right" style="@style/ltLabel"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=""
+                      android:id="@+id/content" android:layout_gravity="center" android:layout_margin="5dip"
+                      android:textSize="20dip" android:layout_weight="2"/>
+        </TableRow>
+
+    </TableLayout>
+
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:gravity="center_horizontal">
+            android:layout_height="wrap_content" android:gravity="center_horizontal" android:layout_marginTop="20dp">
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:text="接单"
-                android:id="@+id/action"/>
+                android:id="@+id/action" style="@style/big_button"/>
     </LinearLayout>
 </LinearLayout>

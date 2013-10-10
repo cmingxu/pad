@@ -27,7 +27,7 @@ public class Preference extends PreferenceActivity {
             getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
             getActionBar().setIcon(getResources().getDrawable(R.drawable.icon_zhuye));
             getActionBar().setDisplayHomeAsUpEnabled(true);
-            getActionBar().setTitle("PMP");
+            getActionBar().setTitle(getResources().getString(R.string.app_name));
         }
 
         EditTextPreference etp_server = (EditTextPreference) findPreference("server_path");

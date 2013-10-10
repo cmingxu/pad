@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              style="@style/overall"
+        >
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:gravity="center_horizontal"
+                android:layout_marginTop="10dip" android:showDividers="middle|end" android:orientation="vertical">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/jiaofei_btn" android:src="@drawable/baoxiu"
+                        android:background="@null" android:layout_margin="2dip" android:layout_gravity="center"
+                        android:onClick="redirectToJiaofeidanList"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="缴费单"
+                        android:id="@+id/textView" android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                             android:id="@+id/chaxun_btn"
+                             android:layout_column="3" android:src="@drawable/xunjian" android:layout_gravity="center"
+                             android:background="@null" android:layout_margin="2dip"
+                             android:onClick="redirectToChaxunList"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="查询" android:id="@+id/textView1" android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent">
+                <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                             android:id="@+id/baoxiu_btn" android:src="@drawable/chaobiao"
+                             android:layout_gravity="left|center_vertical" android:background="@null"
+                             android:layout_margin="2dip" android:onClick="redirectToBaoxiuList"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="报修"
+                          android:id="@+id/textView4" android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+        </TableRow>
+
+
+    </TableLayout>
+</LinearLayout>
+

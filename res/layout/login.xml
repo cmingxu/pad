@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:background="@drawable/bg">
+              style="@style/overall"
+              android:layout_height="wrap_content" android:background="@drawable/bg" android:orientation="vertical"
+              android:onClick="redirectToYezhuMain">
 
     <TextView
             android:layout_width="wrap_content"
@@ -24,12 +25,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" android:weightSum="2" android:layout_gravity="center"
             android:gravity="center">
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:text="登  录"
-                android:id="@+id/login_btn" android:layout_weight="1"
-                android:textSize="30dp" android:textColor="#ffffff"
-                style="@style/big_button" android:layout_gravity="center_horizontal"/>
+        <Button style="@style/big_button" android:layout_width="wrap_content" android:layout_height="51dp"
+                android:text="登  录" android:id="@+id/login_btn" android:layout_weight="1" android:textSize="30dp"
+                android:textColor="#ffffff" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+        <Button style="@style/big_button" android:layout_width="wrap_content" android:layout_height="51dp"
+                android:text="我是业主" android:id="@+id/iamyezhu" android:layout_weight="1" android:textSize="30dp"
+                android:textColor="#ffffff" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                android:onClick="redirectToYezhuMain"/>
     </LinearLayout>
 </LinearLayout>

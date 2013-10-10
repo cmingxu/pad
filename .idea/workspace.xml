@@ -24,26 +24,26 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" name="Default" comment="" />
     <ignored path="pad.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../game_studio/android-client/.idea/workspace.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364083820664" ignored="false" />
-    <file path="/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380199871065" ignored="false" />
-    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379936685221" ignored="false" />
+    <file path="/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381383360986" ignored="false" />
+    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381391362317" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
-    <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380198056391" ignored="false" />
-    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380078150005" ignored="false" />
+    <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381392134795" ignored="false" />
+    <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381390900308" ignored="false" />
     <file path="/Maintain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380198639847" ignored="false" />
-    <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380080465289" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379905205344" ignored="false" />
+    <file path="/NewForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381387702450" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381136125000" ignored="false" />
     <file path="/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379239585298" ignored="false" />
-    <file path="/AddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380078037467" ignored="false" />
+    <file path="/AddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381302055806" ignored="false" />
     <file path="/AppConfig.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380077349030" ignored="false" />
-    <file path="/AppContext.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379902967882" ignored="false" />
-    <file path="/BaseActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380198400052" ignored="false" />
+    <file path="/AppContext.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380436615539" ignored="false" />
+    <file path="/BaseActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381137140873" ignored="false" />
     <file path="/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1378119464501" ignored="false" />
     <file path="/Loupan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1377837951255" ignored="false" />
     <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368862466296" ignored="false" />
@@ -52,7 +52,7 @@
     <file path="/HttpHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379903287871" ignored="false" />
     <file path="/Base.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1366467746580" ignored="false" />
     <file path="/Config.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372905435555" ignored="false" />
-    <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371608597423" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381135819061" ignored="false" />
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/BackupRestore/res/values/strings.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116100776" ignored="false" />
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/NotePad/tests/AndroidManifest.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116100776" ignored="false" />
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/BackupRestore/src/com/example/android/backuprestore/ExampleAgent.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116100776" ignored="false" />
@@ -1010,7 +1010,7 @@
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/BackupRestore/res/layout/backup_restore.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116101110" ignored="false" />
     <file path="$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/NotePad/src/com/example/android/notepad/NotesList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367116101110" ignored="false" />
     <file path="/preference.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367639853242" ignored="false" />
-    <file path="/Preference.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379239254255" ignored="false" />
+    <file path="/Preference.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381134759820" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/internal/app/ActionBarImpl.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019777" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/internal/app/ActionBarWrapper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019777" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/actionbarsherlock/internal/nineoldandroids/animation/Animator.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1367657019778" ignored="false" />
@@ -1061,14 +1061,14 @@
     <file path="$PROJECT_DIR$/../pda_server/app/controllers/Loucengs.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/app/models/Weixiudan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
     <file path="$PROJECT_DIR$/../pda_server/app/models/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
-    <file path="/Util.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379902758048" ignored="false" />
+    <file path="/Util.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381137555871" ignored="false" />
     <file path="/UIHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373709840696" ignored="false" />
     <file path="/AddressChooserResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1378121034084" ignored="false" />
-    <file path="/new_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379253887361" ignored="false" />
+    <file path="/new_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381135891775" ignored="false" />
     <file path="/TakePic.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368870073492" ignored="false" />
     <file path="/take_pic.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368869411401" ignored="false" />
     <file path="/WeixiudanList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379904323769" ignored="false" />
-    <file path="/XunjianList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380198708001" ignored="false" />
+    <file path="/XunjianList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381386107572" ignored="false" />
     <file path="/Xunjian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1374290799762" ignored="false" />
     <file path="/WeixiudanUpload.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370081064453" ignored="false" />
     <file path="/StringUtils.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380197713232" ignored="false" />
@@ -1085,14 +1085,14 @@
     <file path="/Application.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370421121494" ignored="false" />
     <file path="/SyssendAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1370421325752" ignored="false" />
     <file path="/SyssendCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1371608231339" ignored="false" />
-    <file path="/Notice.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372142618236" ignored="false" />
-    <file path="/NoticeService.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379904217774" ignored="false" />
+    <file path="/Notice.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381308189338" ignored="false" />
+    <file path="/NoticeService.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381308202717" ignored="false" />
     <file path="/NoticeAcceptList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1378127429482" ignored="false" />
     <file path="/NoticeCompleteList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379904630354" ignored="false" />
-    <file path="/NoticeAcceptForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379904640425" ignored="false" />
-    <file path="/NoticeCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379904351378" ignored="false" />
+    <file path="/NoticeAcceptForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381384417409" ignored="false" />
+    <file path="/NoticeCompleteForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381384480556" ignored="false" />
     <file path="/weixiudan_list_seperator.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372064906212" ignored="false" />
-    <file path="/styles.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380097250508" ignored="false" />
+    <file path="/styles.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381300141406" ignored="false" />
     <file path="/Zidian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372071151746" ignored="false" />
     <file path="/Cidian.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372384862319" ignored="false" />
     <file path="/MainFragement.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1372901817576" ignored="false" />
@@ -1465,19 +1465,29 @@
     <file path="/XunjiandanView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380101977546" ignored="false" />
     <file path="/XunjiandianView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379941721367" ignored="false" />
     <file path="/xunjianmingxi.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379905956750" ignored="false" />
-    <file path="/PadJsonHttpResponseHandler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379250612975" ignored="false" />
+    <file path="/PadJsonHttpResponseHandler.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381387451318" ignored="false" />
     <file path="$PROJECT_DIR$/../../../open-source-code/android/ProAndAppDev/gen/com/example/ProAndAppDev/BuildConfig.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379426339060" ignored="false" />
     <file path="/xunjiandian.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379427210364" ignored="false" />
     <file path="/LoadingPage.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379902005710" ignored="false" />
-    <file path="/LandingPage.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380199420800" ignored="false" />
+    <file path="/LandingPage.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381138036237" ignored="false" />
     <file path="/DanyuanbiaoChaobiao.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379945798056" ignored="false" />
     <file path="/DanyuanbiaochaobiaoList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380198931736" ignored="false" />
-    <file path="/main.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380071936672" ignored="false" />
-    <file path="/DanyuanbiaochaobiaoForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380197267621" ignored="false" />
+    <file path="/main.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381299132723" ignored="false" />
+    <file path="/DanyuanbiaochaobiaoForm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381384521016" ignored="false" />
     <file path="/AppManager.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380078330529" ignored="false" />
     <file path="/border.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380096297639" ignored="false" />
     <file path="/chaobiao_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380196736167" ignored="false" />
-    <file path="$USER_HOME$/Documents/Test/src/com/company/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380197694039" ignored="false" />
+    <file path="$USER_HOME$/Documents/Test/src/com/company/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381383363819" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../open-source-code/java/android-app/src/net/oschina/app/AppContext.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1380599141142" ignored="false" />
+    <file path="/Setting.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381299788386" ignored="false" />
+    <file path="/setting.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381300181463" ignored="false" />
+    <file path="/notice_accept_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381302581962" ignored="false" />
+    <file path="/notice_complete_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381303318497" ignored="false" />
+    <file path="/CachedRequest.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381383395717" ignored="false" />
+    <file path="/login_main.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381390289319" ignored="false" />
+    <file path="/YezhuMain.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381391492934" ignored="false" />
+    <file path="/YezhuBaoxiu.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381391647247" ignored="false" />
+    <file path="/YezhuJiaofeidanList.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381392951003" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1492,6 +1502,24 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -1528,24 +1556,6 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -1555,86 +1565,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DanyuanbiaochaobiaoList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="16" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XunjiandianView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="62" selection-start="3525" selection-end="3525" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XunjianmingxiView.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianmingxiView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="16" selection-start="4814" selection-end="4814" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/BaseActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="16" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LandingPage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/LandingPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="28" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="23" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.20578778">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maintain.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="30" selection-start="2857" selection-end="2857" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NewForm.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="13" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XunjianList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="21" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.0">
+            <state line="246" column="6" selection-start="9662" selection-end="9877" vertical-scroll-proportion="18.62963">
               <folding />
             </state>
           </provider>
@@ -1643,9 +1577,93 @@
       <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="398" column="26" selection-start="13808" selection-end="13808" vertical-scroll-proportion="0.0">
+            <state line="409" column="45" selection-start="14171" selection-end="14171" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YezhuMain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="36" selection-start="746" selection-end="766" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YezhuJiaofeidanList.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuJiaofeidanList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="36" selection-start="3279" selection-end="3279" vertical-scroll-proportion="0.5153061">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yezhu_jiaofeidan_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/yezhu_jiaofeidan_item.xml">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yezhujiaofeidan_list.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/yezhujiaofeidan_list.xml">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YezhuChaxunList.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuChaxunList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="49" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YezhuBaoxiu.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuBaoxiu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="45" selection-start="280" selection-end="292" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yezhu_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/yezhu_main.xml">
+          <provider editor-type-id="text-editor">
+            <state line="54" column="0" selection-start="3289" selection-end="3289" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/login.xml">
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -1664,28 +1682,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/Xunjiandan.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjiandanView.java" />
-        <option value="$PROJECT_DIR$/res/layout/xunjiandian.xml" />
-        <option value="$PROJECT_DIR$/res/layout/xunjianmingxi.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NoticeCompleteForm.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoForm.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/common/StringUtils.java" />
-        <option value="$PROJECT_DIR$/res/layout/chaobiao_form.xml" />
-        <option value="$PROJECT_DIR$/res/layout/danyuanbiaochaobiao_item.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Maintain.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/XunjianmingxiView.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/LandingPage.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/view/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/common/PadJsonHttpResponseHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/NewForm.java" />
+        <option value="$PROJECT_DIR$/res/layout/login_main.xml" />
+        <option value="$PROJECT_DIR$/res/layout/login.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/YezhuMain.java" />
+        <option value="$PROJECT_DIR$/res/layout/yezhu_main.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/YezhuBaoxiu.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/YezhuChaxunList.java" />
+        <option value="$PROJECT_DIR$/res/layout/yezhujiaofeidan_list.xml" />
+        <option value="$PROJECT_DIR$/res/layout/YezhuJiaofeidanItem.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/YezhuJiaofeidanList.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1860" />
+    <option name="width" value="1864" />
     <option name="height" value="1178" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1741,6 +1759,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1796,6 +1815,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1881,6 +1944,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1906,7 +1987,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1950,15 +2030,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.pad.models" />
       <recent name="com.example.pad.view" />
+      <recent name="com.example.pad.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/layout" />
+      <recent name="$PROJECT_DIR$/res/drawable-hdpi" />
+      <recent name="$PROJECT_DIR$/res/drawable" />
       <recent name="$PROJECT_DIR$/res/drawable-mdpi" />
       <recent name="$PROJECT_DIR$/res/menu" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.pad" />
@@ -2163,28 +2243,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1860" height="1178" extended-state="6" />
+    <frame x="0" y="22" width="1864" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21792035" sideWeight="0.6101852" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28539824" sideWeight="0.6101852" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2174393" sideWeight="0.6111111" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28476822" sideWeight="0.6111111" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.67346936" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.47857141" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39444444" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39444444" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38981482" sideWeight="0.5005531" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19512194" sideWeight="0.3506865" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28425926" sideWeight="0.49944812" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="381" y="22" width="1280" height="800" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="193" y="22" width="1280" height="822" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22566372" sideWeight="0.6101852" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38981482" sideWeight="0.4994469" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2621413" sideWeight="0.6111111" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3888889" sideWeight="0.4994469" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2262,134 +2342,127 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/xunjianmingxi.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoForm.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/NoticeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="88" selection-start="1723" selection-end="1723" vertical-scroll-proportion="0.0">
+        <state line="52" column="116" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/StringUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NoticeAcceptForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="264" column="31" selection-start="7279" selection-end="7279" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#700#718#0" expanded="true" />
-            <element signature="e#961#979#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/chaobiao_form.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="26" column="17" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.0">
+        <state line="62" column="0" selection-start="2064" selection-end="2303" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/chaobiao_list.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/danyuanbiaochaobiao_item.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="26" selection-start="13808" selection-end="13808" vertical-scroll-proportion="0.0">
+        <state line="138" column="84" selection-start="5272" selection-end="5272" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Maintain.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="30" selection-start="2857" selection-end="2857" vertical-scroll-proportion="0.0">
+        <state line="18" column="13" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/PadJsonHttpResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="33" selection-start="1775" selection-end="1796" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="31" selection-start="159" selection-end="172" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/NewForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="13" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="21" selection-start="2948" selection-end="2948" vertical-scroll-proportion="0.0">
+        <state line="246" column="6" selection-start="9662" selection-end="9877" vertical-scroll-proportion="18.62963">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjiandianView.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/login.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="62" selection-start="3525" selection-end="3525" vertical-scroll-proportion="0.0">
+        <state line="409" column="45" selection-start="14171" selection-end="14171" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/XunjianmingxiView.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="16" selection-start="4814" selection-end="4814" vertical-scroll-proportion="0.0">
+        <state line="29" column="36" selection-start="746" selection-end="766" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/yezhu_main.xml">
+      <provider editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="3289" selection-end="3289" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuBaoxiu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="16" selection-start="1551" selection-end="1551" vertical-scroll-proportion="0.0">
+        <state line="12" column="45" selection-start="280" selection-end="292" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/LandingPage.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuChaxunList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="28" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0">
+        <state line="12" column="49" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="16" selection-start="2775" selection-end="2775" vertical-scroll-proportion="0.0">
+    <entry file="file://$PROJECT_DIR$/res/layout/yezhujiaofeidan_list.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/yezhu_jiaofeidan_item.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YezhuJiaofeidanList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="23" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.20578778">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="109" column="36" selection-start="3279" selection-end="3279" vertical-scroll-proportion="0.5153061">
+          <folding />
         </state>
       </provider>
     </entry>

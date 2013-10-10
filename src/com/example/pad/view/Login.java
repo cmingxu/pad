@@ -41,6 +41,7 @@ public class Login extends BaseActivity {
     private HttpHelper httpHelper;
     private Handler handler;
     private AppContext appContext;
+    private Button iamyezhu;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,7 @@ public class Login extends BaseActivity {
         appNameTv = (TextView) findViewById(R.id.app_name);
         appNameTv.setText(R.string.app_name);
         loginBtn.setOnClickListener(new LoginInOnClickListener());
+        iamyezhu = (Button)findViewById(R.id.iamyezhu);
 
 
         progressDialog = new ProgressDialog(this);
@@ -403,5 +405,9 @@ public class Login extends BaseActivity {
                 Toast.makeText(Login.this, R.string.input_error, Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void redirectToYezhuMain(View view){
+        redirect(Login.this, YezhuMain.class);
     }
 }

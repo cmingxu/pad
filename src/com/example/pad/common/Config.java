@@ -1,7 +1,5 @@
 package com.example.pad.common;
 
-import java.util.HashMap;
-
 /**
  * Created with IntelliJ IDEA.
  * User: xcm
@@ -14,7 +12,7 @@ public class Config {
     public static final String SERVER_BASE_URL = "http://101.20.142.1:9000/";
 //    public static final String SERVER_BASE_URL = "http://192.168.0.113:9000/";
 
-    public static final int NOTICE_FETCH_INTERVAL = 3 * 60 * 1000;
+    public static final int NOTICE_FETCH_INTERVAL = 1 * 1000;
     public static final int HTTP_TIMEOUT = 15 * 1000;
 
     public static boolean passwordRequired(){

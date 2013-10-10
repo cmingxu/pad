@@ -8,14 +8,16 @@ import com.example.pad.AppContext;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.PadJsonHttpResponseHandler;
 import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
+import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Cidian;
 import com.example.pad.models.Notice;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -122,11 +124,19 @@ public class NoticeCompleteForm extends BaseActivity {
 
                     return;
                 }
+
+
+                CachedRequest cachedRequest = new CachedRequest();
+                cachedRequest.setHappenedAt(new Date());
+                cachedRequest.setRequest(path + "?id=" + n.remoteId + "&desc="  + desc);
+                cachedRequest.setType("维修单完成");
+
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage("保存中");
                 progressDialog.show();
 
-                httpHelper.with(path + "?id=" + n.remoteId + "&desc="  + desc, null, new JsonHttpResponseHandler(){
+                httpHelper.with(path + "?id=" + n.remoteId + "&desc="  + desc, null,
+                        new PadJsonHttpResponseHandler(getApplicationContext(), progressDialog, cachedRequest){
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
                         progressDialog.dismiss();

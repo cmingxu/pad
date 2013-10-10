@@ -7,10 +7,12 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.example.pad.view.LandingPage;
 
 /**
  * Created with IntelliJ IDEA.
@@ -42,6 +44,7 @@ public class BaseActivity extends SherlockActivity {
         appContext = (AppContext)getApplication();
         appConfig  = AppConfig.getAppConfig(appContext);
         appManager.addActivity(this);
+        Log.d("onCreate", this.getTitle().toString());
 
     }
 
@@ -50,8 +53,10 @@ public class BaseActivity extends SherlockActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+
     @Override
     protected void onDestroy() {
+        Log.d("onDestroy", this.getTitle().toString());
         super.onDestroy();
     }
 
@@ -100,7 +105,11 @@ public class BaseActivity extends SherlockActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 appContext.logout();
-                System.exit(0);
+                Intent intent = new Intent(BaseActivity.this, LandingPage.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("Exit", true);
+                startActivity(intent);
+                finish();
             }
         }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override

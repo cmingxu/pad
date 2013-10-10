@@ -3,6 +3,7 @@ package com.example.pad.common;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
+import com.example.pad.models.CachedRequest;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,14 +18,21 @@ import org.json.JSONObject;
 public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
     private Context context;
     private ProgressDialog progressDialog;
+    private CachedRequest cachedRequest;
 
     public PadJsonHttpResponseHandler(Context context) {
         this.context = context;
     }
-
     public PadJsonHttpResponseHandler(Context context, ProgressDialog progressDialog) {
         this.context = context;
         this.progressDialog = progressDialog;
+
+    }
+
+    public PadJsonHttpResponseHandler(Context context, ProgressDialog progressDialog, CachedRequest cachedRequest) {
+        this.context = context;
+        this.progressDialog = progressDialog;
+        this.cachedRequest = cachedRequest;
     }
 
     @Override
@@ -40,11 +48,19 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
     @Override
     public void onFailure(Throwable throwable, JSONObject jsonObject) {
         Log.d("network", "onFailure");
-        super.onFailure(throwable, jsonObject);
+
+        Log.d("cachedrequest", "fuck");
+
         if (progressDialog != null) {
             progressDialog.hide();
         }
         UIHelper.showLongToast(context, throwable.toString());
+        if (cachedRequest != null) {
+            Log.d("cachedrequest", cachedRequest.getRequest());
+            cachedRequest.save();
+        }
+
+        super.onFailure(throwable, jsonObject);
     }
 
     @Override
@@ -54,7 +70,12 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
         if (progressDialog != null) {
             progressDialog.hide();
         }
-        UIHelper.showLongToast(context, throwable.toString());
+        Log.e("network", throwable.toString());
+        UIHelper.showLongToast(context, "网络错， 检查网络是否连接以及服务器地址是否设置正确。");
+//        save request for later retranssmit
+        if (cachedRequest != null) {
+            cachedRequest.save();
+        }
     }
 
     @Override
@@ -65,7 +86,12 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
         if (progressDialog != null) {
             progressDialog.hide();
         }
-        UIHelper.showLongToast(context, throwable.toString());
+        UIHelper.showLongToast(context, "网络错， 检查网络是否连接以及服务器地址是否设置正确。");
+        if (cachedRequest != null) {
+            cachedRequest.save();
+        }
 
     }
+
+
 }

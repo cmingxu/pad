@@ -3,6 +3,7 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              style="@style/overall"
         >
     <TableLayout
             android:layout_width="fill_parent"
@@ -47,6 +48,28 @@
                           android:id="@+id/textView4" android:layout_gravity="center_horizontal"/>
             </LinearLayout>
 
+        </TableRow>
+
+        <TableRow android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:layout_marginTop="10dip" android:showDividers="middle|end"
+                  android:gravity="center_horizontal">
+
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent">
+                <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                             android:id="@+id/setting_btn" android:src="@drawable/chaobiao"
+                             android:layout_gravity="left|center_vertical" android:background="@null"
+                             android:layout_margin="2dip"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="设置"
+                          android:id="@+id/textView4" android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:id="@+id/linearLayout">
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                          android:layout_height="fill_parent" android:id="@+id/linearLayout1">
+            </LinearLayout>
         </TableRow>
 
 

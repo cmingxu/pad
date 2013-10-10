@@ -3,7 +3,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
+              style="@style/overall"
               android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
 
     <EditText
             android:layout_width="fill_parent"
@@ -66,4 +71,6 @@
                 style="@style/big_button"/>
     </LinearLayout>
 
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

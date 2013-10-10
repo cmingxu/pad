@@ -5,6 +5,7 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
+import com.example.pad.AppContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,8 +52,11 @@ public class Notice extends Model{
     public boolean completeUpload;
     @Column(name="daixiuUpload")
     public boolean daixiuUpload;
+    @Column(name="userlogin")
+    public String userlogin;
 
-    public static ArrayList<Notice> fromJsonArray(JSONArray s) throws JSONException {
+
+    public static ArrayList<Notice> fromJsonArray(JSONArray s, AppContext context) throws JSONException {
         JSONObject temp = null;
         ArrayList<Notice> notices = new ArrayList<Notice>();
 
@@ -71,6 +75,7 @@ public class Notice extends Model{
             notice.acceptUpload = false;
             notice.completeUpload = false;
             notice.daixiuUpload = false;
+            notice.userlogin = context.getCurrentUser().login;
             notices.add(notice);
 
         }

@@ -20,11 +20,12 @@ import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.PadJsonHttpResponseHandler;
 import com.example.pad.common.UIHelper;
+import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandanmingxi;
-import com.loopj.android.http.RequestParams;
 import org.json.JSONObject;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -80,6 +81,10 @@ public class XunjianList extends BaseActivity
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getSupportMenuInflater().inflate(R.menu.xunjiandan_list_menu, menu);
+        if(appConfig.getLoggedUser() != null){
+            MenuItem menuItem = menu.findItem(R.id.action_logout) ;
+            menuItem.setTitle("退出" + appConfig.getLoggedUser());
+        }
         return true;
     }
 
@@ -104,10 +109,14 @@ public class XunjianList extends BaseActivity
 
             for (final Xunjiandan o : Xunjiandan.findAllFinished()) {
                if(o.finished()){
-                   RequestParams rp = new RequestParams("id", o.mRemoteID);
-                   rp.put("minTime", o.minTime());
-                   rp.put("maxTime", o.maxTime());
-                   httpHelper.post("xunjiandans", rp, new PadJsonHttpResponseHandler(XunjianList.this, progressDialog) {
+
+                   CachedRequest cachedRequest = new CachedRequest();
+                   cachedRequest.setHappenedAt(new Date());
+                   cachedRequest.setRequest("xunjiandans?id=" + o.mRemoteID + "&minTime=" + o.minTime() + "&maxTime=" + o.maxTime());
+                   cachedRequest.setType("巡检单");
+
+                   httpHelper.post("xunjiandans?id=" + o.mRemoteID + "&minTime=" + o.minTime() + "&maxTime=" + o.maxTime(), null,
+                           new PadJsonHttpResponseHandler(XunjianList.this, progressDialog, cachedRequest) {
 
                        @Override
                        public void onSuccess(JSONObject jsonObject) {
@@ -119,14 +128,19 @@ public class XunjianList extends BaseActivity
                    });
 
                    for (final Xunjiandanmingxi xunjiandanmingxi : o.xunjiandanmingxis()) {
-                       RequestParams mingxirp = new RequestParams("id", xunjiandanmingxi.mRemoteID);
-                       mingxirp.put("zhiid", xunjiandanmingxi.mZhiId);
-                       mingxirp.put("zhi", xunjiandanmingxi.mZhi);
-                       mingxirp.put("xunjianshijian", xunjiandanmingxi.mXunjianShijian);
-                       mingxirp.put("biaoshi", xunjiandanmingxi.mBiaoshi);
-                       mingxirp.put("shuoming", xunjiandanmingxi.mShuoming);
 
-                       httpHelper.post("xunjiandanmingxis", mingxirp, new PadJsonHttpResponseHandler(XunjianList.this, progressDialog) {
+
+                       String request = new String("id=" + xunjiandanmingxi.mRemoteID + "&zhiid=" + xunjiandanmingxi.mZhiId + "&zhi=" + xunjiandanmingxi.mZhi +
+                       "&xunjianshijian=" + xunjiandanmingxi.mXunjianShijian + "&biaoshi=" + xunjiandanmingxi.mBiaoshi +
+                               "&shuoming=" + xunjiandanmingxi.mShuoming);
+
+                       CachedRequest mingxicachedRequest = new CachedRequest();
+                       mingxicachedRequest.setHappenedAt(new Date());
+                       mingxicachedRequest.setRequest("xunjiandanmingxis?" + request);
+                       mingxicachedRequest.setType("巡检明细");
+
+                       httpHelper.post("xunjiandanmingxis?" + request, null,
+                               new PadJsonHttpResponseHandler(XunjianList.this, progressDialog, mingxicachedRequest) {
 
                            @Override
                            public void onSuccess(JSONObject jsonObject) {

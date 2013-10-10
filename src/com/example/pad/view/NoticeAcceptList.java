@@ -1,6 +1,5 @@
 package com.example.pad.view;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,7 +16,6 @@ import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.models.Notice;
-import com.example.pad.models.Weixiudan;
 
 import java.util.List;
 
@@ -52,7 +50,7 @@ public class NoticeAcceptList extends BaseActivity{
             }
         });
 
-        notice_list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                notice_list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 final Notice notice = notices.get(position);
@@ -69,7 +67,7 @@ public class NoticeAcceptList extends BaseActivity{
 
                     }
                 }).show();
-                return false;  //To change body of implemented methods use File | Settings | File Templates.
+                return false;
             }
         });
 

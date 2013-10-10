@@ -53,6 +53,9 @@ public class Xunjiandan extends Model {
     public int mRemoteID;
     @Column(name = "mXunjianren")
     public String mXunjianren;
+    @Column(name="userlogin")
+    public String userlogin;
+
 
     public static ArrayList<Xunjiandan> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;

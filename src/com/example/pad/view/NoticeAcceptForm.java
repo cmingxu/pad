@@ -9,11 +9,14 @@ import android.widget.Toast;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
+import com.example.pad.common.PadJsonHttpResponseHandler;
 import com.example.pad.common.UIHelper;
 import com.example.pad.common.Util;
+import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Notice;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONObject;
+
+import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -58,11 +61,17 @@ public class NoticeAcceptForm extends BaseActivity {
                     return;
                 }
 
+                CachedRequest cachedRequest = new CachedRequest();
+                cachedRequest.setHappenedAt(new Date());
+                cachedRequest.setRequest("jiedan?id=" + n.remoteId);
+                cachedRequest.setType("维修单接单");
+
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage("接单中");
                 progressDialog.show();
 
-                httpHelper.with("jiedan?id=" + n.remoteId, null, new JsonHttpResponseHandler(){
+                httpHelper.with("jiedan?id=" + n.remoteId, null,
+                        new PadJsonHttpResponseHandler(getApplicationContext(), progressDialog, cachedRequest){
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
                         progressDialog.dismiss();

@@ -49,4 +49,8 @@
         <item name="android:background">@drawable/big_button</item>
         <item name="android:padding">10dip</item>
     </style>
+
+    <style name="overall">
+        <item name="android:background">#eee</item>
+    </style>
 </resources>

@@ -11,7 +11,9 @@ import android.view.WindowManager;
 import com.example.pad.AppConfig;
 import com.example.pad.AppContext;
 import com.example.pad.R;
+import com.example.pad.common.NoticeService;
 import com.example.pad.common.StringUtils;
+import com.example.pad.common.Util;
 import com.example.pad.models.User;
 
 
@@ -31,13 +33,23 @@ public class LandingPage extends Activity {
         setContentView(R.layout.loading);
 
 
+        if(getIntent().getBooleanExtra("Exit", false)){
+//            stoping noticeservice
+            if(Util.isNoticeServiceRunning(LandingPage.this)) {
+                Log.d("service runing", "running");
+                stopService(new Intent(LandingPage.this, NoticeService.class));
+            }
+            finish();
+            return;
+
+        } else{
+
         Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 String autoLoggedInUserLogin = AppConfig.getAppConfig(LandingPage.this).getLoggedUser();
 
-                Log.d("landing", autoLoggedInUserLogin);
                 boolean isAutoLoggedin = (!StringUtils.isEmpty(autoLoggedInUserLogin));
                 User u = User.find_by_login(autoLoggedInUserLogin);
 
@@ -54,10 +66,13 @@ public class LandingPage extends Activity {
         };
 
         handler.postDelayed(runnable, 3 * 1000);
+        }
     }
 
     protected void redirect(Context from, Class to){
         Intent i = new Intent();
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         i.setClass(from, to);
         from.startActivity(i);
     }

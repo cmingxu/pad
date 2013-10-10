@@ -1,14 +1,11 @@
 package com.example.pad.models;
 
-import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
 import com.example.pad.common.StringUtils;
-import com.google.gson.Gson;
-import org.apache.http.client.utils.URLEncodedUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,6 +62,8 @@ public class Weixiudan extends Model {
     public String image2;
     @Column(name="mImage3")
     public String image3;
+    @Column(name="userlogin")
+    public String userlogin;
 
     public Weixiudan() {
     }

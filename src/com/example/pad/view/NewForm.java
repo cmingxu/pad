@@ -15,13 +15,10 @@ import android.widget.*;
 import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
-import com.example.pad.common.HttpHelper;
-import com.example.pad.common.StringUtils;
-import com.example.pad.common.UIHelper;
-import com.example.pad.common.Util;
+import com.example.pad.common.*;
 import com.example.pad.models.AddressChooserResult;
+import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Weixiudan;
-import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import org.json.JSONObject;
 
@@ -149,8 +146,7 @@ public class NewForm extends BaseActivity {
         weixiudan.mDanyuanBianhao = result.mDanyuanbianhao;
         weixiudan.mLoupanName = result.mLoupanName;
         weixiudan.mLoupanBianhao = result.mLoupanbianhao;
-
-
+        weixiudan.userlogin = appContext.getCurrentUser().login;
 
     }
 
@@ -237,7 +233,6 @@ public class NewForm extends BaseActivity {
                     handler.sendMessage(message);
                 }
 
-                Log.d("toJSon", weixiudan.toQuery());
                 RequestParams params = new RequestParams();
                 try {
 
@@ -248,16 +243,23 @@ public class NewForm extends BaseActivity {
                     if (weixiudan.image3 != null)
                         params.put("image3", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image3));
                 } catch(FileNotFoundException e) {}
-                if(!Util.instance().isNetworkConnected(NewForm.this)){
-                    UIHelper.showLongToast(NewForm.this, getString(R.string.network_error));
 
-                    return;
-                }
+//                if(!Util.instance().isNetworkConnected(NewForm.this)){
+//                    UIHelper.showLongToast(NewForm.this, getString(R.string.network_error));
+//
+//                    return;
+//                }
 
+
+                final CachedRequest cachedRequest = new CachedRequest();
+                cachedRequest.setHappenedAt(new Date());
+                cachedRequest.setRequest("weixiudans?" + weixiudan.toQuery());
+                cachedRequest.setType("维修单");
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage(getString(R.string.save_and_upload_inprogress));
                 progressDialog.show();
-                new HttpHelper(appContext).post("weixiudans?" + weixiudan.toQuery(), params, new JsonHttpResponseHandler() {
+                new HttpHelper(appContext).post("weixiudans?" + weixiudan.toQuery(), params,
+                        new PadJsonHttpResponseHandler(getApplicationContext(), progressDialog, cachedRequest) {
 
                     @Override
                     public void onSuccess(int i, JSONObject jsonObject) {
@@ -274,6 +276,7 @@ public class NewForm extends BaseActivity {
                     @Override
                     public void onFailure(Throwable throwable, JSONObject jsonObject) {
                         Log.d("onFailure", "throwable");
+                        cachedRequest.save();
                         super.onFailure(throwable, jsonObject);
                         Message message = new Message();
                         message.what = WEIXIUDAN_SAVE_FAILE;

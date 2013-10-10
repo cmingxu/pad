@@ -63,10 +63,7 @@ public class AddressChooser extends BaseActivity {
 
         public void back() {
             if (state.current_selecting.equals("loupan")) {
-                Intent i = new Intent();
-                i.setClass(AddressChooser.this, NewForm.class);
-                appManager.finishActivity();
-                startActivity(i);
+                finish();
             } else if (state.current_selecting.equals("louge")) {
             } else if (state.current_selecting.equals("louceng")) {
             } else if (state.current_selecting.equals("danyuan")) {

@@ -1,5 +1,8 @@
 package com.example.pad.view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,6 +16,8 @@ public class Main extends BaseActivity {
     private ImageButton maintain_btn;
     private ImageButton xunjian_btn;
     private ImageButton chaobiao_btn;
+    private ImageButton setting_btn;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,8 @@ public class Main extends BaseActivity {
         xunjian_btn.setOnClickListener(new XunjianClickListener());
         chaobiao_btn = (ImageButton) findViewById(R.id.chaobiao_btn);
         chaobiao_btn.setOnClickListener(new ChaobiaoClickListener());
+        setting_btn = (ImageButton) findViewById(R.id.setting_btn);
+        setting_btn.setOnClickListener(new SettingClickListener());
     }
 
 
@@ -51,6 +58,16 @@ public class Main extends BaseActivity {
         }
     }
 
+    protected class SettingClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            redirect(Main.this, Setting.class);
+
+        }
+    }
+
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -68,11 +85,28 @@ public class Main extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
-                lastActivityWarnning();
+                new AlertDialog.Builder(this).setMessage(R.string.logout_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        appContext.logout();
+                        Intent intent = new Intent(Main.this, LandingPage.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra("Exit", true);
+                        startActivity(intent);
+                        Main.this.finish();
+                    }
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).show();
+                break;
             default:
+                super.onOptionsItemSelected(item);
                 break;
         }
-        return super.onOptionsItemSelected(item);
+        return  true;
     }
 
 
