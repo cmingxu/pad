@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              style="@style/overall"
+              android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/zhuhuName" android:layout_gravity="center" android:hint="业主姓名"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/zhuHuPhone" android:layout_gravity="center" android:hint="业主电话"
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+    <Spinner
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/categories" android:layout_gravity="center" android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/baoxiuneirong" android:layout_gravity="center" android:lines="1" android:longClickable="true"
+            android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView1" android:layout_weight="1" android:minHeight="50dip"
+                android:src="@drawable/placeholder" android:longClickable="false"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2" android:layout_weight="1" android:minHeight="50dip" android:src="@drawable/placeholder"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3" android:layout_weight="1" android:minHeight="50dip" android:src="@drawable/placeholder"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_gravity="center" android:gravity="center_horizontal">
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保存"
+                android:id="@+id/saveBtn" android:layout_marginTop="20dp"
+                android:textSize="25dp"
+                style="@style/big_button"/>
+    </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

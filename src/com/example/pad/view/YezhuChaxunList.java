@@ -2,6 +2,7 @@ package com.example.pad.view;
 
 import android.os.Bundle;
 import com.example.pad.BaseActivity;
+import com.example.pad.R;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,5 +14,6 @@ import com.example.pad.BaseActivity;
 public class YezhuChaxunList extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.yezhu_chaxun_list);
     }
 }

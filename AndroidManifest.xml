@@ -85,6 +85,9 @@
         <activity android:name=".view.YezhuMain"/>
         <activity android:name=".view.YezhuJiaofeidanList"/>
         <activity android:name=".view.YezhuBaoxiu"/>
+        <activity android:name=".view.YezhuChaxunList"/>
+
+
         <service android:name=".common.NoticeService"/>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
