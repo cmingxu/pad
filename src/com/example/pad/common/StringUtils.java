@@ -246,11 +246,17 @@ public class StringUtils
 
     public static Date parseTime(String string){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         try {
             return sdf.parse(string);
         } catch (ParseException e) {
-            System.out.println(e.fillInStackTrace());
-            return null;
+            try {
+                return sdf2.parse(string.substring(0, 15));
+            } catch (ParseException e1) {
+
+                e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                return null;
+            }
         }
     }
 

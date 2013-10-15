@@ -8,10 +8,12 @@
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/time_range_select" android:layout_gravity="center" android:layout_marginTop="120dip"/>
+            android:id="@+id/time_range_select" android:layout_gravity="center" android:layout_marginTop="120dip"
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="开始下载"
-            android:id="@+id/download" android:layout_gravity="center" style="@style/big_button"/>
+            android:id="@+id/download" android:layout_gravity="center" style="@style/big_button"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
 </LinearLayout>
