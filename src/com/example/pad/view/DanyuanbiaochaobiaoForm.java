@@ -29,7 +29,7 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
     private TextView lastCountTv;
     private Button chaobiaoButton;
     private DanyuanbiaoChaobiao danyuanbiaoChaobiao;
-    private String danyuan;
+    private String louceng;
     HttpHelper httpHelper;
     Handler handler;
     ProgressDialog progressDialog;
@@ -45,8 +45,8 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
 
         danyuanbiaoChaobiao = DanyuanbiaoChaobiao.findByRemoteId(getIntent().getIntExtra("danyuanbiaochaobiao_id", 0));
 
-        danyuan = getIntent().getStringExtra("danyuan");
-        biaomingcheng.setText(danyuan + "/" + danyuanbiaoChaobiao.mBiaomingcheng);
+        louceng = getIntent().getStringExtra("louceng");
+        biaomingcheng.setText(louceng + "/" + danyuanbiaoChaobiao.mBiaomingcheng);
         lastCountTv.setText(StringUtils.parseToDushu(danyuanbiaoChaobiao.mShangciDushu));
 
         chaobiaoButton.setOnClickListener(new ChaobiaoButtonListener());

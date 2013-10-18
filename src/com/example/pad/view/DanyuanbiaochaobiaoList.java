@@ -2,7 +2,6 @@ package com.example.pad.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -11,6 +10,7 @@ import com.example.pad.R;
 import com.example.pad.common.StringUtils;
 import com.example.pad.models.AddressChooserResult;
 import com.example.pad.models.DanyuanbiaoChaobiao;
+import com.example.pad.models.Louceng;
 
 import java.util.ArrayList;
 
@@ -40,7 +40,7 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
             public void onClick(View v) {
                 Intent i = new Intent();
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                i.setClass(DanyuanbiaochaobiaoList.this, AddressChooser.class);
+                i.setClass(DanyuanbiaochaobiaoList.this, CengAddressChooser.class);
                 startActivityForResult(i, ADDRESS_REQUEST_CODE);
 
             }
@@ -54,11 +54,12 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
             case ADDRESS_REQUEST_CODE:
                 if (data != null) {
                     result = (AddressChooserResult) data.getSerializableExtra("result");
-                    Log.d("result", result.toString());
-                    danyuanBianhao = result.getmDanyuanbianhao();
-                    danyuanChooserEditText.setText(result.getmLoupanName() + "/" + result.getmLougeName() + "/" + result.getmDanyuanName());
 
-                    final ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos = (ArrayList<DanyuanbiaoChaobiao>) DanyuanbiaoChaobiao.findByDanyuanbianhao(result.getmDanyuanbianhao()) ;
+                    danyuanBianhao = result.getmDanyuanbianhao();
+                    danyuanChooserEditText.setText(result.getmLoupanName() + "/" + result.getmLougeName() + "/" + result.getmLoucengName());
+
+
+                    final ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos =  Louceng.danyuanbiaochaobiaoByLoucengBianhao(result.getmLoucengbianhao()) ;
                     danyuanbiaosListView.setAdapter(new ListViewAdapter(danyuanbiaoChaobiaos));
                     danyuanbiaosListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
@@ -67,7 +68,7 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
                             Intent intent = new Intent();
                             intent.setClass(DanyuanbiaochaobiaoList.this, DanyuanbiaochaobiaoForm.class);
                             intent.putExtra("danyuanbiaochaobiao_id", danyuanbiaoChaobiao.mRemoteID);
-                            intent.putExtra("danyuan", result.getmDanyuanName());
+                            intent.putExtra("louceng", result.getmLoucengName());
                             startActivity(intent);
                         }
                     });

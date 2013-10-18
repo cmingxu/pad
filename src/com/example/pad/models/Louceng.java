@@ -65,6 +65,19 @@ public class Louceng extends Model{
         return new Select().from(Danyuan.class).where("mLougebianhao='" + this.mLougebianhao + "' AND mLoucengMingcheng='" + this.mLoucengmingcheng + "'").execute();
     }
 
+    public static ArrayList<DanyuanbiaoChaobiao> danyuanbiaochaobiaoByLoucengBianhao(String loucengBianhao){
+        ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos = new ArrayList<DanyuanbiaoChaobiao>();
+        Louceng  louceng = new Select().from(Louceng.class).where("mLoucengbianhao='" + loucengBianhao + "'").executeSingle();
+
+        ArrayList<Danyuan> danyuans =  (ArrayList<Danyuan>)louceng.danyuans();
+        for(Danyuan danyuan : danyuans){
+            for(DanyuanbiaoChaobiao danyuanbiaoChaobiao : (ArrayList<DanyuanbiaoChaobiao>)danyuan.danyuanbiaoChaobiaos()){
+                danyuanbiaoChaobiaos.add(danyuanbiaoChaobiao);
+            }
+        }
+        return danyuanbiaoChaobiaos;
+    }
+
     @Override
     public String toString() {
         return mLoucengmingcheng;

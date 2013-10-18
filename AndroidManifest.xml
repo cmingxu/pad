@@ -36,7 +36,10 @@
         <activity android:name=".view.NewForm"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".view.AddressChooser"
+        <activity android:name=".view.DanyuanAddressChooser"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".view.CengAddressChooser"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
         <activity android:name=".view.Preference"
@@ -86,6 +89,7 @@
         <activity android:name=".view.YezhuJiaofeidanList"/>
         <activity android:name=".view.YezhuBaoxiu"/>
         <activity android:name=".view.YezhuChaxunList"/>
+        <activity android:name=".view.YezhuWuyeChooser"/>
 
 
         <service android:name=".common.NoticeService"/>

@@ -159,8 +159,6 @@ public class Login extends BaseActivity {
             }
 
         });
-
-
     }
 
     public void redirect(Class klass) {
@@ -370,8 +368,6 @@ public class Login extends BaseActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
                 resourceDoneMessage();
             }
         });

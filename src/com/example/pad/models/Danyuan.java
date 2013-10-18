@@ -72,6 +72,10 @@ public class Danyuan extends Model {
         return new Select().from(Zhuhu.class).where("mZhuhuBianhao = '" + this.mYezhubianhao + "'").executeSingle();
     }
 
+    public List<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos(){
+        return new Select().from(DanyuanbiaoChaobiao.class).where("mDanyuanBianhao = '" + this.mDanyuanbianhao + "'").execute();
+    }
+
     @Override
     public String toString() {
         return this.mDanyuanmingcheng;

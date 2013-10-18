@@ -22,7 +22,7 @@ import java.util.ArrayList;
  * Time: 2:57 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AddressChooser extends BaseActivity {
+public class DanyuanAddressChooser extends BaseActivity {
     private Button back_btn;
     private ListView listView;
 
@@ -37,7 +37,7 @@ public class AddressChooser extends BaseActivity {
         getSupportActionBar().setTitle("维修地址");
 
         listView = (ListView)findViewById(R.id.listView);
-        adapter = new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
+        adapter = new ArrayAdapter<Model>(DanyuanAddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new ListItemOnClickListener());
 
@@ -46,14 +46,14 @@ public class AddressChooser extends BaseActivity {
 
     private void changeAdapter(){
         if(state.current_selecting.equals("loupan")){
-            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
+            adapter =  new ArrayAdapter<Model>(DanyuanAddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
         }
         else if (state.current_selecting.equals("louge")) {
-            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_loupan.louges().toArray(new Louge[0]));
+            adapter =  new ArrayAdapter<Model>(DanyuanAddressChooser.this, android.R.layout.simple_list_item_1, state.current_loupan.louges().toArray(new Louge[0]));
         } else if (state.current_selecting.equals("louceng")) {
-            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_louge.loucengs().toArray(new Louceng[0]));
+            adapter =  new ArrayAdapter<Model>(DanyuanAddressChooser.this, android.R.layout.simple_list_item_1, state.current_louge.loucengs().toArray(new Louceng[0]));
         } else if (state.current_selecting.equals("danyuan")) {
-            adapter =  new ArrayAdapter<Model>(AddressChooser.this, android.R.layout.simple_list_item_1, state.current_louceng.danyuans().toArray(new Danyuan[0]));
+            adapter =  new ArrayAdapter<Model>(DanyuanAddressChooser.this, android.R.layout.simple_list_item_1, state.current_louceng.danyuans().toArray(new Danyuan[0]));
         } else {
         }
         listView.setAdapter(adapter);
@@ -124,7 +124,7 @@ public class AddressChooser extends BaseActivity {
                 intent.putExtra("result", result);
 
                 setResult(1, intent);
-                AddressChooser.this.finish();
+                DanyuanAddressChooser.this.finish();
             } else {
             }
             state.next();

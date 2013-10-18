@@ -304,7 +304,7 @@ public class NewForm extends BaseActivity {
         @Override
         public void onClick(View view) {
             Intent i = new Intent();
-            i.setClass(NewForm.this, AddressChooser.class);
+            i.setClass(NewForm.this, DanyuanAddressChooser.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivityForResult(i, CHOOSE_ADDRESS);
         }
