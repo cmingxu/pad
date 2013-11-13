@@ -84,12 +84,24 @@
         <activity android:name=".view.DanyuanbiaochaobiaoForm"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".view.Setting"/>
-        <activity android:name=".view.YezhuMain"/>
-        <activity android:name=".view.YezhuJiaofeidanList"/>
-        <activity android:name=".view.YezhuBaoxiu"/>
-        <activity android:name=".view.YezhuChaxunList"/>
-        <activity android:name=".view.YezhuWuyeChooser"/>
+        <activity android:name=".view.Setting"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".view.YezhuMain"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".view.YezhuJiaofeidanList"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".view.YezhuBaoxiu"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".view.YezhuChaxunList"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".view.YezhuWuyeChooser"
+                  android:configChanges="keyboardHidden|orientation|screenSize"
+                  android:screenOrientation="portrait"/>
 
 
         <service android:name=".common.NoticeService"/>

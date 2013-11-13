@@ -50,7 +50,13 @@ public class HttpHelper {
     }
 
     private String absoluteURL(String path) {
-        return "http://" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_PORT) + "/" + path;
+//        return URLEncoder.encode("http://" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_PORT) + "/" + path);
+//        return ("http://" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_PORT) + "/" + path);
+//        return "http://" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_PORT)  + "/" + URLEncoder.encode(path);
+        return "http://" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(appContext).get(AppConfig.CONF_PORT)  + "/" + path;
+
+
+
     }
 
 

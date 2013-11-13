@@ -47,7 +47,7 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
 
     @Override
     public void onFailure(Throwable throwable, JSONObject jsonObject) {
-        Log.d("network", "onFailure");
+        Log.d("network", "onFailure jsonObject");
 
         Log.d("cachedrequest", "fuck");
 
@@ -65,13 +65,14 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
 
     @Override
     public void onFailure(Throwable throwable, JSONArray jsonArray) {
-        Log.d("network", "onFailure");
+        Log.d("network", "onFailure jsonArray");
         super.onFailure(throwable, jsonArray);
         if (progressDialog != null) {
             progressDialog.hide();
         }
         Log.e("network", throwable.toString());
-        UIHelper.showLongToast(context, "网络错， 检查网络是否连接以及服务器地址是否设置正确。");
+        UIHelper.showLongToast(context, "网络错， 检查网络是否连接以及服务器地址是否设置正确。  " + throwable.toString());
+
 //        save request for later retranssmit
         if (cachedRequest != null) {
             cachedRequest.save();
@@ -80,13 +81,13 @@ public class PadJsonHttpResponseHandler extends JsonHttpResponseHandler{
 
     @Override
     public void onFailure(Throwable throwable, String string) {
-        Log.d("network", "onFailure");
+        Log.d("network", "onFailure string");
         super.onFailure(throwable, string);
 
         if (progressDialog != null) {
             progressDialog.hide();
         }
-        UIHelper.showLongToast(context, "网络错， 检查网络是否连接以及服务器地址是否设置正确。");
+        UIHelper.showLongToast(context, "网络错， 检查网络是否连接以及服务器地址是否设置正确。" + throwable.toString());
         if (cachedRequest != null) {
             cachedRequest.save();
         }

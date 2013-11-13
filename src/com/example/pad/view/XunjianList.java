@@ -19,6 +19,7 @@ import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.PadJsonHttpResponseHandler;
+import com.example.pad.common.StringUtils;
 import com.example.pad.common.UIHelper;
 import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Xunjiandan;
@@ -110,12 +111,14 @@ public class XunjianList extends BaseActivity
             for (final Xunjiandan o : Xunjiandan.findAllFinished()) {
                if(o.finished()){
 
+                   String req =  "xunjiandans?id=" + o.mRemoteID + "&minTime=" + o.minTime() + "&maxTime=" + o.maxTime();
+
                    CachedRequest cachedRequest = new CachedRequest();
                    cachedRequest.setHappenedAt(new Date());
-                   cachedRequest.setRequest("xunjiandans?id=" + o.mRemoteID + "&minTime=" + o.minTime() + "&maxTime=" + o.maxTime());
+                   cachedRequest.setRequest(req);
                    cachedRequest.setType("巡检单");
 
-                   httpHelper.post("xunjiandans?id=" + o.mRemoteID + "&minTime=" + o.minTime() + "&maxTime=" + o.maxTime(), null,
+                   httpHelper.post(req, null,
                            new PadJsonHttpResponseHandler(XunjianList.this, progressDialog, cachedRequest) {
 
                        @Override
@@ -131,7 +134,7 @@ public class XunjianList extends BaseActivity
 
 
                        String request = new String("id=" + xunjiandanmingxi.mRemoteID + "&zhiid=" + xunjiandanmingxi.mZhiId + "&zhi=" + xunjiandanmingxi.mZhi +
-                       "&xunjianshijian=" + xunjiandanmingxi.mXunjianShijian + "&biaoshi=" + xunjiandanmingxi.mBiaoshi +
+                       "&xunjianshijian=" + StringUtils.toLongString(xunjiandanmingxi.mXunjianShijian) + "&biaoshi=" + xunjiandanmingxi.mBiaoshi +
                                "&shuoming=" + xunjiandanmingxi.mShuoming);
 
                        CachedRequest mingxicachedRequest = new CachedRequest();

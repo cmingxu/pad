@@ -17,6 +17,8 @@
             android:title="Refresh"/>
     <item
             android:id="@+id/action_settings"
+            android:orderInCategory="102"
+            android:showAsAction="ifRoom"
             android:title="设置">
     </item>
 </menu>

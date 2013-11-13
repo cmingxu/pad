@@ -51,7 +51,11 @@ public class Xunjiandanmingxi extends Model {
             xunjiandanmingxi.mXiangmuId   = temp.optString("项目id");
             xunjiandanmingxi.mZhi   = temp.optString("值");
             xunjiandanmingxi.mZhiId   = temp.optString("值id");
-            xunjiandanmingxi.mXunjianShijian   = temp.optString("巡检时间");
+            String xunjianshijian =  temp.optString("巡检时间");
+            if(xunjianshijian != null && !xunjianshijian.equals("")){
+                xunjiandanmingxi.mXunjianShijian   = StringUtils.formatTime(StringUtils.parseToTime(xunjianshijian));
+            }
+
             xunjiandanmingxi.mBiaoshi   = temp.optString("标识");
             xunjiandanmingxi.mShuoming   = temp.optString("说明");
             xunjiandanmingxi.mRemoteID   = temp.optInt("id");

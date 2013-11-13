@@ -30,5 +30,10 @@
                 android:textColor="#ffffff" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
                 android:gravity="center_horizontal"/>
 
+        <Button style="@style/big_button" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="我是业主" android:id="@+id/iamyezhu" android:layout_weight="1" android:textSize="30dp"
+                android:textColor="#ffffff" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                android:gravity="center_horizontal" android:onClick="redirectToYezhuMain"/>
+
     </LinearLayout>
 </LinearLayout>

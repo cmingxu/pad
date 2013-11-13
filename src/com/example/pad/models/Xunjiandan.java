@@ -196,8 +196,6 @@ public class Xunjiandan extends Model {
     public String minTime(){
         ArrayList<Date> dates = new ArrayList<Date>();
         for (Xunjiandanmingxi xunjiandanmingxi : this.xunjiandanmingxis()) {
-            Log.d("parseTime", xunjiandanmingxi.mXunjianShijian);
-            Log.d("parseTime", "" + StringUtils.parseTime(xunjiandanmingxi.mXunjianShijian));
             Date date  = StringUtils.parseTime(xunjiandanmingxi.mXunjianShijian);
             if (date != null) {
                 dates.add(date);
@@ -205,7 +203,8 @@ public class Xunjiandan extends Model {
         }
 
         Collections.sort(dates);
-        return StringUtils.formatTime(dates.get(0));
+
+        return Long.toString(dates.get(0).getTime());
     }
 
     public String maxTime(){
@@ -217,7 +216,7 @@ public class Xunjiandan extends Model {
 
         Collections.sort(dates);
         Collections.reverse(dates);
-        return StringUtils.formatTime(dates.get(0));
+        return Long.toString(dates.get(0).getTime());
     }
 
     @Override

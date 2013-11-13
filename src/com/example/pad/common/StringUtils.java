@@ -240,28 +240,35 @@ public class StringUtils
     }
 
     public static String currentTime(){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         return sdf.format(new Date());
     }
 
     public static Date parseTime(String string){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
-        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         try {
             return sdf.parse(string);
         } catch (ParseException e) {
-            try {
-                return sdf2.parse(string.substring(0, 15));
-            } catch (ParseException e1) {
-
-                e1.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                return null;
-            }
+           e.printStackTrace();
+            return  null;
         }
     }
 
+    public static Date parseToTime(String string){
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date = null;
+        try {
+            date = sdf2.parse(string.substring(0, 18));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return date;
+    }
+
     public static String formatTime(Date date){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         return sdf.format(date);
     }
 
@@ -269,5 +276,10 @@ public class StringUtils
         Double d = Double.parseDouble(dushu);
         Log.d("double", "" + d);
         return String.format("%.1f", d);
+    }
+
+    public static String toLongString(String date){
+        Date d = StringUtils.parseTime(date);
+        return Long.toString(d.getTime());
     }
 }

@@ -58,7 +58,6 @@ public class DanyuanbiaoChaobiao extends Model {
         new Delete().from(DanyuanbiaoChaobiao.class).where("1=1").execute();
     }
 
-
     public static List<DanyuanbiaoChaobiao> findByDanyuanbianhao(String danyuanbianhao){
         return new Select().from(DanyuanbiaoChaobiao.class).where("mDanyuanBianhao='" + danyuanbianhao + "'").execute();
     }
