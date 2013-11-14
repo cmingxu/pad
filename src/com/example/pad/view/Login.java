@@ -178,12 +178,17 @@ public class Login extends BaseActivity {
             Toast.makeText(Login.this, R.string.network_error, Toast.LENGTH_SHORT).show();
             return;
         }
+
+        if (!Util.instance().isServerReachable(getApplicationContext())) {
+            Toast.makeText(Login.this, R.string.server_not_reachable, Toast.LENGTH_SHORT).show();
+            return;
+        }
         progressDialog.show();
         progressDialog.setTitle("消息同步");
         progressDialog.setMessage("数据同步中, 请不要关闭程序");
         handler = new Handler() {
 
-            int total_resource_count = 11;
+            int total_resource_count = 17;
 
             @Override
             public void handleMessage(Message msg) {
@@ -218,6 +223,12 @@ public class Login extends BaseActivity {
         Xunjiandan.deleteAll();
         Xunjiandanmingxi.deleteAll();
         DanyuanbiaoChaobiao.deleteAll();
+        YFFjlx.deleteAll();
+        YFFjlxYsdx.deleteAll();
+        YFHuxing.deleteAll();
+        YFHxFjlx.deleteAll();
+        YFYsdx.deleteAll();
+        YFYsxm.deleteAll();
 
 
         httpHelper.with("danyuanbiaochaobiaos", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
@@ -371,6 +382,91 @@ public class Login extends BaseActivity {
                 resourceDoneMessage();
             }
         });
+
+        httpHelper.with("yf_huxings", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<YFHuxing> yf_huxings = YFHuxing.fromJsonArray(jsonArray);
+                    for (YFHuxing l : yf_huxings) l.save();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
+
+        httpHelper.with("yf_fjlxs", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<YFFjlx> yf_fjlxs = YFFjlx.fromJsonArray(jsonArray);
+                    for (YFFjlx l : yf_fjlxs) l.save();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
+
+        httpHelper.with("yf_hx_fjlxs", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<YFHxFjlx> yf_hx_fjlxs = YFHxFjlx.fromJsonArray(jsonArray);
+                    for (YFHxFjlx l : yf_hx_fjlxs) l.save();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
+
+        httpHelper.with("yf_ysdxs", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<YFYsdx> yf_ysdxs = YFYsdx.fromJsonArray(jsonArray);
+                    for (YFYsdx l : yf_ysdxs) l.save();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
+
+        httpHelper.with("yf_fjlx_ysdxs", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<YFFjlxYsdx> yf_fjlx_ysdxs = YFFjlxYsdx.fromJsonArray(jsonArray);
+                    for (YFFjlxYsdx l : yf_fjlx_ysdxs) l.save();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
+
+        httpHelper.with("yf_ysxms", null, new PadJsonHttpResponseHandler(Login.this, progressDialog) {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                try {
+                    ArrayList<YFYsxm> yf_ysxms = YFYsxm.fromJsonArray(jsonArray);
+                    for (YFYsxm l : yf_ysxms) l.save();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                resourceDoneMessage();
+            }
+        });
+
 
     }
 

@@ -16,6 +16,7 @@ public class Main extends BaseActivity {
     private ImageButton maintain_btn;
     private ImageButton xunjian_btn;
     private ImageButton chaobiao_btn;
+    private ImageButton shoulou_btn;
     private ImageButton setting_btn;
 
 
@@ -32,6 +33,9 @@ public class Main extends BaseActivity {
         chaobiao_btn.setOnClickListener(new ChaobiaoClickListener());
         setting_btn = (ImageButton) findViewById(R.id.setting_btn);
         setting_btn.setOnClickListener(new SettingClickListener());
+        shoulou_btn = (ImageButton) findViewById(R.id.shoulou_btn);
+        shoulou_btn.setOnClickListener(new ShoulouClickListener());
+
     }
 
 
@@ -62,6 +66,14 @@ public class Main extends BaseActivity {
         @Override
         public void onClick(View view) {
             redirect(Main.this, Setting.class);
+
+        }
+    }
+
+    protected class ShoulouClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            redirect(Main.this, YFShoulouView.class);
 
         }
     }

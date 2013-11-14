@@ -5,7 +5,13 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
+import com.example.pad.AppConfig;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -64,6 +70,31 @@ public class Util {
         return this.getNetworkType(context) != 0;
     }
 
+    public boolean isServerReachable(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnected()) {
+            try {
+                String urlString = "http://" + AppConfig.getAppConfig(context).get(AppConfig.CONF_SERVER) + ":" + AppConfig.getAppConfig(context).get(AppConfig.CONF_PORT);
+
+                URL url = new URL(urlString);   // Change to "http://google.com" for www  test.
+                HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
+                urlc.setConnectTimeout(10 * 1000);          // 10 s.
+                urlc.connect();
+                if (urlc.getResponseCode() == 200) {        // 200 = "OK" code (http connection is fine).
+                    Log.wtf("Connection", "Success !");
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (MalformedURLException e1) {
+                return false;
+            } catch (IOException e) {
+                return false;
+            }
+        }
+        return false;
+    }
 
     public String formatTime(String format, Date d){
         SimpleDateFormat sdf = new SimpleDateFormat(format);

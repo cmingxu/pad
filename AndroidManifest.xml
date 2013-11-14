@@ -102,6 +102,7 @@
         <activity android:name=".view.YezhuWuyeChooser"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
+        <activity android:name=".view.YFShoulouView"/>
 
 
         <service android:name=".common.NoticeService"/>

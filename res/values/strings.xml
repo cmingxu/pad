@@ -32,8 +32,7 @@
     <string name="complete_notice_saved_ok">完成单据保存成功</string>
     <string name="complete_notice_saved_fail">完成单据保存失败</string>
     <string name="delete_confirm">我要删掉此记录！</string>
-
-
+    <string name="server_not_reachable">服务器不可达， 确保地址配置正确并且服务器已经开启！</string>
 
 </resources>
 

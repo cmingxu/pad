@@ -30,11 +30,15 @@ public class DanyuanAddressChooser extends BaseActivity {
     public ArrayAdapter<Model> adapter;
 
     public void onCreate(Bundle savedInstanceState) {
+        String title = getIntent().getStringExtra("title");
+        if (title == null) {
+            title = "维修地址";
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.address_chooser);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.icon_fanhui_on));
-        getSupportActionBar().setTitle("维修地址");
+        getSupportActionBar().setTitle(title);
 
         listView = (ListView)findViewById(R.id.listView);
         adapter = new ArrayAdapter<Model>(DanyuanAddressChooser.this, android.R.layout.simple_list_item_1, Loupan.all().toArray(new Loupan[0]));
