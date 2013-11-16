@@ -1,5 +1,7 @@
 package com.example.pad.models;
 
+import com.example.pad.common.StringUtils;
+
 import java.io.Serializable;
 
 /**
@@ -152,5 +154,22 @@ public class AddressChooserResult implements Serializable {
         return this.getmDanyuanbianhao() + this.getmDanyuanId() + this.getmDanyuanName() +
                 this.getmLoucengbianhao() + this.getmLoucengName() + "  " + this.getmZhuhuBianhao();
 
+    }
+
+    public String toHumanJiangeString() {
+        Danyuan danyuan = Danyuan.findByDanyuanbianhao(this.mDanyuanbianhao);
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.mLoupanName);
+        sb.append("/");
+        sb.append(this.mLougeName);
+        sb.append("/");
+        sb.append(this.mDanyuanName);
+        if(!StringUtils.isEmpty(danyuan.mJiange)){
+            sb.append("(");
+            sb.append(danyuan.mJiange);
+            sb.append(")");
+        }
+
+        return sb.toString();
     }
 }

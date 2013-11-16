@@ -54,7 +54,7 @@ public class Danyuan extends Model {
             danyuan.mLoucengMingcheng = temp.getString("楼层名称");
             danyuan.mDanyuanmingcheng = temp.getString("单元名称");
             danyuan.mYezhubianhao   = temp.optString("业主编号");
-//            danyuan.mJiange         = temp.getString("间隔");
+            danyuan.mJiange         = temp.optString("间隔", "");
             danyuan.remoteId        = temp.getInt("id");
             danyuans.add(danyuan);
 
@@ -64,6 +64,12 @@ public class Danyuan extends Model {
 
     public static void deleteAll(){
         new Delete().from(Danyuan.class).where("1=1").execute();
+    }
+
+    public static Danyuan findByDanyuanbianhao(String danyuanbianhao){
+
+        return new Select().from(Danyuan.class).where("mDanyuanbianhao = '" + danyuanbianhao + "'").executeSingle();
+
     }
 
 
@@ -80,5 +86,9 @@ public class Danyuan extends Model {
     public String toString() {
         return this.mDanyuanmingcheng;
 
+    }
+
+    public YFHuxing huxing(){
+        return new Select().from(YFHuxing.class).where("mHxmc='" + this.mJiange +"'").executeSingle();
     }
 }

@@ -26,6 +26,9 @@ public class YFYsxm extends Model {
     public String mXmbh;
     @Column(name="mRemoteId")
     public String mRemoteId;
+    @Column(name="mDxId")
+    public String mDxId;
+
 
     public static ArrayList<YFYsxm> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
@@ -34,8 +37,11 @@ public class YFYsxm extends Model {
         for (int i = 0; i < s.length(); i++){
             temp = s.getJSONObject(i);
             YFYsxm yf_ysxm = new YFYsxm();
+
+            yf_ysxm = new YFYsxm();
             yf_ysxm.mXmmc = temp.optString("XMMC", "");
             yf_ysxm.mXmbh = temp.optString("XMBH", "");
+            yf_ysxm.mDxId = temp.getString("DXID");
             yf_ysxm.mRemoteId = temp.optString("id", "");
 
             yf_ysxms.add(yf_ysxm);

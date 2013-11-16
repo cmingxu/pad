@@ -24,7 +24,8 @@
     </option>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="fjlx" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" name="Default" comment="" />
@@ -32,7 +33,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../game_studio/android-client/.idea/workspace.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364083820664" ignored="false" />
     <file path="/Main.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384434317382" ignored="false" />
-    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384351590603" ignored="false" />
+    <file path="/fragment.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384607470482" ignored="false" />
     <file path="$PROJECT_DIR$/src/com/example/pad/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1364123876097" ignored="false" />
     <file path="/Dummy.txt" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384437173486" ignored="false" />
     <file path="/Login.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384435971116" ignored="false" />
@@ -46,7 +47,7 @@
     <file path="/BaseActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381137140873" ignored="false" />
     <file path="/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1378119464501" ignored="false" />
     <file path="/Loupan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1377837951255" ignored="false" />
-    <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1382082411633" ignored="false" />
+    <file path="/Danyuan.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384584886908" ignored="false" />
     <file path="/User.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1379903938306" ignored="false" />
     <file path="/Louceng.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1382090250829" ignored="false" />
     <file path="/HttpHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1382182551135" ignored="false" />
@@ -1063,7 +1064,7 @@
     <file path="$PROJECT_DIR$/../pda_server/app/models/Louge.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368589765560" ignored="false" />
     <file path="/Util.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384435918220" ignored="false" />
     <file path="/UIHelper.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1373709840696" ignored="false" />
-    <file path="/AddressChooserResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1378121034084" ignored="false" />
+    <file path="/AddressChooserResult.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384604921986" ignored="false" />
     <file path="/new_form.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1381135891775" ignored="false" />
     <file path="/TakePic.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368870073492" ignored="false" />
     <file path="/take_pic.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1368869411401" ignored="false" />
@@ -1508,15 +1509,18 @@
     <file path="/SettingActivity.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1382335701749" ignored="false" />
     <file path="$PROJECT_DIR$/../letian_client/src/com/letian/lib/BaseAuthenicationHttpClient.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1382335875574" ignored="false" />
     <file path="/BaseAuthenicationHttpClient.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1382335873864" ignored="false" />
-    <file path="/YFHuxing.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384350181718" ignored="false" />
-    <file path="/YFFjlx.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384350333765" ignored="false" />
+    <file path="/YFHuxing.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384612386034" ignored="false" />
+    <file path="/YFFjlx.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384609779089" ignored="false" />
     <file path="/YFHxFjlx.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384350497475" ignored="false" />
-    <file path="/YFYsdx.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384351239846" ignored="false" />
-    <file path="/YFYsxm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384351380962" ignored="false" />
+    <file path="/YFYsdx.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384581987823" ignored="false" />
+    <file path="/YFYsxm.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384581914111" ignored="false" />
     <file path="/YFFjlxYsdx.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384351545168" ignored="false" />
-    <file path="/YFShoulouView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384436998307" ignored="false" />
+    <file path="/YFShoulouView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384609161398" ignored="false" />
     <file path="/yf_shoulou.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384436341334" ignored="false" />
     <file path="/DanyuanAddressChooser.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384436935441" ignored="false" />
+    <file path="/YFYsdxView.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384613410341" ignored="false" />
+    <file path="/yf_ysdx.xml" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384607615183" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/example/pad/R.java" changelist="4fd5e6f1-e35f-4426-b1a6-2b47cf5b4e6f" time="1384608706568" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1536,6 +1540,24 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -1572,24 +1594,6 @@
         <option name="LOG_MESSAGE" value="&#13;&#13;JAVA" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$USER_HOME$/Downloads/android-sdk-macosx/samples/android-17/ApiDemos/src/com/example/android/apis/animation/AnimationSeeking.java" line="140" class="com.example.android.apis.animation.AnimationSeeking.MyAnimationView" package="com.example.android.apis.animation">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -1599,46 +1603,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Login.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="68" selection-start="5991" selection-end="6011" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="15" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Util.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/Util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="43" selection-start="2629" selection-end="2629" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="15" selection-start="2232" selection-end="2389" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YFShoulouView.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="YFShoulouView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YFShoulouView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="18" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.4779412">
+            <state line="65" column="74" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1335#1739#0" expanded="true" />
+                <element signature="e#1728#1729#0" expanded="true" />
+                <element signature="e#2475#2483#0" expanded="true" />
+                <element signature="e#2825#3449#0" expanded="true" />
+                <element signature="e#3422#3423#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddressChooserResult.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/AddressChooserResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="166" column="12" selection-start="3995" selection-end="3995" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1646,54 +1630,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CengAddressChooser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/CengAddressChooser.java">
+      <file leaf-file-name="Method.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-17/java/lang/reflect/Method.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="13" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.0">
+            <state line="524" column="0" selection-start="18971" selection-end="18971" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DanyuanAddressChooser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanAddressChooser.java">
+      <file leaf-file-name="Danyuan.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="44" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0">
+            <state line="91" column="8" selection-start="2915" selection-end="2915" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DanyuanbiaochaobiaoList.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java">
+      <file leaf-file-name="YFFjlx.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFFjlx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="12" selection-start="1784" selection-end="3231" vertical-scroll-proportion="0.0">
+            <state line="58" column="24" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.16455697">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yf_shoulou.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/yf_shoulou.xml">
+      <file leaf-file-name="YFFjlxYsdx.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFFjlxYsdx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="49" selection-start="633" selection-end="633" vertical-scroll-proportion="-10.230769">
+            <state line="22" column="25" selection-start="543" selection-end="550" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="YFYsdxView.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YFYsdxView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="44" selection-start="991" selection-end="991" vertical-scroll-proportion="-7.6">
+              <folding>
+                <element signature="e#1050#1058#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="54" selection-start="6287" selection-end="6287" vertical-scroll-proportion="-10.52">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yf_ysdx.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/yf_ysdx.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chaobiao_list.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/chaobiao_list.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="298" selection-end="674" vertical-scroll-proportion="-5.8461537">
+            <state line="10" column="33" selection-start="404" selection-end="404" vertical-scroll-proportion="-5.769231">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="YFHuxing.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFHuxing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="80" selection-start="1961" selection-end="1961" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -1712,28 +1722,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/menu/login_menu.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFHxFjlx.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFFjlx.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFHuxing.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFYsxm.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFFjlxYsdx.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFKfsYfd.java" />
-        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFYsdx.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Main.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/common/Util.java" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/Login.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/yf_shoulou.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/DanyuanAddressChooser.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFYsxm.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFYsdx.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/AddressChooserResult.java" />
+        <option value="$PROJECT_DIR$/res/layout/yf_ysdx.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/pad/view/YFShoulouView.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFHuxing.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/models/YFFjlx.java" />
+        <option value="$PROJECT_DIR$/src/com/example/pad/view/YFYsdxView.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1239" />
+    <option name="width" value="1240" />
     <option name="height" value="778" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -1744,10 +1754,16 @@
             <id />
           </State>
           <State>
-            <id>Android</id>
+            <id>Probable bugs</id>
           </State>
           <State>
-            <id>Android Lint</id>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
           </State>
         </expanded-state>
       </profile-state>
@@ -1785,7 +1801,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1801,6 +1816,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1836,26 +1891,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1887,7 +1925,7 @@
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.3650058" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
@@ -1899,8 +1937,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.pad.models" />
       <recent name="com.example.pad.view" />
+      <recent name="com.example.pad.models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/layout" />
@@ -2112,11 +2150,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1239" height="778" extended-state="6" />
+    <frame x="0" y="22" width="1240" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3503772" sideWeight="0.67107195" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20452641" sideWeight="0.67107195" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942164" sideWeight="0.67107195" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.670068" order="3" side_tool="false" content_ui="tabs" />
@@ -2127,15 +2163,17 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19512194" sideWeight="0.3506865" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2804699" sideWeight="0.49944812" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="22" width="1239" height="778" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.3604888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="2" y="58" width="1239" height="742" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32777777" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32355407" sideWeight="0.67107195" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32328308" sideWeight="0.67107195" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32892805" sideWeight="0.4994469" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3503772" sideWeight="0.67107195" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20452641" sideWeight="0.67107195" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3249428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2213,133 +2251,134 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFHxFjlx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="48" selection-start="1485" selection-end="1485" vertical-scroll-proportion="-10.72">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#862#872#0" expanded="true" />
-          </folding>
+        <state line="23" column="23" selection-start="565" selection-end="570" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFYsxm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="985" selection-end="986" vertical-scroll-proportion="-5.3">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#847#855#0" expanded="true" />
-          </folding>
+        <state line="58" column="45" selection-start="1575" selection-end="1575" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFYsdx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="23" selection-start="1260" selection-end="1260" vertical-scroll-proportion="-14.04">
+        <state line="51" column="102" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/yf_shoulou.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="37" selection-start="622" selection-end="630" vertical-scroll-proportion="-8.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-17/android/app/ActivityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1989" column="0" selection-start="70539" selection-end="70539" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#847#855#0" expanded="true" />
+            <element signature="e#0#70539#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#65786#65803#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state line="63" column="115" selection-start="3961" selection-end="3961" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Main.java">
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-17/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="45" selection-start="2427" selection-end="2440" vertical-scroll-proportion="0.0">
+        <state line="5301" column="0" selection-start="221750" selection-end="221750" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/android-async-http-1.4.3.jar!/com/loopj/android/http/AsyncHttpClient.class">
+    <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-17/java/lang/reflect/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="165" selection-end="165" vertical-scroll-proportion="35.72">
+        <state line="524" column="0" selection-start="18971" selection-end="18971" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/HttpHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/Danyuan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="15" selection-start="2232" selection-end="2389" vertical-scroll-proportion="0.0">
+        <state line="91" column="8" selection-start="2915" selection-end="2915" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/common/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="43" selection-start="2629" selection-end="2629" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="68" selection-start="5991" selection-end="6011" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="15" selection-start="1671" selection-end="1671" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/chaobiao_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="298" selection-end="674" vertical-scroll-proportion="-5.8461537">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/yf_ysdx.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/yf_shoulou.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="49" selection-start="633" selection-end="633" vertical-scroll-proportion="-10.230769">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanbiaochaobiaoList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="12" selection-start="1784" selection-end="3231" vertical-scroll-proportion="0.0">
+        <state line="10" column="33" selection-start="404" selection-end="404" vertical-scroll-proportion="-5.769231">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/CengAddressChooser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/AddressChooserResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="13" selection-start="1638" selection-end="1638" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="166" column="12" selection-start="3995" selection-end="3995" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/DanyuanAddressChooser.java">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="44" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0">
+        <state line="110" column="54" selection-start="6287" selection-end="6287" vertical-scroll-proportion="-10.52">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YFShoulouView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="18" selection-start="1313" selection-end="1313" vertical-scroll-proportion="0.4779412">
+        <state line="65" column="74" selection-start="2356" selection-end="2356" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1335#1739#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="e#2475#2483#0" expanded="true" />
+            <element signature="e#2825#3449#0" expanded="true" />
+            <element signature="e#3422#3423#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFHuxing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="80" selection-start="1961" selection-end="1961" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFFjlxYsdx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="25" selection-start="543" selection-end="550" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/view/YFYsdxView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="44" selection-start="991" selection-end="991" vertical-scroll-proportion="-7.6">
+          <folding>
+            <element signature="e#1050#1058#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/pad/models/YFFjlx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="24" selection-start="1595" selection-end="1595" vertical-scroll-proportion="0.16455697">
+          <folding />
         </state>
       </provider>
     </entry>

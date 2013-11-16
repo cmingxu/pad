@@ -1,14 +1,17 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -55,5 +58,10 @@ public class YFHuxing extends Model {
     @Override
     public String toString() {
          return  this.mHxmc + "/" + this.mHxbh;
+    }
+
+    public List<YFFjlx> fjlxes(){
+        Log.d("sql", new Select().from(YFFjlx.class).join(YFHxFjlx.class).on("YFHxFjlx.mFjlxId = YFFjlx.mRemoteId").where("YFHxFjlx.mHxId = '" + this.mRemoteId + "'").toSql());
+        return new Select("YFFjlx.mRemoteId, YFFjlx.id, YFFjlx.mRemoteId, mFjmc, mFjbh").from(YFFjlx.class).join(YFHxFjlx.class).on("YFHxFjlx.mFjlxId = YFFjlx.mRemoteId").where("YFHxFjlx.mHxId = '" + this.mRemoteId + "'").orderBy("mFjbh").execute();
     }
 }
