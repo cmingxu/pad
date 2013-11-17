@@ -61,18 +61,18 @@
   
   <!-- JDK definitions -->
   
-  <property name="jdk.bin.android_4.2.2_platform" value="${jdk.home.android_4.2.2_platform}/../../../../Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin"/>
-  <path id="jdk.classpath.android_4.2.2_platform">
-    <fileset dir="${jdk.home.android_4.2.2_platform}">
-      <include name="platforms/android-17/android.jar"/>
-      <include name="platforms/android-17/data/res"/>
+  <property name="jdk.bin.android_4.1.2_platform" value="${jdk.home.android_4.1.2_platform}/../../../../Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin"/>
+  <path id="jdk.classpath.android_4.1.2_platform">
+    <fileset dir="${jdk.home.android_4.1.2_platform}">
+      <include name="platforms/android-16/android.jar"/>
+      <include name="platforms/android-16/data/res"/>
       <include name="tools/support/annotations.jar"/>
     </fileset>
   </path>
   
-  <property name="project.jdk.home" value="${jdk.home.android_4.2.2_platform}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.android_4.2.2_platform}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.android_4.2.2_platform"/>
+  <property name="project.jdk.home" value="${jdk.home.android_4.1.2_platform}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.android_4.1.2_platform}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.android_4.1.2_platform"/>
   
   
   <!-- Project Libraries -->
@@ -82,18 +82,13 @@
     <pathelement location="${basedir}/lib/android-async-http-1.4.3.jar"/>
   </path>
   
-  <path id="library.android-async-http-1.4.3.classpath">
-    <pathelement location="${basedir}/lib/android-async-http-1.4.3.jar"/>
+  <path id="library.android-integration-honeycomb.classpath">
+    <pathelement location="${basedir}/lib/android-integration-honeycomb.jar"/>
     <pathelement location="${basedir}/lib/android-integration.jar"/>
   </path>
   
-  <path id="library.android-integration.classpath">
-    <pathelement location="${basedir}/lib/android-integration.jar"/>
-    <pathelement location="${basedir}/lib/android-support-v4.jar"/>
-  </path>
-  
-  <path id="library.android-support-v4.classpath">
-    <pathelement location="${basedir}/lib/android-support-v4.jar"/>
+  <path id="library.android-support-v41.classpath">
+    <pathelement location="${basedir}/lib/abs/libs/android-support-v4.jar"/>
   </path>
   
   <path id="library.gson-2.2.4.classpath">

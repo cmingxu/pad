@@ -1,10 +1,14 @@
 package com.example.pad.models;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
+import com.example.pad.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,13 +25,13 @@ import java.util.List;
  */
 
 @Table(name="YFYsdx")
-public class YFYsdx extends Model {
+public class YFYsdx extends Model implements Comparable<YFYsdx> {
     @Column(name="mDxmc")
     public String mDxmc;
     @Column(name="mDxbh")
     public String mDxbh;
     @Column(name="mRemoteId")
-    public String mRemoteId;
+    public int mRemoteId;
 
     public static ArrayList<YFYsdx> fromJsonArray(JSONArray s) throws JSONException {
         JSONObject temp = null;
@@ -38,7 +42,7 @@ public class YFYsdx extends Model {
             YFYsdx yf_ysdx = new YFYsdx();
             yf_ysdx.mDxmc = temp.optString("DXMC", "");
             yf_ysdx.mDxbh = temp.optString("DXBH", "");
-            yf_ysdx.mRemoteId = temp.optString("id", "");
+            yf_ysdx.mRemoteId = temp.optInt("id", -1);
 
             yf_ysdxs.add(yf_ysdx);
 
@@ -57,5 +61,26 @@ public class YFYsdx extends Model {
 
     public List<YFYsxm> ysxms(){
             return  new Select().from(YFYsxm.class).where("mDxId = '"+ this.mRemoteId + "'").execute();
+    }
+
+
+    public static YFYsdx findById(int id){
+        Log.d("sql",   new Select().from(YFYsdx.class).where("mRemoteId="+ id + "").toSql());
+        return  new Select().from(YFYsdx.class).where("mRemoteId="+ id + "").executeSingle();
+
+    }
+    @Override
+    public int compareTo(YFYsdx another) {
+        return Integer.parseInt(this.mDxbh) - Integer.parseInt(another.mDxbh);
+    }
+
+    public Drawable indicationIcon(Context context, String danyuanbianhao, int fjlxid){
+        YFYfRecord yfYfRecord = YFYfRecord.findByDanyuanbianhaoAndDxIdAndFjlxId(danyuanbianhao, this.mRemoteId, fjlxid);
+        if (yfYfRecord == null) {
+            return context.getResources().getDrawable(R.drawable.yes_icon);
+        }   else{
+            return context.getResources().getDrawable(R.drawable.no_icon);
+        }
+
     }
 }

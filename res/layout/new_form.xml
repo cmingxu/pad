@@ -14,34 +14,45 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/address_choose_text" android:clickable="true" android:maxLines="1" android:hint="报修地址"
-            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+            android:background="@drawable/text_view_border"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="2013/3/28"
             android:id="@+id/time" android:editable="false" android:enabled="false" android:maxLines="1"
-            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+            android:background="@drawable/text_view_border"
+            android:layout_marginTop="5dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/zhuhuName" android:layout_gravity="center" android:hint="业主姓名"
-            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"
+            android:background="@drawable/text_view_border"
+            android:layout_marginTop="5dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/zhuHuPhone" android:layout_gravity="center" android:hint="业主电话"
-            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+            android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+            android:background="@drawable/text_view_border"
+            android:layout_marginTop="5dp"/>
     <Spinner
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/categories" android:layout_gravity="center" android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:background="@drawable/text_view_border"
+
+            android:layout_marginRight="10dp" android:layout_marginTop="5dp"/>
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/baoxiuneirong" android:layout_gravity="center" android:lines="1" android:longClickable="true"
-            android:gravity="top" android:maxLines="3" android:hint="维修内容" android:focusable="true"
-            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+            android:gravity="top" android:hint="维修内容" android:focusable="true"
+            android:layout_marginRight="10dp" android:layout_marginLeft="10dp"
+            android:background="@drawable/text_view_border"
+            android:layout_marginTop="5dp" android:minLines="3"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"

@@ -110,7 +110,7 @@
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"
                 />
-
+        <activity android:name=".view.YFForm"/>
 
 
         <service android:name=".common.NoticeService"/>

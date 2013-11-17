@@ -24,6 +24,8 @@ public class CachedRequest extends Model{
     public String images;
     @Column(name="type")
     public String type;
+    @Column(name="rid")
+    public long rid;
 
 
     public Date getHappenedAt() {
@@ -40,6 +42,14 @@ public class CachedRequest extends Model{
 
     public void setRequest(String request) {
         this.request = request;
+    }
+
+    public long getRid() {
+        return rid;
+    }
+
+    public void setRid(long rid) {
+        this.rid = rid;
     }
 
     public String getImages() {

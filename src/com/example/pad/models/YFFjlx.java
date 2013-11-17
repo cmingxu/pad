@@ -57,8 +57,8 @@ public class YFFjlx extends Model implements Comparable<YFFjlx> {
     }
 
     public List<YFYsdx> ysdxs(){
-        Log.d("sql", new Select().from(YFYsdx.class).join(YFFjlxYsdx.class).on("YFFjlxYsdx.mYsdxId = YFYsdx.mRemoteId").where("YFFjlxYsdx.mFjlxId = '" + this.mRemoteId + "'").toSql());
-        return new Select().from(YFYsdx.class).join(YFFjlxYsdx.class).on("YFFjlxYsdx.mFjlxId = YFYsdx.mRemoteId").where("YFFjlxYsdx.mFjlxId = '" + this.mRemoteId + "'").execute();
+        Log.d("sql", new Select().from(YFYsdx.class).join(YFFjlxYsdx.class).on("YFFjlxYsdx.mDxId = YFYsdx.mRemoteId").where("YFFjlxYsdx.mFjlxId = '" + this.mRemoteId + "'").toSql());
+        return new Select("YFYsdx.mRemoteId, YFYsdx.mDxmc, YFYsdx.mDxbh, YFYsdx.id ").from(YFYsdx.class).join(YFFjlxYsdx.class).on("YFFjlxYsdx.mDxId= YFYsdx.mRemoteId").where("YFFjlxYsdx.mFjlxId = '" + this.mRemoteId + "'").execute();
     }
 
     public static YFFjlx findByRemoteId(int id) {

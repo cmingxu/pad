@@ -61,7 +61,7 @@ public class YFShoulouView extends BaseActivity {
                     result = (AddressChooserResult) data.getSerializableExtra("result");
                     mDanyuanEditText.setText(result.toHumanJiangeString());
 
-                    Danyuan danyuan = Danyuan.findByDanyuanbianhao(result.getmDanyuanbianhao());
+                    final Danyuan danyuan = Danyuan.findByDanyuanbianhao(result.getmDanyuanbianhao());
                     if (!StringUtils.isEmpty(danyuan.mJiange)) {
                         fjlxes = (ArrayList<YFFjlx>) danyuan.huxing().fjlxes();
                         Collections.sort(fjlxes);
@@ -78,6 +78,7 @@ public class YFShoulouView extends BaseActivity {
                                 i.setClass(YFShoulouView.this, YFYsdxView.class);
                                 Log.d("fjlx","" + fjlxes.get(position).mRemoteId );
                                 i.putExtra("fjlx_id", fjlxes.get(position).mRemoteId);
+                                i.putExtra("danyuanbianhao", danyuan.mDanyuanbianhao);
                                 YFShoulouView.this.startActivity(i);
                             }
                         });

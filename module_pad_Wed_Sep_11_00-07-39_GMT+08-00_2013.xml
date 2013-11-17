@@ -2,9 +2,9 @@
 <project name="module_pad" default="compile.module.pad">
   <dirname property="module.pad.basedir" file="${ant.file.module_pad}"/>
   
-  <property name="module.jdk.home.pad" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.pad" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.pad" value="${project.jdk.classpath}"/>
+  <property name="module.jdk.home.pad" value="${jdk.home.android_4.1.2_platform}"/>
+  <property name="module.jdk.bin.pad" value="${jdk.bin.android_4.1.2_platform}"/>
+  <property name="module.jdk.classpath.pad" value="jdk.classpath.android_4.1.2_platform"/>
   
   <property name="compiler.args.pad" value="${compiler.args}"/>
   
@@ -20,8 +20,8 @@
     <path refid="library.activeandroid.classpath"/>
     <pathelement location="${abs.output.dir}"/>
     <path refid="library.gson-2.2.4.classpath"/>
-    <path refid="library.android-async-http-1.4.3.classpath"/>
-    <path refid="library.android-integration.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.android-integration-honeycomb.classpath"/>
   </path>
   
   <path id="pad.runtime.production.module.classpath">
@@ -29,8 +29,8 @@
     <path refid="library.activeandroid.classpath"/>
     <path refid="abs.runtime.production.module.classpath"/>
     <path refid="library.gson-2.2.4.classpath"/>
-    <path refid="library.android-async-http-1.4.3.classpath"/>
-    <path refid="library.android-integration.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.android-integration-honeycomb.classpath"/>
   </path>
   
   <path id="pad.module.classpath">
@@ -40,8 +40,8 @@
     <pathelement location="${abs.testoutput.dir}"/>
     <pathelement location="${abs.output.dir}"/>
     <path refid="library.gson-2.2.4.classpath"/>
-    <path refid="library.android-async-http-1.4.3.classpath"/>
-    <path refid="library.android-integration.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.android-integration-honeycomb.classpath"/>
   </path>
   
   <path id="pad.runtime.module.classpath">
@@ -50,8 +50,8 @@
     <path refid="library.activeandroid.classpath"/>
     <path refid="abs.runtime.module.classpath"/>
     <path refid="library.gson-2.2.4.classpath"/>
-    <path refid="library.android-async-http-1.4.3.classpath"/>
-    <path refid="library.android-integration.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.android-integration-honeycomb.classpath"/>
   </path>
   
   

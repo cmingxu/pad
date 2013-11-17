@@ -2,9 +2,9 @@
 <project name="module_abs" default="compile.module.abs">
   <dirname property="module.abs.basedir" file="${ant.file.module_abs}"/>
   
-  <property name="module.jdk.home.abs" value="${jdk.home.android_4.2.2_platform}"/>
-  <property name="module.jdk.bin.abs" value="${jdk.bin.android_4.2.2_platform}"/>
-  <property name="module.jdk.classpath.abs" value="jdk.classpath.android_4.2.2_platform"/>
+  <property name="module.jdk.home.abs" value="${jdk.home.android_4.1.2_platform}"/>
+  <property name="module.jdk.bin.abs" value="${jdk.bin.android_4.1.2_platform}"/>
+  <property name="module.jdk.classpath.abs" value="jdk.classpath.android_4.1.2_platform"/>
   
   <property name="compiler.args.abs" value="${compiler.args}"/>
   
@@ -17,24 +17,28 @@
   
   <path id="abs.module.production.classpath">
     <path refid="${module.jdk.classpath.abs}"/>
-    <path refid="library.android-support-v4.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.gson-2.2.4.classpath"/>
   </path>
   
   <path id="abs.runtime.production.module.classpath">
     <pathelement location="${abs.output.dir}"/>
-    <path refid="library.android-support-v4.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.gson-2.2.4.classpath"/>
   </path>
   
   <path id="abs.module.classpath">
     <path refid="${module.jdk.classpath.abs}"/>
     <pathelement location="${abs.output.dir}"/>
-    <path refid="library.android-support-v4.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.gson-2.2.4.classpath"/>
   </path>
   
   <path id="abs.runtime.module.classpath">
     <pathelement location="${abs.testoutput.dir}"/>
     <pathelement location="${abs.output.dir}"/>
-    <path refid="library.android-support-v4.classpath"/>
+    <path refid="library.android-support-v41.classpath"/>
+    <path refid="library.gson-2.2.4.classpath"/>
   </path>
   
   
