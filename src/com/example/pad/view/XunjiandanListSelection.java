@@ -89,7 +89,7 @@ public class XunjiandanListSelection extends BaseActivity {
                     c.add(Calendar.SECOND, (Integer)timeRange.get(spinner.getSelectedItem().toString()));
                     rp.put("before", StringUtils.formatTime(c.getTime()));
 
-                    httpHelper.with("xunjiandans", rp, new PadJsonHttpResponseHandler(XunjiandanListSelection.this, progressDialog) {
+                    httpHelper.with("xunjiandans", rp, new PadJsonHttpResponseHandler() {
                         @Override
                         public void onSuccess(JSONArray jsonArray) {
                             try {
@@ -109,7 +109,7 @@ public class XunjiandanListSelection extends BaseActivity {
 
                     });
 
-                    httpHelper.with("xunjiandanmingxis", null, new PadJsonHttpResponseHandler(XunjiandanListSelection.this, progressDialog){
+                    httpHelper.with("xunjiandanmingxis", null, new PadJsonHttpResponseHandler(){
                         @Override
                         public void onSuccess(JSONArray jsonArray) {
                             try {

@@ -3,6 +3,7 @@ package com.example.pad.view;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,10 +74,12 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
             }
 
 
-            CachedRequest cachedRequest = new CachedRequest();
-            cachedRequest.setHappenedAt(new Date());
-            cachedRequest.setRequest("chaobiao?id=" + danyuanbiaoChaobiao.mRemoteID + "&bencidushu=" + biaoshu);
-            cachedRequest.setType("抄表");
+            final CachedRequest cachedRequest = new CachedRequest();
+            cachedRequest.happenedAt = new Date();
+            cachedRequest.httpMethod = "post";
+            cachedRequest.request_path =  "chaobiao?id=" + danyuanbiaoChaobiao.mRemoteID + "&bencidushu=" + biaoshu;
+            cachedRequest.resource_type = "抄表";
+            cachedRequest.resource_id = danyuanbiaoChaobiao.getId();
 
             progressDialog.setTitle("");
             progressDialog.setMessage("表数上传中， 请稍后");
@@ -84,7 +87,7 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
 
             httpHelper = new HttpHelper(appContext);
             httpHelper.post("chaobiao?id=" + danyuanbiaoChaobiao.mRemoteID + "&bencidushu=" + biaoshu, null,
-                    new PadJsonHttpResponseHandler(DanyuanbiaochaobiaoForm.this, progressDialog, cachedRequest){
+                    new PadJsonHttpResponseHandler(){
                 @Override
                 public void onSuccess(JSONObject jsonObject) {
                     progressDialog.hide();
@@ -92,12 +95,20 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
                     super.onSuccess(jsonObject);
                 }
 
-                @Override
-                public void onFailure(Throwable throwable, JSONObject jsonObject) {
-                    progressDialog.hide();
-                    UIHelper.showLongToast(DanyuanbiaochaobiaoForm.this, "上传失败");
-                    super.onFailure(throwable, jsonObject);
-                }
+                        @Override
+                        public void failure(String message) {
+                            DanyuanbiaochaobiaoForm.this.finish();
+                            if (progressDialog != null) {
+                                progressDialog.hide();
+                            }
+                            UIHelper.showLongToast(DanyuanbiaochaobiaoForm.this, message);
+                            if (cachedRequest != null) {
+                                Log.d("cachedrequest", cachedRequest.request_path);
+                                UIHelper.showLongToast(DanyuanbiaochaobiaoForm.this, R.string.chaobiao_saved_failed_will_retry_for_you);
+                                cachedRequest.save();
+                            }
+                            super.failure(message);
+                        }
             });
 
 

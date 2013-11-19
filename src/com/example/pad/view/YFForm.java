@@ -50,7 +50,6 @@ public class YFForm extends BaseActivity {
     private YFFjlx fjlx;
     private YFYfRecord yfRecord;
     private ProgressDialog progressDialog;
-    private HttpHelper httpHelper;
 
     public void onCreate(Bundle savedInstanceState) {
         yfImagesDir = "/sdcard/" + YFForm.this.getPackageName() + "/yf";
@@ -68,6 +67,7 @@ public class YFForm extends BaseActivity {
         progressDialog.setMessage("验房结果上传中， 请稍后");
 
         textView = (TextView) findViewById(R.id.desc);
+        textView.setText(ysdx.preDesc(YFForm.this, danyuan.mDanyuanbianhao, fjlx.mRemoteId));
         savebBtn = (Button) findViewById(R.id.save_yf_record);
         containerLayout = (LinearLayout) findViewById(R.id.image_container);
 
@@ -128,11 +128,11 @@ public class YFForm extends BaseActivity {
                 progressDialog.show();
 
                 final CachedRequest cachedRequest = new CachedRequest();
-                cachedRequest.setHappenedAt(new Date());
-                cachedRequest.setType("yf_yz_yfd");
-                cachedRequest.setRequest("yf_yz_yfd");
-                cachedRequest.setImages(yfRecord.imagesInStr());
-                cachedRequest.setRid(yfRecord.getId());
+                cachedRequest.happenedAt = new Date();
+                cachedRequest.resource_type = "验房";
+                cachedRequest.request_path = "yf_yz_yfd";
+                cachedRequest.images = yfRecord.imagesInStr();
+                cachedRequest.resource_id = yfRecord.getId();
 
                 RequestParams params = new RequestParams();
                 params.put("mDesc", yfRecord.mDesc);
@@ -143,9 +143,7 @@ public class YFForm extends BaseActivity {
                 if(imagesDir.exists() && imagesDir.isDirectory()){
                     int i = 0;
                     for (File image : imagesDir.listFiles()) {
-
                         try {
-                            Log.d("sql", "image" + i);
                             params.put("image" + i, image);
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
@@ -155,23 +153,37 @@ public class YFForm extends BaseActivity {
                     }
                 }
 
-                new HttpHelper(appContext).post("yf_yz_yfd", params, new PadJsonHttpResponseHandler(YFForm.this, progressDialog, cachedRequest) {
+                new HttpHelper(appContext).post("yf_yz_yfd", params, new PadJsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
-                        UIHelper.showLongToast(YFForm.this, "验房单保存成功");
-                        YFForm.this.finish();
+                        Log.d("json", jsonObject.toString());
+                        RequestResponse requestResponse = new RequestResponse(jsonObject);
+                        if(requestResponse.ok()){
+                            UIHelper.showLongToast(YFForm.this, "验房单保存成功");
+                            YFForm.this.finish();
+                        }else{
+                            UIHelper.showLongToast(YFForm.this, requestResponse.message);
+                        }
+
                         progressDialog.hide();
                         super.onSuccess(jsonObject);
                     }
 
                     @Override
-                    public void onFailure(Throwable throwable, JSONObject jsonObject) {
-                        Log.d("onFailure", "throwable");
-                        cachedRequest.save();
+                    public void failure(String message) {
                         YFForm.this.finish();
-                        super.onFailure(throwable, jsonObject);
-                        progressDialog.hide();
+                        if (progressDialog != null) {
+                            progressDialog.hide();
+                        }
+                        UIHelper.showLongToast(YFForm.this, message);
+                        if (cachedRequest != null) {
+                            Log.d("cachedrequest", cachedRequest.request_path);
+                            UIHelper.showLongToast(YFForm.this, R.string.yfrecord_saved_failed_will_retry_for_you);
+                            cachedRequest.save();
+                        }
+                        super.failure(message);
                     }
+
                 });
             }
         }

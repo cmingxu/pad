@@ -114,12 +114,13 @@ public class XunjianList extends BaseActivity
                    String req =  "xunjiandans?id=" + o.mRemoteID + "&minTime=" + o.minTime() + "&maxTime=" + o.maxTime();
 
                    CachedRequest cachedRequest = new CachedRequest();
-                   cachedRequest.setHappenedAt(new Date());
-                   cachedRequest.setRequest(req);
-                   cachedRequest.setType("巡检单");
+                   cachedRequest.happenedAt = new Date();
+                   cachedRequest.request_path = req;
+                   cachedRequest.resource_type = "巡检单";
+                   cachedRequest.resource_id = o.getId();
 
                    httpHelper.post(req, null,
-                           new PadJsonHttpResponseHandler(XunjianList.this, progressDialog, cachedRequest) {
+                           new PadJsonHttpResponseHandler() {
 
                        @Override
                        public void onSuccess(JSONObject jsonObject) {
@@ -128,22 +129,24 @@ public class XunjianList extends BaseActivity
                            setupListView();
                        }
 
+
+
                    });
 
                    for (final Xunjiandanmingxi xunjiandanmingxi : o.xunjiandanmingxis()) {
-
-
                        String request = new String("id=" + xunjiandanmingxi.mRemoteID + "&zhiid=" + xunjiandanmingxi.mZhiId + "&zhi=" + xunjiandanmingxi.mZhi +
                        "&xunjianshijian=" + StringUtils.toLongString(xunjiandanmingxi.mXunjianShijian) + "&biaoshi=" + xunjiandanmingxi.mBiaoshi +
                                "&shuoming=" + xunjiandanmingxi.mShuoming);
 
                        CachedRequest mingxicachedRequest = new CachedRequest();
-                       mingxicachedRequest.setHappenedAt(new Date());
-                       mingxicachedRequest.setRequest("xunjiandanmingxis?" + request);
-                       mingxicachedRequest.setType("巡检明细");
+                       mingxicachedRequest.happenedAt = new Date();
+                       mingxicachedRequest.httpMethod = "post";
+                       mingxicachedRequest.request_path = "xunjiandanmingxis?" + request;
+                       mingxicachedRequest.resource_type = "巡检明细";
+                       mingxicachedRequest.resource_id = xunjiandanmingxi.getId();
 
                        httpHelper.post("xunjiandanmingxis?" + request, null,
-                               new PadJsonHttpResponseHandler(XunjianList.this, progressDialog, mingxicachedRequest) {
+                               new PadJsonHttpResponseHandler() {
 
                            @Override
                            public void onSuccess(JSONObject jsonObject) {

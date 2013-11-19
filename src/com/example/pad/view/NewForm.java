@@ -1,18 +1,18 @@
 package com.example.pad.view;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
-import com.activeandroid.query.Select;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.*;
@@ -35,72 +35,57 @@ import java.util.Date;
  */
 public class NewForm extends BaseActivity {
 
-    public  static  final  int WEIXIUDAN_SAVE_OK = 1;
-    public  static final   int WEIXIUDAN_SAVE_FAILE = 2;
-    public  static final   int WEIXIUDAN_SAVE_EXCEPTION = 3;
-    public  static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
-    public  static final   int WEIXIUDAN_SAVE_EMPTY = 5;
-
-    public static final int IMAGE1 = 1;
-    public static final int IMAGE2 = 2;
-    public static final int IMAGE3 = 3;
-
-
+    public static final int WEIXIUDAN_SAVE_OK = 1;
+    public static final int WEIXIUDAN_SAVE_FAILE = 2;
+    public static final int WEIXIUDAN_SAVE_EXCEPTION = 3;
+    public static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
+    public static final int WEIXIUDAN_SAVE_EMPTY = 5;
+    public static final int CHOOSE_ADDRESS = 1;
+    private static final int IMAGE_CAPTURE = 0;
+    Weixiudan weixiudan;
+    AddressChooserResult result;
+    String weixiudanImagesDir;
     private Button saveBtn;
     private EditText address_choose_text;
     private EditText zhuhu_name_text;
     private EditText zhuhu_phone_text;
     private EditText baoxiuneirong;
     private EditText time_text;
-    private ImageView imageView1;
-    private ImageView imageView2;
-    private ImageView imageView3;
-    public int currentImageView = IMAGE1;
+    private ImageView camera;
     private Spinner categories;
-    private static final int IMAGE_CAPTURE = 0;
-    public static final int CHOOSE_ADDRESS = 1;
-
+    private LinearLayout containerLayout;
     private ArrayAdapter<String> adapter;
     private ProgressDialog progressDialog;
-    private Handler handler;
     private File tempFile = null;
-    Weixiudan weixiudan;
-    AddressChooserResult result;
-
 
     public void onCreate(Bundle savedInstanceState) {
+
+        weixiudanImagesDir = "/sdcard/" + NewForm.this.getPackageName() + "/weixiudan";
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_form);
 
         Bundle extra = getIntent().getExtras();
-        if (extra != null){
-            long weixiudan_id = extra.getLong("weixiudan_id");
-            weixiudan = (Weixiudan) new Select().from(Weixiudan.class).where("id=" + weixiudan_id).executeSingle();
-        }else {
-            weixiudan = new Weixiudan();
-        }
+        weixiudan = new Weixiudan();
 
-        saveBtn = (Button)findViewById(R.id.saveBtn);
+        saveBtn = (Button) findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new SaveOnClickListener());
 
-        categories = (Spinner)findViewById(R.id.categories);
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, Weixiudan.categories);
+        categories = (Spinner) findViewById(R.id.categories);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Weixiudan.categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categories.setAdapter(adapter);
 
-        address_choose_text = (EditText)findViewById(R.id.address_choose_text);
-        zhuhu_name_text     = (EditText)findViewById(R.id.zhuhuName);
-        zhuhu_phone_text    = (EditText)findViewById(R.id.zhuHuPhone);
-        baoxiuneirong       = (EditText)findViewById(R.id.baoxiuneirong);
-        time_text           = (EditText)findViewById(R.id.time);
-        imageView1 = (ImageView)findViewById(R.id.imageView1);
-        imageView2 = (ImageView)findViewById(R.id.imageView2);
-        imageView3 = (ImageView)findViewById(R.id.imageView3);
-        imageView1.setOnClickListener(new TakePicClickListener(IMAGE1));
-        imageView2.setOnClickListener(new TakePicClickListener(IMAGE2));
-        imageView3.setOnClickListener(new TakePicClickListener(IMAGE3));
-        time_text.setText( Util.instance().formatTime("yyyy/MM/dd", new Date()));
-        if(weixiudan.getId() != null){
+        address_choose_text = (EditText) findViewById(R.id.address_choose_text);
+        zhuhu_name_text = (EditText) findViewById(R.id.zhuhuName);
+        zhuhu_phone_text = (EditText) findViewById(R.id.zhuHuPhone);
+        baoxiuneirong = (EditText) findViewById(R.id.baoxiuneirong);
+        time_text = (EditText) findViewById(R.id.time);
+        containerLayout = (LinearLayout) findViewById(R.id.image_container);
+        camera = (ImageView) findViewById(R.id.camera);
+        camera.setOnClickListener(new TakePicClickListener());
+        time_text.setText(Util.instance().formatTime("yyyy/MM/dd", new Date()));
+        if (weixiudan.getId() != null) {
             address_choose_text.setText(weixiudan.address());
             zhuhu_name_text.setText(weixiudan.mYezhuName);
             zhuhu_phone_text.setText(weixiudan.mYezhuPhone);
@@ -124,21 +109,28 @@ public class NewForm extends BaseActivity {
         progressDialog = new ProgressDialog(this);
 
 
+        File temp_path = new File(weixiudanImagesDir + "/temp");
+        if (temp_path.exists() && temp_path.isDirectory()) {
+            for (File imageFile : temp_path.listFiles()) {
+                if (imageFile.getAbsolutePath().endsWith(".jpg")) {
+                    addImageInContainer(imageFile.getAbsolutePath());
+                }
+            }
+        }
+
     }
 
-    public void gatherWeixiudan(){
+    public void gatherWeixiudan() {
         if (weixiudan == null) {
             weixiudan = new Weixiudan();
         }
-        weixiudan.mBaoxiuLeibie =categories.getSelectedItem().toString();
+        weixiudan.mBaoxiuLeibie = categories.getSelectedItem().toString();
         weixiudan.mBaoxiuNeirong = baoxiuneirong.getText().toString();
-        weixiudan.mBaoxiuren   = result.mYezhuName;
-        weixiudan.mBaoXiuRiqi  = Util.instance().formatTime("yyyy/MM/dd", new Date());
+        weixiudan.mBaoxiuren = result.mYezhuName;
+        weixiudan.mBaoXiuRiqi = Util.instance().formatTime("yyyy/MM/dd", new Date());
         weixiudan.mDanyuanName = result.mDanyuanName;
-        weixiudan.mDbSaved = 0;
         weixiudan.mLoucengName = result.mLoucengName;
         weixiudan.mLougeName = result.mLougeName;
-        weixiudan.mRemoteSaved = 0;
         weixiudan.mYezhuName = result.mYezhuName;
         weixiudan.mYezhuPhone = result.mYezhuDianhua;
         weixiudan.mLougeBianhao = result.mLougebianhao;
@@ -146,12 +138,9 @@ public class NewForm extends BaseActivity {
         weixiudan.mDanyuanBianhao = result.mDanyuanbianhao;
         weixiudan.mLoupanName = result.mLoupanName;
         weixiudan.mLoupanBianhao = result.mLoupanbianhao;
-        weixiudan.userlogin = appContext.getCurrentUser().login;
-
     }
 
-
-    public boolean allFieldsFilled(){
+    public boolean allFieldsFilled() {
         boolean result = true;
 
         if (StringUtils.isEmpty(address_choose_text.getText().toString())) {
@@ -163,143 +152,162 @@ public class NewForm extends BaseActivity {
         }
 
         if (StringUtils.isEmpty(zhuhu_phone_text.getText().toString())) {
-            result = false ;
+            result = false;
         }
 
         if (StringUtils.isEmpty(baoxiuneirong.getText().toString())) {
 
             result = false;
         }
-
-
         return result;
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == IMAGE_CAPTURE) {
+            if (resultCode == RESULT_OK) {
+                addImageInContainer(tempFile.getAbsolutePath());
+            }
+        }
+
+        if (requestCode == CHOOSE_ADDRESS) {
+            if (data != null) {
+                result = (AddressChooserResult) data.getSerializableExtra("result");
+                Log.d("result", result.toString());
+                address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
+                zhuhu_phone_text.setText(result.getmYezhuDianhua());
+                zhuhu_name_text.setText(result.getmYezhuName());
+            }
+
+
+        }
+    }
+
+    public void addImageInContainer(final String imagePath) {
+        float scale = getResources().getDisplayMetrics().density;
+        int dpAsPixels = (int) (10 * scale + 0.5f);
+        int dpAsPixels60 = (int) (58 * scale + 0.5f);
+
+        ImageView imageView = new ImageView(NewForm.this);
+
+        imageView.setImageBitmap(Bitmap.createScaledBitmap(BitmapFactory.decodeFile(imagePath), dpAsPixels60, dpAsPixels60, false));
+        imageView.setPadding(0, 0, dpAsPixels, 0);
+
+        imageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                final View view = v;
+                new AlertDialog.Builder(NewForm.this)
+                        .setTitle("删除图片")
+                        .setMessage("选择OK将删除此照片?")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                File file = new File(imagePath);
+                                file.delete();
+                                containerLayout.removeView(view);
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // do nothing
+                            }
+                        })
+                        .show();
+
+                return true;
+            }
+
+        });
+
+
+        containerLayout.addView(imageView, 0);
 
 
     }
-    private class SaveOnClickListener implements Button.OnClickListener{
+
+    private class SaveOnClickListener implements Button.OnClickListener {
         @Override
         public void onClick(View v) {
-
-            handler = new Handler(){
-                @Override
-                public void handleMessage(Message msg) {
-                    super.handleMessage(msg);
-                    switch (msg.what){
-                        case WEIXIUDAN_SAVE_OK:
-                            progressDialog.dismiss();
-                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved));
-
-                            redirectWithClearTop(NewForm.this, Maintain.class);
-                            break;
-                        case WEIXIUDAN_SAVE_FAILE:
-                            progressDialog.dismiss();
-                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_failed));
-                            break;
-                        case WEIXIUDAN_SAVE_EXCEPTION:
-                            progressDialog.dismiss();
-                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_exception));
-                            break;
-                        case WEIXIUDAN_SAVE_NO_RESULT:
-                            progressDialog.dismiss();
-                            UIHelper.showLongToast(NewForm.this, getString(R.string.weixiudan_saved_no_result));
-                            break;
-                        case WEIXIUDAN_SAVE_EMPTY:
-                            progressDialog.dismiss();
-                            UIHelper.showLongToast(NewForm.this, "业主姓名,电话， 维修内容均不能空");
-                            break;
-                        default:
-                    }
-
-                }
-            } ;
-
-            if(!allFieldsFilled()){
-                Message message = new Message();
-                message.what = WEIXIUDAN_SAVE_EMPTY;
-                handler.sendMessage(message);
+            if (!allFieldsFilled()) {
+                UIHelper.showLongToast(NewForm.this, R.string.value_should_not_empty);
                 return;
             }
 
-            if(null != result){
+            if (null != result) {
                 gatherWeixiudan();
-                weixiudan.mDbSaved  = 1;
-                try {
-                    weixiudan.save();
+                weixiudan.mImageDir = weixiudanImagesDir + "/" + Weixiudan.last_id();
+                weixiudan.save();
 
-                }  catch (Exception e){
-                    Log.d("image exception", e.toString());
-                    Message message = new Message();
-                    message.what = WEIXIUDAN_SAVE_EXCEPTION;
-                    handler.sendMessage(message);
+                File file = new File(weixiudanImagesDir + "/temp/");
+                if (file.exists() && file.isDirectory() && file.list().length > 0) {
+                    file.renameTo(new File(weixiudan.mImageDir));
                 }
 
                 RequestParams params = new RequestParams();
-                try {
-
-                    if( weixiudan.image1 != null)
-                        params.put("image1", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image1));
-                    if (weixiudan.image2 != null)
-                        params.put("image2", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image2));
-                    if (weixiudan.image3 != null)
-                        params.put("image3", new File("/sdcard/" + NewForm.this.getPackageName() + "/" + weixiudan.image3));
-                } catch(FileNotFoundException e) {}
-
-//                if(!Util.instance().isNetworkConnected(NewForm.this)){
-//                    UIHelper.showLongToast(NewForm.this, getString(R.string.network_error));
-//
-//                    return;
-//                }
-
 
                 final CachedRequest cachedRequest = new CachedRequest();
-                cachedRequest.setHappenedAt(new Date());
-                cachedRequest.setRequest("weixiudans?" + weixiudan.toQuery());
-                cachedRequest.setType("维修单");
+                cachedRequest.happenedAt = new Date();
+                cachedRequest.httpMethod = "post";
+                cachedRequest.request_path = "weixiudans";
+                cachedRequest.resource_type = "维修单";
+                cachedRequest.resource_id = weixiudan.getId();
+                cachedRequest.images = weixiudan.mImageDir;
+
+                File imagesDir = new File(weixiudan.mImageDir);
+                if (imagesDir.exists() && imagesDir.isDirectory()) {
+                    int i = 0;
+                    for (File image : imagesDir.listFiles()) {
+                        Log.d("image", "images");
+                        try {
+                            params.put("image" + i, image);
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+                        i = i + 1;
+                    }
+                }
+
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage(getString(R.string.save_and_upload_inprogress));
                 progressDialog.show();
                 new HttpHelper(appContext).post("weixiudans?" + weixiudan.toQuery(), params,
-                        new PadJsonHttpResponseHandler(getApplicationContext(), progressDialog, cachedRequest) {
+                        new PadJsonHttpResponseHandler() {
 
-                    @Override
-                    public void onSuccess(int i, JSONObject jsonObject) {
-                        Log.d("onSuccess", "onSuccess");
-                        weixiudan.mRemoteSaved = 1;
-                        weixiudan.save();
+                            @Override
+                            public void onSuccess(int i, JSONObject jsonObject) {
+                                progressDialog.hide();
+                                NewForm.this.finish();
+                                UIHelper.showLongToast(NewForm.this, R.string.weixiudan_saved);
+                            }
 
-                        super.onSuccess(i, jsonObject);
-                        Message message = new Message();
-                        message.what = WEIXIUDAN_SAVE_OK;
-                        handler.sendMessage(message);
-                    }
+                            @Override
+                            public void failure(String message) {
+                                NewForm.this.finish();
+                                if (progressDialog != null) {
+                                    progressDialog.hide();
+                                }
+                                UIHelper.showLongToast(NewForm.this, message);
+                                if (cachedRequest != null) {
+                                    Log.d("cachedrequest", cachedRequest.request_path);
+                                    UIHelper.showLongToast(NewForm.this, R.string.weixiudan_saved_failed_will_retry_for_you);
+                                    cachedRequest.save();
+                                }
+                                super.failure(message);
+                            }
 
-                    @Override
-                    public void onFailure(Throwable throwable, JSONObject jsonObject) {
-                        Log.d("onFailure", "throwable");
-                        cachedRequest.save();
-                        super.onFailure(throwable, jsonObject);
-                        Message message = new Message();
-                        message.what = WEIXIUDAN_SAVE_FAILE;
-                        handler.sendMessage(message);
-                    }
 
-                    @Override
-                    public void onFinish() {
-                        super.onFinish();
-                        Log.d("onFInish", "finish");
-
-                    }
-                });
-            }else{
-                Message message = new Message();
-                message.what = WEIXIUDAN_SAVE_NO_RESULT;
-                handler.sendMessage(message);
+                        });
+            } else {
+                UIHelper.showLongToast(NewForm.this, R.string.weixiudan_saved_no_result);
             }
 
         }
     }
 
-    protected class AddressChoseClickListener implements Button.OnClickListener{
+    protected class AddressChoseClickListener implements Button.OnClickListener {
 
         @Override
         public void onClick(View view) {
@@ -310,69 +318,21 @@ public class NewForm extends BaseActivity {
         }
     }
 
-    protected class TakePicClickListener implements Button.OnClickListener{
-        public int currentImageView;
-        public TakePicClickListener(int currentImageView) {
-            this.currentImageView = currentImageView;
-        }
-
+    protected class TakePicClickListener implements Button.OnClickListener {
         @Override
         public void onClick(View view) {
-            NewForm.this.currentImageView = this.currentImageView;
             final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            tempFile =  getTempFile(NewForm.this);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile( tempFile));
+            tempFile = getTempFile(NewForm.this);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
             startActivityForResult(intent, IMAGE_CAPTURE);
         }
-    }
 
-    private File getTempFile(Context context){
-        final File path = new File( "/sdcard"   ,context.getPackageName() );
-
-        if(!path.exists()){
-            path.mkdir();
-        }
-        return new File(path, StringUtils.randomString() + ".jpg");
-    }
-
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == IMAGE_CAPTURE) {
-            if (resultCode == RESULT_OK) {
-                Log.d("sddd", tempFile.getName());
-                switch (NewForm.this.currentImageView)    {
-
-                    case IMAGE1:
-                        weixiudan.image1 = tempFile.getName();
-                        imageView1.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
-                        break;
-                    case IMAGE2:
-                        weixiudan.image2 = tempFile.getName();
-                        imageView2.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
-                        break;
-                    case IMAGE3:
-                        weixiudan.image3 = tempFile.getName();
-                        imageView3.setImageDrawable(Drawable.createFromPath(tempFile.getAbsolutePath()));
-                        break;
-                    default:
-                        break;
-                }
-
-
+        private File getTempFile(Context context) {
+            File path = new File(weixiudanImagesDir);
+            if (!path.exists()) {
+                path.mkdir();
             }
-        }
-
-        if (requestCode == CHOOSE_ADDRESS){
-            if (data != null) {
-                result  = (AddressChooserResult)data.getSerializableExtra("result");
-                Log.d("result", result.toString());
-                address_choose_text.setText(result.getmLougeName() + "/" + result.getmLoucengName() + "/" + result.getmDanyuanName());
-                zhuhu_phone_text.setText(result.getmYezhuDianhua());
-                zhuhu_name_text.setText(result.getmYezhuName());
-            }
-
-
+            return new File(path, "/temp/" + StringUtils.randomString() + ".jpg");
         }
     }
 }

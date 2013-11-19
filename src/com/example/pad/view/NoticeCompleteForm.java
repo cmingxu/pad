@@ -2,6 +2,7 @@ package com.example.pad.view;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import com.example.pad.AppContext;
@@ -27,8 +28,6 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class NoticeCompleteForm extends BaseActivity {
-    private TextView sendPerson;
-    private TextView sendTime;
     private TextView content;
     private Spinner description;
     private Button submit;
@@ -46,8 +45,6 @@ public class NoticeCompleteForm extends BaseActivity {
         setContentView(R.layout.notice_complete_form);
 
 
-        sendPerson = (TextView)findViewById(R.id.sendperson);
-        sendTime   = (TextView)findViewById(R.id.sendtime);
         content    = (TextView)findViewById(R.id.content);
         submit = (Button)findViewById(R.id.submit_btn);
         description = (Spinner)findViewById(R.id.description);
@@ -87,8 +84,6 @@ public class NoticeCompleteForm extends BaseActivity {
         });
 
 
-        sendPerson.setText(n.sendPerson);
-        sendTime.setText(n.sendTime);
         content.setText(n.danjuNeirong);
         progressDialog = new ProgressDialog(this);
 
@@ -126,41 +121,41 @@ public class NoticeCompleteForm extends BaseActivity {
                 }
 
 
-                CachedRequest cachedRequest = new CachedRequest();
-                cachedRequest.setHappenedAt(new Date());
-                cachedRequest.setRequest(path + "?id=" + n.remoteId + "&desc="  + desc);
-                cachedRequest.setType("维修单完成");
+                final CachedRequest cachedRequest = new CachedRequest();
+                cachedRequest.happenedAt = new Date();
+                cachedRequest.request_path =   path + "?id=" + n.remoteId + "&desc="  + desc;
+                cachedRequest.resource_type = "维修单完成";
+                cachedRequest.resource_id = n.getId();
+
 
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage("保存中");
                 progressDialog.show();
 
                 httpHelper.with(path + "?id=" + n.remoteId + "&desc="  + desc, null,
-                        new PadJsonHttpResponseHandler(getApplicationContext(), progressDialog, cachedRequest){
+                        new PadJsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(JSONObject jsonObject) {
                         progressDialog.dismiss();
-                        if (radioGroup.getCheckedRadioButtonId() == R.id.wancheng_radio){
-                           n.completeUpload = true;
-                        }   else {
-                            n.daixiuUpload = true;
-                        }
-                        n.save();
+                        NoticeCompleteForm.this.finish();
+                        n.delete();
                         Toast.makeText(NoticeCompleteForm.this, R.string.wancheng_ok, Toast.LENGTH_SHORT).show();
-                        redirectWithClearTop(NoticeCompleteForm.this, Maintain.class);
-
                     }
+                            @Override
+                            public void failure(String message) {
+                                NoticeCompleteForm.this.finish();
+                                if (progressDialog != null) {
+                                    progressDialog.hide();
+                                }
+                                UIHelper.showLongToast(NoticeCompleteForm.this, message);
+                                if (cachedRequest != null) {
+                                    Log.d("cachedrequest", cachedRequest.request_path);
+                                    UIHelper.showLongToast(NoticeCompleteForm.this, R.string.notice_complete_saved_failed_will_retry_for_you);
+                                    cachedRequest.save();
+                                }
+                                super.failure(message);
+                            }
 
-                    @Override
-                    public void onFailure(Throwable throwable, JSONObject jsonObject) {
-                        progressDialog.dismiss();
-                        Toast.makeText(NoticeCompleteForm.this, R.string.wancheng_failed, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFinish() {
-
-                    }
                 });
 
             }

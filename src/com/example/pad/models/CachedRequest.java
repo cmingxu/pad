@@ -17,55 +17,17 @@ import java.util.Date;
 @Table(name="CachedRequest")
 public class CachedRequest extends Model{
     @Column(name="happenedAt")
-    Date happenedAt;
-    @Column(name="request")
-    public String request;
+    public Date happenedAt;
+    @Column(name="request_path")
+    public String request_path;
     @Column(name="images")
     public String images;
-    @Column(name="type")
-    public String type;
-    @Column(name="rid")
-    public long rid;
+    @Column(name="resource_type")
+    public String resource_type;
+    @Column(name="resource_id")
+    public long resource_id;
+    @Column(name="httpMethod")
+    public String httpMethod;
 
-
-    public Date getHappenedAt() {
-        return happenedAt;
-    }
-
-    public void setHappenedAt(Date happenedAt) {
-        this.happenedAt = happenedAt;
-    }
-
-    public String getRequest() {
-        return request;
-    }
-
-    public void setRequest(String request) {
-        this.request = request;
-    }
-
-    public long getRid() {
-        return rid;
-    }
-
-    public void setRid(long rid) {
-        this.rid = rid;
-    }
-
-    public String getImages() {
-        return images;
-    }
-
-    public void setImages(String images) {
-        this.images = images;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }
 

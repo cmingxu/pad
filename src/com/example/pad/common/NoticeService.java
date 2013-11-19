@@ -11,7 +11,7 @@ import android.util.Log;
 import com.example.pad.AppContext;
 import com.example.pad.R;
 import com.example.pad.models.Notice;
-import com.example.pad.view.Maintain;
+import com.example.pad.view.NoticeList;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +39,7 @@ public class NoticeService extends Service {
     private TimerTask updateTask = new TimerTask() {
         @Override
         public void run() {
-            Log.i("ddd", "Timer task doing work");
+            Log.d("timer", "Timer task doing work");
 
             httpHelper.with("notices", null, new JsonHttpResponseHandler(){
                 @Override
@@ -56,7 +56,7 @@ public class NoticeService extends Service {
                                 long[] vibrate = new long[] { 1000, 1000, 1000, 1000, 1000 };
                                 n.vibrate = vibrate;
                                 n.flags = Notification.FLAG_AUTO_CANCEL;
-                                Intent i = new Intent(NoticeService.this, Maintain.class);
+                                Intent i = new Intent(NoticeService.this, NoticeList.class);
                                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
                                 PendingIntent contentIntent = PendingIntent.getActivity(
                                         NoticeService.this,

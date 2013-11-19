@@ -1,8 +1,6 @@
 package com.example.pad.view;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,13 +24,18 @@ import java.util.List;
  * Time: 1:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NoticeAcceptList extends BaseActivity{
+public class NoticeList extends BaseActivity{
     private ListView notice_list;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice_list);
-        final List<Notice> notices = new Select().from(Notice.class).where("isAccept=0").execute();
+       setupList();
+
+    }
+
+    public void setupList(){
+        final List<Notice> notices = new Select().from(Notice.class).execute();
 
         notice_list = (ListView)findViewById(R.id.list_view);
         notice_list.setAdapter(new NoticeListViewAdapter(notices));
@@ -44,35 +47,24 @@ public class NoticeAcceptList extends BaseActivity{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Notice n = notices.get(position);
                 Intent i = new Intent();
-                i.setClass(NoticeAcceptList.this, NoticeAcceptForm.class);
+                if(n.isAccept){
+                    i.setClass(NoticeList.this, NoticeCompleteForm.class);
+                } else{
+                    i.setClass(NoticeList.this, NoticeAcceptForm.class);
+                }
                 i.putExtra("notice_id", n.getId());
                 startActivity(i);
             }
         });
-
-                notice_list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                final Notice notice = notices.get(position);
-                new AlertDialog.Builder(NoticeAcceptList.this).setMessage(R.string.delete_confirm).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        notice.delete();
-                        finish();
-                        startActivity(getIntent());
-                    }
-                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                }).show();
-                return false;
-            }
-        });
-
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setupList();
+
+    }
 
     class NoticeListViewAdapter extends BaseAdapter{
 
@@ -101,13 +93,11 @@ public class NoticeAcceptList extends BaseActivity{
         public View getView(int position, View convertView, ViewGroup parent) {
             Notice notice = (Notice)notices.get(position);
 
-            LayoutInflater inflater = (LayoutInflater)NoticeAcceptList.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater)NoticeList.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.notice_item, null);
-            TextView title = (TextView)view.findViewById(R.id.title);
-            TextView content = (TextView)view.findViewById(R.id.content);
+            TextView title = (TextView)view.findViewById(R.id.notice);
 
             title.setText(notice.danjuBiaoti);
-            content.setText(notice.danjuNeirong);
 
             return view;
 

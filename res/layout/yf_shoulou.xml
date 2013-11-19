@@ -3,15 +3,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent" style="@style/overall">
 
-    <EditText
+    <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/chooseDanyuan" android:layout_gravity="left|center_vertical" android:hint="选择单元"/>
-    <ListView
+            android:layout_height="wrap_content" android:background="@drawable/text_view_border_background">
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/chooseDanyuan" android:layout_gravity="left|center_vertical" android:hint="选择单元"
+                android:background="@drawable/text_view_border"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/shoulous"/>
+            android:layout_height="wrap_content" android:background="@drawable/text_view_border_background">
+        <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/shoulous"/>
+    </LinearLayout>
 
 </LinearLayout>

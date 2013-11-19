@@ -18,6 +18,7 @@ public class Main extends BaseActivity {
     private ImageButton chaobiao_btn;
     private ImageButton shoulou_btn;
     private ImageButton setting_btn;
+    private ImageButton notice_btn;
 
 
     @Override
@@ -35,6 +36,8 @@ public class Main extends BaseActivity {
         setting_btn.setOnClickListener(new SettingClickListener());
         shoulou_btn = (ImageButton) findViewById(R.id.shoulou_btn);
         shoulou_btn.setOnClickListener(new ShoulouClickListener());
+        notice_btn = (ImageButton) findViewById(R.id.notice_btn);
+        notice_btn.setOnClickListener(new NoticeClickListener());
 
     }
 
@@ -42,7 +45,7 @@ public class Main extends BaseActivity {
     protected class MaintainClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            redirect(Main.this, Maintain.class);
+            redirect(Main.this, NewForm.class);
         }
     }
 
@@ -74,6 +77,14 @@ public class Main extends BaseActivity {
         @Override
         public void onClick(View view) {
             redirect(Main.this, YFShoulouView.class);
+
+        }
+    }
+
+    protected class NoticeClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            redirect(Main.this, NoticeList.class);
 
         }
     }

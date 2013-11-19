@@ -62,13 +62,15 @@ public class YFShoulouView extends BaseActivity {
                     mDanyuanEditText.setText(result.toHumanJiangeString());
 
                     final Danyuan danyuan = Danyuan.findByDanyuanbianhao(result.getmDanyuanbianhao());
-                    if (!StringUtils.isEmpty(danyuan.mJiange)) {
+                    if (!StringUtils.isEmpty(danyuan.mJiange) || (danyuan.huxing() != null)) {
                         fjlxes = (ArrayList<YFFjlx>) danyuan.huxing().fjlxes();
                         Collections.sort(fjlxes);
                         ArrayList<String> fjlxs = new ArrayList<String>();
                         for (YFFjlx o : fjlxes) {
                             fjlxs.add(o.mFjmc + "( " + o.mFjbh + ")");
+                            Log.d("sql", o.mFjmc);
                         }
+
                         shoulous.setAdapter(new ArrayAdapter<String>(YFShoulouView.this, android.R.layout.simple_list_item_1, fjlxs));
                         shoulous.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

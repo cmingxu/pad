@@ -53,17 +53,8 @@ public class Weixiudan extends Model {
     public String mLoucengBianhao;
     @Column(name="mZhuhuBianhao")
     public String mZhuhuBianhao;
-    public int mDbSaved;
-    @Column(name="mRemoteSaved")
-    public int mRemoteSaved;
-    @Column(name="mImage1")
-    public String image1;
-    @Column(name="mImage2")
-    public String image2;
-    @Column(name="mImage3")
-    public String image3;
-    @Column(name="userlogin")
-    public String userlogin;
+    @Column(name="mImageDir")
+    public String mImageDir;
 
     public Weixiudan() {
     }
@@ -137,9 +128,13 @@ public class Weixiudan extends Model {
         return this.mLougeName + "/" + this.mLoucengName + "/" + this.mDanyuanName;
     }
 
-
-    public static int not_uploaded_count() {
-        return  new Select().from(Weixiudan.class).where("mRemoteSaved=0").execute().size();
+    public static long last_id(){
+        Weixiudan last = new Select().from(Weixiudan.class).orderBy("id DESC").executeSingle();
+        if (last != null){
+            return last.getId() + 1;
+        }
+        return 0l;
     }
+
 
 }

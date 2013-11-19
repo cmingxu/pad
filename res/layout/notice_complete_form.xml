@@ -2,48 +2,55 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
-              android:layout_width="match_parent"
+              android:layout_width="fill_parent"
               style="@style/overall"
               android:layout_height="match_parent">
-    <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
 
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ltTableRow">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="接单人"
-                android:id="@+id/no"
-                android:textSize="20dip" style="@style/ltLabel" android:layout_weight="1"/>
-            <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:id="@+id/sendperson" android:layout_gravity="center"
-                    android:textSize="20dip" android:layout_weight="2"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ltTableRow">
-            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="sendtime"
-                      android:id="@+id/sendtime"
-                      android:textSize="20dip" style="@style/ltLabel" android:layout_weight="1"/>
-            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="sendtime"
-                      android:id="@+id/no" android:layout_gravity="center"
-                      android:textSize="20dip" android:layout_weight="2"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" style="@style/ltTableRow">
-            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="维修内容"
-                      android:id="@+id/no"
-                      android:textSize="20dip" android:layout_weight="1" style="@style/ltLabel"/>
-            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=""
-                      android:id="@+id/content" android:layout_gravity="center"
-                      android:textSize="20dip" android:layout_weight="2"/>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" style="@style/ltTableRow"
-                  android:layout_gravity="center_horizontal" android:layout_height="wrap_content"
-                  android:gravity="center_horizontal">
-            <RadioGroup
+        <!--<TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ltTableRow">-->
+            <!--<TextView-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="接单人"-->
+                <!--android:id="@+id/no"-->
+                <!--android:textSize="20dip" style="@style/ltLabel" android:layout_weight="1"/>-->
+            <!--<TextView-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text=""-->
+                    <!--android:id="@+id/sendperson" android:layout_gravity="center"-->
+                    <!--android:textSize="20dip" android:layout_weight="2"/>-->
+        <!--</TableRow>-->
+        <!--<TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ltTableRow">-->
+            <!--<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="接单时间"-->
+                      <!--android:id="@+id/sendtime"-->
+                      <!--android:textSize="20dip" style="@style/ltLabel" android:layout_weight="1"/>-->
+            <!--<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="sendtime"-->
+                      <!--android:id="@+id/no" android:layout_gravity="center"-->
+                      <!--android:textSize="20dip" android:layout_weight="2"/>-->
+        <!--</TableRow>-->
+            <!--<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="维修内容"-->
+                      <!--android:id="@+id/no"-->
+                      <!--android:textSize="20dip" android:layout_weight="1" style="@style/ltLabel"/>-->
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:background="@drawable/text_view_border_background">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=""
+                  android:id="@+id/content"
+                  android:textSize="20dip" android:layout_weight="2" android:layout_marginLeft="10dp"
+                  android:background="@drawable/text_view_border" android:layout_marginRight="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_view_border_background">
+    <RadioGroup
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" android:id="@+id/radioGroup"
-                    android:layout_gravity="bottom" android:orientation="horizontal">
+                    android:orientation="horizontal" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                    android:background="@drawable/text_view_border">
                 <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -55,19 +62,29 @@
                         android:text="待修"
                         android:id="@+id/daixiu_radio" android:checked="false" android:layout_weight="1"/>
             </RadioGroup>
-        </TableRow>
-        <TableRow android:layout_width="fill_parent" style="@style/ltTableRow" android:layout_height="wrap_content"
-                  android:gravity="center_horizontal">
-            <Spinner
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_view_border_background">
+    <Spinner
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/description"/>
-        </TableRow>
-    </TableLayout>
+                    android:id="@+id/description" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+                    android:background="@drawable/text_view_border"/>
+        </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/text_view_border_background">
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="51dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:text="提交"
-            android:id="@+id/submit_btn" android:layout_gravity="center" android:layout_marginTop="20dp"
-            style="@style/big_button"/>
+            android:id="@+id/submit_btn" android:layout_gravity="center" android:layout_marginTop="10dp"
+            style="@style/big_button" android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
 </LinearLayout>

@@ -35,14 +35,15 @@
     </LinearLayout>
    </ScrollView>
     <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" android:gravity="center_horizontal">
         <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="保存"
-                android:id="@+id/save_yf_record" style="@style/big_button"/>
+                android:id="@+id/save_yf_record" style="@style/big_button" android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
     </LinearLayout>
     <LinearLayout
             android:orientation="vertical"

@@ -83,4 +83,15 @@ public class YFYsdx extends Model implements Comparable<YFYsdx> {
         }
 
     }
+
+    public String preDesc(Context context, String danyuanbianhao, int fjlxid){
+        YFYfRecord yfYfRecord = YFYfRecord.findByDanyuanbianhaoAndDxIdAndFjlxId(danyuanbianhao, this.mRemoteId, fjlxid);
+        if (yfYfRecord == null) {
+            return "";
+        }   else{
+            return yfYfRecord.mDesc;
+        }
+
+    }
 }
+

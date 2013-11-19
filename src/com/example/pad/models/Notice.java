@@ -43,17 +43,6 @@ public class Notice extends Model{
     public boolean isComplete;
     @Column(name="isDaixiu")
     public boolean isDaixiu;
-    @Column(name="jsr")
-
-    public String jsr;
-    @Column(name="acceptUploaded")
-    public boolean acceptUpload;
-    @Column(name="completeUploaded")
-    public boolean completeUpload;
-    @Column(name="daixiuUpload")
-    public boolean daixiuUpload;
-    @Column(name="userlogin")
-    public String userlogin;
 
 
     public static ArrayList<Notice> fromJsonArray(JSONArray s, AppContext context) throws JSONException {
@@ -68,14 +57,9 @@ public class Notice extends Model{
             notice.danjuLeixing = temp.getString("单据类型");
             notice.danjuNeirong = temp.getString("单据内容");
             notice.remoteId     = temp.getInt("id");
-            notice.jsr          = temp.getString("接收人");
             notice.isAccept = false;
             notice.isComplete = false;
             notice.isDaixiu = false;
-            notice.acceptUpload = false;
-            notice.completeUpload = false;
-            notice.daixiuUpload = false;
-            notice.userlogin = context.getCurrentUser().login;
             notices.add(notice);
 
         }
@@ -102,14 +86,6 @@ public class Notice extends Model{
     public void daixiu(){
         this.isDaixiu = true;
         this.save();
-    }
-
-    public static int notUploadCount(String jsr){
-        return new Select().from(Notice.class).where("((isAccept = 1 and acceptUploaded=0) or (isComplete=1 and completeUploaded=0) or (isDaixiu=1 and daixiuUpload=0)) and jsr=?", jsr).execute().size();
-    }
-
-    public static int complete_count(String jsr){
-        return new Select().from(Notice.class).where("(isAccept = 1 and isComplete=0 and isDaixiu=0) and jsr=?", jsr).execute().size();
     }
 
     public static List<Notice> allComplete(String jsr){

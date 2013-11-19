@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">乐天物业</string>
+    <string name="app_name">乐软物业</string>
     <string name="wait_please">请稍后</string>
     <string name="network_error">网络连接错误， 请检查是否连接到网络或网络环境不稳定</string>
     <string name="users_reloading">登陆用户重新载入中...</string>
@@ -14,6 +14,11 @@
     <string name="input_password">请输入登陆密码！</string>
     <string name="weixiudan_saved">维修单保存成功！</string>
     <string name="weixiudan_saved_failed">维修单保存失败， 检查网络设置！</string>
+    <string name="weixiudan_saved_failed_will_retry_for_you">维修单上传失败， 此单已经保存再手机中， 稍后会为您重试！</string>
+    <string name="jiedan_saved_failed_will_retry_for_you">接单信息上传失败， 此单已经保存再手机中， 稍后会为您重试！</string>
+    <string name="notice_complete_saved_failed_will_retry_for_you">完成单据信息上传失败， 此单已经保存再手机中， 稍后会为您重试！</string>
+    <string name="chaobiao_saved_failed_will_retry_for_you">抄表信息上传失败， 此单已经保存再手机中， 稍后会为您重试！</string>
+    <string name="yfrecord_saved_failed_will_retry_for_you">验房信息上传失败， 此单已经保存再手机中， 稍后会为您重试！</string>
     <string name="weixiudan_saved_exception">维修单保存失败， 请联系管理员！</string>
     <string name="save_and_upload_inprogress">维修单保存并且上传中， 请稍后!</string>
     <string name="weixiudan_saved_no_result">请选择维修地址</string>

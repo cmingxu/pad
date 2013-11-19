@@ -29,9 +29,6 @@
         <activity android:name=".view.Main"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".view.Maintain"
-                  android:configChanges="keyboardHidden|orientation|screenSize"
-                  android:screenOrientation="portrait"/>
         <activity android:name=".BaseActivity"/>
         <activity android:name=".view.NewForm"
                   android:configChanges="keyboardHidden|orientation|screenSize"
@@ -45,16 +42,13 @@
         <activity android:name=".view.Preference"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".view.WeixiudanList"
-                  android:configChanges="keyboardHidden|orientation|screenSize"
-                  android:screenOrientation="portrait"/>
         <activity android:name=".view.XunjianList"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
         <activity android:name=".view.XunjiandanView"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".view.NoticeAcceptList"
+        <activity android:name=".view.NoticeList"
                   android:configChanges="keyboardHidden|orientation|screenSize"
                   android:screenOrientation="portrait"/>
         <activity android:name=".view.NoticeCompleteList"

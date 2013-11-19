@@ -89,6 +89,8 @@ public class Danyuan extends Model {
     }
 
     public YFHuxing huxing(){
+        Log.d("sql", new Select().from(YFHuxing.class).where("mHxmc='" + this.mJiange +"'").toSql());
+
         return new Select().from(YFHuxing.class).where("mHxmc='" + this.mJiange +"'").executeSingle();
     }
 }
