@@ -2,6 +2,7 @@ package com.example.pad.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
@@ -53,6 +54,7 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
         switch (requestCode) {
             case ADDRESS_REQUEST_CODE:
                 if (data != null) {
+                    Log.d("danyuanbianhao", "danyuanbianhao");
                     result = (AddressChooserResult) data.getSerializableExtra("result");
 
                     danyuanBianhao = result.getmDanyuanbianhao();

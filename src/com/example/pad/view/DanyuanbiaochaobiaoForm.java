@@ -2,7 +2,6 @@ package com.example.pad.view;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,7 +31,6 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
     private DanyuanbiaoChaobiao danyuanbiaoChaobiao;
     private String louceng;
     HttpHelper httpHelper;
-    Handler handler;
     ProgressDialog progressDialog;
 
     public void onCreate(Bundle savedInstanceState) {

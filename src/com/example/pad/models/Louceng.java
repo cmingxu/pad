@@ -67,10 +67,13 @@ public class Louceng extends Model{
 
     public static ArrayList<DanyuanbiaoChaobiao> danyuanbiaochaobiaoByLoucengBianhao(String loucengBianhao){
         ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos = new ArrayList<DanyuanbiaoChaobiao>();
+        Log.d("danyuanbianhao",  new Select().from(Louceng.class).where("mLoucengbianhao='" + loucengBianhao + "'").toSql());
         Louceng  louceng = new Select().from(Louceng.class).where("mLoucengbianhao='" + loucengBianhao + "'").executeSingle();
 
+        Log.d("danyuanbianhao", loucengBianhao);
         ArrayList<Danyuan> danyuans =  (ArrayList<Danyuan>)louceng.danyuans();
         for(Danyuan danyuan : danyuans){
+            Log.d("danyuanbianhao", danyuan.mDanyuanbianhao);
             for(DanyuanbiaoChaobiao danyuanbiaoChaobiao : (ArrayList<DanyuanbiaoChaobiao>)danyuan.danyuanbiaoChaobiaos()){
                 danyuanbiaoChaobiaos.add(danyuanbiaoChaobiao);
             }

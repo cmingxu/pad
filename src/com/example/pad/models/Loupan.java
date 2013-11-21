@@ -1,5 +1,6 @@
 package com.example.pad.models;
 
+import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -64,7 +65,20 @@ public class Loupan extends Model {
     }
 
     public List<Louge> louges(){
+        Log.d("sql", new Select().from(Louge.class).where("mLoupanbianhao='" + this.mLoupanbianhao + "'").toSql());
         return new Select().from(Louge.class).where("mLoupanbianhao='" + this.mLoupanbianhao + "'").execute();
+    }
+
+    public ArrayList<Louceng> loucengs(){
+        List<Danyuan> danyuans = new Select().from(Danyuan.class).where("mLoupanbianhao='" + this.mLoupanbianhao + "'").groupBy("mLoucengMingcheng").execute();
+        ArrayList<Danyuan> danyuans1 = (ArrayList<Danyuan>)danyuans;
+
+        ArrayList<Louceng> loucengs = new ArrayList<Louceng>();
+        for (Danyuan danyuan : danyuans1) {
+            loucengs.add(new Louceng(danyuan.mLoucengMingcheng, danyuan.mLouceng));
+        }
+
+        return loucengs;
     }
 
     @Override

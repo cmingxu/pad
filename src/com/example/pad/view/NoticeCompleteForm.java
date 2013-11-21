@@ -120,7 +120,6 @@ public class NoticeCompleteForm extends BaseActivity {
                     return;
                 }
 
-
                 final CachedRequest cachedRequest = new CachedRequest();
                 cachedRequest.happenedAt = new Date();
                 cachedRequest.request_path =   path + "?id=" + n.remoteId + "&desc="  + desc;
