@@ -66,6 +66,11 @@ public class DanyuanbiaoChaobiao extends Model {
         return new Select().from(DanyuanbiaoChaobiao.class).where("mRemoteId='" + mRemoteID + "'").executeSingle();
     }
 
+    public Danyuan danyuan(){
+        return new Select().from(Danyuan.class).where("mDanyuanBianhao='" + this.mDanyuanBianhao + "'").executeSingle();
+
+    }
+
 
     @Override
     public String toString() {

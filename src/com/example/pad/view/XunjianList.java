@@ -24,6 +24,7 @@ import com.example.pad.common.UIHelper;
 import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandanmingxi;
+import com.loopj.android.http.RequestParams;
 import org.json.JSONObject;
 
 import java.util.Date;
@@ -129,8 +130,6 @@ public class XunjianList extends BaseActivity
                            setupListView();
                        }
 
-
-
                    });
 
                    for (final Xunjiandanmingxi xunjiandanmingxi : o.xunjiandanmingxis()) {
@@ -138,14 +137,24 @@ public class XunjianList extends BaseActivity
                        "&xunjianshijian=" + StringUtils.toLongString(xunjiandanmingxi.mXunjianShijian) + "&biaoshi=" + xunjiandanmingxi.mBiaoshi +
                                "&shuoming=" + xunjiandanmingxi.mShuoming);
 
+                       RequestParams params = new RequestParams();
+                       params.put("id", "" + xunjiandanmingxi.mRemoteID);
+                       params.put("zhiid", xunjiandanmingxi.mZhiId);
+                       params.put("zhi", xunjiandanmingxi.mZhi);
+                       params.put("xunjianshijian", xunjiandanmingxi.mXunjianShijian);
+                       params.put("biaoshi", xunjiandanmingxi.mBiaoshi);
+                       params.put("shuoming", xunjiandanmingxi.mShuoming);
+
+
+
                        CachedRequest mingxicachedRequest = new CachedRequest();
                        mingxicachedRequest.happenedAt = new Date();
                        mingxicachedRequest.httpMethod = "post";
-                       mingxicachedRequest.request_path = "xunjiandanmingxis?" + request;
+                       mingxicachedRequest.request_path = "xunjiandanmingxis";
                        mingxicachedRequest.resource_type = "巡检明细";
                        mingxicachedRequest.resource_id = xunjiandanmingxi.getId();
 
-                       httpHelper.post("xunjiandanmingxis?" + request, null,
+                       httpHelper.post("xunjiandanmingxis", params,
                                new PadJsonHttpResponseHandler() {
 
                            @Override
@@ -154,7 +163,14 @@ public class XunjianList extends BaseActivity
                                Xunjiandanmingxi.delete(Xunjiandanmingxi.class, xunjiandanmingxi.getId());
                                progressDialog.hide();
                            }
-                       });
+
+                                   @Override
+                                   public void failure(String message) {
+                                       UIHelper.showLongToast(XunjianList.this, message);
+                                       progressDialog.hide();
+                                       super.failure(message);
+                                   }
+                               });
                    }
                }
             }

@@ -20,7 +20,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/biaomingcheng" android:layout_weight="3" style="@style/ltText"/>
+                android:id="@+id/biaomingcheng" android:layout_weight="3" style="@style/ltText"
+                android:layout_marginLeft="10dp"/>
         </TableRow>
 
 
@@ -29,7 +30,8 @@
             <TextView style="@style/ltLabel" android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:text="上次读数" android:id="@+id/textView2" android:layout_weight="1" android:gravity="right"/>
             <TextView style="@style/ltText" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="New Text" android:id="@+id/lastCount" android:layout_weight="3"/>
+                      android:text="New Text" android:id="@+id/lastCount" android:layout_weight="3"
+                      android:layout_marginLeft="10dp"/>
         </TableRow>
     <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent" style="@style/ltTableRow">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="本次读数"

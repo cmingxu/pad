@@ -45,7 +45,7 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
         danyuanbiaoChaobiao = DanyuanbiaoChaobiao.findByRemoteId(getIntent().getIntExtra("danyuanbiaochaobiao_id", 0));
 
         louceng = getIntent().getStringExtra("louceng");
-        biaomingcheng.setText(louceng + "/" + danyuanbiaoChaobiao.mBiaomingcheng);
+        biaomingcheng.setText(louceng + "/" + danyuanbiaoChaobiao.danyuan().mDanyuanmingcheng + "/" + danyuanbiaoChaobiao.mBiaomingcheng);
         lastCountTv.setText(StringUtils.parseToDushu(danyuanbiaoChaobiao.mShangciDushu));
 
         chaobiaoButton.setOnClickListener(new ChaobiaoButtonListener());
@@ -89,6 +89,8 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
                 @Override
                 public void onSuccess(JSONObject jsonObject) {
                     progressDialog.hide();
+                    danyuanbiaoChaobiao.delete();
+                    DanyuanbiaochaobiaoForm.this.finish();
                     UIHelper.showLongToast(DanyuanbiaochaobiaoForm.this, "上传成功");
                     super.onSuccess(jsonObject);
                 }

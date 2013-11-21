@@ -35,11 +35,6 @@ import java.util.Date;
  */
 public class NewForm extends BaseActivity {
 
-    public static final int WEIXIUDAN_SAVE_OK = 1;
-    public static final int WEIXIUDAN_SAVE_FAILE = 2;
-    public static final int WEIXIUDAN_SAVE_EXCEPTION = 3;
-    public static final int WEIXIUDAN_SAVE_NO_RESULT = 4;
-    public static final int WEIXIUDAN_SAVE_EMPTY = 5;
     public static final int CHOOSE_ADDRESS = 1;
     private static final int IMAGE_CAPTURE = 0;
     Weixiudan weixiudan;

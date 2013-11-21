@@ -51,7 +51,7 @@ public class CengAddressChooser extends BaseActivity {
         else if (state.current_selecting.equals("louge")) {
             adapter =  new ArrayAdapter<Model>(CengAddressChooser.this, android.R.layout.simple_list_item_1, state.current_loupan.louges().toArray(new Louge[0]));
         } else if (state.current_selecting.equals("louceng")) {
-            adapter =  new ArrayAdapter<Model>(CengAddressChooser.this, android.R.layout.simple_list_item_1, state.current_loupan.loucengs().toArray(new Louceng[0]));
+            adapter =  new ArrayAdapter<Model>(CengAddressChooser.this, android.R.layout.simple_list_item_1, state.current_louge.loucengs().toArray(new Louceng[0]));
         } else {
         }
         listView.setAdapter(adapter);

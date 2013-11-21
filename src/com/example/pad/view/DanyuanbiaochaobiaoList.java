@@ -28,6 +28,7 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
     public ListView danyuanbiaosListView;
     public AddressChooserResult result;
     public String danyuanBianhao;
+    Intent dataChoosed;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,35 +48,48 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
             }
         });
 
+        setupList(dataChoosed);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setupList(dataChoosed);
+
+    }
+
+    public void setupList(Intent data){
+        if (data != null) {
+            Log.d("danyuanbianhao", "danyuanbianhao");
+            result = (AddressChooserResult) data.getSerializableExtra("result");
+
+            danyuanBianhao = result.getmDanyuanbianhao();
+            danyuanChooserEditText.setText(result.getmLoupanName() + "/" + result.getmLougeName() + "/" + result.getmLoucengName());
+
+            final ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos =  Louceng.danyuanbiaochaobiaoByLoucengBianhao(result.getmLoucengbianhao()) ;
+            danyuanbiaosListView.setAdapter(new ListViewAdapter(danyuanbiaoChaobiaos));
+            danyuanbiaosListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    DanyuanbiaoChaobiao danyuanbiaoChaobiao = danyuanbiaoChaobiaos.get(position);
+                    Intent intent = new Intent();
+                    intent.setClass(DanyuanbiaochaobiaoList.this, DanyuanbiaochaobiaoForm.class);
+                    intent.putExtra("danyuanbiaochaobiao_id", danyuanbiaoChaobiao.mRemoteID);
+                    intent.putExtra("louceng", result.getmLoucengName());
+                    startActivity(intent);
+                }
+            });
+            danyuanbiaosListView.invalidate();
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case ADDRESS_REQUEST_CODE:
-                if (data != null) {
-                    Log.d("danyuanbianhao", "danyuanbianhao");
-                    result = (AddressChooserResult) data.getSerializableExtra("result");
-
-                    danyuanBianhao = result.getmDanyuanbianhao();
-                    danyuanChooserEditText.setText(result.getmLoupanName() + "/" + result.getmLougeName() + "/" + result.getmLoucengName());
-
-
-                    final ArrayList<DanyuanbiaoChaobiao> danyuanbiaoChaobiaos =  Louceng.danyuanbiaochaobiaoByLoucengBianhao(result.getmLoucengbianhao()) ;
-                    danyuanbiaosListView.setAdapter(new ListViewAdapter(danyuanbiaoChaobiaos));
-                    danyuanbiaosListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            DanyuanbiaoChaobiao danyuanbiaoChaobiao = danyuanbiaoChaobiaos.get(position);
-                            Intent intent = new Intent();
-                            intent.setClass(DanyuanbiaochaobiaoList.this, DanyuanbiaochaobiaoForm.class);
-                            intent.putExtra("danyuanbiaochaobiao_id", danyuanbiaoChaobiao.mRemoteID);
-                            intent.putExtra("louceng", result.getmLoucengName());
-                            startActivity(intent);
-                        }
-                    });
-                    danyuanbiaosListView.invalidate();
-                }
+                dataChoosed = data;
+                setupList(dataChoosed);
                 break;
             default:
                 break;
@@ -115,7 +129,7 @@ public class DanyuanbiaochaobiaoList extends BaseActivity {
             TextView biaomingcheng = (TextView)view.findViewById(R.id.biaomingcheng);
             TextView shangcidushu = (TextView)view.findViewById(R.id.shangcibiaoshu);
 
-            biaomingcheng.setText(danyuanbiaoChaobiao.mBiaomingcheng);
+            biaomingcheng.setText(danyuanbiaoChaobiao.danyuan().mDanyuanmingcheng + "  " + danyuanbiaoChaobiao.mBiaomingcheng);
             shangcidushu.setText(StringUtils.parseToDushu(danyuanbiaoChaobiao.mShangciDushu));
 
             return view;

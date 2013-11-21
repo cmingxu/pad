@@ -1,15 +1,16 @@
 package com.example.pad.view;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
 import com.example.pad.common.StringUtils;
+import com.example.pad.common.UIHelper;
 import com.example.pad.models.*;
 
 /**
@@ -31,6 +32,7 @@ public class XunjianmingxiView extends BaseActivity {
     private TextView mXunjianshijian;
     private TextView mXunjianshuoming;
     private RadioGroup radioGroup;
+    private Button save_btn;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,7 @@ public class XunjianmingxiView extends BaseActivity {
         mXunjianshijian = (TextView)findViewById(R.id.xunjianshijian);
         radioGroup = (RadioGroup)findViewById(R.id.radio_group);
         mXunjianshuoming  = (TextView)findViewById(R.id.xunjianshuoming);
+        save_btn = (Button) findViewById(R.id.save_btn);
 
         mXunjiandianTv.setText(this.mXunjiandian.mMingcheng);
         mXunjianxiangmuTv.setText(this.mXunjianxiangmu.mMingcheng);
@@ -70,6 +73,8 @@ public class XunjianmingxiView extends BaseActivity {
         for (Xunjianzhi xunjianzhi : mXunjianxiangmu.xunjianzhis()) {
             addRadioButton(xunjianzhi);
         }
+
+        save_btn.setOnClickListener(new SaveClickListener());
 
     }
 
@@ -99,35 +104,26 @@ public class XunjianmingxiView extends BaseActivity {
         radioGroup.addView(radioButton, rParams);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportMenuInflater().inflate(R.menu.xunjianmingxi, menu);
-        return true;
+    class SaveClickListener implements Button.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            save();
+        }
     }
-
 
     public void save(){
         mXunjianzhi = Xunjianzhi.findByRemoteId(radioGroup.getCheckedRadioButtonId());
         if (mXunjianzhi != null) {
             mXunjiandanmingxi.mZhi = mXunjianzhi.mZhi;
             mXunjiandanmingxi.mZhiId = String.valueOf(mXunjianzhi.mRemoteID);
-        }
-        mXunjiandanmingxi.mShuoming = mXunjianshuoming.getText().toString();
-        mXunjiandanmingxi.mXunjianShijian = StringUtils.currentTime();
-        mXunjiandanmingxi.save();
-
-
-        XunjianmingxiView.this.finish();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_save:
-                save();
-            default:
-                super.onOptionsItemSelected(item);
+            mXunjiandanmingxi.mShuoming = mXunjianshuoming.getText().toString();
+            mXunjiandanmingxi.mXunjianShijian = StringUtils.currentTime();
+            mXunjiandanmingxi.save();
+            XunjianmingxiView.this.finish();
+        } else{
+            UIHelper.showLongToast(XunjianmingxiView.this, R.string.value_should_not_empty);
         }
 
-        return true;
     }
+
 }
