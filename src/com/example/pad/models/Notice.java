@@ -43,6 +43,12 @@ public class Notice extends Model{
     public boolean isComplete;
     @Column(name="isDaixiu")
     public boolean isDaixiu;
+    @Column(name="display")
+    public boolean display;
+    @Column(name="desc")
+    public String desc;
+    @Column(name="res")
+    public String res;
 
 
     public static ArrayList<Notice> fromJsonArray(JSONArray s, AppContext context) throws JSONException {
@@ -57,10 +63,15 @@ public class Notice extends Model{
             notice.danjuLeixing = temp.getString("单据类型");
             notice.danjuNeirong = temp.getString("单据内容");
             notice.remoteId     = temp.getInt("id");
+            if(Notice.findByRemoteId(notice.remoteId) != null){
+                continue;
+            }
             notice.isAccept = false;
             notice.isComplete = false;
             notice.isDaixiu = false;
+            notice.display = true;
             notices.add(notice);
+
 
         }
         return notices;
@@ -89,7 +100,7 @@ public class Notice extends Model{
     }
 
     public static List<Notice> allComplete(String jsr){
-        return new Select().from(Notice.class).where("(isAccept = 1 and isComplete=0 and isDaixiu=0) and jsr=?", jsr).execute();
+        return new Select().from(Notice.class).where("(display = 1 AND isAccept = 1 and isComplete=0 and isDaixiu=0) and jsr=?", jsr).execute();
     }
 
     public static Notice findByRemoteId(int remoteId){

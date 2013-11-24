@@ -11,9 +11,9 @@ import com.example.pad.R;
 import com.example.pad.common.HttpHelper;
 import com.example.pad.common.PadJsonHttpResponseHandler;
 import com.example.pad.common.UIHelper;
-import com.example.pad.common.Util;
 import com.example.pad.models.CachedRequest;
 import com.example.pad.models.Notice;
+import com.loopj.android.http.RequestParams;
 import org.json.JSONObject;
 
 import java.util.Date;
@@ -39,13 +39,9 @@ public class NoticeAcceptForm extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notice_accept_form);
 //
-//        sendPerson = (TextView)findViewById(R.id.sendperson);
-//        sendTime   = (TextView)findViewById(R.id.sendtime);
         content = (TextView) findViewById(R.id.content);
         accept_btn = (Button) findViewById(R.id.action);
 
-//        sendPerson.setText(n.sendPerson);
-//        sendTime.setText(n.sendTime);
         content.setText(n.danjuNeirong);
 
         progressDialog = new ProgressDialog(this);
@@ -55,30 +51,27 @@ public class NoticeAcceptForm extends BaseActivity {
             @Override
             public void onClick(View v) {
                 n.accept();
-                if (!Util.instance().isNetworkConnected(NoticeAcceptForm.this)) {
-                    UIHelper.showLongToast(NoticeAcceptForm.this, getString(R.string.network_error));
-
-                    return;
-                }
 
                 final CachedRequest cachedRequest = new CachedRequest();
                 cachedRequest.happenedAt = new Date();
-                cachedRequest.request_path = "jiedan?id=" + n.remoteId;
+                cachedRequest.request_path = "jiedan";
                 cachedRequest.resource_type = "维修单接单";
                 cachedRequest.resource_id = n.getId();
+
+                RequestParams requestParams = new RequestParams();
+                requestParams.put("id", "" + n.remoteId);
 
                 progressDialog.setTitle(R.string.wait_please);
                 progressDialog.setMessage("接单中");
                 progressDialog.show();
 
-                httpHelper.with("jiedan?id=" + n.remoteId, null,
+                httpHelper.with("jiedan", requestParams,
                         new PadJsonHttpResponseHandler() {
                             @Override
                             public void onSuccess(JSONObject jsonObject) {
                                 progressDialog.dismiss();
                                 NoticeAcceptForm.this.finish();
                                 UIHelper.showLongToast(NoticeAcceptForm.this, R.string.jiedan_ok);
-                                n.save();
                             }
 
                             @Override

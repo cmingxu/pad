@@ -35,7 +35,7 @@ public class NoticeList extends BaseActivity{
     }
 
     public void setupList(){
-        final List<Notice> notices = new Select().from(Notice.class).execute();
+        final List<Notice> notices = new Select().from(Notice.class).where("display = 1").execute();
 
         notice_list = (ListView)findViewById(R.id.list_view);
         notice_list.setAdapter(new NoticeListViewAdapter(notices));

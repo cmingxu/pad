@@ -24,6 +24,9 @@ import java.util.HashMap;
 
 @Table(name="Weixiudan")
 public class Weixiudan extends Model {
+
+    public static final String IMAGE_DIR = "/sdcard/com.example.pad/weixiudan";
+
     @Column(name="mLoupanName")
     public String mLoupanName;
     @Column(name="mLougeName")
@@ -127,6 +130,8 @@ public class Weixiudan extends Model {
     public String address(){
         return this.mLougeName + "/" + this.mLoucengName + "/" + this.mDanyuanName;
     }
+
+
 
     public static long last_id(){
         Weixiudan last = new Select().from(Weixiudan.class).orderBy("id DESC").executeSingle();

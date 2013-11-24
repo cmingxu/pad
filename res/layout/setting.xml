@@ -25,6 +25,7 @@
                     android:layout_marginTop="14dp"
                     android:gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/bdsc_relative_layout"
                     android:background="@drawable/preference_first_item" >
                 <TextView
                         android:layout_width="wrap_content"
@@ -32,7 +33,17 @@
                         android:padding="8dp"
                         android:text="报单上传"
                         android:textSize="17sp"
-                        android:textColor="#000" />
+                        android:textColor="#000"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="(1)"
+                        android:id="@+id/bdsc_view"
+                        android:textSize="17sp"
+                        android:textColor="#000"
+                        android:layout_toLeftOf="@+id/bdsc_image"
+                        />
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -40,6 +51,7 @@
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:clickable="true"
+                        android:id="@+id/bdsc_image"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
@@ -49,6 +61,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/jdsc_relative_layout"
                     android:background="@drawable/preference_item" >
                 <TextView
                         android:layout_width="wrap_content"
@@ -56,13 +69,25 @@
                         android:padding="8dp"
                         android:text="接单上传"
                         android:textSize="17sp"
+
                         android:textColor="#000" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="(1)"
+                        android:textSize="17sp"
+                        android:id="@+id/jdsc_view"
+                        android:textColor="#000"
+                        android:layout_toLeftOf="@+id/jdsc_image">
+                        </TextView>
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="matrix"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:id="@+id/jdsc_image"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
@@ -72,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/wcsc_relative_layout"
                     android:background="@drawable/preference_item" >
                 <TextView
                         android:layout_width="wrap_content"
@@ -80,12 +106,24 @@
                         android:text="完成上传"
                         android:textSize="17sp"
                         android:textColor="#000" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="(1)"
+                        android:textSize="17sp"
+                        android:textColor="#000"
+                        android:layout_toLeftOf="@+id/wcsc_image"
+                        android:id="@+id/wcsc_view"
+                        >
+                </TextView>
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="matrix"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:id="@+id/wcsc_image"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
@@ -95,6 +133,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/xjsc_relative_layout"
                     android:background="@drawable/preference_item" >
                 <TextView
                         android:layout_width="wrap_content"
@@ -103,12 +142,26 @@
                         android:text="巡检上传"
                         android:textSize="17sp"
                         android:textColor="#000" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="(1)"
+                        android:textSize="17sp"
+                        android:textColor="#000"
+                        android:layout_toLeftOf="@+id/xjsc_image"
+                        android:id="@+id/xjsc_view"
+                        >
+                </TextView>
+
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="matrix"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:id="@+id/xjsc_image"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
@@ -118,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/cbsc_relative_layout"
                     android:background="@drawable/preference_item" >
                 <TextView
                         android:layout_width="wrap_content"
@@ -126,12 +180,27 @@
                         android:text="抄表上传"
                         android:textSize="17sp"
                         android:textColor="#000" />
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="(1)"
+                        android:textSize="17sp"
+                        android:textColor="#000"
+                        android:id="@+id/cbsc_view"
+                        android:layout_toLeftOf="@+id/cbsc_image"
+                        >
+                </TextView>
+
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="matrix"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:id="@+id/cbsc_image"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
@@ -140,6 +209,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/yfsc_relative_layout"
                     android:background="@drawable/preference_item" >
                 <TextView
                         android:layout_width="wrap_content"
@@ -148,12 +218,26 @@
                         android:text="验房上传"
                         android:textSize="17sp"
                         android:textColor="#000" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="(1)"
+                        android:id="@+id/yfsc_view"
+                        android:textSize="17sp"
+                        android:textColor="#000"
+                        android:layout_toLeftOf="@+id/yfsc_image"
+                        >
+                </TextView>
+
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="matrix"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:id="@+id/yfsc_image"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
@@ -176,6 +260,7 @@
                         android:scaleType="matrix"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:id="@+id/qcsj"
                         android:src="@drawable/mm_submenu" />
             </RelativeLayout>
             </LinearLayout>

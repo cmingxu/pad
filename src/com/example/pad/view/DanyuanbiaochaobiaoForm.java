@@ -60,11 +60,6 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
 
         @Override
         public void onClick(View v) {
-            if (!Util.instance().isNetworkConnected(DanyuanbiaochaobiaoForm.this)) {
-                UIHelper.showLongToast(DanyuanbiaochaobiaoForm.this, "当前网络不可用， 请重试");
-
-                return;
-            }
             String biaoshu  = dangqianbiaoshu.getText().toString();
             if (StringUtils.isEmpty(biaoshu)){
                 UIHelper.showLongToast(DanyuanbiaochaobiaoForm.this, "请输入当前表数");
@@ -97,6 +92,8 @@ public class DanyuanbiaochaobiaoForm extends BaseActivity {
 
                         @Override
                         public void failure(String message) {
+                            danyuanbiaoChaobiao.biaoshu = dangqianbiaoshu.getText().toString();
+                            danyuanbiaoChaobiao.save();
                             DanyuanbiaochaobiaoForm.this.finish();
                             if (progressDialog != null) {
                                 progressDialog.hide();

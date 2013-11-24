@@ -55,7 +55,7 @@ public class NewForm extends BaseActivity {
 
     public void onCreate(Bundle savedInstanceState) {
 
-        weixiudanImagesDir = "/sdcard/" + NewForm.this.getPackageName() + "/weixiudan";
+        weixiudanImagesDir = Weixiudan.IMAGE_DIR;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_form);

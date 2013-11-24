@@ -33,6 +33,8 @@ public class DanyuanbiaoChaobiao extends Model {
     public String mShangciDushu;
     @Column(name="mBenciDushu")
     public String mBenciDushu;
+    @Column(name="biaoshu")
+    public String biaoshu;
 
 
     public static ArrayList<DanyuanbiaoChaobiao> fromJsonArray(JSONArray s) throws JSONException {
