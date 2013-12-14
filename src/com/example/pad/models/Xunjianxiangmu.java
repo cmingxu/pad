@@ -1,6 +1,5 @@
 package com.example.pad.models;
 
-import android.util.Log;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
@@ -72,6 +71,11 @@ public class Xunjianxiangmu extends Model {
 
     public List<Xunjianzhi> xunjianzhis(){
         return new Select().from(Xunjianzhi.class).where("mXiangmuId=" + this.mRemoteID).orderBy("mShunxu").execute();
+    }
+
+    public boolean isFinish(Xunjiandan xunjiandan){
+        Xunjiandanmingxi xunjiandanmingxi = Xunjiandanmingxi.findByRemoteXunjiandanidAndRemoteXunjianxiangmuid(xunjiandan.mRemoteID, this.mRemoteID);
+        return xunjiandanmingxi.isFinished();
     }
 
     @Override

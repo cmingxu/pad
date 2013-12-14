@@ -1,18 +1,22 @@
 package com.example.pad.view;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import com.actionbarsherlock.app.ActionBar;
+import android.view.ViewGroup;
+import android.widget.*;
 import com.example.pad.BaseActivity;
 import com.example.pad.R;
+import com.example.pad.common.StringUtils;
+import com.example.pad.common.UIHelper;
+import com.example.pad.models.Xunjiandan;
 import com.example.pad.models.Xunjiandian;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
 
@@ -25,13 +29,13 @@ import java.util.ArrayList;
  */
 
 
-public class XunjiandanView extends BaseActivity implements ActionBar.TabListener {
-    com.example.pad.models.Xunjiandan xunjiandan;
-    ArrayList<Xunjiandian> mFinishedXunjiandians;
-    ArrayList<Xunjiandian> mNotFinishedxunjiandians;
-    ArrayAdapter<String> mFinishedListViewAdapter;
-    ArrayAdapter<String> mNotFinishedListViewAdapter;
-    boolean tabOneSelected;
+public class XunjiandanView extends BaseActivity {
+    Xunjiandan xunjiandan;
+    ArrayList<Xunjiandian> mXunjiandians;
+    private EditText mBarCodeEditText;
+    private Button mScanButton;
+    private Button mChaxunButton;
+    public String barcode;
     private ListView listView;
 
     @Override
@@ -39,119 +43,141 @@ public class XunjiandanView extends BaseActivity implements ActionBar.TabListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xunjian);
 
-        xunjiandan = com.example.pad.models.Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
+        mBarCodeEditText = (EditText) findViewById(R.id.barcode);
+        mScanButton = (Button) findViewById(R.id.scan);
+        mChaxunButton = (Button) findViewById(R.id.chaxun_btn);
 
-        ActionBar bar = getSupportActionBar();
-        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        bar.setDisplayHomeAsUpEnabled(true);
-        bar.setDisplayShowTitleEnabled(true);
-        bar.setIcon(getResources().getDrawable(R.drawable.icon_zhuye));
-        bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
-        bar.setTitle("巡检单： " + xunjiandan.mDanjuBianHao);
+        mScanButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                IntentIntegrator intentIntegrator = new IntentIntegrator(XunjiandanView.this);
+                intentIntegrator.initiateScan();
+            }
 
-        ActionBar.Tab tab = getSupportActionBar().newTab();
-        tab.setText("已完成");
-        tab.setTag("tab1");
-        tab.setTabListener(this);
-        getSupportActionBar().addTab(tab);
+        });
 
 
-        ActionBar.Tab tab2 = getSupportActionBar().newTab();
-        tab2.setText("未完成");
-        tab2.setTabListener(this);
-        tab2.setTag("tab2");
-        getSupportActionBar().addTab(tab2);
 
-        if (savedInstanceState != null) {
-            bar.setSelectedNavigationItem(savedInstanceState.getInt("tab", 1));
-        }
 
+        xunjiandan = Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
+        mChaxunButton.setOnClickListener(new ChaxunButtonClickListener(xunjiandan));
+        Log.d("abcdef", "create");
         setupData();
 
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (scanResult != null) {
+            Log.i("SCAN", "scan result: " + scanResult);
+            mBarCodeEditText.setText(scanResult.getContents());
+            barcode = scanResult.getContents();
+        } else
+            Log.e("SCAN", "Sorry, the scan was unsuccessful...");
+        UIHelper.showLongToast(XunjiandanView.this, "对不起， 扫描编码失败！");
+    }
+
+    class ChaxunButtonClickListener implements Button.OnClickListener {
+        Xunjiandan xunjiandan;
+
+        public ChaxunButtonClickListener(Xunjiandan xunjiandan) {
+            this.xunjiandan = xunjiandan;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.d("size a", "zheli                 ............");
+            barcode = mBarCodeEditText.getText().toString();
+            if (StringUtils.isEmpty(barcode)) {
+                UIHelper.showLongToast(XunjiandanView.this, "对不起， 请扫描或者输入编码！");
+                return;
+            }
+            ArrayList<Xunjiandian> mXunjiandians = new ArrayList<Xunjiandian>();
+            for (Xunjiandian xunjiandian : xunjiandan.xunjiandians()) {
+                if(xunjiandian.mBianma.equals(barcode)){
+                    mXunjiandians.add(xunjiandian);
+                }
+            }
+
+            listView.setAdapter(new ListViewAdapter(mXunjiandians));
+            Log.d("size a","" + mXunjiandians.size());
+            listView.setOnItemClickListener(new OnItemClickListener());
+            listView.invalidate();
+
+        }
     }
 
     @Override
     protected void onResume() {
+        Log.d("abcdef", "resume");
         super.onResume();
-        Log.d("wee", "onresume");
         setupData();
-        mFinishedListViewAdapter.notifyDataSetChanged();
-        mNotFinishedListViewAdapter.notifyDataSetChanged();
-        listView.invalidate();
     }
 
     public void setupData() {
-        mFinishedXunjiandians = (ArrayList<Xunjiandian>) xunjiandan.finishedXunjiandians();
-        mNotFinishedxunjiandians = (ArrayList<Xunjiandian>) xunjiandan.notFinishedXunjiandians();
+        Log.d("abcdef draw", "setupdata");
+        mXunjiandians = (ArrayList<Xunjiandian>) xunjiandan.xunjiandians();
 
         listView = (ListView) findViewById(R.id.xunjianxiangmus);
-
-        ArrayList<String> finishedXunjiandianStrs = new ArrayList<String>();
-        ArrayList<String> notFinishedXunjiandianStrs = new ArrayList<String>();
-
-        for (Xunjiandian xunjiandian : mFinishedXunjiandians) {
-            finishedXunjiandianStrs.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
-        }
-
-        for (Xunjiandian xunjiandian : mNotFinishedxunjiandians) {
-            notFinishedXunjiandianStrs.add(xunjiandian.mFangchanQuyu + " " + xunjiandian.mMingcheng);
-        }
-
-        tabOneSelected = true;
-
-        mFinishedListViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, finishedXunjiandianStrs);
-        mNotFinishedListViewAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, notFinishedXunjiandianStrs);
-        listView.setAdapter(mFinishedListViewAdapter);
+        listView.setAdapter(new ListViewAdapter(mXunjiandians));
         listView.setOnItemClickListener(new OnItemClickListener());
 
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt("tab", getSupportActionBar()
-                .getSelectedNavigationIndex());
-    }
-
-    @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-        listView = (ListView) findViewById(R.id.xunjianxiangmus);
-
-        if (tab.getTag() != null && ((String) tab.getTag()).equals("tab1")) {
-            tabOneSelected = true;
-            listView.setAdapter(mFinishedListViewAdapter);
-        } else {
-
-            tabOneSelected = false;
-            listView.setAdapter(mNotFinishedListViewAdapter);
-        }
-    }
-
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
 
     public class OnItemClickListener implements ListView.OnItemClickListener {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            if (tabOneSelected) {
-//                do nothing
-                Log.d("qoo", mFinishedXunjiandians.get(position).mBianhao);
-            } else {
 //                redirct to new activity
                 Intent intent = new Intent();
                 intent.setClass(XunjiandanView.this, XunjiandianView.class);
-                intent.putExtra("xunjiandian_id", mNotFinishedxunjiandians.get(position).mRemoteId);
+                intent.putExtra("xunjiandian_id", mXunjiandians.get(position).mRemoteId);
                 intent.putExtra("xunjiandan_id", xunjiandan.mRemoteID);
                 startActivity(intent);
+        }
+    }
+
+
+    class ListViewAdapter extends BaseAdapter{
+        ArrayList<Xunjiandian> mXunjiandians;
+
+        public ListViewAdapter(ArrayList<Xunjiandian> xunjiandians){
+            this.mXunjiandians = xunjiandians;
+        }
+
+        @Override
+        public int getCount() {
+            return mXunjiandians.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Log.d("abcdef draw", "" + position);
+            Xunjiandian xunjiandian = mXunjiandians.get(position);
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.xunjiandian_item, null);
             }
+
+            TextView ysdxName = (TextView) convertView.findViewById(R.id.xunjiandian_name);
+            ImageView imageView = (ImageView) convertView.findViewById(R.id.xunjiandian_icon);
+            if(xunjiandian.finish(xunjiandan)){
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.yes_icon));
+            }{
+                imageView.setImageDrawable(getResources().getDrawable(R.drawable.no_icon));
+            }
+            ysdxName.setText(xunjiandian.mMingcheng);
+            return convertView;
         }
     }
 

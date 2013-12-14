@@ -8,10 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.activeandroid.query.Select;
@@ -215,6 +212,14 @@ public class XunjianList extends BaseActivity
             kaishi_shijian.setText(xunjiandan.mJihuaQishiShijian.substring(0, 16));
             jieshu_shijian.setText(xunjiandan.mJihuaZhongzhiShijian.substring(0, 16));
             xunjiandan_bianhao.setText(xunjiandan.mDanjuBianHao);
+
+            ImageView icon = (ImageView) view.findViewById(R.id.icon);
+            if(xunjiandan.finished()){
+            icon.setImageDrawable(getResources().getDrawable(R.drawable.yes_icon));
+            }else{
+                icon.setImageDrawable(getResources().getDrawable(R.drawable.no_icon));
+            }
+
 
 
             return view;

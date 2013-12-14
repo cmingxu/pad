@@ -109,6 +109,20 @@ public class Xunjiandian extends Model {
         return new Select().from(Xunjiandian.class).where("mBianma=" + bianma).executeSingle();
     }
 
+    public boolean finish(Xunjiandan xunjiandan){
+        boolean finish = true;
+        for (Xunjiandanmingxi xunjiandanmingxi : xunjiandan.xunjiandanmingxis()) {
+            for (Xunjianxiangmu xunjianxiangmu : this.xunjianxiangmus()) {
+                if(Integer.parseInt(xunjiandanmingxi.mXiangmuId) == xunjianxiangmu.mRemoteID){
+                    if(!xunjiandanmingxi.isFinished()){
+                        finish = false;
+                    }
+                }
+            }
+        }
+        return  finish;
+    }
+
 
     @Override
     public String toString() {

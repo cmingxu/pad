@@ -52,7 +52,7 @@ public class YFForm extends BaseActivity {
     private ProgressDialog progressDialog;
 
     public void onCreate(Bundle savedInstanceState) {
-        yfImagesDir = "/sdcard/" + YFForm.this.getPackageName() + "/yf";
+        yfImagesDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath()  + "/yf";
         Bundle bundle = getIntent().getExtras();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.yf_form);
