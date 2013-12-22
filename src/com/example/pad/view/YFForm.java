@@ -52,7 +52,7 @@ public class YFForm extends BaseActivity {
     private ProgressDialog progressDialog;
 
     public void onCreate(Bundle savedInstanceState) {
-        yfImagesDir = android.os.Environment.getExternalStorageDirectory().getAbsolutePath()  + "/yf";
+        yfImagesDir = "/sdcard/yf";
         Bundle bundle = getIntent().getExtras();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.yf_form);
@@ -83,17 +83,17 @@ public class YFForm extends BaseActivity {
             }
 
             private File getTempFile(Context context) {
-                File path = new File("/sdcard", context.getPackageName() + "/yf");
+                File path = new File("/sdcard", "/yf/temp/");
 
                 if (!path.exists()) {
                     path.mkdir();
                 }
-                return new File(path, "/temp/" + StringUtils.randomString() + ".jpg");
+                return new File(path, StringUtils.randomString() + ".jpg");
             }
 
         });
 
-        File temp_path = new File("/sdcard", YFForm.this.getPackageName() + "/yf/temp");
+        File temp_path = new File("/sdcard", "/yf/temp");
         if (temp_path.exists() && temp_path.isDirectory()) {
             for (File imageFile : temp_path.listFiles()) {
                 if (imageFile.getAbsolutePath().endsWith(".jpg")) {

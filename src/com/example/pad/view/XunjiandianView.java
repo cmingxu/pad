@@ -52,6 +52,20 @@ public class XunjiandianView extends BaseActivity {
         bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.top));
         bar.setTitle(this.mXunjiandian.mMingcheng);
 
+
+        setupData();
+        Log.d("ddd", "" + xunjianxiangmus.size());
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d("abcdef", "resume");
+        super.onResume();
+        setupData();
+    }
+
+
+    public void setupData() {
         xunjianxiangmus = (ArrayList<Xunjianxiangmu>) this.mXunjiandian.xunjianxiangmusForXunjiandan(this.mXunjiandan.mRemoteID);
         ArrayList<String> xunjianxiangmuStrs = new ArrayList<String>();
         for (Xunjianxiangmu xujianxiangmu : xunjianxiangmus) {
@@ -69,9 +83,7 @@ public class XunjiandianView extends BaseActivity {
             }
         });
 
-        Log.d("ddd", "" + xunjianxiangmus.size());
     }
-
 
 
     @Override

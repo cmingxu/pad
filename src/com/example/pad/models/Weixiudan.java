@@ -25,7 +25,9 @@ import java.util.HashMap;
 @Table(name="Weixiudan")
 public class Weixiudan extends Model {
 
-    public static final String IMAGE_DIR = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/weixiudan";
+//    public static final String IMAGE_DIR = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/weixiudan";
+
+    public static final String IMAGE_DIR =   "/sdcard/weixiudan";
 
     @Column(name="mLoupanName")
     public String mLoupanName;

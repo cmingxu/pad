@@ -61,7 +61,7 @@ public class XunjiandanView extends BaseActivity {
         xunjiandan = Xunjiandan.findByRemoteId(getIntent().getIntExtra("xunjiandan_id", 0));
         mChaxunButton.setOnClickListener(new ChaxunButtonClickListener(xunjiandan));
         Log.d("abcdef", "create");
-        setupData();
+        setupData((ArrayList<Xunjiandian>)xunjiandan.xunjiandians());
 
     }
 
@@ -85,7 +85,6 @@ public class XunjiandanView extends BaseActivity {
 
         @Override
         public void onClick(View v) {
-            Log.d("size a", "zheli                 ............");
             barcode = mBarCodeEditText.getText().toString();
             if (StringUtils.isEmpty(barcode)) {
                 UIHelper.showLongToast(XunjiandanView.this, "对不起， 请扫描或者输入编码！");
@@ -98,10 +97,7 @@ public class XunjiandanView extends BaseActivity {
                 }
             }
 
-            listView.setAdapter(new ListViewAdapter(mXunjiandians));
-            Log.d("size a","" + mXunjiandians.size());
-            listView.setOnItemClickListener(new OnItemClickListener());
-            listView.invalidate();
+            setupData(mXunjiandians);
 
         }
     }
@@ -110,15 +106,28 @@ public class XunjiandanView extends BaseActivity {
     protected void onResume() {
         Log.d("abcdef", "resume");
         super.onResume();
-        setupData();
+        if(StringUtils.isEmpty(barcode)){
+            mXunjiandians = (ArrayList<Xunjiandian>)xunjiandan.xunjiandians();
+            setupData(mXunjiandians);
+
+
+        }else{
+            mXunjiandians.clear();
+            for (Xunjiandian xunjiandian : xunjiandan.xunjiandians()) {
+                if(xunjiandian.mBianma.equals(barcode)){
+                    mXunjiandians.add(xunjiandian);
+                }
+            }
+            setupData(mXunjiandians);
+        }
+
     }
 
-    public void setupData() {
-        Log.d("abcdef draw", "setupdata");
-        mXunjiandians = (ArrayList<Xunjiandian>) xunjiandan.xunjiandians();
+    public void setupData(ArrayList<Xunjiandian> xunjiandians) {
 
+        Log.d("aaaaaaaass", "" + xunjiandians.size());
         listView = (ListView) findViewById(R.id.xunjianxiangmus);
-        listView.setAdapter(new ListViewAdapter(mXunjiandians));
+        listView.setAdapter(new ListViewAdapter(xunjiandians));
         listView.setOnItemClickListener(new OnItemClickListener());
 
     }
@@ -162,22 +171,22 @@ public class XunjiandanView extends BaseActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Log.d("abcdef draw", "" + position);
             Xunjiandian xunjiandian = mXunjiandians.get(position);
-            if (convertView == null) {
-                LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = inflater.inflate(R.layout.xunjiandian_item, null);
-            }
 
-            TextView ysdxName = (TextView) convertView.findViewById(R.id.xunjiandian_name);
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.xunjiandian_icon);
+            LayoutInflater inflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View view = inflater.inflate(R.layout.xunjiandian_item, null);
+
+
+            TextView ysdxName = (TextView) view.findViewById(R.id.xunjiandian_name);
+            ImageView imageView = (ImageView) view.findViewById(R.id.xunjiandian_icon);
+            Log.d("aaaaaaaaa", ""+ xunjiandian.finish(xunjiandan));
             if(xunjiandian.finish(xunjiandan)){
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.yes_icon));
-            }{
+            }else {
                 imageView.setImageDrawable(getResources().getDrawable(R.drawable.no_icon));
             }
             ysdxName.setText(xunjiandian.mMingcheng);
-            return convertView;
+            return view;
         }
     }
 

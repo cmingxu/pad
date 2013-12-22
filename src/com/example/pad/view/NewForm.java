@@ -318,16 +318,17 @@ public class NewForm extends BaseActivity {
         public void onClick(View view) {
             final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             tempFile = getTempFile(NewForm.this);
+
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(tempFile));
             startActivityForResult(intent, IMAGE_CAPTURE);
         }
 
         private File getTempFile(Context context) {
-            File path = new File(weixiudanImagesDir);
+            File path = new File(weixiudanImagesDir + "/temp/");
             if (!path.exists()) {
-                path.mkdir();
+                path.mkdirs();
             }
-            return new File(path, "/temp/" + StringUtils.randomString() + ".jpg");
+            return new File(path,  StringUtils.randomString() + ".jpg");
         }
     }
 }
